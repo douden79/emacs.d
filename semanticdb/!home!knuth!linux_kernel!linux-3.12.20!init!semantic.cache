@@ -1,0 +1,625 @@
+;; Object init/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "init/"
+  :tables
+  (list
+    (semanticdb-table "main.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("DEBUG" variable (:constant-flag t) nil [378 383])
+            ("linux/types.h" include (:system-flag t) nil [414 438])
+            ("linux/module.h" include (:system-flag t) nil [439 464])
+            ("linux/proc_fs.h" include (:system-flag t) nil [465 491])
+            ("linux/kernel.h" include (:system-flag t) nil [492 517])
+            ("linux/syscalls.h" include (:system-flag t) nil [518 545])
+            ("linux/stackprotector.h" include (:system-flag t) nil [546 579])
+            ("linux/string.h" include (:system-flag t) nil [580 605])
+            ("linux/ctype.h" include (:system-flag t) nil [606 630])
+            ("linux/delay.h" include (:system-flag t) nil [631 655])
+            ("linux/ioport.h" include (:system-flag t) nil [656 681])
+            ("linux/init.h" include (:system-flag t) nil [682 705])
+            ("linux/initrd.h" include (:system-flag t) nil [706 731])
+            ("linux/bootmem.h" include (:system-flag t) nil [732 758])
+            ("linux/acpi.h" include (:system-flag t) nil [759 782])
+            ("linux/tty.h" include (:system-flag t) nil [783 805])
+            ("linux/percpu.h" include (:system-flag t) nil [806 831])
+            ("linux/kmod.h" include (:system-flag t) nil [832 855])
+            ("linux/vmalloc.h" include (:system-flag t) nil [856 882])
+            ("linux/kernel_stat.h" include (:system-flag t) nil [883 913])
+            ("linux/start_kernel.h" include (:system-flag t) nil [914 945])
+            ("linux/security.h" include (:system-flag t) nil [946 973])
+            ("linux/smp.h" include (:system-flag t) nil [974 996])
+            ("linux/profile.h" include (:system-flag t) nil [997 1023])
+            ("linux/rcupdate.h" include (:system-flag t) nil [1024 1051])
+            ("linux/moduleparam.h" include (:system-flag t) nil [1052 1082])
+            ("linux/kallsyms.h" include (:system-flag t) nil [1083 1110])
+            ("linux/writeback.h" include (:system-flag t) nil [1111 1139])
+            ("linux/cpu.h" include (:system-flag t) nil [1140 1162])
+            ("linux/cpuset.h" include (:system-flag t) nil [1163 1188])
+            ("linux/cgroup.h" include (:system-flag t) nil [1189 1214])
+            ("linux/efi.h" include (:system-flag t) nil [1215 1237])
+            ("linux/tick.h" include (:system-flag t) nil [1238 1261])
+            ("linux/interrupt.h" include (:system-flag t) nil [1262 1290])
+            ("linux/taskstats_kern.h" include (:system-flag t) nil [1291 1324])
+            ("linux/delayacct.h" include (:system-flag t) nil [1325 1353])
+            ("linux/unistd.h" include (:system-flag t) nil [1354 1379])
+            ("linux/rmap.h" include (:system-flag t) nil [1380 1403])
+            ("linux/mempolicy.h" include (:system-flag t) nil [1404 1432])
+            ("linux/key.h" include (:system-flag t) nil [1433 1455])
+            ("linux/buffer_head.h" include (:system-flag t) nil [1456 1486])
+            ("linux/page_cgroup.h" include (:system-flag t) nil [1487 1517])
+            ("linux/debug_locks.h" include (:system-flag t) nil [1518 1548])
+            ("linux/debugobjects.h" include (:system-flag t) nil [1549 1580])
+            ("linux/lockdep.h" include (:system-flag t) nil [1581 1607])
+            ("linux/kmemleak.h" include (:system-flag t) nil [1608 1635])
+            ("linux/pid_namespace.h" include (:system-flag t) nil [1636 1668])
+            ("linux/device.h" include (:system-flag t) nil [1669 1694])
+            ("linux/kthread.h" include (:system-flag t) nil [1695 1721])
+            ("linux/sched.h" include (:system-flag t) nil [1722 1746])
+            ("linux/signal.h" include (:system-flag t) nil [1747 1772])
+            ("linux/idr.h" include (:system-flag t) nil [1773 1795])
+            ("linux/kgdb.h" include (:system-flag t) nil [1796 1819])
+            ("linux/ftrace.h" include (:system-flag t) nil [1820 1845])
+            ("linux/async.h" include (:system-flag t) nil [1846 1870])
+            ("linux/kmemcheck.h" include (:system-flag t) nil [1871 1899])
+            ("linux/sfi.h" include (:system-flag t) nil [1900 1922])
+            ("linux/shmem_fs.h" include (:system-flag t) nil [1923 1950])
+            ("linux/slab.h" include (:system-flag t) nil [1951 1974])
+            ("linux/perf_event.h" include (:system-flag t) nil [1975 2004])
+            ("linux/file.h" include (:system-flag t) nil [2005 2028])
+            ("linux/ptrace.h" include (:system-flag t) nil [2029 2054])
+            ("linux/blkdev.h" include (:system-flag t) nil [2055 2080])
+            ("linux/elevator.h" include (:system-flag t) nil [2081 2108])
+            ("linux/sched_clock.h" include (:system-flag t) nil [2109 2139])
+            ("linux/context_tracking.h" include (:system-flag t) nil [2140 2175])
+            ("linux/random.h" include (:system-flag t) nil [2176 2201])
+            ("asm/io.h" include (:system-flag t) nil [2203 2222])
+            ("asm/bugs.h" include (:system-flag t) nil [2223 2244])
+            ("asm/setup.h" include (:system-flag t) nil [2245 2267])
+            ("asm/sections.h" include (:system-flag t) nil [2268 2293])
+            ("asm/cacheflush.h" include (:system-flag t) nil [2294 2321])
+            ("kernel_init" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2404 2411]))                  
+                :type "int")
+                nil [2381 2412])
+            ("init_IRQ" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2435 2440]))                  
+                :type "void")
+                nil [2414 2441])
+            ("fork_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2464 2478]))                  
+                :type "void")
+                nil [2442 2479])
+            ("mca_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2501 2506]))                  
+                :type "void")
+                nil [2480 2507])
+            ("sbus_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2530 2535]))                  
+                :type "void")
+                nil [2508 2536])
+            ("radix_tree_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2565 2570]))                  
+                :type "void")
+                nil [2537 2571])
+            ("mark_rodata_ro" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2634 2639]))                  
+                :type "void")
+                nil [2600 2643])
+            ("__read_mostly" variable (:type ("early_boot_irqs_disabled" type (:type "class") nil nil)) nil [3033 3072])
+            ("__read_mostly" variable (:type ("system_state" type (:type "class") nil nil)) nil [3093 3120])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("system_state" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3135 3148]))                  
+                :type "int")
+                nil [3121 3149])
+            ("MAX_INIT_ARGS" variable (:constant-flag t) nil [3197 3210])
+            ("MAX_INIT_ENVS" variable (:constant-flag t) nil [3245 3258])
+            ("time_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3308 3313]))                  
+                :type "void")
+                nil [3286 3314])
+            ("softirq_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3450 3455]))                  
+                :type "void")
+                nil [3425 3456])
+            ("boot_command_line" variable
+               (:dereference 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [3521 3569])
+            ("saved_command_line" variable
+               (:pointer 1
+                :type "char")
+                nil [3621 3646])
+            ("static_command_line" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [3688 3721])
+            ("execute_command" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [3723 3752])
+            ("ramdisk_execute_command" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [3753 3790])
+            ("reset_devices" variable (:type "unsigned int") nil [4196 4223])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("reset_devices" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4238 4252]))                  
+                :type "int")
+                nil [4224 4253])
+            ("set_reset_devices" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4291 4301]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4266 4336])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("set_reset_devices" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4363 4381]))                  
+                :type "int")
+                nil [4338 4382])
+            ("argv_init" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{ \"init\", NULL, }"
+                :type "char")
+                nil [4384 4451])
+            ("envp_init" variable
+               (:pointer 1
+                :dereference 1
+                :constant-flag t
+                :default-value "{ \"HOME=/\", \"TERM=linux\", NULL, }"
+                :type "char")
+                nil [4452 4528])
+            ("panic_later" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :type "char")
+                nil [4529 4574])
+            ("panic_param" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :type "char")
+                nil [4529 4574])
+            ("__setup_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type ("obs_kernel_param" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4804 4872])
+            ("__setup_end" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type ("obs_kernel_param" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4804 4872])
+            ("obsolete_checksetup" function
+               (:arguments 
+                  ( ("line" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4912 4923]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4885 5568])
+            ("loops_per_jiffy" variable
+               (:default-value "(1<<12)"
+                :type "unsigned long")
+                nil [5730 5770])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("loops_per_jiffy" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5786 5802]))                  
+                :type "int")
+                nil [5772 5803])
+            ("debug_kernel" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5836 5846]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5816 5885])
+            ("quiet_kernel" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5918 5928]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5898 5966])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug_kernel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5989 6002]))                  
+                :type "int")
+                nil [5968 6003])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("quiet_kernel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6025 6038]))                  
+                :type "int")
+                nil [6004 6039])
+            ("loglevel" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6068 6078]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6052 6366])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("loglevel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6392 6401]))                  
+                :type "int")
+                nil [6368 6402])
+            ("repair_env_string" function
+               (:arguments 
+                  ( ("param" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6509 6521])
+                    ("val" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6522 6532])
+                    ("unused" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6533 6552]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6484 6799])
+            ("unknown_bootoption" function
+               (:arguments 
+                  ( ("param" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6976 6988])
+                    ("val" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6989 6999])
+                    ("unused" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7000 7019]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6950 7827])
+            ("init_setup" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7858 7868]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7840 8243])
+            ("rdinit_setup" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8325 8335]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [8305 8500])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("rdinit_setup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8520 8533]))                  
+                :type "int")
+                nil [8501 8534])
+            ("setup_max_cpus" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "NR_CPUS"
+                :type "unsigned int")
+                nil [8555 8606])
+            ("smp_init" variable (:constant-flag t) nil [8715 8723])
+            ("setup_nr_cpu_ids" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8787 8792]))                  
+                :type "void")
+                nil [8751 8796])
+            ("smp_prepare_cpus" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("maxcpus" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8833 8854]))                  
+                :type "void")
+                nil [8797 8858])
+            ("setup_command_line" function
+               (:arguments 
+                  ( ("command_line" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9175 9194]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [9149 9422])
+            ("DECLARE_COMPLETION" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("kthreadd_done" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9763 9777]))                  
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [9726 9778])
+            ("rest_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9824 9829]))                  
+                :type ("__init_refok" type (:type "class") nil nil))
+                nil [9801 10584])
+            ("do_early_param" function
+               (:arguments 
+                  ( ("param" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10649 10661])
+                    ("val" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10662 10672])
+                    ("unused" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10673 10692]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [10627 11168])
+            ("parse_early_options" function
+               (:arguments 
+                  ( ("cmdline" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11202 11216]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11175 11290])
+            ("parse_early_param" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11397 11402]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11372 11668])
+            ("boot_cpu_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11744 11749]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11723 12073])
+            ("smp_setup_processor_id" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12117 12122]))                  
+                :type ("__weak" type (:type "class") nil nil))
+                nil [12087 12126])
+            ("thread_info_cache_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12200 12205]))                  
+                :type ("__weak" type (:type "class") nil nil))
+                nil [12170 12209])
+            ("mm_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12287 12292]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [12272 12515])
+            ("start_kernel" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13013 13018]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [12993 18735])
+            ("do_ctors" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18826 18831]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [18810 18973])
+            ("initcall_debug" variable (:type "bool") nil [18975 18995])
+            ("core_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("initcall_debug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19007 19022])
+                    ("" variable (:type ("initcall_debug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19023 19038])
+                    ("" variable (:type "bool") (reparse-symbol arg-sub-list) [19039 19044]))                  
+                :type "int")
+                nil [18996 19051])
+            ("do_one_initcall_debug" function
+               (:arguments 
+                  ( ("fn" variable (:type ("initcall_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19103 19117]))                  
+                :type ("__init_or_module" type (:type "class") nil nil))
+                nil [19064 19511])
+            ("do_one_initcall" function
+               (:arguments 
+                  ( ("fn" variable (:type ("initcall_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19550 19564]))                  
+                :type ("__init_or_module" type (:type "class") nil nil))
+                nil [19517 20015])
+            ("__initcall_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20018 20055])
+            ("__initcall0_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20056 20094])
+            ("__initcall1_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20095 20133])
+            ("__initcall2_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20134 20172])
+            ("__initcall3_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20173 20211])
+            ("__initcall4_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20212 20250])
+            ("__initcall5_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20251 20289])
+            ("__initcall6_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20290 20328])
+            ("__initcall7_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20329 20367])
+            ("__initcall_end" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("initcall_t" type (:type "class") nil nil))
+                nil [20368 20403])
+            ("__initdata" variable
+               (:default-value "{
+	__initcall0_start,
+	__initcall1_start,
+	__initcall2_start,
+	__initcall3_start,
+	__initcall4_start,
+	__initcall5_start,
+	__initcall6_start,
+	__initcall7_start,
+	__initcall_end,
+}"
+                :type "int")
+                nil [20442 20636])
+            ("__initdata" variable
+               (:default-value "{
+	\"early\",
+	\"core\",
+	\"postcore\",
+	\"arch\",
+	\"subsys\",
+	\"fs\",
+	\"device\",
+	\"late\",
+}"
+                :type "int")
+                nil [20738 20834])
+            ("do_initcall_level" function
+               (:arguments 
+                  ( ("level" variable (:type "int") (reparse-symbol arg-sub-list) [20873 20883]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [20848 21291])
+            ("do_initcalls" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21325 21330]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [21305 21442])
+            ("do_basic_setup" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21709 21714]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [21687 21894])
+            ("do_pre_smp_initcalls" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21936 21941]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [21908 22046])
+            ("load_default_modules" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22355 22360]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [22327 22397])
+            ("run_init_process" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("init_filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [22427 22453]))                  
+                :type "int")
+                nil [22399 22618])
+            ("kernel_init_freeable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22669 22674]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [22641 22675])
+            ("kernel_init" function
+               (:arguments 
+                  ( ("unused" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [22706 22719]))                  
+                :type ("__ref" type (:type "class") nil nil))
+                nil [22688 23735])
+            ("kernel_init_freeable" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [23786 23791]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [23758 25123]))          
+      :file "main.c"
+      :pointmax 25124
+      :fsize 26309
+      :lastmodtime '(21986 44084 61347 52000)
+      :unmatched-syntax '((thing 12988 . 12992) (thing 12977 . 12987) (thing 12267 . 12271) (thing 12260 . 12266) (thing 12163 . 12169) (thing 12158 . 12162) (thing 12080 . 12086) (thing 12075 . 12079) (thing 11718 . 11722) (thing 11711 . 11717) (thing 11367 . 11371) (thing 11170 . 11174) (thing 10623 . 10626) (thing 10623 . 10626) (thing 10616 . 10622) (thing 10616 . 10622) (thing 9796 . 9800) (thing 9796 . 9800) (thing 9787 . 9795) (thing 9787 . 9795) (thing 9780 . 9786) (thing 9780 . 9786) (thing 9144 . 9148) (thing 9144 . 9148) (thing 9137 . 9143) (thing 9137 . 9143) (thing 8509 . 8518) (thing 8509 . 8518) (thing 8301 . 8304) (thing 8301 . 8304) (thing 8294 . 8300) (thing 8294 . 8300) (thing 7836 . 7839) (thing 7836 . 7839) (thing 7829 . 7835) (thing 7829 . 7835) (thing 6946 . 6949) (thing 6946 . 6949) (thing 6939 . 6945) (thing 6939 . 6945) (thing 6480 . 6483) (thing 6480 . 6483) (thing 6473 . 6479) (thing 6473 . 6479) (thing 6380 . 6390) (thing 6380 . 6390) (thing 6048 . 6051) (thing 6048 . 6051) (thing 6041 . 6047) (thing 6041 . 6047) (thing 6016 . 6023) (thing 6016 . 6023) (thing 5980 . 5987) (thing 5980 . 5987) (thing 5894 . 5897) (thing 5894 . 5897) (thing 5887 . 5893) (thing 5887 . 5893) (thing 5812 . 5815) (thing 5812 . 5815) (thing 5805 . 5811) (thing 5805 . 5811) (thing 4881 . 4884) (thing 4881 . 4884) (thing 4874 . 4880) (thing 4874 . 4880) (thing 4346 . 4361) (thing 4346 . 4361) (thing 4262 . 4265) (thing 4262 . 4265) (thing 4255 . 4261) (thing 4255 . 4261) (thing 3516 . 3520) (thing 3516 . 3520) (thing 3423 . 3424) (thing 3423 . 3424) (thing 3417 . 3423) (thing 3417 . 3423) (thing 3389 . 3417) (thing 3389 . 3417) (thing 3384 . 3388) (thing 3384 . 3388) (thing 3079 . 3092) (thing 3079 . 3092) (thing 3074 . 3078) (thing 3074 . 3078) (thing 3028 . 3032) (thing 3028 . 3032) (thing 18798 . 18804) (thing 18805 . 18809) (thing 19045 . 19049) (thing 19053 . 19059) (thing 19060 . 19063) (thing 19513 . 19516) (thing 20405 . 20411) (thing 20412 . 20422) (thing 20423 . 20424) (thing 20424 . 20439) (thing 20439 . 20441) (thing 20702 . 20708) (thing 20709 . 20713) (thing 20714 . 20715) (thing 20715 . 20735) (thing 20735 . 20737) (thing 20836 . 20842) (thing 20843 . 20847) (thing 21293 . 21299) (thing 21300 . 21304) (thing 21675 . 21681) (thing 21682 . 21686) (thing 21896 . 21902) (thing 21903 . 21907) (thing 22322 . 22326) (thing 22620 . 22626) (thing 22627 . 22635) (thing 22636 . 22640) (thing 22677 . 22683) (thing 22684 . 22687) (thing 23737 . 23743) (thing 23744 . 23752) (thing 23753 . 23757))
+      :lexical-table 
+        '(("MAX_INIT_ARGS" . ((symbol "CONFIG_INIT_ENV_ARG_LIMIT" 3211 . 3236)))
+          ("MAX_INIT_ENVS" . ((symbol "CONFIG_INIT_ENV_ARG_LIMIT" 3259 . 3284)))
+          ("DEBUG")
+          ("smp_init" (spp-arg-list nil 8723 . 8725) . 
+              ((DO "do" 8726 . 8728) (semantic-list "{ }" 8729 . 8732) (WHILE "while" 8733 . 8738) (semantic-list "(0)" 8739 . 8742)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!init!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

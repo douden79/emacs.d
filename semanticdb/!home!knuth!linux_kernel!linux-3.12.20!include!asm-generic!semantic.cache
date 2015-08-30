@@ -1,0 +1,407 @@
+;; Object asm-generic/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm-generic/"
+  :tables
+  (list
+    (semanticdb-table "io.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_GENERIC_IO_H" variable (:constant-flag t) nil [458 476])
+            ("asm/page.h" include (:system-flag t) nil [478 499])
+            ("linux/types.h" include (:system-flag t) nil [546 570])
+            ("asm-generic/pci_iomap.h" include (:system-flag t) nil [639 673])
+            ("mmiowb" variable (:constant-flag t) nil [698 704])
+            ("__raw_readb" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1097 1126])
+                    ("" variable (:type ("addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1126 1131]))                  
+                :type ("u8" type (:type "class") nil nil))
+                nil [1068 1180])
+            ("__raw_readw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1239 1268])
+                    ("" variable (:type ("addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1268 1273]))                  
+                :type ("u16" type (:type "class") nil nil))
+                nil [1209 1323])
+            ("__raw_readl" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1382 1411])
+                    ("" variable (:type ("addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1411 1416]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [1352 1466])
+            ("readb" variable (:constant-flag t) nil [1483 1488])
+            ("readw" variable (:constant-flag t) nil [1510 1515])
+            ("readw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1546 1575])
+                    ("" variable (:type ("addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1575 1580]))                  
+                :type ("u16" type (:type "class") nil nil))
+                nil [1522 1626])
+            ("readl" variable (:constant-flag t) nil [1636 1641])
+            ("readl" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1672 1701])
+                    ("" variable (:type ("addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1701 1706]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [1648 1752])
+            ("__raw_writeb" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("b" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1807 1812])
+                    ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1813 1836])
+                    ("" variable (:type ("addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1836 1841]))                  
+                :type "void")
+                nil [1775 1881])
+            ("__raw_writew" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("b" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1943 1949])
+                    ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1950 1973])
+                    ("" variable (:type ("addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1973 1978]))                  
+                :type "void")
+                nil [1911 2019])
+            ("__raw_writel" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("b" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2081 2087])
+                    ("__iomem" variable
+                       (:typemodifiers ("volatile")
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2088 2111])
+                    ("" variable (:type ("addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2111 2116]))                  
+                :type "void")
+                nil [2049 2157])
+            ("writeb" variable (:constant-flag t) nil [2174 2180])
+            ("writew" variable (:constant-flag t) nil [2202 2208])
+            ("writel" variable (:constant-flag t) nil [2261 2267])
+            ("PCI_IOBASE" variable (:constant-flag t) nil [2855 2865])
+            ("inb" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3042 3061]))                  
+                :type ("u8" type (:type "class") nil nil))
+                nil [3021 3099])
+            ("inw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3123 3142]))                  
+                :type ("u16" type (:type "class") nil nil))
+                nil [3101 3180])
+            ("inl" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3204 3223]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [3182 3261])
+            ("outb" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("b" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3287 3292])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3293 3312]))                  
+                :type "void")
+                nil [3263 3347])
+            ("outw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("b" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3373 3379])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3380 3399]))                  
+                :type "void")
+                nil [3349 3434])
+            ("outl" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("b" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3460 3466])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3467 3486]))                  
+                :type "void")
+                nil [3436 3521])
+            ("inb_p" variable (:constant-flag t) nil [3531 3536])
+            ("inw_p" variable (:constant-flag t) nil [3561 3566])
+            ("inl_p" variable (:constant-flag t) nil [3591 3596])
+            ("outb_p" variable (:constant-flag t) nil [3621 3627])
+            ("outw_p" variable (:constant-flag t) nil [3663 3669])
+            ("outl_p" variable (:constant-flag t) nil [3705 3711])
+            ("insb" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3777 3796])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3797 3810])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [3811 3821]))                  
+                :type "void")
+                nil [3753 3947])
+            ("insw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3993 4012])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4013 4026])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [4027 4037]))                  
+                :type "void")
+                nil [3969 4165])
+            ("insl" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4211 4230])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4231 4244])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [4245 4255]))                  
+                :type "void")
+                nil [4187 4383])
+            ("outsb" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4431 4450])
+                    ("buffer" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4451 4470])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [4471 4481]))                  
+                :type "void")
+                nil [4406 4600])
+            ("outsw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4648 4667])
+                    ("buffer" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4668 4687])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [4688 4698]))                  
+                :type "void")
+                nil [4623 4818])
+            ("outsl" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4866 4885])
+                    ("buffer" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4886 4905])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [4906 4916]))                  
+                :type "void")
+                nil [4841 5036])
+            ("ioread8" variable (:constant-flag t) nil [5082 5089])
+            ("ioread16" variable (:constant-flag t) nil [5117 5125])
+            ("ioread16be" variable (:constant-flag t) nil [5153 5163])
+            ("ioread32" variable (:constant-flag t) nil [5211 5219])
+            ("ioread32be" variable (:constant-flag t) nil [5247 5257])
+            ("iowrite8" variable (:constant-flag t) nil [5306 5314])
+            ("iowrite16" variable (:constant-flag t) nil [5352 5361])
+            ("iowrite16be" variable (:constant-flag t) nil [5399 5410])
+            ("iowrite32" variable (:constant-flag t) nil [5465 5474])
+            ("iowrite32be" variable (:constant-flag t) nil [5512 5523])
+            ("ioread8_rep" variable (:constant-flag t) nil [5579 5590])
+            ("ioread16_rep" variable (:constant-flag t) nil [5659 5671])
+            ("ioread32_rep" variable (:constant-flag t) nil [5740 5752])
+            ("iowrite8_rep" variable (:constant-flag t) nil [5822 5834])
+            ("iowrite16_rep" variable (:constant-flag t) nil [5904 5917])
+            ("iowrite32_rep" variable (:constant-flag t) nil [5987 6000])
+            ("IO_SPACE_LIMIT" variable (:constant-flag t) nil [6128 6142]))          
+      :file "io.h"
+      :pointmax 8549
+      :fsize 8548
+      :lastmodtime '(21976 3068 916725 546000)
+      :unmatched-syntax '((punctuation 2110 . 2111) (punctuation 1972 . 1973) (punctuation 1835 . 1836) (punctuation 1700 . 1701) (punctuation 1574 . 1575) (punctuation 1410 . 1411) (punctuation 1267 . 1268) (punctuation 1125 . 1126))
+      :lexical-table 
+        '(("PCI_IOBASE" . ((semantic-list "((void __iomem *) 0)" 2866 . 2886)))
+          ("inl_p" (spp-arg-list ("addr") 3596 . 3602) . ((symbol "inl" 3603 . 3606) (semantic-list "(addr)" 3606 . 3612)))
+          ("inb_p" (spp-arg-list ("addr") 3536 . 3542) . ((symbol "inb" 3543 . 3546) (semantic-list "(addr)" 3546 . 3552)))
+          ("outl_p" (spp-arg-list ("x" "addr") 3711 . 3720) . ((symbol "outl" 3721 . 3725) (semantic-list "((x), (addr))" 3725 . 3738)))
+          ("iowrite32" (spp-arg-list ("v" "addr") 5474 . 5483) . ((symbol "writel" 5484 . 5490) (semantic-list "((v), (addr))" 5490 . 5503)))
+          ("iowrite32be" (spp-arg-list ("v" "addr") 5523 . 5532) . ((symbol "__raw_writel" 5533 . 5545) (semantic-list "(__cpu_to_be32(v), addr)" 5545 . 5569)))
+          ("ioread32_rep" (spp-arg-list ("p" "dst" "count") 5752 . 5767) . ((symbol "insl" 5771 . 5775) (semantic-list "((unsigned long) (p), (dst), (count))" 5775 . 5812)))
+          ("outb_p" (spp-arg-list ("x" "addr") 3627 . 3636) . ((symbol "outb" 3637 . 3641) (semantic-list "((x), (addr))" 3641 . 3654)))
+          ("ioread16" (spp-arg-list ("addr") 5125 . 5131) . ((symbol "readw" 5133 . 5138) (semantic-list "(addr)" 5138 . 5144)))
+          ("ioread32be" (spp-arg-list ("addr") 5257 . 5263) . ((symbol "__be32_to_cpu" 5264 . 5277) (semantic-list "(__raw_readl(addr))" 5277 . 5296)))
+          ("ioread32" (spp-arg-list ("addr") 5219 . 5225) . ((symbol "readl" 5227 . 5232) (semantic-list "(addr)" 5232 . 5238)))
+          ("IO_SPACE_LIMIT" . ((number "0xffff" 6143 . 6149)))
+          ("iowrite32_rep" (spp-arg-list ("p" "src" "count") 6000 . 6015) . ((symbol "outsl" 6019 . 6024) (semantic-list "((unsigned long) (p), (src), (count))" 6024 . 6061)))
+          ("readw" . ((symbol "readw" 1516 . 1521)))
+          ("iowrite8" (spp-arg-list ("v" "addr") 5314 . 5323) . ((symbol "writeb" 5324 . 5330) (semantic-list "((v), (addr))" 5330 . 5343)))
+          ("mmiowb" (spp-arg-list nil 704 . 706) . 
+              ((DO "do" 707 . 709) (semantic-list "{}" 710 . 712) (WHILE "while" 713 . 718) (semantic-list "(0)" 719 . 722)))
+          ("writew" (spp-arg-list ("b" "addr") 2208 . 2216) . ((symbol "__raw_writew" 2217 . 2229) (semantic-list "(__cpu_to_le16(b),addr)" 2229 . 2252)))
+          ("ioread8" (spp-arg-list ("addr") 5089 . 5095) . ((symbol "readb" 5097 . 5102) (semantic-list "(addr)" 5102 . 5108)))
+          ("iowrite8_rep" (spp-arg-list ("p" "src" "count") 5834 . 5849) . ((symbol "outsb" 5853 . 5858) (semantic-list "((unsigned long) (p), (src), (count))" 5858 . 5895)))
+          ("__ASM_GENERIC_IO_H")
+          ("readl" . ((symbol "readl" 1642 . 1647)))
+          ("inw_p" (spp-arg-list ("addr") 3566 . 3572) . ((symbol "inw" 3573 . 3576) (semantic-list "(addr)" 3576 . 3582)))
+          ("ioread16_rep" (spp-arg-list ("p" "dst" "count") 5671 . 5686) . ((symbol "insw" 5690 . 5694) (semantic-list "((unsigned long) (p), (dst), (count))" 5694 . 5731)))
+          ("writel" (spp-arg-list ("b" "addr") 2267 . 2275) . ((symbol "__raw_writel" 2276 . 2288) (semantic-list "(__cpu_to_le32(b),addr)" 2288 . 2311)))
+          ("outw_p" (spp-arg-list ("x" "addr") 3669 . 3678) . ((symbol "outw" 3679 . 3683) (semantic-list "((x), (addr))" 3683 . 3696)))
+          ("iowrite16be" (spp-arg-list ("v" "addr") 5410 . 5419) . ((symbol "__raw_writew" 5420 . 5432) (semantic-list "(__cpu_to_be16(v), addr)" 5432 . 5456)))
+          ("ioread16be" (spp-arg-list ("addr") 5163 . 5169) . ((symbol "__be16_to_cpu" 5170 . 5183) (semantic-list "(__raw_readw(addr))" 5183 . 5202)))
+          ("ioread8_rep" (spp-arg-list ("p" "dst" "count") 5590 . 5605) . ((symbol "insb" 5609 . 5613) (semantic-list "((unsigned long) (p), (dst), (count))" 5613 . 5650)))
+          ("readb" . ((symbol "__raw_readb" 1489 . 1500)))
+          ("writeb" . ((symbol "__raw_writeb" 2181 . 2193)))
+          ("iowrite16" (spp-arg-list ("v" "addr") 5361 . 5370) . ((symbol "writew" 5371 . 5377) (semantic-list "((v), (addr))" 5377 . 5390)))
+          ("iowrite16_rep" (spp-arg-list ("p" "src" "count") 5917 . 5932) . ((symbol "outsw" 5936 . 5941) (semantic-list "((unsigned long) (p), (src), (count))" 5941 . 5978)))
+          )
+)
+    (semanticdb-table "page.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_GENERIC_PAGE_H" variable (:constant-flag t) nil [38 58])
+            ("PAGE_SHIFT" variable (:constant-flag t) nil [309 319])
+            ("PAGE_SIZE" variable (:constant-flag t) nil [393 402])
+            ("PAGE_MASK" variable (:constant-flag t) nil [438 447])
+            ("asm/setup.h" include (:system-flag t) nil [466 488])
+            ("get_user_page" variable (:constant-flag t) nil [520 533])
+            ("free_user_page" variable (:constant-flag t) nil [578 592])
+            ("clear_page" variable (:constant-flag t) nil [630 640])
+            ("copy_page" variable (:constant-flag t) nil [684 693])
+            ("clear_user_page" variable (:constant-flag t) nil [744 759])
+            ("copy_user_page" variable (:constant-flag t) nil [802 816])
+            ("pte_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pte" variable (:type "unsigned long") (reparse-symbol classsubparts) [935 953]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [917 962])
+            ("pmd_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pmd" variable
+                             (:dereference 1
+                              :type "unsigned long")
+                              (reparse-symbol classsubparts) [981 1003]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [963 1012])
+            ("pgd_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pgd" variable (:type "unsigned long") (reparse-symbol classsubparts) [1031 1049]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1013 1058])
+            ("pgprot_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pgprot" variable (:type "unsigned long") (reparse-symbol classsubparts) [1077 1098]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1059 1110])
+            ("pgtable_t" type
+               (:typedef ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :pointer 1
+                :type "typedef")
+                nil [1111 1142])
+            ("pte_val" variable (:constant-flag t) nil [1152 1159])
+            ("pmd_val" variable (:constant-flag t) nil [1181 1188])
+            ("pgd_val" variable (:constant-flag t) nil [1215 1222])
+            ("pgprot_val" variable (:constant-flag t) nil [1244 1254])
+            ("__pte" variable (:constant-flag t) nil [1280 1285])
+            ("__pmd" variable (:constant-flag t) nil [1316 1321])
+            ("__pgd" variable (:constant-flag t) nil [1352 1357])
+            ("__pgprot" variable (:constant-flag t) nil [1388 1396])
+            ("memory_start" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [1423 1457])
+            ("memory_end" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [1458 1490])
+            ("PAGE_OFFSET" variable (:constant-flag t) nil [1626 1637])
+            ("ARCH_PFN_OFFSET" variable (:constant-flag t) nil [1683 1698])
+            ("__va" variable (:constant-flag t) nil [1766 1770])
+            ("__pa" variable (:constant-flag t) nil [1814 1818])
+            ("virt_to_pfn" variable (:constant-flag t) nil [1853 1864])
+            ("pfn_to_virt" variable (:constant-flag t) nil [1908 1919])
+            ("virt_to_page" variable (:constant-flag t) nil [1960 1972])
+            ("page_to_virt" variable (:constant-flag t) nil [2018 2030])
+            ("page_to_phys" variable (:constant-flag t) nil [2098 2110])
+            ("pfn_valid" variable (:constant-flag t) nil [2184 2193])
+            ("virt_addr_valid" variable (:constant-flag t) nil [2277 2292])
+            ("asm-generic/memory_model.h" include (:system-flag t) nil [2419 2456])
+            ("asm-generic/getorder.h" include (:system-flag t) nil [2457 2490]))          
+      :file "page.h"
+      :pointmax 2526
+      :fsize 2525
+      :lastmodtime '(21976 3068 916725 546000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("virt_to_pfn" (spp-arg-list ("kaddr") 1864 . 1871) . ((semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 1872 . 1899)))
+          ("__pgd" (spp-arg-list ("x") 1357 . 1360) . ((semantic-list "((pgd_t) { (x) } )" 1361 . 1379)))
+          ("free_user_page" (spp-arg-list ("page" "addr") 592 . 604) . ((symbol "free_page" 605 . 614) (semantic-list "(addr)" 614 . 620)))
+          ("clear_page" (spp-arg-list ("page") 640 . 646) . ((symbol "memset" 647 . 653) (semantic-list "((page), 0, PAGE_SIZE)" 653 . 675)))
+          ("__pte" (spp-arg-list ("x") 1285 . 1288) . ((semantic-list "((pte_t) { (x) } )" 1289 . 1307)))
+          ("PAGE_MASK" . ((semantic-list "(~(PAGE_SIZE-1))" 448 . 464)))
+          ("get_user_page" (spp-arg-list ("vaddr") 533 . 540) . ((symbol "__get_free_page" 542 . 557) (semantic-list "(GFP_KERNEL)" 557 . 569)))
+          ("__pa" (spp-arg-list ("x") 1818 . 1821) . ((semantic-list "((unsigned long) (x))" 1822 . 1843)))
+          ("page_to_virt" (spp-arg-list ("page") 2030 . 2036) . ((symbol "pfn_to_virt" 2037 . 2048) (semantic-list "(page_to_pfn(page))" 2048 . 2067)))
+          ("PAGE_SHIFT" . ((number "12" 320 . 322)))
+          ("clear_user_page" (spp-arg-list ("page" "vaddr" "pg") 759 . 776) . ((symbol "clear_page" 777 . 787) (semantic-list "(page)" 787 . 793)))
+          ("pfn_to_virt" (spp-arg-list ("pfn") 1919 . 1924) . ((symbol "__va" 1925 . 1929) (semantic-list "((pfn) << PAGE_SHIFT)" 1929 . 1950)))
+          ("PAGE_SIZE" . ((semantic-list "(1UL << PAGE_SHIFT)" 403 . 422)))
+          ("copy_user_page" (spp-arg-list ("to" "from" "vaddr" "pg") 816 . 837) . ((symbol "copy_page" 838 . 847) (semantic-list "(to, from)" 847 . 857)))
+          ("__pmd" (spp-arg-list ("x") 1321 . 1324) . ((semantic-list "((pmd_t) { (x) } )" 1325 . 1343)))
+          ("__pgprot" (spp-arg-list ("x") 1396 . 1399) . ((semantic-list "((pgprot_t) { (x) } )" 1400 . 1421)))
+          ("virt_addr_valid" (spp-arg-list ("kaddr") 2292 . 2299) . ((semantic-list "(((void *)(kaddr) >= (void *)PAGE_OFFSET) && \\
+				((void *)(kaddr) < (void *)memory_end))" 2300 . 2390)))
+          ("__ASM_GENERIC_PAGE_H")
+          ("pgd_val" (spp-arg-list ("x") 1222 . 1225) . ((semantic-list "((x).pgd)" 1226 . 1235)))
+          ("pfn_valid" (spp-arg-list ("pfn") 2193 . 2198) . ((semantic-list "((pfn) >= ARCH_PFN_OFFSET && ((pfn) - ARCH_PFN_OFFSET) < max_mapnr)" 2200 . 2267)))
+          ("copy_page" (spp-arg-list ("to" "from") 693 . 702) . ((symbol "memcpy" 703 . 709) (semantic-list "((to), (from), PAGE_SIZE)" 709 . 734)))
+          ("__va" (spp-arg-list ("x") 1770 . 1773) . ((semantic-list "((void *)((unsigned long) (x)))" 1774 . 1805)))
+          ("page_to_phys" (spp-arg-list ("page") 2110 . 2116) . ((semantic-list "((dma_addr_t)page_to_pfn(page) << PAGE_SHIFT)" 2122 . 2167)))
+          ("pmd_val" (spp-arg-list ("x") 1188 . 1191) . ((semantic-list "((&x)->pmd[0])" 1192 . 1206)))
+          ("pgprot_val" (spp-arg-list ("x") 1254 . 1257) . ((semantic-list "((x).pgprot)" 1258 . 1270)))
+          ("ARCH_PFN_OFFSET" . ((semantic-list "(PAGE_OFFSET >> PAGE_SHIFT)" 1700 . 1727)))
+          ("pte_val" (spp-arg-list ("x") 1159 . 1162) . ((semantic-list "((x).pte)" 1163 . 1172)))
+          ("PAGE_OFFSET" . ((semantic-list "(0)" 1639 . 1642)))
+          ("virt_to_page" (spp-arg-list ("addr") 1972 . 1978) . ((symbol "pfn_to_page" 1979 . 1990) (semantic-list "(virt_to_pfn(addr))" 1990 . 2009)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!include!asm-generic!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

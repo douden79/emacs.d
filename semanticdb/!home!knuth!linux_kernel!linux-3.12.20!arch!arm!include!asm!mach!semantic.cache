@@ -1,0 +1,209 @@
+;; Object mach/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mach/"
+  :tables
+  (list
+    (semanticdb-table "arch.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/types.h" include (:system-flag t) nil [275 299])
+            ("linux/reboot.h" include (:system-flag t) nil [322 347])
+            ("tag" type
+               (:prototype t
+                :type "struct")
+                nil [349 360])
+            ("meminfo" type
+               (:prototype t
+                :type "struct")
+                nil [361 376])
+            ("pt_regs" type
+               (:prototype t
+                :type "struct")
+                nil [377 392])
+            ("smp_operations" type
+               (:prototype t
+                :type "struct")
+                nil [393 415])
+            ("smp_ops" variable (:constant-flag t) nil [513 520])
+            ("smp_init_ops" variable (:constant-flag t) nil [564 576])
+            ("machine_desc" type
+               (:members 
+                  ( ("nr" variable (:type "unsigned int") (reparse-symbol classsubparts) [634 651])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [680 698])
+                    ("atag_offset" variable (:type "unsigned long") (reparse-symbol classsubparts) [725 752])
+                    ("dt_compat" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [783 813])
+                    ("nr_irqs" variable (:type "unsigned int") (reparse-symbol classsubparts) [873 895])
+                    ("video_start" variable (:type "unsigned int") (reparse-symbol classsubparts) [1007 1033])
+                    ("video_end" variable (:type "unsigned int") (reparse-symbol classsubparts) [1060 1084])
+                    ("reserve_lp0" variable
+                       (:suffix ":1"
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1110 1140])
+                    ("reserve_lp1" variable
+                       (:suffix ":1"
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1162 1192])
+                    ("reserve_lp2" variable
+                       (:suffix ":1"
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1214 1244])
+                    ("reboot_mode" variable (:type ("reboot_mode" type (:type "enum") nil nil)) (reparse-symbol classsubparts) [1266 1295])
+                    ("smp" variable
+                       (:pointer 1
+                        :type ("smp_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1324 1351])
+                    ("smp_init" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1394 1399]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [1375 1400])
+                    ("fixup" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type ("tag" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1418 1431])
+                            ("" variable
+                               (:pointer 2
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1432 1440])
+                            ("" variable
+                               (:pointer 1
+                                :type ("meminfo" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1447 1464]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1402 1465])
+                    ("reserve" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1485 1490]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1467 1491])
+                    ("map_io" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1534 1539]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1517 1540])
+                    ("init_early" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1588 1593]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1567 1594])
+                    ("init_irq" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1615 1620]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1596 1621])
+                    ("init_time" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1643 1648]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1623 1649])
+                    ("init_machine" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1674 1679]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1651 1680])
+                    ("init_late" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1702 1707]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1682 1708])
+                    ("restart" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type ("reboot_mode" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [1808 1825])
+                            ("" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1826 1839]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1790 1840]))                  
+                :type "struct")
+                nil [611 1843])
+            ("machine_desc" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type ("machine_desc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1902 1949])
+            ("__arch_info_begin" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type ("machine_desc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2015 2087])
+            ("__arch_info_end" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type ("machine_desc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2015 2087])
+            ("for_each_machine_desc" variable (:constant-flag t) nil [2200 2221])
+            ("MACHINE_START" variable (:constant-flag t) nil [2396 2409])
+            ("MACHINE_END" variable (:constant-flag t) nil [2609 2620])
+            ("DT_MACHINE_START" variable (:constant-flag t) nil [2638 2654]))          
+      :file "arch.h"
+      :pointmax 2846
+      :fsize 2891
+      :lastmodtime '(21976 3065 500725 647000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("smp_ops" (spp-arg-list ("ops") 520 . 525) . ((semantic-list "(struct smp_operations *)" 526 . 551) (symbol "NULL" 551 . 555)))
+          ("smp_init_ops" (spp-arg-list ("ops") 576 . 581) . ((semantic-list "(bool (*)(void))" 582 . 598) (symbol "NULL" 598 . 602)))
+          ("DT_MACHINE_START" (spp-arg-list ("_name" "_namestr") 2654 . 2671) . 
+              ((STATIC "static" 2675 . 2681) (CONST "const" 2682 . 2687) (STRUCT "struct" 2688 . 2694) (symbol "machine_desc" 2695 . 2707) (spp-symbol-merge ((symbol "__mach_desc_" 2708 . 2720) (symbol "_name" 2722 . 2727)) 2708 . 2727) (symbol "__used" 2731 . 2737) (symbol "__attribute__" 2747 . 2760) (semantic-list "((__section__(\".arch.info.init\")))" 2760 . 2794) (punctuation "=" 2795 . 2796) (open-paren "{" 2797 . 2798) (punctuation "." 2802 . 2803) (symbol "nr" 2803 . 2805) (punctuation "=" 2807 . 2808) (punctuation "~" 2809 . 2810) (number "0" 2810 . 2811) (punctuation "," 2811 . 2812) (punctuation "." 2819 . 2820) (symbol "name" 2820 . 2824) (punctuation "=" 2826 . 2827) (symbol "_namestr" 2828 . 2836) (punctuation "," 2836 . 2837)))
+          ("MACHINE_START" (spp-arg-list ("_type" "_name") 2409 . 2422) . 
+              ((STATIC "static" 2427 . 2433) (CONST "const" 2434 . 2439) (STRUCT "struct" 2440 . 2446) (symbol "machine_desc" 2447 . 2459) (spp-symbol-merge ((symbol "__mach_desc_" 2460 . 2472) (symbol "_type" 2474 . 2479)) 2460 . 2479) (symbol "__used" 2483 . 2489) (symbol "__attribute__" 2499 . 2512) (semantic-list "((__section__(\".arch.info.init\")))" 2512 . 2546) (punctuation "=" 2547 . 2548) (open-paren "{" 2549 . 2550) (punctuation "." 2554 . 2555) (symbol "nr" 2555 . 2557) (punctuation "=" 2559 . 2560) (spp-symbol-merge ((symbol "MACH_TYPE_" 2561 . 2571) (symbol "_type" 2573 . 2578)) 2561 . 2578) (punctuation "," 2578 . 2579) (punctuation "." 2584 . 2585) (symbol "name" 2585 . 2589) (punctuation "=" 2591 . 2592) (symbol "_name" 2593 . 2598) (punctuation "," 2598 . 2599)))
+          ("MACHINE_END" . ((close-paren "}" 2626 . 2627) (punctuation ";" 2627 . 2628)))
+          ("for_each_machine_desc" (spp-arg-list ("p") 2221 . 2224) . ((FOR "for" 2230 . 2233) (semantic-list "(p = __arch_info_begin; p < __arch_info_end; p++)" 2234 . 2283)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!arm!include!asm!mach!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

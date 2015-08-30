@@ -1,0 +1,862 @@
+;; Object time/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "time/"
+  :tables
+  (list
+    (semanticdb-table "tick-internal.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/hrtimer.h" include (:system-flag t) nil [74 100])
+            ("linux/tick.h" include (:system-flag t) nil [101 124])
+            ("jiffies_lock" variable
+               (:typemodifiers ("extern")
+                :type ("seqlock_t" type (:type "class") nil nil))
+                nil [126 156])
+            ("CS_NAME_LEN" variable (:constant-flag t) nil [166 177])
+            ("do_timer" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("ticks" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5321 5341]))                  
+                :type "void")
+                nil [5300 5342]))          
+      :file "tick-internal.h"
+      :pointmax 5343
+      :fsize 5342
+      :lastmodtime '(21976 3069 224725 537000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("CS_NAME_LEN" . ((number "32" 178 . 180)))
+          )
+)
+    (semanticdb-table "timekeeping.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/timekeeper_internal.h" include (:system-flag t) nil [213 251])
+            ("linux/module.h" include (:system-flag t) nil [252 277])
+            ("linux/interrupt.h" include (:system-flag t) nil [278 306])
+            ("linux/percpu.h" include (:system-flag t) nil [307 332])
+            ("linux/init.h" include (:system-flag t) nil [333 356])
+            ("linux/mm.h" include (:system-flag t) nil [357 378])
+            ("linux/sched.h" include (:system-flag t) nil [379 403])
+            ("linux/syscore_ops.h" include (:system-flag t) nil [404 434])
+            ("linux/clocksource.h" include (:system-flag t) nil [435 465])
+            ("linux/jiffies.h" include (:system-flag t) nil [466 492])
+            ("linux/time.h" include (:system-flag t) nil [493 516])
+            ("linux/tick.h" include (:system-flag t) nil [517 540])
+            ("linux/stop_machine.h" include (:system-flag t) nil [541 572])
+            ("linux/pvclock_gtod.h" include (:system-flag t) nil [573 604])
+            ("tick-internal.h" include nil nil [606 632])
+            ("ntp_internal.h" include nil nil [633 658])
+            ("timekeeping_internal.h" include nil nil [659 692])
+            ("TK_CLEAR_NTP" variable (:constant-flag t) nil [702 714])
+            ("TK_MIRROR" variable (:constant-flag t) nil [733 742])
+            ("TK_CLOCK_WAS_SET" variable (:constant-flag t) nil [761 777])
+            ("timekeeper" variable
+               (:typemodifiers ("static")
+                :type ("timekeeper" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [788 824])
+            ("DEFINE_RAW_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("timekeeper_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [852 868]))                  
+                :type "int")
+                nil [825 869])
+            ("timekeeper_seq" variable
+               (:typemodifiers ("static")
+                :type ("seqcount_t" type (:type "class") nil nil))
+                nil [870 903])
+            ("shadow_timekeeper" variable
+               (:typemodifiers ("static")
+                :type ("timekeeper" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [904 947])
+            ("timekeeping_suspended" variable (:type ("__read_mostly" type (:type "class") nil nil)) nil [996 1032])
+            ("persistent_clock_exist" variable
+               (:default-value "false"
+                :type ("__read_mostly" type (:type "class") nil nil))
+                nil [1102 1147])
+            ("tk_normalize_xtime" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1187 1209]))                  
+                :type "void")
+                nil [1149 1349])
+            ("tk_set_xtime" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1376 1398])
+                    ("ts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1399 1425]))                  
+                :type "void")
+                nil [1351 1507])
+            ("tk_xtime_add" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1534 1556])
+                    ("ts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1557 1583]))                  
+                :type "void")
+                nil [1509 1692])
+            ("tk_set_wall_to_mono" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1726 1748])
+                    ("wtm" variable (:type ("timespec" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1749 1769]))                  
+                :type "void")
+                nil [1694 2263])
+            ("tk_set_sleep_time" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2295 2317])
+                    ("t" variable (:type ("timespec" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2318 2336]))                  
+                :type "void")
+                nil [2265 2534])
+            ("tk_setup_internals" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2871 2893])
+                    ("clock" variable
+                       (:pointer 1
+                        :type ("clocksource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2894 2920]))                  
+                :type "void")
+                nil [2840 4129])
+            ("get_arch_timeoffset" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4392 4397]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [4354 4411])
+            ("timekeeping_get_ns" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4457 4479]))                  
+                :type ("s64" type (:type "class") nil nil))
+                nil [4420 4921])
+            ("timekeeping_get_ns_raw" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4964 4986]))                  
+                :type ("s64" type (:type "class") nil nil))
+                nil [4923 5463])
+            ("RAW_NOTIFIER_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("pvclock_gtod_chain" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5490 5509]))                  
+                :type "int")
+                nil [5465 5510])
+            ("update_pvclock_gtod" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5544 5566])
+                    ("was_set" variable (:type "bool") (reparse-symbol arg-sub-list) [5567 5580]))                  
+                :type "void")
+                nil [5512 5644])
+            ("pvclock_gtod_register_notifier" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5769 5795]))                  
+                :type "int")
+                nil [5734 6080])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pvclock_gtod_register_notifier" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6099 6130]))                  
+                :type "int")
+                nil [6081 6131])
+            ("pvclock_gtod_unregister_notifier" function
+               (:arguments 
+                  ( ("nb" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6265 6291]))                  
+                :type "int")
+                nil [6228 6508])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pvclock_gtod_unregister_notifier" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6527 6560]))                  
+                :type "int")
+                nil [6509 6561])
+            ("timekeeping_update" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6626 6648])
+                    ("action" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6649 6669]))                  
+                :type "void")
+                nil [6595 6906])
+            ("timekeeping_forward_now" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7226 7248]))                  
+                :type "void")
+                nil [7190 7782])
+            ("__getnstimeofday" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8041 8061]))                  
+                :type "int")
+                nil [8020 8551])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__getnstimeofday" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8566 8583]))                  
+                :type "int")
+                nil [8552 8584])
+            ("getnstimeofday" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8781 8801]))                  
+                :type "void")
+                nil [8761 8837])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("getnstimeofday" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8852 8867]))                  
+                :type "int")
+                nil [8838 8868])
+            ("ktime_get" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8888 8893]))                  
+                :type ("ktime_t" type (:type "class") nil nil))
+                nil [8870 9406])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ktime_get" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9425 9435]))                  
+                :type "int")
+                nil [9407 9436])
+            ("ktime_get_ts" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9763 9783]))                  
+                :type "void")
+                nil [9745 10213])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ktime_get_ts" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10232 10245]))                  
+                :type "int")
+                nil [10214 10246])
+            ("timekeeping_clocktai" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10439 10459]))                  
+                :type "void")
+                nil [10413 10806])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("timekeeping_clocktai" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10821 10842]))                  
+                :type "int")
+                nil [10807 10843])
+            ("ktime_get_clocktai" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10986 10991]))                  
+                :type ("ktime_t" type (:type "class") nil nil))
+                nil [10959 11076])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ktime_get_clocktai" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11091 11110]))                  
+                :type "int")
+                nil [11077 11111])
+            ("do_gettimeofday" function
+               (:arguments 
+                  ( ("tv" variable
+                       (:pointer 1
+                        :type ("timeval" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12339 12358]))                  
+                :type "void")
+                nil [12318 12467])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("do_gettimeofday" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12482 12498]))                  
+                :type "int")
+                nil [12468 12499])
+            ("do_settimeofday" function
+               (:arguments 
+                  ( ("tv" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12715 12741]))                  
+                :type "int")
+                nil [12695 13453])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("do_settimeofday" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13468 13484]))                  
+                :type "int")
+                nil [13454 13485])
+            ("timekeeping_inject_offset" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13724 13744]))                  
+                :type "int")
+                nil [13694 14594])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("timekeeping_inject_offset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14609 14635]))                  
+                :type "int")
+                nil [14595 14636])
+            ("timekeeping_get_tai_offset" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14749 14754]))                  
+                :type ("s32" type (:type "class") nil nil))
+                nil [14718 14970])
+            ("__timekeeping_set_tai_offset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15084 15106])
+                    ("tai_offset" variable (:type ("s32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15107 15122]))                  
+                :type "void")
+                nil [15043 15224])
+            ("timekeeping_set_tai_offset" function
+               (:arguments 
+                  ( ("tai_offset" variable (:type ("s32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15338 15353]))                  
+                :type "void")
+                nil [15306 15719])
+            ("change_clocksource" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [15900 15911]))                  
+                :type "int")
+                nil [15870 16707])
+            ("timekeeping_notify" function
+               (:arguments 
+                  ( ("clock" variable
+                       (:pointer 1
+                        :type ("clocksource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16977 17003]))                  
+                :type "int")
+                nil [16954 17190])
+            ("ktime_get_real" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [17328 17333]))                  
+                :type ("ktime_t" type (:type "class") nil nil))
+                nil [17305 17416])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ktime_get_real" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17435 17450]))                  
+                :type "int")
+                nil [17417 17451])
+            ("getrawmonotonic" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17660 17680]))                  
+                :type "void")
+                nil [17639 17952])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("getrawmonotonic" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17967 17983]))                  
+                :type "int")
+                nil [17953 17984])
+            ("timekeeping_valid_for_hres" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18099 18104]))                  
+                :type "int")
+                nil [18068 18355])
+            ("timekeeping_max_deferment" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18475 18480]))                  
+                :type ("u64" type (:type "class") nil nil))
+                nil [18445 18707])
+            ("read_persistent_clock" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19091 19111]))                  
+                :type "void")
+                nil [19042 19150])
+            ("read_boot_clock" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19520 19540]))                  
+                :type "void")
+                nil [19477 19579])
+            ("timekeeping_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19697 19702]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [19673 21009])
+            ("timekeeping_suspend_time" variable
+               (:typemodifiers ("static")
+                :type ("timespec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [21052 21100])
+            ("__timekeeping_inject_sleeptime" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21401 21423])
+                    ("delta" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21431 21454]))                  
+                :type "void")
+                nil [21358 21806])
+            ("timekeeping_inject_sleeptime" function
+               (:arguments 
+                  ( ("delta" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22267 22290]))                  
+                :type "void")
+                nil [22233 22880])
+            ("timekeeping_resume" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [23141 23146]))                  
+                :type "void")
+                nil [23110 25421])
+            ("timekeeping_suspend" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [25454 25459]))                  
+                :type "int")
+                nil [25423 27014])
+            ("timekeeping_syscore_ops" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.resume		= timekeeping_resume,
+	.suspend	= timekeeping_suspend,
+}"
+                :type ("syscore_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [27064 27185])
+            ("timekeeping_init_ops" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [27226 27231]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [27198 27295])
+            ("device_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("timekeeping_init_ops" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27313 27334]))                  
+                :type "int")
+                nil [27297 27335])
+            ("timekeeping_bigadjust" function
+               (:arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27502 27524])
+                    ("error" variable (:type ("s64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27532 27542])
+                    ("interval" variable
+                       (:pointer 1
+                        :type ("s64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27543 27557])
+                    ("offset" variable
+                       (:pointer 1
+                        :type ("s64" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27565 27577]))                  
+                :type "int")
+                nil [27476 28865])
+            ("timekeeping_adjust" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29068 29090])
+                    ("offset" variable (:type ("s64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29091 29102]))                  
+                :type "void")
+                nil [29037 33726])
+            ("accumulate_nsecs_to_secs" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34044 34066]))                  
+                :type "unsigned int")
+                nil [33992 34650])
+            ("logarithmic_accumulation" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tk" variable
+                       (:pointer 1
+                        :type ("timekeeper" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34945 34967])
+                    ("offset" variable (:type ("cycle_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34968 34983])
+                    ("shift" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34990 35000])
+                    ("clock_set" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [35007 35031]))                  
+                :type ("cycle_t" type (:type "class") nil nil))
+                nil [34905 35904])
+            ("old_vsyscall_fixup" variable (:constant-flag t) nil [36769 36787])
+            ("update_wall_time" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [36920 36925]))                  
+                :type "void")
+                nil [36891 39770])
+            ("getboottime" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40197 40217]))                  
+                :type "void")
+                nil [40180 40515])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("getboottime" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40534 40546]))                  
+                :type "int")
+                nil [40516 40547])
+            ("get_monotonic_boottime" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40851 40871]))                  
+                :type "void")
+                nil [40823 41371])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_monotonic_boottime" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41390 41413]))                  
+                :type "int")
+                nil [41372 41414])
+            ("ktime_get_boottime" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [41674 41679]))                  
+                :type ("ktime_t" type (:type "class") nil nil))
+                nil [41647 41766])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ktime_get_boottime" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41785 41804]))                  
+                :type "int")
+                nil [41767 41805])
+            ("monotonic_to_bootbased" function
+               (:arguments 
+                  ( ("ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [41962 41982]))                  
+                :type "void")
+                nil [41934 42073])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("monotonic_to_bootbased" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42092 42115]))                  
+                :type "int")
+                nil [42074 42116])
+            ("get_seconds" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [42144 42149]))                  
+                :type "unsigned long")
+                nil [42118 42215])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_seconds" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42230 42242]))                  
+                :type "int")
+                nil [42216 42243])
+            ("__current_kernel_time" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [42283 42288]))                  
+                :type ("timespec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [42245 42353])
+            ("current_kernel_time" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [42391 42396]))                  
+                :type ("timespec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [42355 42624])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("current_kernel_time" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42639 42659]))                  
+                :type "int")
+                nil [42625 42660])
+            ("get_monotonic_coarse" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [42699 42704]))                  
+                :type ("timespec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [42662 43060])
+            ("do_timer" function
+               (:arguments 
+                  ( ("ticks" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [43109 43129]))                  
+                :type "void")
+                nil [43095 43202])
+            ("get_xtime_and_monotonic_and_sleep_offset" function
+               (:arguments 
+                  ( ("xtim" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [43537 43559])
+                    ("wtom" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [43564 43586])
+                    ("sleep" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [43587 43610]))                  
+                :type "void")
+                nil [43491 43869])
+            ("ktime_get_monotonic_offset" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [44878 44883]))                  
+                :type ("ktime_t" type (:type "class") nil nil))
+                nil [44843 45141])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ktime_get_monotonic_offset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45160 45187]))                  
+                :type "int")
+                nil [45142 45188])
+            ("do_adjtimex" function
+               (:arguments 
+                  ( ("txc" variable
+                       (:pointer 1
+                        :type ("timex" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45281 45299]))                  
+                :type "int")
+                nil [45265 46274])
+            ("xtime_update" function
+               (:arguments 
+                  ( ("ticks" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [46914 46934]))                  
+                :type "void")
+                nil [46896 47020]))          
+      :file "timekeeping.c"
+      :pointmax 47021
+      :fsize 47020
+      :lastmodtime '(21976 3069 224725 537000)
+      :unmatched-syntax '((symbol "__inline" 27460 . 27475) (STATIC 27453 . 27459) (INT 27194 . 27197) (STATIC 27187 . 27193) (VOID 19668 . 19672) (BOOL 1097 . 1101) (INT 992 . 995) (symbol "__inline" 27460 . 27475) (STATIC 27453 . 27459) (INT 27194 . 27197) (STATIC 27187 . 27193) (VOID 19668 . 19672) (BOOL 1097 . 1101) (INT 992 . 995))
+      :lexical-table 
+        '(("TK_MIRROR" . ((semantic-list "(1 << 1)" 744 . 752)))
+          ("TK_CLOCK_WAS_SET" . ((semantic-list "(1 << 2)" 778 . 786)))
+          ("TK_CLEAR_NTP" . ((semantic-list "(1 << 0)" 716 . 724)))
+          ("old_vsyscall_fixup" (spp-arg-list ("tk") 36787 . 36791))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!kernel!time!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
