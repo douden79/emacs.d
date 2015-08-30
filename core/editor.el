@@ -70,7 +70,8 @@
 (set-face-background 'ac-completion-face "black")
 
 ;;;; powerline
-(setq powerline-default-theme t)
+(require 'powerline)
+(powerline-default-theme)
 ;;============================================================
 ;;                         EDIT
 ;;============================================================

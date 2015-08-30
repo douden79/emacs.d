@@ -32,6 +32,7 @@
      helm-gtags
      helm-cscope
      powerline
+	 org
     )
   "A list of packages to ensure are installed at launch.")
 
