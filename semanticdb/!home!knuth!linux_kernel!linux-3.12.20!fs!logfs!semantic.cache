@@ -1,0 +1,557 @@
+;; Object logfs/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "logfs/"
+  :tables
+  (list
+    (semanticdb-table "logfs_abi.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("FS_LOGFS_LOGFS_ABI_H" variable (:constant-flag t) nil [227 247])
+            ("BUILD_BUG_ON" variable (:constant-flag t) nil [311 323])
+            ("SIZE_CHECK" variable (:constant-flag t) nil [356 366])
+            ("LOGFS_MAGIC" variable (:constant-flag t) nil [2017 2028])
+            ("LOGFS_MAGIC_U32" variable (:constant-flag t) nil [2060 2075])
+            ("LOGFS_BLOCKSIZE" variable (:constant-flag t) nil [2521 2536])
+            ("LOGFS_BLOCK_FACTOR" variable (:constant-flag t) nil [2556 2574])
+            ("LOGFS_BLOCK_BITS" variable (:constant-flag t) nil [2615 2631])
+            ("I0_BLOCKS" variable (:constant-flag t) nil [2777 2786])
+            ("I1_BLOCKS" variable (:constant-flag t) nil [2801 2810])
+            ("I2_BLOCKS" variable (:constant-flag t) nil [2839 2848])
+            ("I3_BLOCKS" variable (:constant-flag t) nil [2891 2900])
+            ("I4_BLOCKS" variable (:constant-flag t) nil [2943 2952])
+            ("I5_BLOCKS" variable (:constant-flag t) nil [2995 3004])
+            ("INDIRECT_INDEX" variable (:constant-flag t) nil [3048 3062])
+            ("LOGFS_EMBEDDED_FIELDS" variable (:constant-flag t) nil [3082 3103])
+            ("LOGFS_EMBEDDED_SIZE" variable (:constant-flag t) nil [3470 3489])
+            ("LOGFS_I0_SIZE" variable (:constant-flag t) nil [3536 3549])
+            ("LOGFS_I1_SIZE" variable (:constant-flag t) nil [3589 3602])
+            ("LOGFS_I2_SIZE" variable (:constant-flag t) nil [3642 3655])
+            ("LOGFS_I3_SIZE" variable (:constant-flag t) nil [3695 3708])
+            ("LOGFS_I4_SIZE" variable (:constant-flag t) nil [3748 3761])
+            ("LOGFS_I5_SIZE" variable (:constant-flag t) nil [3801 3814])
+            ("LOGFS_FULLY_POPULATED" variable (:constant-flag t) nil [4040 4061])
+            ("pure_ofs" variable (:constant-flag t) nil [4083 4091])
+            ("LOGFS_MAX_INDIRECT" variable (:constant-flag t) nil [4851 4869])
+            ("LOGFS_MAX_LEVELS" variable (:constant-flag t) nil [4882 4898])
+            ("LOGFS_NO_AREAS" variable (:constant-flag t) nil [4932 4946])
+            ("LOGFS_MAX_NAMELEN" variable (:constant-flag t) nil [5012 5029])
+            ("LOGFS_JOURNAL_SEGS" variable (:constant-flag t) nil [5094 5112])
+            ("MAX_CACHED_SEGS" variable (:constant-flag t) nil [5196 5211])
+            ("LOGFS_OBJECT_HEADERSIZE" variable (:constant-flag t) nil [5568 5591])
+            ("LOGFS_SEGMENT_HEADERSIZE" variable (:constant-flag t) nil [5607 5631])
+            ("LOGFS_MAX_OBJECTSIZE" variable (:constant-flag t) nil [5647 5667])
+            ("LOGFS_SEGMENT_RESERVE" variable (:constant-flag t) nil [5720 5741])
+            ("" type
+               (:members 
+                  ( ("SEG_SUPER" variable
+                       (:constant-flag t
+                        :default-value (5929 5933)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5917 5933])
+                    ("SEG_JOURNAL" variable
+                       (:constant-flag t
+                        :default-value (5950 5954)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5936 5954])
+                    ("SEG_OSTORE" variable
+                       (:constant-flag t
+                        :default-value (5970 5974)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [5957 5974]))                  
+                :type "enum")
+                nil [5909 5978])
+            ("logfs_segment_header" type
+               (:members 
+                  ( ("crc" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6370 6381])
+                    ("pad" variable (:type ("__be16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6383 6394])
+                    ("type" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6396 6406])
+                    ("level" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6408 6419])
+                    ("segno" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6421 6434])
+                    ("ec" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6436 6446])
+                    ("gec" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6448 6459]))                  
+                :type "struct")
+                nil [6339 6462])
+            ("check_logfs_segment_header" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [6464 6522])
+            ("LOGFS_FEATURES_INCOMPAT" variable (:constant-flag t) nil [6533 6556])
+            ("LOGFS_FEATURES_RO_COMPAT" variable (:constant-flag t) nil [6573 6597])
+            ("LOGFS_FEATURES_COMPAT" variable (:constant-flag t) nil [6613 6634])
+            ("logfs_disk_super" type
+               (:members 
+                  ( ("ds_sh" variable (:type ("logfs_segment_header" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [7876 7910])
+                    ("ds_magic" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7912 7928])
+                    ("ds_crc" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7931 7945])
+                    ("ds_ifile_levels" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7947 7968])
+                    ("ds_iblock_levels" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7970 7992])
+                    ("ds_data_levels" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7994 8014])
+                    ("ds_segment_shift" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8016 8038])
+                    ("ds_block_shift" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8040 8060])
+                    ("ds_write_shift" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8062 8082])
+                    ("pad0" variable
+                       (:dereference 1
+                        :type ("__u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8084 8097])
+                    ("ds_filesystem_size" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8100 8126])
+                    ("ds_segment_size" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8128 8151])
+                    ("ds_bad_seg_reserve" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8153 8180])
+                    ("ds_feature_incompat" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8183 8210])
+                    ("ds_feature_ro_compat" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8212 8240])
+                    ("ds_feature_compat" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8243 8268])
+                    ("ds_feature_flags" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8270 8294])
+                    ("ds_root_reserve" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8297 8320])
+                    ("ds_speed_reserve" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8322 8347])
+                    ("ds_journal_seg" variable
+                       (:dereference 1
+                        :type ("__be32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8350 8392])
+                    ("ds_super_ofs" variable
+                       (:dereference 1
+                        :type ("__be64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8395 8418])
+                    ("pad3" variable
+                       (:dereference 1
+                        :type ("__be64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8420 8435]))                  
+                :type "struct")
+                nil [7849 8438])
+            ("check_logfs_disk_super" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [8440 8473])
+            ("" type
+               (:members 
+                  ( ("OBJ_BLOCK" variable
+                       (:constant-flag t
+                        :default-value (8602 8606)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [8590 8606])
+                    ("OBJ_INODE" variable
+                       (:constant-flag t
+                        :default-value (8621 8625)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [8609 8625])
+                    ("OBJ_DENTRY" variable
+                       (:constant-flag t
+                        :default-value (8641 8645)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [8628 8645]))                  
+                :type "enum")
+                nil [8582 8649])
+            ("logfs_object_header" type
+               (:members 
+                  ( ("crc" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8974 8985])
+                    ("len" variable (:type ("__be16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8987 8998])
+                    ("type" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9000 9010])
+                    ("compr" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9012 9023])
+                    ("ino" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9025 9036])
+                    ("bix" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9038 9049])
+                    ("data_crc" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9051 9067]))                  
+                :type "struct")
+                nil [8944 9094])
+            ("check_logfs_object_header" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [9096 9152])
+            ("" type
+               (:members 
+                  ( ("LOGFS_INO_MAPPING" variable
+                       (:constant-flag t
+                        :default-value (9366 9370)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9346 9370])
+                    ("LOGFS_INO_MASTER" variable
+                       (:constant-flag t
+                        :default-value (9392 9396)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9373 9396])
+                    ("LOGFS_INO_ROOT" variable
+                       (:constant-flag t
+                        :default-value (9417 9421)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9399 9421])
+                    ("LOGFS_INO_SEGFILE" variable
+                       (:constant-flag t
+                        :default-value (9444 9448)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9424 9448])
+                    ("LOGFS_RESERVED_INOS" variable
+                       (:constant-flag t
+                        :default-value (9473 9477)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [9451 9477]))                  
+                :type "enum")
+                nil [9338 9481])
+            ("LOGFS_IF_COMPRESSED" variable (:constant-flag t) nil [9889 9908])
+            ("LOGFS_IF_DIRTY" variable (:constant-flag t) nil [9949 9963])
+            ("LOGFS_IF_ZOMBIE" variable (:constant-flag t) nil [9984 9999])
+            ("LOGFS_IF_STILLBORN" variable (:constant-flag t) nil [10020 10038])
+            ("LOGFS_FL_USER_VISIBLE" variable (:constant-flag t) nil [10091 10112])
+            ("LOGFS_FL_USER_MODIFIABLE" variable (:constant-flag t) nil [10143 10167])
+            ("LOGFS_FL_INHERITED" variable (:constant-flag t) nil [10269 10287])
+            ("logfs_disk_inode" type
+               (:members 
+                  ( ("di_mode" variable (:type ("__be16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10794 10809])
+                    ("di_height" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10811 10826])
+                    ("di_pad" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10828 10840])
+                    ("di_flags" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10842 10858])
+                    ("di_uid" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10860 10874])
+                    ("di_gid" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10876 10890])
+                    ("di_ctime" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10893 10909])
+                    ("di_mtime" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10911 10927])
+                    ("di_atime" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10930 10946])
+                    ("di_refcount" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10948 10967])
+                    ("di_generation" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10969 10990])
+                    ("di_used_bytes" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10993 11014])
+                    ("di_size" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11016 11031])
+                    ("di_data" variable
+                       (:dereference 1
+                        :type ("__be64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11034 11072]))                  
+                :type "struct")
+                nil [10767 11075])
+            ("check_logfs_disk_inode" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [11077 11110])
+            ("INODE_POINTER_OFS" variable (:constant-flag t) nil [11121 11138])
+            ("INODE_USED_OFS" variable (:constant-flag t) nil [11212 11226])
+            ("INODE_SIZE_OFS" variable (:constant-flag t) nil [11306 11320])
+            ("INODE_HEIGHT_OFS" variable (:constant-flag t) nil [11394 11410])
+            ("logfs_disk_dentry" type
+               (:members 
+                  ( ("ino" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11708 11719])
+                    ("namelen" variable (:type ("__be16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11721 11736])
+                    ("type" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11738 11748])
+                    ("name" variable
+                       (:dereference 1
+                        :type ("__u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11750 11779]))                  
+                :type "struct")
+                nil [11680 11806])
+            ("check_logfs_disk_dentry" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [11808 11842])
+            ("RESERVED" variable (:constant-flag t) nil [11853 11861])
+            ("BADSEG" variable (:constant-flag t) nil [11882 11888])
+            ("logfs_segment_entry" type
+               (:members 
+                  ( ("ec_level" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12437 12453])
+                    ("valid" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12455 12468]))                  
+                :type "struct")
+                nil [12407 12471])
+            ("check_logfs_segment_entry" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [12473 12507])
+            ("logfs_journal_header" type
+               (:members 
+                  ( ("h_crc" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12851 12864])
+                    ("h_len" variable (:type ("__be16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12866 12879])
+                    ("h_datalen" variable (:type ("__be16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12881 12898])
+                    ("h_type" variable (:type ("__be16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12900 12914])
+                    ("h_compr" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12916 12929])
+                    ("h_pad" variable
+                       (:dereference 1
+                        :type ("__u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12931 12945]))                  
+                :type "struct")
+                nil [12820 12948])
+            ("check_logfs_journal_header" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [12950 12986])
+            ("logfs_vim" type
+               (:members 
+                  ( ("VIM_DEFAULT" variable
+                       (:constant-flag t
+                        :default-value (13190 13191)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [13176 13191])
+                    ("VIM_SEGFILE" variable
+                       (:constant-flag t
+                        :default-value (13208 13209)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [13194 13209]))                  
+                :type "enum")
+                nil [13158 13213])
+            ("logfs_je_area" type
+               (:members 
+                  ( ("segno" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13734 13747])
+                    ("used_bytes" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13749 13767])
+                    ("gc_level" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13769 13783])
+                    ("vim" variable (:type ("__u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [13785 13794]))                  
+                :type "struct")
+                nil [13710 13821])
+            ("check_logfs_je_area" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [13823 13852])
+            ("MAX_JOURNAL_HEADER" variable (:constant-flag t) nil [13863 13881])
+            ("logfs_je_dynsb" type
+               (:members 
+                  ( ("ds_gec" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14420 14434])
+                    ("ds_sweeper" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14436 14454])
+                    ("ds_rename_dir" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14457 14478])
+                    ("ds_rename_pos" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14480 14501])
+                    ("ds_victim_ino" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14504 14525])
+                    ("ds_victim_parent" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14527 14551])
+                    ("ds_used_bytes" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14564 14585])
+                    ("ds_generation" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14587 14608])
+                    ("pad" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14610 14621]))                  
+                :type "struct")
+                nil [14395 14624])
+            ("check_logfs_je_dynsb" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [14626 14656])
+            ("logfs_je_anchor" type
+               (:members 
+                  ( ("da_size" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14909 14924])
+                    ("da_last_ino" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14926 14945])
+                    ("da_used_bytes" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14948 14969])
+                    ("da_height" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [14971 14984])
+                    ("pad" variable
+                       (:dereference 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [14986 14996])
+                    ("da_data" variable
+                       (:dereference 1
+                        :type ("__be64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [14999 15037]))                  
+                :type "struct")
+                nil [14883 15040])
+            ("check_logfs_je_anchor" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [15042 15074])
+            ("logfs_je_spillout" type
+               (:members 
+                  ( ("so_segment" variable
+                       (:dereference 1
+                        :type ("__be64" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [15300 15321]))                  
+                :type "struct")
+                nil [15272 15324])
+            ("check_logfs_je_spillout" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [15326 15358])
+            ("logfs_je_journal_ec" type
+               (:members 
+                  ( ("ec" variable
+                       (:dereference 1
+                        :type ("__be32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [15560 15573]))                  
+                :type "struct")
+                nil [15530 15576])
+            ("check_logfs_je_journal_ec" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [15578 15612])
+            ("logfs_je_free_segments" type
+               (:members 
+                  ( ("segno" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15730 15743])
+                    ("ec" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15745 15755]))                  
+                :type "struct")
+                nil [15697 15758])
+            ("check_logfs_je_free_segments" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [15760 15797])
+            ("logfs_seg_alias" type
+               (:members 
+                  ( ("old_segno" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15886 15903])
+                    ("new_segno" variable (:type ("__be32" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15905 15922]))                  
+                :type "struct")
+                nil [15860 15925])
+            ("check_logfs_seg_alias" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [15927 15957])
+            ("logfs_obj_alias" type
+               (:members 
+                  ( ("ino" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16045 16056])
+                    ("bix" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16058 16069])
+                    ("val" variable (:type ("__be64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16071 16082])
+                    ("level" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16084 16093])
+                    ("pad" variable
+                       (:dereference 1
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [16095 16105])
+                    ("child_no" variable (:type ("__be16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [16107 16123]))                  
+                :type "struct")
+                nil [16019 16126])
+            ("check_logfs_obj_alias" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) nil))                  
+                :type "void")
+                nil [16128 16159])
+            ("" type
+               (:members 
+                  ( ("COMPR_NONE" variable
+                       (:constant-flag t
+                        :default-value (16282 16283)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [16269 16283])
+                    ("COMPR_ZLIB" variable
+                       (:constant-flag t
+                        :default-value (16299 16300)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [16286 16300]))                  
+                :type "enum")
+                nil [16261 16304])
+            ("" type
+               (:members 
+                  ( ("JE_FIRST" variable
+                       (:constant-flag t
+                        :default-value (17010 17014)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [16999 17014])
+                    ("JEG_BASE" variable
+                       (:constant-flag t
+                        :default-value (17029 17033)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [17018 17033])
+                    ("JE_COMMIT" variable
+                       (:constant-flag t
+                        :default-value (17048 17052)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [17036 17052])
+                    ("JE_DYNSB" variable
+                       (:constant-flag t
+                        :default-value (17066 17070)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [17055 17070])
+                    ("JE_ANCHOR" variable
+                       (:constant-flag t
+                        :default-value (17085 17089)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [17073 17089])
+                    ("JE_ERASECOUNT" variable
+                       (:constant-flag t
+                        :default-value (17108 17112)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [17092 17112])
+                    ("JE_SPILLOUT" variable
+                       (:constant-flag t
+                        :default-value (17129 17133)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [17115 17133])
+                    ("JE_OBJ_ALIAS" variable
+                       (:constant-flag t
+                        :default-value (17151 17155)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [17136 17155])
+                    ("JE_AREA" variable
+                       (:constant-flag t
+                        :default-value (17169 17173)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [17158 17173])
+                    ("JE_LAST" variable
+                       (:constant-flag t
+                        :default-value (17188 17192)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [17177 17192]))                  
+                :type "enum")
+                nil [16991 17196]))          
+      :file "logfs_abi.h"
+      :pointmax 17205
+      :fsize 17204
+      :lastmodtime '(21976 3068 768725 550000)
+      :unmatched-syntax '((punctuation 16159 . 16160) (punctuation 15957 . 15958) (punctuation 15797 . 15798) (punctuation 15612 . 15613) (punctuation 15358 . 15359) (punctuation 15074 . 15075) (punctuation 14656 . 14657) (punctuation 13852 . 13853) (punctuation 12986 . 12987) (punctuation 12507 . 12508) (punctuation 11842 . 11843) (punctuation 11110 . 11111) (punctuation 9152 . 9153) (punctuation 8473 . 8474) (punctuation 6522 . 6523))
+      :lexical-table 
+        '(("LOGFS_MAGIC" . ((symbol "0x7a3a8e5cb9d5bf67ull" 2030 . 2051)))
+          ("LOGFS_BLOCK_FACTOR" . ((semantic-list "(LOGFS_BLOCKSIZE / sizeof(u64))" 2575 . 2606)))
+          ("I3_BLOCKS" . ((semantic-list "(LOGFS_BLOCK_FACTOR * I2_BLOCKS)" 2902 . 2934)))
+          ("LOGFS_MAX_INDIRECT" . ((semantic-list "(5)" 4870 . 4873)))
+          ("LOGFS_EMBEDDED_FIELDS" . ((semantic-list "(I0_BLOCKS + 1)" 3104 . 3119)))
+          ("INODE_POINTER_OFS" . ((semantic-list "(offsetof(struct logfs_disk_inode, di_data) / sizeof(__be64))" 11142 . 11203)))
+          ("INDIRECT_INDEX" . ((symbol "I0_BLOCKS" 3064 . 3073)))
+          ("LOGFS_I1_SIZE" . ((semantic-list "(I1_BLOCKS * LOGFS_BLOCKSIZE)" 3604 . 3633)))
+          ("LOGFS_BLOCKSIZE" . ((semantic-list "(4096ull)" 2538 . 2547)))
+          ("LOGFS_BLOCK_BITS" . ((semantic-list "(9)" 2632 . 2635)))
+          ("I4_BLOCKS" . ((semantic-list "(LOGFS_BLOCK_FACTOR * I3_BLOCKS)" 2954 . 2986)))
+          ("LOGFS_I4_SIZE" . ((semantic-list "(I4_BLOCKS * LOGFS_BLOCKSIZE)" 3763 . 3792)))
+          ("LOGFS_MAX_OBJECTSIZE" . ((semantic-list "(LOGFS_OBJECT_HEADERSIZE + LOGFS_BLOCKSIZE)" 5668 . 5711)))
+          ("LOGFS_FL_USER_MODIFIABLE" . ((semantic-list "(LOGFS_IF_COMPRESSED)" 10168 . 10189)))
+          ("BUILD_BUG_ON" (spp-arg-list ("condition") 323 . 334))
+          ("I0_BLOCKS" . ((semantic-list "(16)" 2788 . 2792)))
+          ("LOGFS_MAX_LEVELS" . ((semantic-list "(LOGFS_MAX_INDIRECT + 1)" 4899 . 4923)))
+          ("LOGFS_SEGMENT_RESERVE" . ((semantic-list "(LOGFS_SEGMENT_HEADERSIZE + LOGFS_MAX_OBJECTSIZE - 1)" 5745 . 5798)))
+          ("INODE_USED_OFS" . ((semantic-list "(offsetof(struct logfs_disk_inode, di_used_bytes) / sizeof(__be64))" 11230 . 11297)))
+          ("LOGFS_NO_AREAS" . ((semantic-list "(2 * LOGFS_MAX_LEVELS)" 4948 . 4970)))
+          ("LOGFS_IF_DIRTY" . ((number "0x20000000" 9965 . 9975)))
+          ("LOGFS_FL_INHERITED" . ((semantic-list "(LOGFS_IF_COMPRESSED)" 10288 . 10309)))
+          ("MAX_JOURNAL_HEADER" . ((semantic-list "(sizeof(struct logfs_journal_header) + sizeof(struct logfs_je_area))" 13885 . 13953)))
+          ("I5_BLOCKS" . ((semantic-list "(LOGFS_BLOCK_FACTOR * I4_BLOCKS)" 3006 . 3038)))
+          ("LOGFS_I0_SIZE" . ((semantic-list "(I0_BLOCKS * LOGFS_BLOCKSIZE)" 3551 . 3580)))
+          ("LOGFS_FL_USER_VISIBLE" . ((semantic-list "(LOGFS_IF_COMPRESSED)" 10113 . 10134)))
+          ("FS_LOGFS_LOGFS_ABI_H")
+          ("I1_BLOCKS" . ((symbol "LOGFS_BLOCK_FACTOR" 2812 . 2830)))
+          ("LOGFS_I3_SIZE" . ((semantic-list "(I3_BLOCKS * LOGFS_BLOCKSIZE)" 3710 . 3739)))
+          ("LOGFS_FULLY_POPULATED" . ((semantic-list "(1ULL << 63)" 4062 . 4074)))
+          ("MAX_CACHED_SEGS" . ((semantic-list "(64)" 5213 . 5217)))
+          ("LOGFS_IF_ZOMBIE" . ((number "0x40000000" 10001 . 10011)))
+          ("INODE_HEIGHT_OFS" . ((semantic-list "(0)" 11411 . 11414)))
+          ("pure_ofs" (spp-arg-list ("ofs") 4091 . 4096) . ((semantic-list "(ofs & ~LOGFS_FULLY_POPULATED)" 4097 . 4127)))
+          ("LOGFS_JOURNAL_SEGS" . ((semantic-list "(16)" 5113 . 5117)))
+          ("RESERVED" . ((number "0xffffffff" 11863 . 11873)))
+          ("LOGFS_EMBEDDED_SIZE" . ((semantic-list "(LOGFS_EMBEDDED_FIELDS * sizeof(u64))" 3490 . 3527)))
+          ("LOGFS_IF_STILLBORN" . ((number "0x80000000" 10039 . 10049)))
+          ("SIZE_CHECK" (spp-arg-list ("type" "size") 366 . 378) . 
+              ((STATIC "static" 385 . 391) (INLINE "inline" 392 . 398) (VOID "void" 399 . 403) (spp-symbol-merge ((symbol "check_" 404 . 410) (symbol "type" 412 . 416)) 404 . 416) (semantic-list "(void)" 416 . 422) (semantic-list "{								\\
+	BUILD_BUG_ON(sizeof(struct type) != (size));		\\
+}" 428 . 489)))
+          ("LOGFS_MAGIC_U32" . ((symbol "0xc97e8168u" 2077 . 2088)))
+          ("I2_BLOCKS" . ((semantic-list "(LOGFS_BLOCK_FACTOR * I1_BLOCKS)" 2850 . 2882)))
+          ("LOGFS_FEATURES_INCOMPAT" . ((semantic-list "(0ull)" 6558 . 6564)))
+          ("LOGFS_FEATURES_COMPAT" . ((semantic-list "(0ull)" 6636 . 6642)))
+          ("BADSEG" . ((number "0xffffffff" 11891 . 11901)))
+          ("LOGFS_I2_SIZE" . ((semantic-list "(I2_BLOCKS * LOGFS_BLOCKSIZE)" 3657 . 3686)))
+          ("LOGFS_MAX_NAMELEN" . ((semantic-list "(255)" 5030 . 5035)))
+          ("LOGFS_OBJECT_HEADERSIZE" . ((semantic-list "(0x1c)" 5592 . 5598)))
+          ("INODE_SIZE_OFS" . ((semantic-list "(offsetof(struct logfs_disk_inode, di_size) / sizeof(__be64))" 11324 . 11385)))
+          ("LOGFS_I5_SIZE" . ((semantic-list "(I5_BLOCKS * LOGFS_BLOCKSIZE)" 3816 . 3845)))
+          ("LOGFS_SEGMENT_HEADERSIZE" . ((semantic-list "(0x18)" 5632 . 5638)))
+          ("LOGFS_FEATURES_RO_COMPAT" . ((semantic-list "(0ull)" 6598 . 6604)))
+          ("LOGFS_IF_COMPRESSED" . ((number "0x00000004" 9909 . 9919)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!fs!logfs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,131 @@
+;; Object mm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mm/"
+  :tables
+  (list
+    (semanticdb-table "init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/pagemap.h" include (:system-flag t) nil [150 176])
+            ("linux/signal.h" include (:system-flag t) nil [177 202])
+            ("linux/sched.h" include (:system-flag t) nil [203 227])
+            ("linux/kernel.h" include (:system-flag t) nil [228 253])
+            ("linux/errno.h" include (:system-flag t) nil [254 278])
+            ("linux/string.h" include (:system-flag t) nil [279 304])
+            ("linux/types.h" include (:system-flag t) nil [305 329])
+            ("linux/ptrace.h" include (:system-flag t) nil [330 355])
+            ("linux/mman.h" include (:system-flag t) nil [356 379])
+            ("linux/mm.h" include (:system-flag t) nil [380 401])
+            ("linux/swap.h" include (:system-flag t) nil [402 425])
+            ("linux/init.h" include (:system-flag t) nil [426 449])
+            ("linux/bootmem.h" include (:system-flag t) nil [450 476])
+            ("linux/vmalloc.h" include (:system-flag t) nil [495 521])
+            ("linux/gfp.h" include (:system-flag t) nil [522 544])
+            ("asm/uaccess.h" include (:system-flag t) nil [546 570])
+            ("asm/pgtable.h" include (:system-flag t) nil [571 595])
+            ("asm/pgalloc.h" include (:system-flag t) nil [596 620])
+            ("asm/hwrpb.h" include (:system-flag t) nil [621 643])
+            ("asm/dma.h" include (:system-flag t) nil [644 664])
+            ("asm/mmu_context.h" include (:system-flag t) nil [665 693])
+            ("asm/console.h" include (:system-flag t) nil [694 718])
+            ("asm/tlb.h" include (:system-flag t) nil [719 739])
+            ("asm/setup.h" include (:system-flag t) nil [740 762])
+            ("asm/sections.h" include (:system-flag t) nil [763 788])
+            ("die_if_kernel" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [816 823])
+                    ("" variable
+                       (:pointer 1
+                        :type ("pt_regs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [823 840])
+                    ("" variable (:type "long") (reparse-symbol arg-sub-list) [840 845]))                  
+                :type "void")
+                nil [790 846])
+            ("original_pcb" variable
+               (:typemodifiers ("static")
+                :type ("pcb_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [848 886])
+            ("pgd_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("mm" variable
+                       (:pointer 1
+                        :type ("mm_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [906 927]))                  
+                :type ("pgd_t" type (:type "class") nil nil))
+                nil [888 1440])
+            ("__bad_pagetable" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1925 1930]))                  
+                :type ("pmd_t" type (:type "class") nil nil))
+                nil [1901 2006])
+            ("__bad_page" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2025 2030]))                  
+                :type ("pte_t" type (:type "class") nil nil))
+                nil [2008 2144])
+            ("load_PCB" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("pcb" variable
+                       (:pointer 1
+                        :type ("pcb_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2183 2206]))                  
+                :type "unsigned long")
+                nil [2146 2299])
+            ("switch_to_system_map" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2400 2405]))                  
+                :type "void")
+                nil [2360 3695])
+            ("callback_init_done" variable (:type "int") nil [3697 3720])
+            ("callback_init" function
+               (:arguments 
+                  ( ("kernel_end" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3750 3768]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3729 6488])
+            ("paging_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6591 6596]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6572 7081])
+            ("mem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7539 7544]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7523 7681])
+            ("free_initmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7701 7706]))                  
+                :type "void")
+                nil [7683 7737]))          
+      :file "init.c"
+      :pointmax 7903
+      :fsize 7902
+      :lastmodtime '(21976 3065 40725 660000)
+      :unmatched-syntax '((VOID 7518 . 7522) (VOID 6567 . 6571) (punctuation 3727 . 3728) (VOID 3722 . 3726))))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!alpha!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

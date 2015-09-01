@@ -1,0 +1,316 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "atomic.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ALPHA_ATOMIC_H" variable (:constant-flag t) nil [33 48])
+            ("linux/types.h" include (:system-flag t) nil [50 74])
+            ("asm/barrier.h" include (:system-flag t) nil [75 99])
+            ("asm/cmpxchg.h" include (:system-flag t) nil [100 124])
+            ("ATOMIC_INIT" variable (:constant-flag t) nil [328 339])
+            ("ATOMIC64_INIT" variable (:constant-flag t) nil [360 373])
+            ("atomic_read" variable (:constant-flag t) nil [394 405])
+            ("atomic64_read" variable (:constant-flag t) nil [451 464])
+            ("atomic_set" variable (:constant-flag t) nil [511 521])
+            ("atomic64_set" variable (:constant-flag t) nil [557 569])
+            ("atomic_add" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [816 822])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [823 836]))                  
+                :type "void")
+                nil [800 1069])
+            ("atomic64_add" function
+               (:arguments 
+                  ( ("i" variable (:type "long") (reparse-symbol arg-sub-list) [1107 1114])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1115 1130]))                  
+                :type "void")
+                nil [1089 1363])
+            ("atomic_sub" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [1399 1405])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1406 1419]))                  
+                :type "void")
+                nil [1383 1652])
+            ("atomic64_sub" function
+               (:arguments 
+                  ( ("i" variable (:type "long") (reparse-symbol arg-sub-list) [1690 1697])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1698 1713]))                  
+                :type "void")
+                nil [1672 1946])
+            ("atomic_add_return" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [2038 2044])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2045 2057]))                  
+                :type "int")
+                nil [2002 2374])
+            ("atomic64_add_return" function
+               (:arguments 
+                  ( ("i" variable (:type "long") (reparse-symbol arg-sub-list) [2419 2426])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2427 2442]))                  
+                :type "long")
+                nil [2394 2759])
+            ("atomic_sub_return" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [2802 2808])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2809 2822]))                  
+                :type "long")
+                nil [2779 3139])
+            ("atomic64_sub_return" function
+               (:arguments 
+                  ( ("i" variable (:type "long") (reparse-symbol arg-sub-list) [3184 3191])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3192 3207]))                  
+                :type "long")
+                nil [3159 3524])
+            ("atomic64_cmpxchg" variable (:constant-flag t) nil [3534 3550])
+            ("atomic64_xchg" variable (:constant-flag t) nil [3609 3622])
+            ("atomic_cmpxchg" variable (:constant-flag t) nil [3669 3683])
+            ("atomic_xchg" variable (:constant-flag t) nil [3742 3753])
+            ("__atomic_add_unless" function
+               (:arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4095 4107])
+                    ("a" variable (:type "int") (reparse-symbol arg-sub-list) [4108 4114])
+                    ("u" variable (:type "int") (reparse-symbol arg-sub-list) [4115 4121]))                  
+                :type "int")
+                nil [4071 4521])
+            ("atomic64_add_unless" function
+               (:arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type ("atomic64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4832 4846])
+                    ("a" variable (:type "long") (reparse-symbol arg-sub-list) [4847 4854])
+                    ("u" variable (:type "long") (reparse-symbol arg-sub-list) [4855 4862]))                  
+                :type "int")
+                nil [4808 5233])
+            ("atomic64_dec_if_positive" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type ("atomic64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5497 5511]))                  
+                :type "long")
+                nil [5453 5837])
+            ("atomic64_inc_not_zero" variable (:constant-flag t) nil [5847 5868])
+            ("atomic_add_negative" variable (:constant-flag t) nil [5912 5931])
+            ("atomic64_add_negative" variable (:constant-flag t) nil [5980 6001])
+            ("atomic_dec_return" variable (:constant-flag t) nil [6053 6070])
+            ("atomic64_dec_return" variable (:constant-flag t) nil [6107 6126])
+            ("atomic_inc_return" variable (:constant-flag t) nil [6166 6183])
+            ("atomic64_inc_return" variable (:constant-flag t) nil [6220 6239])
+            ("atomic_sub_and_test" variable (:constant-flag t) nil [6279 6298])
+            ("atomic64_sub_and_test" variable (:constant-flag t) nil [6347 6368])
+            ("atomic_inc_and_test" variable (:constant-flag t) nil [6420 6439])
+            ("atomic64_inc_and_test" variable (:constant-flag t) nil [6484 6505])
+            ("atomic_dec_and_test" variable (:constant-flag t) nil [6553 6572])
+            ("atomic64_dec_and_test" variable (:constant-flag t) nil [6617 6638])
+            ("atomic_inc" variable (:constant-flag t) nil [6686 6696])
+            ("atomic64_inc" variable (:constant-flag t) nil [6726 6738])
+            ("atomic_dec" variable (:constant-flag t) nil [6771 6781])
+            ("atomic64_dec" variable (:constant-flag t) nil [6811 6823])
+            ("smp_mb__before_atomic_dec" variable (:constant-flag t) nil [6856 6881])
+            ("smp_mb__after_atomic_dec" variable (:constant-flag t) nil [6901 6925])
+            ("smp_mb__before_atomic_inc" variable (:constant-flag t) nil [6945 6970])
+            ("smp_mb__after_atomic_inc" variable (:constant-flag t) nil [6990 7014]))          
+      :file "atomic.h"
+      :pointmax 7056
+      :fsize 7055
+      :lastmodtime '(21976 3065 24725 661000)
+      :unmatched-syntax '((symbol 4797 . 4807) (STATIC 4790 . 4796) (symbol 4060 . 4070) (STATIC 4053 . 4059) (symbol 3148 . 3158) (STATIC 3141 . 3147) (symbol 2768 . 2778) (STATIC 2761 . 2767) (symbol 2383 . 2393) (STATIC 2376 . 2382) (symbol 1661 . 1671) (STATIC 1654 . 1660) (symbol 1372 . 1382) (STATIC 1365 . 1371) (symbol 1078 . 1088) (STATIC 1071 . 1077) (symbol 789 . 799) (STATIC 782 . 788))
+      :lexical-table 
+        '(("atomic64_sub_and_test" (spp-arg-list ("i" "v") 6368 . 6373) . ((semantic-list "(atomic64_sub_return((i), (v)) == 0)" 6374 . 6410)))
+          ("atomic64_dec_and_test" (spp-arg-list ("v") 6638 . 6641) . ((semantic-list "(atomic64_sub_return(1, (v)) == 0)" 6642 . 6676)))
+          ("atomic64_cmpxchg" (spp-arg-list ("v" "old" "new") 3550 . 3563) . ((semantic-list "(cmpxchg(&((v)->counter), old, new))" 3564 . 3600)))
+          ("atomic64_xchg" (spp-arg-list ("v" "new") 3622 . 3630) . ((semantic-list "(xchg(&((v)->counter), new))" 3631 . 3659)))
+          ("atomic64_dec_return" (spp-arg-list ("v") 6126 . 6129) . ((symbol "atomic64_sub_return" 6130 . 6149) (semantic-list "(1,(v))" 6149 . 6156)))
+          ("smp_mb__before_atomic_inc" (spp-arg-list nil 6970 . 6972) . ((symbol "smp_mb" 6973 . 6979) (semantic-list "()" 6979 . 6981)))
+          ("atomic64_read" (spp-arg-list ("v") 464 . 467) . ((semantic-list "(*(volatile long *)&(v)->counter)" 468 . 501)))
+          ("atomic_inc_return" (spp-arg-list ("v") 6183 . 6186) . ((symbol "atomic_add_return" 6187 . 6204) (semantic-list "(1,(v))" 6204 . 6211)))
+          ("atomic64_inc" (spp-arg-list ("v") 6738 . 6741) . ((symbol "atomic64_add" 6742 . 6754) (semantic-list "(1,(v))" 6754 . 6761)))
+          ("smp_mb__after_atomic_dec" (spp-arg-list nil 6925 . 6927) . ((symbol "smp_mb" 6928 . 6934) (semantic-list "()" 6934 . 6936)))
+          ("ATOMIC64_INIT" (spp-arg-list ("i") 373 . 376) . ((semantic-list "{ (i) }" 377 . 384)))
+          ("atomic64_set" (spp-arg-list ("v" "i") 569 . 574) . ((semantic-list "((v)->counter = (i))" 575 . 595)))
+          ("atomic_inc" (spp-arg-list ("v") 6696 . 6699) . ((symbol "atomic_add" 6700 . 6710) (semantic-list "(1,(v))" 6710 . 6717)))
+          ("atomic_inc_and_test" (spp-arg-list ("v") 6439 . 6442) . ((semantic-list "(atomic_add_return(1, (v)) == 0)" 6443 . 6475)))
+          ("atomic_set" (spp-arg-list ("v" "i") 521 . 526) . ((semantic-list "((v)->counter = (i))" 528 . 548)))
+          ("atomic_cmpxchg" (spp-arg-list ("v" "old" "new") 3683 . 3696) . ((semantic-list "(cmpxchg(&((v)->counter), old, new))" 3697 . 3733)))
+          ("atomic_xchg" (spp-arg-list ("v" "new") 3753 . 3761) . ((semantic-list "(xchg(&((v)->counter), new))" 3762 . 3790)))
+          ("atomic64_inc_not_zero" (spp-arg-list ("v") 5868 . 5871) . ((symbol "atomic64_add_unless" 5872 . 5891) (semantic-list "((v), 1, 0)" 5891 . 5902)))
+          ("atomic_dec_return" (spp-arg-list ("v") 6070 . 6073) . ((symbol "atomic_sub_return" 6074 . 6091) (semantic-list "(1,(v))" 6091 . 6098)))
+          ("atomic64_inc_and_test" (spp-arg-list ("v") 6505 . 6508) . ((semantic-list "(atomic64_add_return(1, (v)) == 0)" 6509 . 6543)))
+          ("smp_mb__before_atomic_dec" (spp-arg-list nil 6881 . 6883) . ((symbol "smp_mb" 6884 . 6890) (semantic-list "()" 6890 . 6892)))
+          ("atomic_read" (spp-arg-list ("v") 405 . 408) . ((semantic-list "(*(volatile int *)&(v)->counter)" 410 . 442)))
+          ("atomic64_dec" (spp-arg-list ("v") 6823 . 6826) . ((symbol "atomic64_sub" 6827 . 6839) (semantic-list "(1,(v))" 6839 . 6846)))
+          ("atomic64_inc_return" (spp-arg-list ("v") 6239 . 6242) . ((symbol "atomic64_add_return" 6243 . 6262) (semantic-list "(1,(v))" 6262 . 6269)))
+          ("smp_mb__after_atomic_inc" (spp-arg-list nil 7014 . 7016) . ((symbol "smp_mb" 7017 . 7023) (semantic-list "()" 7023 . 7025)))
+          ("_ALPHA_ATOMIC_H")
+          ("ATOMIC_INIT" (spp-arg-list ("i") 339 . 342) . ((semantic-list "{ (i) }" 344 . 351)))
+          ("atomic_add_negative" (spp-arg-list ("a" "v") 5931 . 5937) . ((semantic-list "(atomic_add_return((a), (v)) < 0)" 5938 . 5971)))
+          ("atomic_dec" (spp-arg-list ("v") 6781 . 6784) . ((symbol "atomic_sub" 6785 . 6795) (semantic-list "(1,(v))" 6795 . 6802)))
+          ("atomic_sub_and_test" (spp-arg-list ("i" "v") 6298 . 6303) . ((semantic-list "(atomic_sub_return((i), (v)) == 0)" 6304 . 6338)))
+          ("atomic_dec_and_test" (spp-arg-list ("v") 6572 . 6575) . ((semantic-list "(atomic_sub_return(1, (v)) == 0)" 6576 . 6608)))
+          ("atomic64_add_negative" (spp-arg-list ("a" "v") 6001 . 6007) . ((semantic-list "(atomic64_add_return((a), (v)) < 0)" 6008 . 6043)))
+          )
+)
+    (semanticdb-table "page.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ALPHA_PAGE_H" variable (:constant-flag t) nil [31 44])
+            ("linux/const.h" include (:system-flag t) nil [46 70])
+            ("asm/pal.h" include (:system-flag t) nil [71 91])
+            ("PAGE_SHIFT" variable (:constant-flag t) nil [143 153])
+            ("PAGE_SIZE" variable (:constant-flag t) nil [165 174])
+            ("PAGE_MASK" variable (:constant-flag t) nil [209 218])
+            ("STRICT_MM_TYPECHECKS" variable (:constant-flag t) nil [267 287])
+            ("clear_page" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("page" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [312 323]))                  
+                :type "void")
+                nil [289 324])
+            ("clear_user_page" variable (:constant-flag t) nil [333 348])
+            ("__alloc_zeroed_user_highpage" variable (:constant-flag t) nil [392 420])
+            ("__HAVE_ARCH_ALLOC_ZEROED_USER_HIGHPAGE" variable (:constant-flag t) nil [528 566])
+            ("copy_page" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("_to" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [590 601])
+                    ("_from" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [602 615]))                  
+                :type "void")
+                nil [568 616])
+            ("copy_user_page" variable (:constant-flag t) nil [625 639])
+            ("pte_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pte" variable (:type "unsigned long") (reparse-symbol classsubparts) [785 803]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [768 812])
+            ("pmd_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pmd" variable (:type "unsigned long") (reparse-symbol classsubparts) [830 848]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [813 857])
+            ("pgd_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pgd" variable (:type "unsigned long") (reparse-symbol classsubparts) [875 893]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [858 902])
+            ("pgprot_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pgprot" variable (:type "unsigned long") (reparse-symbol classsubparts) [920 941]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [903 953])
+            ("pte_val" variable (:constant-flag t) nil [963 970])
+            ("pmd_val" variable (:constant-flag t) nil [992 999])
+            ("pgd_val" variable (:constant-flag t) nil [1021 1028])
+            ("pgprot_val" variable (:constant-flag t) nil [1050 1060])
+            ("__pte" variable (:constant-flag t) nil [1086 1091])
+            ("__pmd" variable (:constant-flag t) nil [1122 1127])
+            ("__pgd" variable (:constant-flag t) nil [1158 1163])
+            ("__pgprot" variable (:constant-flag t) nil [1194 1202])
+            ("pgtable_t" type
+               (:typedef ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :pointer 1
+                :type "typedef")
+                nil [1609 1640])
+            ("PAGE_OFFSET" variable (:constant-flag t) nil [1721 1732])
+            ("__pa" variable (:constant-flag t) nil [1923 1927])
+            ("__va" variable (:constant-flag t) nil [1977 1981])
+            ("virt_to_page" variable (:constant-flag t) nil [2069 2081])
+            ("pfn_valid" variable (:constant-flag t) nil [2137 2146])
+            ("virt_addr_valid" variable (:constant-flag t) nil [2181 2196])
+            ("VM_DATA_DEFAULT_FLAGS" variable (:constant-flag t) nil [2283 2304])
+            ("asm-generic/memory_model.h" include (:system-flag t) nil [2386 2423])
+            ("asm-generic/getorder.h" include (:system-flag t) nil [2424 2457]))          
+      :file "page.h"
+      :pointmax 2486
+      :fsize 2485
+      :lastmodtime '(21976 3065 28725 660000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("STRICT_MM_TYPECHECKS")
+          ("__alloc_zeroed_user_highpage" (spp-arg-list ("movableflags" "vma" "vaddr") 420 . 446) . ((symbol "alloc_page_vma" 450 . 464) (semantic-list "(GFP_HIGHUSER | __GFP_ZERO | movableflags, vma, vmaddr)" 464 . 519)))
+          ("_ALPHA_PAGE_H")
+          ("__pgd" (spp-arg-list ("x") 1163 . 1166) . ((semantic-list "((pgd_t) { (x) } )" 1167 . 1185)))
+          ("__pte" (spp-arg-list ("x") 1091 . 1094) . ((semantic-list "((pte_t) { (x) } )" 1095 . 1113)))
+          ("PAGE_MASK" . ((semantic-list "(~(PAGE_SIZE-1))" 219 . 235)))
+          ("__HAVE_ARCH_ALLOC_ZEROED_USER_HIGHPAGE")
+          ("__pa" (spp-arg-list ("x") 1927 . 1930) . ((semantic-list "((unsigned long) (x) - PAGE_OFFSET)" 1933 . 1968)))
+          ("VM_DATA_DEFAULT_FLAGS" . ((semantic-list "(VM_READ | VM_WRITE | VM_EXEC | \\
+					 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)" 2306 . 2384)))
+          ("PAGE_SHIFT" . ((number "13" 154 . 156)))
+          ("clear_user_page" (spp-arg-list ("page" "vaddr" "pg") 348 . 365) . ((symbol "clear_page" 366 . 376) (semantic-list "(page)" 376 . 382)))
+          ("PAGE_SIZE" . ((semantic-list "(_AC(1,UL) << PAGE_SHIFT)" 175 . 200)))
+          ("copy_user_page" (spp-arg-list ("to" "from" "vaddr" "pg") 639 . 660) . ((symbol "copy_page" 661 . 670) (semantic-list "(to, from)" 670 . 680)))
+          ("__pmd" (spp-arg-list ("x") 1127 . 1130) . ((semantic-list "((pmd_t) { (x) } )" 1131 . 1149)))
+          ("__pgprot" (spp-arg-list ("x") 1202 . 1205) . ((semantic-list "((pgprot_t) { (x) } )" 1206 . 1227)))
+          ("virt_addr_valid" (spp-arg-list ("kaddr") 2196 . 2203) . ((symbol "pfn_valid" 2204 . 2213) (semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 2213 . 2240)))
+          ("pgd_val" (spp-arg-list ("x") 1028 . 1031) . ((semantic-list "((x).pgd)" 1032 . 1041)))
+          ("pfn_valid" (spp-arg-list ("pfn") 2146 . 2151) . ((semantic-list "((pfn) < max_mapnr)" 2153 . 2172)))
+          ("__va" (spp-arg-list ("x") 1981 . 1984) . ((semantic-list "((void *)((unsigned long) (x) + PAGE_OFFSET))" 1987 . 2032)))
+          ("pmd_val" (spp-arg-list ("x") 999 . 1002) . ((semantic-list "((x).pmd)" 1003 . 1012)))
+          ("pgprot_val" (spp-arg-list ("x") 1060 . 1063) . ((semantic-list "((x).pgprot)" 1064 . 1076)))
+          ("pte_val" (spp-arg-list ("x") 970 . 973) . ((semantic-list "((x).pte)" 974 . 983)))
+          ("PAGE_OFFSET" . ((symbol "0xfffffc0000000000UL" 1734 . 1754)))
+          ("virt_to_page" (spp-arg-list ("kaddr") 2081 . 2088) . ((symbol "pfn_to_page" 2089 . 2100) (semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 2100 . 2127)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!alpha!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

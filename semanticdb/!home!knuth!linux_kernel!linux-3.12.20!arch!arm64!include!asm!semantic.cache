@@ -1,0 +1,128 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "atomic.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_ATOMIC_H" variable (:constant-flag t) nil [782 796])
+            ("linux/compiler.h" include (:system-flag t) nil [798 825])
+            ("linux/types.h" include (:system-flag t) nil [826 850])
+            ("asm/barrier.h" include (:system-flag t) nil [852 876])
+            ("asm/cmpxchg.h" include (:system-flag t) nil [877 901])
+            ("ATOMIC_INIT" variable (:constant-flag t) nil [911 922]))          
+      :file "atomic.h"
+      :pointmax 7093
+      :fsize 7092
+      :lastmodtime '(21976 3065 668725 642000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__ASM_ATOMIC_H")
+          ("ATOMIC_INIT" (spp-arg-list ("i") 922 . 925) . ((semantic-list "{ (i) }" 926 . 933)))
+          )
+)
+    (semanticdb-table "memory.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_MEMORY_H" variable (:constant-flag t) nil [804 818])
+            ("linux/compiler.h" include (:system-flag t) nil [820 847])
+            ("linux/const.h" include (:system-flag t) nil [848 872])
+            ("linux/types.h" include (:system-flag t) nil [873 897])
+            ("asm/sizes.h" include (:system-flag t) nil [898 920])
+            ("UL" variable (:constant-flag t) nil [1071 1073])
+            ("PAGE_OFFSET" variable (:constant-flag t) nil [1488 1499])
+            ("MODULES_END" variable (:constant-flag t) nil [1532 1543])
+            ("MODULES_VADDR" variable (:constant-flag t) nil [1567 1580])
+            ("EARLYCON_IOBASE" variable (:constant-flag t) nil [1613 1628])
+            ("VA_BITS" variable (:constant-flag t) nil [1662 1669])
+            ("TASK_SIZE_64" variable (:constant-flag t) nil [1685 1697])
+            ("TASK_SIZE" variable (:constant-flag t) nil [1877 1886])
+            ("TASK_UNMAPPED_BASE" variable (:constant-flag t) nil [1937 1955])
+            ("__virt_to_phys" variable (:constant-flag t) nil [2297 2311])
+            ("__phys_to_virt" variable (:constant-flag t) nil [2372 2386])
+            ("__phys_to_pfn" variable (:constant-flag t) nil [2519 2532])
+            ("__pfn_to_phys" variable (:constant-flag t) nil [2589 2602])
+            ("page_to_phys" variable (:constant-flag t) nil [2704 2716])
+            ("phys_to_page" variable (:constant-flag t) nil [2766 2778])
+            ("MT_DEVICE_nGnRnE" variable (:constant-flag t) nil [2863 2879])
+            ("MT_DEVICE_nGnRE" variable (:constant-flag t) nil [2890 2905])
+            ("MT_DEVICE_GRE" variable (:constant-flag t) nil [2917 2930])
+            ("MT_NORMAL_NC" variable (:constant-flag t) nil [2942 2954])
+            ("MT_NORMAL" variable (:constant-flag t) nil [2966 2975])
+            ("MT_S2_NORMAL" variable (:constant-flag t) nil [3035 3047])
+            ("MT_S2_DEVICE_nGnRE" variable (:constant-flag t) nil [3061 3079])
+            ("memstart_addr" variable
+               (:typemodifiers ("extern")
+                :type ("phys_addr_t" type (:type "class") nil nil))
+                nil [3107 3141])
+            ("PHYS_OFFSET" variable (:constant-flag t) nil [3215 3226])
+            ("PHYS_PFN_OFFSET" variable (:constant-flag t) nil [3505 3520])
+            ("virt_to_phys" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("x" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3753 3776]))                  
+                :type ("phys_addr_t" type (:type "class") nil nil))
+                nil [3714 3824])
+            ("phys_to_virt" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("x" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3859 3873]))                  
+                :type "void")
+                nil [3826 3914])
+            ("__pa" variable (:constant-flag t) nil [3971 3975])
+            ("__va" variable (:constant-flag t) nil [4024 4028])
+            ("pfn_to_kaddr" variable (:constant-flag t) nil [4085 4097])
+            ("ARCH_PFN_OFFSET" variable (:constant-flag t) nil [4284 4299])
+            ("virt_to_page" variable (:constant-flag t) nil [4326 4338])
+            ("virt_addr_valid" variable (:constant-flag t) nil [4393 4408])
+            ("asm-generic/memory_model.h" include (:system-flag t) nil [4518 4555]))          
+      :file "memory.h"
+      :pointmax 4564
+      :fsize 4563
+      :lastmodtime '(21976 3065 668725 642000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MT_S2_NORMAL" . ((number "0xf" 3049 . 3052)))
+          ("__ASM_MEMORY_H")
+          ("PHYS_OFFSET" . ((semantic-list "({ memstart_addr; })" 3228 . 3248)))
+          ("__virt_to_phys" (spp-arg-list ("x") 2311 . 2314) . ((semantic-list "(((phys_addr_t)(x) - PAGE_OFFSET + PHYS_OFFSET))" 2315 . 2363)))
+          ("PHYS_PFN_OFFSET" . ((semantic-list "(PHYS_OFFSET >> PAGE_SHIFT)" 3521 . 3548)))
+          ("__phys_to_virt" (spp-arg-list ("x") 2386 . 2389) . ((semantic-list "((unsigned long)((x) - PHYS_OFFSET + PAGE_OFFSET))" 2390 . 2440)))
+          ("__phys_to_pfn" (spp-arg-list ("paddr") 2532 . 2539) . ((semantic-list "((unsigned long)((paddr) >> PAGE_SHIFT))" 2540 . 2580)))
+          ("TASK_SIZE" . ((symbol "TASK_SIZE_64" 1888 . 1900)))
+          ("phys_to_page" (spp-arg-list ("phys") 2778 . 2784) . ((semantic-list "(pfn_to_page(__phys_to_pfn(phys)))" 2785 . 2819)))
+          ("__pa" (spp-arg-list ("x") 3975 . 3978) . ((symbol "__virt_to_phys" 3981 . 3995) (semantic-list "((unsigned long)(x))" 3995 . 4015)))
+          ("UL" (spp-arg-list ("x") 1073 . 1076) . ((symbol "_AC" 1077 . 1080) (semantic-list "(x, UL)" 1080 . 1087)))
+          ("MODULES_VADDR" . ((semantic-list "(MODULES_END - SZ_64M)" 1582 . 1604)))
+          ("MT_DEVICE_GRE" . ((number "2" 2932 . 2933)))
+          ("MODULES_END" . ((semantic-list "(PAGE_OFFSET)" 1545 . 1558)))
+          ("TASK_SIZE_64" . ((semantic-list "(UL(1) << VA_BITS)" 1699 . 1717)))
+          ("MT_NORMAL_NC" . ((number "3" 2956 . 2957)))
+          ("pfn_to_kaddr" (spp-arg-list ("pfn") 4097 . 4102) . ((symbol "__va" 4103 . 4107) (semantic-list "((pfn) << PAGE_SHIFT)" 4107 . 4128)))
+          ("virt_addr_valid" (spp-arg-list ("kaddr") 4408 . 4415) . ((semantic-list "(((void *)(kaddr) >= (void *)PAGE_OFFSET) && \\
+				 ((void *)(kaddr) < (void *)high_memory))" 4416 . 4508)))
+          ("EARLYCON_IOBASE" . ((semantic-list "(MODULES_VADDR - SZ_4M)" 1630 . 1653)))
+          ("MT_NORMAL" . ((number "4" 2977 . 2978)))
+          ("page_to_phys" (spp-arg-list ("page") 2716 . 2722) . ((semantic-list "(__pfn_to_phys(page_to_pfn(page)))" 2723 . 2757)))
+          ("MT_DEVICE_nGnRnE" . ((number "0" 2880 . 2881)))
+          ("__va" (spp-arg-list ("x") 4028 . 4031) . ((semantic-list "((void *)__phys_to_virt((phys_addr_t)(x)))" 4034 . 4076)))
+          ("TASK_UNMAPPED_BASE" . ((semantic-list "(PAGE_ALIGN(TASK_SIZE / 4))" 1956 . 1983)))
+          ("MT_S2_DEVICE_nGnRE" . ((number "0x1" 3080 . 3083)))
+          ("ARCH_PFN_OFFSET" . ((symbol "PHYS_PFN_OFFSET" 4301 . 4316)))
+          ("PAGE_OFFSET" . ((symbol "UL" 1501 . 1503) (semantic-list "(0xffffffc000000000)" 1503 . 1523)))
+          ("VA_BITS" . ((semantic-list "(39)" 1672 . 1676)))
+          ("__pfn_to_phys" (spp-arg-list ("pfn") 2602 . 2607) . ((semantic-list "((phys_addr_t)(pfn) << PAGE_SHIFT)" 2608 . 2642)))
+          ("MT_DEVICE_nGnRE" . ((number "1" 2907 . 2908)))
+          ("virt_to_page" (spp-arg-list ("kaddr") 4338 . 4345) . ((symbol "pfn_to_page" 4346 . 4357) (semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 4357 . 4384)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!arm64!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

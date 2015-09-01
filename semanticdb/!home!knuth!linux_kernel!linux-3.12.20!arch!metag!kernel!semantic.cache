@@ -1,0 +1,251 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/export.h" include (:system-flag t) nil [144 169])
+            ("linux/bootmem.h" include (:system-flag t) nil [170 196])
+            ("linux/console.h" include (:system-flag t) nil [197 223])
+            ("linux/cpu.h" include (:system-flag t) nil [224 246])
+            ("linux/delay.h" include (:system-flag t) nil [247 271])
+            ("linux/errno.h" include (:system-flag t) nil [272 296])
+            ("linux/fs.h" include (:system-flag t) nil [297 318])
+            ("linux/genhd.h" include (:system-flag t) nil [319 343])
+            ("linux/init.h" include (:system-flag t) nil [344 367])
+            ("linux/initrd.h" include (:system-flag t) nil [368 393])
+            ("linux/interrupt.h" include (:system-flag t) nil [394 422])
+            ("linux/kernel.h" include (:system-flag t) nil [423 448])
+            ("linux/memblock.h" include (:system-flag t) nil [449 476])
+            ("linux/mm.h" include (:system-flag t) nil [477 498])
+            ("linux/of_fdt.h" include (:system-flag t) nil [499 524])
+            ("linux/of_platform.h" include (:system-flag t) nil [525 555])
+            ("linux/pfn.h" include (:system-flag t) nil [556 578])
+            ("linux/root_dev.h" include (:system-flag t) nil [579 606])
+            ("linux/sched.h" include (:system-flag t) nil [607 631])
+            ("linux/seq_file.h" include (:system-flag t) nil [632 659])
+            ("linux/start_kernel.h" include (:system-flag t) nil [660 691])
+            ("linux/string.h" include (:system-flag t) nil [692 717])
+            ("asm/cachepart.h" include (:system-flag t) nil [719 745])
+            ("asm/clock.h" include (:system-flag t) nil [746 768])
+            ("asm/core_reg.h" include (:system-flag t) nil [769 794])
+            ("asm/cpu.h" include (:system-flag t) nil [795 815])
+            ("asm/da.h" include (:system-flag t) nil [816 835])
+            ("asm/highmem.h" include (:system-flag t) nil [836 860])
+            ("asm/hwthread.h" include (:system-flag t) nil [861 886])
+            ("asm/l2cache.h" include (:system-flag t) nil [887 911])
+            ("asm/mach/arch.h" include (:system-flag t) nil [912 938])
+            ("asm/metag_mem.h" include (:system-flag t) nil [939 965])
+            ("asm/metag_regs.h" include (:system-flag t) nil [966 993])
+            ("asm/mmu.h" include (:system-flag t) nil [994 1014])
+            ("asm/mmzone.h" include (:system-flag t) nil [1015 1038])
+            ("asm/processor.h" include (:system-flag t) nil [1039 1065])
+            ("asm/prom.h" include (:system-flag t) nil [1066 1087])
+            ("asm/sections.h" include (:system-flag t) nil [1088 1113])
+            ("asm/setup.h" include (:system-flag t) nil [1114 1136])
+            ("asm/traps.h" include (:system-flag t) nil [1137 1159])
+            ("DEFAULT_PRIV" variable (:constant-flag t) nil [1219 1231])
+            ("META2_PRIV" variable (:constant-flag t) nil [1631 1641])
+            ("UNALIGNED_PRIV" variable (:constant-flag t) nil [1831 1845])
+            ("PRIV_BITS" variable (:constant-flag t) nil [1864 1873])
+            ("PRIVSYSR_BITS" variable (:constant-flag t) nil [2327 2340])
+            ("PIOREG_BITS" variable (:constant-flag t) nil [2451 2462])
+            ("PSYREG_BITS" variable (:constant-flag t) nil [2604 2615])
+            ("_heap_start" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [2629 2655])
+            ("__initdata" variable (:type ("machine_desc" type (:type "class") nil nil)) nil [2858 2882])
+            ("__read_mostly" variable
+               (:default-value "{
+	[0 ... NR_CPUS-1] = BAD_HWTHREAD_ID
+}"
+                :type "int")
+                nil [3102 3159])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cpu_2_hwthread_id" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3178 3196]))                  
+                :type "int")
+                nil [3160 3197])
+            ("__read_mostly" variable
+               (:default-value "{
+	[0 ... 3] = BAD_CPU_ID
+}"
+                :type "int")
+                nil [3429 3473])
+            ("meta_memoffset" variable (:type "unsigned int") nil [3816 3844])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("meta_memoffset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3859 3874]))                  
+                :type "int")
+                nil [3845 3875])
+            ("original_cmd_line" variable
+               (:pointer 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [3889 3919])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("PTBI" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3936 3941])
+                    ("" variable (:type ("pTBI" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3942 3947]))                  
+                :type "int")
+                nil [3921 3948])
+            ("parse_hwthread_map" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4220 4228]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4194 4751])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("parse_hwthread_map" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4780 4799]))                  
+                :type "int")
+                nil [4752 4800])
+            ("dump_machine_table" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4833 4838]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4807 5231])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5540 5557]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5522 11041])
+            ("customize_machine" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11079 11084]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11054 11302])
+            ("arch_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("customize_machine" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11317 11335]))                  
+                :type "int")
+                nil [11303 11336])
+            ("init_machine_late" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11374 11379]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11349 11453])
+            ("late_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("init_machine_late" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11468 11486]))                  
+                :type "int")
+                nil [11454 11487])
+            ("metag_start_kernel" function
+               (:arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14292 14303]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [14266 14707])
+            ("setup_priv" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14940 14945]))                  
+                :type "void")
+                nil [14924 15206])
+            ("pTBI_get" function
+               (:arguments 
+                  ( ("cpu" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [15222 15239]))                  
+                :type ("PTBI" type (:type "class") nil nil))
+                nil [15208 15271])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pTBI_get" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15286 15295]))                  
+                :type "int")
+                nil [15272 15296])
+            ("capabilities" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "\"\""
+                :type "char")
+                nil [15539 15571])
+            ("caps_kern_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{
+		.procname	= \"capabilities\",
+		.data		= capabilities,
+		.maxlen		= sizeof(capabilities),
+		.mode		= 0444,
+		.proc_handler	= proc_dostring,
+	},
+	{}
+}"
+                :type ("ctl_table" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [15580 15779])
+            ("caps_root_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{
+		.procname	= \"kernel\",
+		.mode		= 0555,
+		.child		= caps_kern_table,
+	},
+	{}
+}"
+                :type ("ctl_table" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [15781 15910])
+            ("capabilities_register_sysctl" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [15959 15964]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [15923 16189])
+            ("core_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("capabilities_register_sysctl" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16205 16234]))                  
+                :type "int")
+                nil [16191 16235]))          
+      :file "setup.c"
+      :pointmax 16236
+      :fsize 16235
+      :lastmodtime '(21976 3065 880725 635000)
+      :unmatched-syntax '((INT 15919 . 15922) (STATIC 15912 . 15918) (VOID 14261 . 14265) (INT 11345 . 11348) (STATIC 11338 . 11344) (INT 11050 . 11053) (STATIC 11043 . 11049) (VOID 5517 . 5521) (VOID 4802 . 4806) (string 4764 . 4778) (INT 4190 . 4193) (STATIC 4183 . 4189) (CHAR 3884 . 3888) (STATIC 3877 . 3883) (semantic-list 3425 . 3428) (symbol 3408 . 3425) (symbol 3405 . 3407) (semantic-list 3092 . 3101) (symbol 3075 . 3092) (symbol 3072 . 3074) (punctuation 2857 . 2858) (symbol 2844 . 2856) (STRUCT 2837 . 2843))
+      :lexical-table 
+        '(("META2_PRIV" . ((semantic-list "(TXPRIVEXT_TXTIMER_BIT		| \\
+			 TXPRIVEXT_TRACE_BIT)" 1642 . 1694)))
+          ("PSYREG_BITS" . ((number "0xfffffffb" 2616 . 2626)))
+          ("DEFAULT_PRIV" . ((semantic-list "(TXPRIVEXT_COPRO_BITS		| \\
+			 TXPRIVEXT_TXTRIGGER_BIT	| \\
+			 TXPRIVEXT_TXGBLCREG_BIT	| \\
+			 TXPRIVEXT_ILOCK_BIT		| \\
+			 TXPRIVEXT_TXITACCYC_BIT	| \\
+			 TXPRIVEXT_TXDIVTIME_BIT	| \\
+			 TXPRIVEXT_TXAMAREGX_BIT	| \\
+			 TXPRIVEXT_TXTIMERI_BIT		| \\
+			 TXPRIVEXT_TXSTATUS_BIT		| \\
+			 TXPRIVEXT_TXDISABLE_BIT)" 1232 . 1540)))
+          ("PIOREG_BITS" . ((number "0xffffffff" 2463 . 2473)))
+          ("UNALIGNED_PRIV" . ((number "0" 1846 . 1847)))
+          ("PRIV_BITS" . ((semantic-list "(DEFAULT_PRIV			| \\
+			 META2_PRIV			| \\
+			 UNALIGNED_PRIV)" 1875 . 1935)))
+          ("PRIVSYSR_BITS" . ((semantic-list "(TXPRIVSYSR_ALL_BITS & ~TXPRIVSYSR_CORECODE_BIT)" 2341 . 2389)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!metag!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

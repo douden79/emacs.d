@@ -1,4 +1,6 @@
-((("require" .
+((("helm-cscope-pop-mark" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("require" .
    [0 0 0 0 0 1 0])
   ("powerline" .
    [0 0 0 1 0 0 0 0 0])))

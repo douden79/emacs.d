@@ -1,0 +1,208 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [477 500])
+            ("linux/ioport.h" include (:system-flag t) nil [501 526])
+            ("linux/export.h" include (:system-flag t) nil [527 552])
+            ("linux/screen_info.h" include (:system-flag t) nil [553 583])
+            ("linux/memblock.h" include (:system-flag t) nil [584 611])
+            ("linux/bootmem.h" include (:system-flag t) nil [612 638])
+            ("linux/initrd.h" include (:system-flag t) nil [639 664])
+            ("linux/root_dev.h" include (:system-flag t) nil [665 692])
+            ("linux/highmem.h" include (:system-flag t) nil [693 719])
+            ("linux/console.h" include (:system-flag t) nil [720 746])
+            ("linux/pfn.h" include (:system-flag t) nil [747 769])
+            ("linux/debugfs.h" include (:system-flag t) nil [770 796])
+            ("linux/kexec.h" include (:system-flag t) nil [797 821])
+            ("linux/sizes.h" include (:system-flag t) nil [822 846])
+            ("asm/addrspace.h" include (:system-flag t) nil [848 874])
+            ("asm/bootinfo.h" include (:system-flag t) nil [875 900])
+            ("asm/bugs.h" include (:system-flag t) nil [901 922])
+            ("asm/cache.h" include (:system-flag t) nil [923 945])
+            ("asm/cpu.h" include (:system-flag t) nil [946 966])
+            ("asm/sections.h" include (:system-flag t) nil [967 992])
+            ("asm/setup.h" include (:system-flag t) nil [993 1015])
+            ("asm/smp-ops.h" include (:system-flag t) nil [1016 1040])
+            ("asm/prom.h" include (:system-flag t) nil [1041 1062])
+            ("__read_mostly" variable (:type "int") nil [1102 1116])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cpu_data" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1132 1141]))                  
+                :type "int")
+                nil [1118 1142])
+            ("PCI_DMA_BUS_IS_PHYS" variable (:type "unsigned int") nil [1272 1305])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("PCI_DMA_BUS_IS_PHYS" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1321 1341]))                  
+                :type "int")
+                nil [1307 1342])
+            ("__read_mostly" variable
+               (:default-value "MACH_UNKNOWN"
+                :type ("mips_machtype" type (:type "class") nil nil))
+                nil [1447 1490])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("mips_machtype" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1506 1520]))                  
+                :type "int")
+                nil [1492 1521])
+            ("boot_mem_map" variable (:type ("boot_mem_map" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1523 1556])
+            ("command_line" variable
+               (:dereference 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1570 1613])
+            ("arcs_cmdline" variable
+               (:dereference 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1619 1662])
+            ("mips_io_port_base" variable
+               (:constant-flag t
+                :default-value "-1"
+                :type "unsigned long")
+                nil [1881 1924])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("mips_io_port_base" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1939 1957]))                  
+                :type "int")
+                nil [1925 1958])
+            ("code_resource" variable
+               (:typemodifiers ("static")
+                :default-value "{ .name = \"Kernel code\", }"
+                :type ("resource" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1960 2026])
+            ("data_resource" variable
+               (:typemodifiers ("static")
+                :default-value "{ .name = \"Kernel data\", }"
+                :type ("resource" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2027 2093])
+            ("__initdata" variable
+               (:default-value "detect_memory_region"
+                :type ("detect_magic" type (:type "class") nil nil))
+                nil [2108 2155])
+            ("add_memory_region" function
+               (:arguments 
+                  ( ("start" variable (:type ("phys_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2187 2200])
+                    ("size" variable (:type ("phys_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2201 2213])
+                    ("type" variable (:type "long") (reparse-symbol arg-sub-list) [2214 2224]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2162 3152])
+            ("detect_memory_region" function
+               (:arguments 
+                  ( ("start" variable (:type ("phys_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3187 3200])
+                    ("sz_min" variable (:type ("phys_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3201 3215])
+                    ("sz_max" variable (:type ("phys_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3216 3230]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3159 3675])
+            ("print_memory_map" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3713 3718]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3689 4417])
+            ("init_initrd" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6646 6651]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6627 6666])
+            ("finalize_initrd" variable (:constant-flag t) nil [6676 6691])
+            ("bootmem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6977 6982]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6957 10603])
+            ("__initdata" variable (:type ("usermem" type (:type "class") nil nil)) nil [11475 11494])
+            ("early_parse_mem" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11530 11538]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11507 11881])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_parse_mem" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11901 11917]))                  
+                :type "int")
+                nil [11882 11918])
+            ("arch_mem_addpart" function
+               (:arguments 
+                  ( ("mem" variable (:type ("phys_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12788 12799])
+                    ("end" variable (:type ("phys_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12800 12811])
+                    ("type" variable (:type "int") (reparse-symbol arg-sub-list) [12812 12821]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [12764 13143])
+            ("mips_parse_crashkernel" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14085 14090]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [14055 14094])
+            ("request_crashkernel" function
+               (:arguments 
+                  ( ("res" variable
+                       (:pointer 1
+                        :type ("resource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14135 14156]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [14108 14160])
+            ("arch_mem_init" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14232 14249]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [14211 16095])
+            ("resource_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [16130 16135]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [16109 17327])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [17352 17369]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [17334 17737])
+            ("kernelsp" variable
+               (:dereference 1
+                :type "unsigned long")
+                nil [17739 17771])
+            ("fw_arg0" variable (:type "unsigned long") nil [17772 17821])
+            ("fw_arg1" variable (:type "unsigned long") nil [17772 17821])
+            ("fw_arg2" variable (:type "unsigned long") nil [17772 17821])
+            ("fw_arg3" variable (:type "unsigned long") nil [17772 17821]))          
+      :file "setup.c"
+      :pointmax 18076
+      :fsize 18075
+      :lastmodtime '(21976 3065 996725 632000)
+      :unmatched-syntax '((VOID 17329 . 17333) (VOID 16104 . 16108) (STATIC 16097 . 16103) (VOID 14206 . 14210) (STATIC 14199 . 14205) (VOID 14103 . 14107) (STATIC 14096 . 14102) (VOID 14050 . 14054) (STATIC 14043 . 14049) (VOID 12759 . 12763) (STATIC 12752 . 12758) (string 11894 . 11899) (INT 11503 . 11506) (STATIC 11496 . 11502) (INT 11471 . 11474) (STATIC 11464 . 11470) (VOID 6952 . 6956) (STATIC 6945 . 6951) (LONG 6622 . 6626) (UNSIGNED 6613 . 6621) (STATIC 6606 . 6612) (VOID 3684 . 3688) (STATIC 3677 . 3683) (VOID 3154 . 3158) (VOID 2157 . 2161) (punctuation 2107 . 2108) (VOID 2102 . 2106) (STATIC 2095 . 2101) (CHAR 1614 . 1618) (CHAR 1565 . 1569) (STATIC 1558 . 1564) (LONG 1442 . 1446) (UNSIGNED 1433 . 1441) (semantic-list 1092 . 1101) (symbol 1084 . 1092) (symbol 1071 . 1083) (STRUCT 1064 . 1070))
+      :lexical-table 
+        '(("finalize_initrd" (spp-arg-list nil 6691 . 6693) . 
+              ((DO "do" 6694 . 6696) (semantic-list "{}" 6697 . 6699) (WHILE "while" 6700 . 6705) (semantic-list "(0)" 6706 . 6709)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!mips!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

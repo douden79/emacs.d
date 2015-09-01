@@ -1,0 +1,254 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/errno.h" include (:system-flag t) nil [410 434])
+            ("linux/sched.h" include (:system-flag t) nil [435 459])
+            ("linux/kernel.h" include (:system-flag t) nil [460 485])
+            ("linux/mm.h" include (:system-flag t) nil [486 507])
+            ("linux/stddef.h" include (:system-flag t) nil [508 533])
+            ("linux/unistd.h" include (:system-flag t) nil [534 559])
+            ("linux/ptrace.h" include (:system-flag t) nil [560 585])
+            ("linux/user.h" include (:system-flag t) nil [586 609])
+            ("linux/tty.h" include (:system-flag t) nil [610 632])
+            ("linux/ioport.h" include (:system-flag t) nil [633 658])
+            ("linux/delay.h" include (:system-flag t) nil [659 683])
+            ("linux/init.h" include (:system-flag t) nil [684 707])
+            ("linux/bootmem.h" include (:system-flag t) nil [708 734])
+            ("linux/seq_file.h" include (:system-flag t) nil [735 762])
+            ("linux/cpu.h" include (:system-flag t) nil [763 785])
+            ("asm/processor.h" include (:system-flag t) nil [786 812])
+            ("linux/console.h" include (:system-flag t) nil [813 839])
+            ("asm/uaccess.h" include (:system-flag t) nil [840 864])
+            ("asm/setup.h" include (:system-flag t) nil [865 887])
+            ("asm/io.h" include (:system-flag t) nil [888 907])
+            ("asm/smp.h" include (:system-flag t) nil [908 928])
+            ("proc/proc.h" include (:system-flag t) nil [929 951])
+            ("asm/fpu.h" include (:system-flag t) nil [952 972])
+            ("asm/sections.h" include (:system-flag t) nil [973 998])
+            ("boot_cpu_data" variable (:type ("mn10300_cpuinfo" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [1000 1037])
+            ("pci_mem_start" variable
+               (:default-value "0x18000000"
+                :type "unsigned long")
+                nil [1086 1127])
+            ("cmd_line" variable
+               (:dereference 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1141 1180])
+            ("redboot_command_line" variable
+               (:dereference 1
+                :default-value "\"console=ttyS0,115200 root=/dev/mtdblock3 rw\""
+                :type "char")
+                nil [1181 1275])
+            ("redboot_platform_name" variable
+               (:dereference 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1282 1334])
+            ("code_resource" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.start	= 0x100000,
+	.end	= 0,
+	.name	= \"Kernel code\",
+}"
+                :type ("resource" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1336 1434])
+            ("data_resource" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.start	= 0,
+	.end	= 0,
+	.name	= \"Kernel data\",
+}"
+                :type ("resource" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1436 1527])
+            ("phys_memory_base" variable (:type ("__initdata" type (:type "class") nil nil)) nil [1550 1578])
+            ("phys_memory_end" variable (:type ("__initdata" type (:type "class") nil nil)) nil [1600 1627])
+            ("memory_end" variable (:type ("__initdata" type (:type "class") nil nil)) nil [1649 1671])
+            ("memory_size" variable (:type "unsigned long") nil [1672 1698])
+            ("__current_ti" variable
+               (:pointer 1
+                :default-value "&init_thread_union.thread_info;"
+                :type ("thread_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1700 1766])
+            ("__current" variable
+               (:pointer 1
+                :default-value "&init_task"
+                :type ("task_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1767 1810])
+            ("mn10300_known_cpus" variable (:constant-flag t) nil [1820 1838])
+            ("mn10300_cputypes" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"am33-1\",
+	\"am33-2\",
+	\"am34-1\",
+	\"am33-3\",
+	\"am34-2\",
+	\"unknown\"
+}"
+                :type "char")
+                nil [1841 1957])
+            ("early_mem" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2076 2084]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2059 2192])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_mem" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2212 2222]))                  
+                :type "int")
+                nil [2193 2223])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2286 2303]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2268 4258])
+            ("cpu_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4318 4323]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4302 4732])
+            ("cpu_devices" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("cpu" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4734 4773])
+            ("topology_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4807 4812]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4786 4898])
+            ("subsys_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("topology_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4916 4930]))                  
+                :type "int")
+                nil [4900 4931])
+            ("show_cpuinfo" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5010 5029])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5030 5038]))                  
+                :type "int")
+                nil [4986 6520])
+            ("c_start" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6543 6562])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6563 6575]))                  
+                :type "void")
+                nil [6522 6628])
+            ("c_next" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6650 6669])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6670 6678])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6679 6691]))                  
+                :type "void")
+                nil [6630 6729])
+            ("c_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6750 6769])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6770 6778]))                  
+                :type "void")
+                nil [6731 6782])
+            ("cpuinfo_op" variable
+               (:constant-flag t
+                :default-value "{
+	.start	= c_start,
+	.next	= c_next,
+	.stop	= c_stop,
+	.show	= show_cpuinfo,
+}"
+                :type ("seq_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6784 6905]))          
+      :file "setup.c"
+      :pointmax 6906
+      :fsize 6905
+      :lastmodtime '(21976 3066 52725 630000)
+      :unmatched-syntax '((INT 4782 . 4785) (STATIC 4775 . 4781) (VOID 4297 . 4301) (VOID 2263 . 2267) (string 2205 . 2210) (INT 2055 . 2058) (STATIC 2048 . 2054) (LONG 1644 . 1648) (UNSIGNED 1635 . 1643) (STATIC 1628 . 1634) (LONG 1595 . 1599) (UNSIGNED 1586 . 1594) (STATIC 1579 . 1585) (LONG 1545 . 1549) (UNSIGNED 1536 . 1544) (STATIC 1529 . 1535) (CHAR 1277 . 1281) (CHAR 1136 . 1140) (STATIC 1129 . 1135))
+      :lexical-table 
+        '(("mn10300_known_cpus" . ((number "5" 1839 . 1840)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!mn10300!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

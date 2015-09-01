@@ -1,0 +1,78 @@
+;; Object mm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mm/"
+  :tables
+  (list
+    (semanticdb-table "init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/gfp.h" include (:system-flag t) nil [93 115])
+            ("linux/swap.h" include (:system-flag t) nil [116 139])
+            ("linux/bootmem.h" include (:system-flag t) nil [140 166])
+            ("linux/uaccess.h" include (:system-flag t) nil [167 193])
+            ("linux/export.h" include (:system-flag t) nil [194 219])
+            ("asm/bfin-global.h" include (:system-flag t) nil [220 248])
+            ("asm/pda.h" include (:system-flag t) nil [249 269])
+            ("asm/cplbinit.h" include (:system-flag t) nil [270 295])
+            ("asm/early_printk.h" include (:system-flag t) nil [296 325])
+            ("blackfin_sram.h" include nil nil [326 352])
+            ("empty_zero_page" variable
+               (:dereference 1
+                :type "char")
+                nil [515 583])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("empty_zero_page" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [598 614]))                  
+                :type "int")
+                nil [584 615])
+            ("exception_stack" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :type "unsigned long")
+                nil [719 771])
+            ("cpu_pda" variable
+               (:dereference 1
+                :type ("blackfin_pda" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [780 817])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cpu_pda" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [832 840]))                  
+                :type "int")
+                nil [818 841])
+            ("paging_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1108 1113]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1089 1764])
+            ("init_pda" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1798 1803]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1782 2378])
+            ("mem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2401 2406]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2385 2757])
+            ("free_initmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2988 2993]))                  
+                :type ("__init_refok" type (:type "class") nil nil))
+                nil [2962 3183]))          
+      :file "init.c"
+      :pointmax 3184
+      :fsize 3183
+      :lastmodtime '(21976 3065 716725 640000)
+      :unmatched-syntax '((VOID 2957 . 2961) (VOID 2380 . 2384) (VOID 1777 . 1781) (symbol 1766 . 1776) (VOID 1084 . 1088)))
+    (semanticdb-table "blackfin_sram.h"
+      :file "blackfin_sram.h"
+      :fsize 243
+      :lastmodtime '(21976 3065 716725 640000)))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!blackfin!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

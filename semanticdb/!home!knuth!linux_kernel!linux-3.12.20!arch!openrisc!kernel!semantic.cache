@@ -1,0 +1,214 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/errno.h" include (:system-flag t) nil [705 729])
+            ("linux/sched.h" include (:system-flag t) nil [730 754])
+            ("linux/kernel.h" include (:system-flag t) nil [755 780])
+            ("linux/mm.h" include (:system-flag t) nil [781 802])
+            ("linux/stddef.h" include (:system-flag t) nil [803 828])
+            ("linux/unistd.h" include (:system-flag t) nil [829 854])
+            ("linux/ptrace.h" include (:system-flag t) nil [855 880])
+            ("linux/slab.h" include (:system-flag t) nil [881 904])
+            ("linux/tty.h" include (:system-flag t) nil [905 927])
+            ("linux/ioport.h" include (:system-flag t) nil [928 953])
+            ("linux/delay.h" include (:system-flag t) nil [954 978])
+            ("linux/console.h" include (:system-flag t) nil [979 1005])
+            ("linux/init.h" include (:system-flag t) nil [1006 1029])
+            ("linux/bootmem.h" include (:system-flag t) nil [1030 1056])
+            ("linux/seq_file.h" include (:system-flag t) nil [1057 1084])
+            ("linux/serial.h" include (:system-flag t) nil [1085 1110])
+            ("linux/initrd.h" include (:system-flag t) nil [1111 1136])
+            ("linux/of_fdt.h" include (:system-flag t) nil [1137 1162])
+            ("linux/of.h" include (:system-flag t) nil [1163 1184])
+            ("linux/memblock.h" include (:system-flag t) nil [1185 1212])
+            ("linux/device.h" include (:system-flag t) nil [1213 1238])
+            ("linux/of_platform.h" include (:system-flag t) nil [1239 1269])
+            ("asm/segment.h" include (:system-flag t) nil [1271 1295])
+            ("asm/pgtable.h" include (:system-flag t) nil [1296 1320])
+            ("asm/types.h" include (:system-flag t) nil [1321 1343])
+            ("asm/setup.h" include (:system-flag t) nil [1344 1366])
+            ("asm/io.h" include (:system-flag t) nil [1367 1386])
+            ("asm/cpuinfo.h" include (:system-flag t) nil [1387 1411])
+            ("asm/delay.h" include (:system-flag t) nil [1412 1434])
+            ("vmlinux.h" include nil nil [1436 1456])
+            ("cmd_line" variable
+               (:dereference 1
+                :default-value "CONFIG_CMDLINE"
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1463 1519])
+            ("setup_memory" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1562 1567]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1542 3032])
+            ("cpuinfo" variable (:type ("cpuinfo" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [3034 3057])
+            ("print_cpuinfo" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3085 3090]))                  
+                :type "void")
+                nil [3059 4819])
+            ("setup_cpuinfo" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4847 4852]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4826 5970])
+            ("or32_early_setup" function
+               (:arguments 
+                  ( ("fdt" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6227 6244]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6203 6447])
+            ("openrisc_device_probe" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6489 6494]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6460 6557])
+            ("device_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("openrisc_device_probe" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6575 6597]))                  
+                :type "int")
+                nil [6559 6598])
+            ("extract_value_bits" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("reg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6647 6665])
+                    ("bit_nr" variable (:type "short") (reparse-symbol arg-sub-list) [6678 6691])
+                    ("width" variable (:type "short") (reparse-symbol arg-sub-list) [6692 6704]))                  
+                :type "unsigned long")
+                nil [6600 6748])
+            ("extract_value" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("reg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6792 6810])
+                    ("mask" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6811 6830]))                  
+                :type "unsigned long")
+                nil [6750 6920])
+            ("detect_unit_config" function
+               (:arguments 
+                  ( ("upr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6953 6971])
+                    ("mask" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6972 6991])
+                    ("text" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7002 7013])
+                    ("func" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7028 7033]))                          
+                        :type "void")
+                        nil nil))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6927 7196])
+            ("calibrate_delay" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7388 7393]))                  
+                :type "void")
+                nil [7367 7815])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7840 7857]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7822 8751])
+            ("show_cpuinfo" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8777 8796])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8797 8805]))                  
+                :type "int")
+                nil [8753 9773])
+            ("c_start" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9796 9815])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9816 9829]))                  
+                :type "void")
+                nil [9775 9901])
+            ("c_next" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9923 9942])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9943 9951])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9952 9965]))                  
+                :type "void")
+                nil [9903 9992])
+            ("c_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10013 10032])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10033 10041]))                  
+                :type "void")
+                nil [9994 10045])
+            ("cpuinfo_op" variable
+               (:constant-flag t
+                :default-value "{
+	.start = c_start,
+	.next = c_next,
+	.stop = c_stop,
+	.show = show_cpuinfo,
+}"
+                :type ("seq_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10047 10168]))          
+      :file "setup.c"
+      :pointmax 10169
+      :fsize 10168
+      :lastmodtime '(21976 3066 64725 630000)
+      :unmatched-syntax '((VOID 7817 . 7821) (VOID 6922 . 6926) (INT 6456 . 6459) (STATIC 6449 . 6455) (VOID 6198 . 6202) (VOID 4821 . 4825) (LONG 1537 . 1541) (UNSIGNED 1528 . 1536) (STATIC 1521 . 1527) (CHAR 1458 . 1462))))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!openrisc!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

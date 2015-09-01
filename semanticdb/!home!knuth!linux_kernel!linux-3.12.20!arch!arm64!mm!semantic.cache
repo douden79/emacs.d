@@ -1,0 +1,120 @@
+;; Object mm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mm/"
+  :tables
+  (list
+    (semanticdb-table "init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [698 723])
+            ("linux/export.h" include (:system-flag t) nil [724 749])
+            ("linux/errno.h" include (:system-flag t) nil [750 774])
+            ("linux/swap.h" include (:system-flag t) nil [775 798])
+            ("linux/init.h" include (:system-flag t) nil [799 822])
+            ("linux/bootmem.h" include (:system-flag t) nil [823 849])
+            ("linux/mman.h" include (:system-flag t) nil [850 873])
+            ("linux/nodemask.h" include (:system-flag t) nil [874 901])
+            ("linux/initrd.h" include (:system-flag t) nil [902 927])
+            ("linux/gfp.h" include (:system-flag t) nil [928 950])
+            ("linux/memblock.h" include (:system-flag t) nil [951 978])
+            ("linux/sort.h" include (:system-flag t) nil [979 1002])
+            ("linux/of_fdt.h" include (:system-flag t) nil [1003 1028])
+            ("asm/prom.h" include (:system-flag t) nil [1030 1051])
+            ("asm/sections.h" include (:system-flag t) nil [1052 1077])
+            ("asm/setup.h" include (:system-flag t) nil [1078 1100])
+            ("asm/sizes.h" include (:system-flag t) nil [1101 1123])
+            ("asm/tlb.h" include (:system-flag t) nil [1124 1144])
+            ("mm.h" include nil nil [1146 1161])
+            ("__initdata" variable
+               (:default-value "0"
+                :type ("phys_initrd_start" type (:type "class") nil nil))
+                nil [1184 1217])
+            ("__initdata" variable
+               (:default-value "0"
+                :type ("phys_initrd_size" type (:type "class") nil nil))
+                nil [1239 1271])
+            ("__read_mostly" variable
+               (:default-value "0"
+                :type ("memstart_addr" type (:type "class") nil nil))
+                nil [1285 1317])
+            ("early_init_dt_setup_initrd_arch" function
+               (:arguments 
+                  ( ("start" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1363 1373])
+                    ("end" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1374 1382]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1324 1447])
+            ("early_initrd" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1480 1488]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1460 1690])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_initrd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1713 1726]))                  
+                :type "int")
+                nil [1691 1727])
+            ("MAX_DMA32_PFN" variable (:constant-flag t) nil [1737 1750])
+            ("zone_sizes_init" function
+               (:arguments 
+                  ( ("min" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1830 1848])
+                    ("max" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1849 1867]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1807 2902])
+            ("arm64_memory_present" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3114 3119]))                  
+                :type "void")
+                nil [3081 3123])
+            ("arm64_memblock_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3382 3387]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3355 4619])
+            ("bootmem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4646 4651]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4626 5035])
+            ("free_memmap" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("start_pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5101 5125])
+                    ("end_pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5126 5148]))                  
+                :type "void")
+                nil [5070 5696])
+            ("free_unused_memmap" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5822 5827]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5796 6748])
+            ("mem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7009 7014]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6993 8837])
+            ("free_initmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8857 8862]))                  
+                :type "void")
+                nil [8839 8892]))          
+      :file "init.c"
+      :pointmax 9230
+      :fsize 9229
+      :lastmodtime '(21976 3065 676725 641000)
+      :unmatched-syntax '((VOID 6988 . 6992) (VOID 5791 . 5795) (STATIC 5784 . 5790) (VOID 4621 . 4625) (VOID 3350 . 3354) (VOID 1802 . 1806) (STATIC 1795 . 1801) (string 1703 . 1711) (INT 1456 . 1459) (STATIC 1449 . 1455) (VOID 1319 . 1323) (symbol 1273 . 1284) (LONG 1234 . 1238) (UNSIGNED 1225 . 1233) (STATIC 1218 . 1224) (LONG 1179 . 1183) (UNSIGNED 1170 . 1178) (STATIC 1163 . 1169))
+      :lexical-table 
+        '(("MAX_DMA32_PFN" . ((semantic-list "((4UL * 1024 * 1024 * 1024) >> PAGE_SHIFT)" 1751 . 1793)))
+          )
+)
+    (semanticdb-table "mm.h"
+      :file "mm.h"
+      :fsize 84
+      :lastmodtime '(21976 3065 676725 641000)))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!arm64!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

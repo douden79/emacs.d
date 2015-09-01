@@ -1,0 +1,2859 @@
+;; Object tty/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "tty/"
+  :tables
+  (list
+    (semanticdb-table "sysrq.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [426 432])
+            ("linux/sched.h" include (:system-flag t) nil [463 487])
+            ("linux/sched/rt.h" include (:system-flag t) nil [488 515])
+            ("linux/interrupt.h" include (:system-flag t) nil [516 544])
+            ("linux/mm.h" include (:system-flag t) nil [545 566])
+            ("linux/fs.h" include (:system-flag t) nil [567 588])
+            ("linux/mount.h" include (:system-flag t) nil [589 613])
+            ("linux/kdev_t.h" include (:system-flag t) nil [614 639])
+            ("linux/major.h" include (:system-flag t) nil [640 664])
+            ("linux/reboot.h" include (:system-flag t) nil [665 690])
+            ("linux/sysrq.h" include (:system-flag t) nil [691 715])
+            ("linux/kbd_kern.h" include (:system-flag t) nil [716 743])
+            ("linux/proc_fs.h" include (:system-flag t) nil [744 770])
+            ("linux/nmi.h" include (:system-flag t) nil [771 793])
+            ("linux/quotaops.h" include (:system-flag t) nil [794 821])
+            ("linux/perf_event.h" include (:system-flag t) nil [822 851])
+            ("linux/kernel.h" include (:system-flag t) nil [852 877])
+            ("linux/module.h" include (:system-flag t) nil [878 903])
+            ("linux/suspend.h" include (:system-flag t) nil [904 930])
+            ("linux/writeback.h" include (:system-flag t) nil [931 959])
+            ("linux/swap.h" include (:system-flag t) nil [960 983])
+            ("linux/spinlock.h" include (:system-flag t) nil [984 1011])
+            ("linux/vt_kern.h" include (:system-flag t) nil [1012 1038])
+            ("linux/workqueue.h" include (:system-flag t) nil [1039 1067])
+            ("linux/hrtimer.h" include (:system-flag t) nil [1068 1094])
+            ("linux/oom.h" include (:system-flag t) nil [1095 1117])
+            ("linux/slab.h" include (:system-flag t) nil [1118 1141])
+            ("linux/input.h" include (:system-flag t) nil [1142 1166])
+            ("linux/uaccess.h" include (:system-flag t) nil [1167 1193])
+            ("linux/moduleparam.h" include (:system-flag t) nil [1194 1224])
+            ("linux/jiffies.h" include (:system-flag t) nil [1225 1251])
+            ("linux/syscalls.h" include (:system-flag t) nil [1252 1279])
+            ("linux/of.h" include (:system-flag t) nil [1280 1301])
+            ("asm/ptrace.h" include (:system-flag t) nil [1303 1326])
+            ("asm/irq_regs.h" include (:system-flag t) nil [1327 1352])
+            ("sysrq_enabled" variable
+               (:default-value "SYSRQ_DEFAULT_ENABLE"
+                :type ("__read_mostly" type (:type "class") nil nil))
+                nil [1422 1473])
+            ("sysrq_always_enabled" variable (:type ("__read_mostly" type (:type "class") nil nil)) nil [1486 1521])
+            ("__weak" variable
+               (:default-value "{ KEY_RESERVED }"
+                :type "int")
+                nil [1565 1591])
+            ("__weak" variable (:type ("sysrq_reset_downtime_ms" type (:type "class") nil nil)) nil [1596 1627])
+            ("sysrq_on" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1650 1655]))                  
+                :type "bool")
+                nil [1629 1706])
+            ("sysrq_on_mask" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mask" variable (:type "int") (reparse-symbol arg-sub-list) [1807 1816]))                  
+                :type "bool")
+                nil [1781 1914])
+            ("sysrq_always_enabled_setup" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1961 1971]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1927 2054])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sysrq_always_enabled_setup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2088 2115]))                  
+                :type "int")
+                nil [2056 2116])
+            ("sysrq_handle_loglevel" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [2153 2161]))                  
+                :type "void")
+                nil [2119 2272])
+            ("sysrq_loglevel_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_loglevel,
+	.help_msg	= \"loglevel(0-9)\",
+	.action_msg	= \"Changing Loglevel\",
+	.enable_mask	= SYSRQ_ENABLE_LOG,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2273 2459])
+            ("sysrq_SAK_op" variable (:constant-flag t) nil [2784 2796])
+            ("sysrq_unraw_op" variable (:constant-flag t) nil [3142 3156])
+            ("sysrq_handle_crash" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [3243 3251]))                  
+                :type "void")
+                nil [3212 3338])
+            ("sysrq_crash_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_crash,
+	.help_msg	= \"crash(c)\",
+	.action_msg	= \"Trigger a crash\",
+	.enable_mask	= SYSRQ_ENABLE_DUMP,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3339 3513])
+            ("sysrq_handle_reboot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [3547 3555]))                  
+                :type "void")
+                nil [3515 3618])
+            ("sysrq_reboot_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_reboot,
+	.help_msg	= \"reboot(b)\",
+	.action_msg	= \"Resetting\",
+	.enable_mask	= SYSRQ_ENABLE_BOOT,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3619 3790])
+            ("sysrq_handle_sync" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [3822 3830]))                  
+                :type "void")
+                nil [3792 3853])
+            ("sysrq_sync_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_sync,
+	.help_msg	= \"sync(s)\",
+	.action_msg	= \"Emergency Sync\",
+	.enable_mask	= SYSRQ_ENABLE_SYNC,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3854 4024])
+            ("sysrq_handle_show_timers" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [4063 4071]))                  
+                :type "void")
+                nil [4026 4101])
+            ("sysrq_show_timers_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_show_timers,
+	.help_msg	= \"show-all-timers(q)\",
+	.action_msg	= \"Show clockevent devices & pending hrtimers (no others)\",
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4103 4303])
+            ("sysrq_handle_mountro" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [4338 4346]))                  
+                :type "void")
+                nil [4305 4372])
+            ("sysrq_mountro_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_mountro,
+	.help_msg	= \"unmount(u)\",
+	.action_msg	= \"Emergency Remount R/O\",
+	.enable_mask	= SYSRQ_ENABLE_REMOUNT,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4373 4562])
+            ("sysrq_showlocks_op" variable (:constant-flag t) nil [4831 4849])
+            ("sysrq_handle_showregs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [6114 6122]))                  
+                :type "void")
+                nil [6080 6223])
+            ("sysrq_showregs_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_showregs,
+	.help_msg	= \"show-registers(p)\",
+	.action_msg	= \"Show Regs\",
+	.enable_mask	= SYSRQ_ENABLE_DUMP,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6224 6407])
+            ("sysrq_handle_showstate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [6444 6452]))                  
+                :type "void")
+                nil [6409 6471])
+            ("sysrq_showstate_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_showstate,
+	.help_msg	= \"show-task-states(t)\",
+	.action_msg	= \"Show State\",
+	.enable_mask	= SYSRQ_ENABLE_DUMP,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6472 6660])
+            ("sysrq_handle_showstate_blocked" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [6705 6713]))                  
+                :type "void")
+                nil [6662 6759])
+            ("sysrq_showstate_blocked_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_showstate_blocked,
+	.help_msg	= \"show-blocked-tasks(w)\",
+	.action_msg	= \"Show Blocked State\",
+	.enable_mask	= SYSRQ_ENABLE_DUMP,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6760 6974])
+            ("sysrq_ftrace_dump_op" variable (:constant-flag t) nil [7302 7322])
+            ("sysrq_handle_showmem" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [7395 7403]))                  
+                :type "void")
+                nil [7362 7421])
+            ("sysrq_showmem_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_showmem,
+	.help_msg	= \"show-memory-usage(m)\",
+	.action_msg	= \"Show Memory\",
+	.enable_mask	= SYSRQ_ENABLE_DUMP,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7422 7608])
+            ("send_sig_all" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sig" variable (:type "int") (reparse-symbol arg-sub-list) [7714 7722]))                  
+                :type "void")
+                nil [7689 7967])
+            ("sysrq_handle_term" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [7999 8007]))                  
+                :type "void")
+                nil [7969 8058])
+            ("sysrq_term_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_term,
+	.help_msg	= \"terminate-all-tasks(e)\",
+	.action_msg	= \"Terminate All Tasks\",
+	.enable_mask	= SYSRQ_ENABLE_SIGNAL,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8059 8251])
+            ("moom_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ignored" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8279 8307]))                  
+                :type "void")
+                nil [8253 8408])
+            ("DECLARE_WORK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("moom_work" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8430 8440])
+                    ("" variable (:type ("moom_callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8441 8455]))                  
+                :type "int")
+                nil [8410 8456])
+            ("sysrq_handle_moom" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [8488 8496]))                  
+                :type "void")
+                nil [8458 8528])
+            ("sysrq_moom_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_moom,
+	.help_msg	= \"memory-full-oom-kill(f)\",
+	.action_msg	= \"Manual OOM execution\",
+	.enable_mask	= SYSRQ_ENABLE_SIGNAL,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8529 8723])
+            ("sysrq_handle_kill" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [9060 9068]))                  
+                :type "void")
+                nil [9030 9119])
+            ("sysrq_kill_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_kill,
+	.help_msg	= \"kill-all-tasks(i)\",
+	.action_msg	= \"Kill All Tasks\",
+	.enable_mask	= SYSRQ_ENABLE_SIGNAL,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9120 9302])
+            ("sysrq_handle_unrt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [9334 9342]))                  
+                :type "void")
+                nil [9304 9369])
+            ("sysrq_unrt_op" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.handler	= sysrq_handle_unrt,
+	.help_msg	= \"nice-all-RT-tasks(n)\",
+	.action_msg	= \"Nice All RT Tasks\",
+	.enable_mask	= SYSRQ_ENABLE_RTNICE,
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9370 9558])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("sysrq_key_table_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9619 9640]))                  
+                :type "int")
+                nil [9596 9641])
+            ("sysrq_key_table" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	&sysrq_loglevel_op,		/* 0 */
+	&sysrq_loglevel_op,		/* 1 */
+	&sysrq_loglevel_op,		/* 2 */
+	&sysrq_loglevel_op,		/* 3 */
+	&sysrq_loglevel_op,		/* 4 */
+	&sysrq_loglevel_op,		/* 5 */
+	&sysrq_loglevel_op,		/* 6 */
+	&sysrq_loglevel_op,		/* 7 */
+	&sysrq_loglevel_op,		/* 8 */
+	&sysrq_loglevel_op,		/* 9 */
+
+	/*
+	 * a: Don't use for system provided sysrqs, it is handled specially on
+	 * sparc and will never arrive.
+	 */
+	NULL,				/* a */
+	&sysrq_reboot_op,		/* b */
+	&sysrq_crash_op,		/* c & ibm_emac driver debug */
+	&sysrq_showlocks_op,		/* d */
+	&sysrq_term_op,			/* e */
+	&sysrq_moom_op,			/* f */
+	/* g: May be registered for the kernel debugger */
+	NULL,				/* g */
+	NULL,				/* h - reserved for help */
+	&sysrq_kill_op,			/* i */
+#ifdef CONFIG_BLOCK
+	&sysrq_thaw_op,			/* j */
+#else
+	NULL,				/* j */
+#endif
+	&sysrq_SAK_op,			/* k */
+#ifdef CONFIG_SMP
+	&sysrq_showallcpus_op,		/* l */
+#else
+	NULL,				/* l */
+#endif
+	&sysrq_showmem_op,		/* m */
+	&sysrq_unrt_op,			/* n */
+	/* o: This will often be registered as 'Off' at init time */
+	NULL,				/* o */
+	&sysrq_showregs_op,		/* p */
+	&sysrq_show_timers_op,		/* q */
+	&sysrq_unraw_op,		/* r */
+	&sysrq_sync_op,			/* s */
+	&sysrq_showstate_op,		/* t */
+	&sysrq_mountro_op,		/* u */
+	/* v: May be registered for frame buffer console restore */
+	NULL,				/* v */
+	&sysrq_showstate_blocked_op,	/* w */
+	/* x: May be registered on ppc/powerpc for xmon */
+	/* x: May be registered on sparc64 for global PMU dump */
+	NULL,				/* x */
+	/* y: May be registered on sparc64 for global register dump */
+	NULL,				/* y */
+	&sysrq_ftrace_dump_op,		/* z */
+}"
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9643 11289])
+            ("sysrq_key_table_key2index" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [11377 11385]))                  
+                :type "int")
+                nil [11340 11564])
+            ("__sysrq_get_key_op" function
+               (:pointer 1
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [11673 11681]))                  
+                :type ("sysrq_key_op" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11633 11852])
+            ("__sysrq_put_key_op" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [11885 11893])
+                    ("op_p" variable
+                       (:pointer 1
+                        :type ("sysrq_key_op" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11894 11920]))                  
+                :type "void")
+                nil [11854 12037])
+            ("__handle_sysrq" function
+               (:arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [12059 12067])
+                    ("check_mask" variable (:type "bool") (reparse-symbol arg-sub-list) [12068 12084]))                  
+                :type "void")
+                nil [12039 13424])
+            ("handle_sysrq" function
+               (:arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [13444 13452]))                  
+                :type "void")
+                nil [13426 13502])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("handle_sysrq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13517 13530]))                  
+                :type "int")
+                nil [13503 13531])
+            ("sysrq_register_handler" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [24452 24457]))                  
+                :type "void")
+                nil [24410 24461])
+            ("sysrq_unregister_handler" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [24507 24512]))                  
+                :type "void")
+                nil [24463 24516])
+            ("sysrq_toggle_support" function
+               (:arguments 
+                  ( ("enable_mask" variable (:type "int") (reparse-symbol arg-sub-list) [24570 24586]))                  
+                :type "int")
+                nil [24545 24788])
+            ("__sysrq_swap_key_ops" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [24822 24830])
+                    ("insert_op_p" variable
+                       (:pointer 1
+                        :type ("sysrq_key_op" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24831 24864])
+                    ("remove_op_p" variable
+                       (:pointer 1
+                        :type ("sysrq_key_op" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24897 24930]))                  
+                :type "int")
+                nil [24790 25220])
+            ("register_sysrq_key" function
+               (:arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [25245 25253])
+                    ("op_p" variable
+                       (:pointer 1
+                        :type ("sysrq_key_op" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25254 25280]))                  
+                :type "int")
+                nil [25222 25331])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("register_sysrq_key" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25346 25365]))                  
+                :type "int")
+                nil [25332 25366])
+            ("unregister_sysrq_key" function
+               (:arguments 
+                  ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [25393 25401])
+                    ("op_p" variable
+                       (:pointer 1
+                        :type ("sysrq_key_op" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25402 25428]))                  
+                :type "int")
+                nil [25368 25479])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("unregister_sysrq_key" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25494 25515]))                  
+                :type "int")
+                nil [25480 25516])
+            ("sysrq_init_procfs" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [26186 26191]))                  
+                :type "void")
+                nil [26149 26195])
+            ("sysrq_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [26255 26260]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [26237 26344])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sysrq_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26357 26368]))                  
+                :type "int")
+                nil [26345 26369]))          
+      :file "sysrq.c"
+      :pointmax 26370
+      :fsize 26369
+      :lastmodtime '(21976 3068 328725 563000)
+      :unmatched-syntax '((INT 26233 . 26236) (STATIC 26226 . 26232) (string 2064 . 2086) (INT 1923 . 1926) (STATIC 1916 . 1922) (INT 1592 . 1595) (semantic-list 1562 . 1564) (symbol 1538 . 1562) (SHORT 1532 . 1537) (UNSIGNED 1523 . 1531) (BOOL 1481 . 1485) (STATIC 1474 . 1480) (INT 1418 . 1421) (STATIC 1411 . 1417) (string 2064 . 2086) (INT 1923 . 1926) (STATIC 1916 . 1922) (INT 1592 . 1595) (semantic-list 1562 . 1564) (symbol 1538 . 1562) (SHORT 1532 . 1537) (UNSIGNED 1523 . 1531) (BOOL 1481 . 1485) (STATIC 1474 . 1480) (INT 1418 . 1421) (STATIC 1411 . 1417))
+      :lexical-table 
+        '(("sysrq_showlocks_op" . ((semantic-list "(*(struct sysrq_key_op *)NULL)" 4850 . 4880)))
+          ("sysrq_ftrace_dump_op" . ((semantic-list "(*(struct sysrq_key_op *)NULL)" 7323 . 7353)))
+          ("sysrq_unraw_op" . ((semantic-list "(*(struct sysrq_key_op *)NULL)" 3157 . 3187)))
+          ("pr_fmt" (spp-arg-list ("fmt") 432 . 437) . 
+              ((symbol "KBUILD_MODNAME" 438 . 452) (string "\": \"" 453 . 457) (symbol "fmt" 458 . 461)))
+          ("sysrq_SAK_op" . ((semantic-list "(*(struct sysrq_key_op *)NULL)" 2797 . 2827)))
+          )
+)
+    (semanticdb-table "tty_io.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/types.h" include (:system-flag t) nil [2506 2530])
+            ("linux/major.h" include (:system-flag t) nil [2531 2555])
+            ("linux/errno.h" include (:system-flag t) nil [2556 2580])
+            ("linux/signal.h" include (:system-flag t) nil [2581 2606])
+            ("linux/fcntl.h" include (:system-flag t) nil [2607 2631])
+            ("linux/sched.h" include (:system-flag t) nil [2632 2656])
+            ("linux/interrupt.h" include (:system-flag t) nil [2657 2685])
+            ("linux/tty.h" include (:system-flag t) nil [2686 2708])
+            ("linux/tty_driver.h" include (:system-flag t) nil [2709 2738])
+            ("linux/tty_flip.h" include (:system-flag t) nil [2739 2766])
+            ("linux/devpts_fs.h" include (:system-flag t) nil [2767 2795])
+            ("linux/file.h" include (:system-flag t) nil [2796 2819])
+            ("linux/fdtable.h" include (:system-flag t) nil [2820 2846])
+            ("linux/console.h" include (:system-flag t) nil [2847 2873])
+            ("linux/timer.h" include (:system-flag t) nil [2874 2898])
+            ("linux/ctype.h" include (:system-flag t) nil [2899 2923])
+            ("linux/kd.h" include (:system-flag t) nil [2924 2945])
+            ("linux/mm.h" include (:system-flag t) nil [2946 2967])
+            ("linux/string.h" include (:system-flag t) nil [2968 2993])
+            ("linux/slab.h" include (:system-flag t) nil [2994 3017])
+            ("linux/poll.h" include (:system-flag t) nil [3018 3041])
+            ("linux/proc_fs.h" include (:system-flag t) nil [3042 3068])
+            ("linux/init.h" include (:system-flag t) nil [3069 3092])
+            ("linux/module.h" include (:system-flag t) nil [3093 3118])
+            ("linux/device.h" include (:system-flag t) nil [3119 3144])
+            ("linux/wait.h" include (:system-flag t) nil [3145 3168])
+            ("linux/bitops.h" include (:system-flag t) nil [3169 3194])
+            ("linux/delay.h" include (:system-flag t) nil [3195 3219])
+            ("linux/seq_file.h" include (:system-flag t) nil [3220 3247])
+            ("linux/serial.h" include (:system-flag t) nil [3248 3273])
+            ("linux/ratelimit.h" include (:system-flag t) nil [3274 3302])
+            ("linux/uaccess.h" include (:system-flag t) nil [3304 3330])
+            ("linux/kbd_kern.h" include (:system-flag t) nil [3332 3359])
+            ("linux/vt_kern.h" include (:system-flag t) nil [3360 3386])
+            ("linux/selection.h" include (:system-flag t) nil [3387 3415])
+            ("linux/kmod.h" include (:system-flag t) nil [3417 3440])
+            ("linux/nsproxy.h" include (:system-flag t) nil [3441 3467])
+            ("TTY_PARANOIA_CHECK" variable (:constant-flag t) nil [3502 3520])
+            ("CHECK_TTY_COUNT" variable (:constant-flag t) nil [3531 3546])
+            ("tty_std_termios" variable
+               (:default-value "{	/* for the benefit of tty drivers  */
+	.c_iflag = ICRNL | IXON,
+	.c_oflag = OPOST | ONLCR,
+	.c_cflag = B38400 | CS8 | CREAD | HUPCL,
+	.c_lflag = ISIG | ICANON | ECHO | ECHOE | ECHOK |
+		   ECHOCTL | ECHOKE | IEXTEN,
+	.c_cc = INIT_C_CC,
+	.c_ispeed = 38400,
+	.c_ospeed = 38400
+}"
+                :type ("ktermios" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3550 3863])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_std_termios" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3879 3895]))                  
+                :type "int")
+                nil [3865 3896])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_drivers" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4082 4094]))                  
+                :type "int")
+                nil [4072 4095])
+            ("DEFINE_MUTEX" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_mutex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4261 4271]))                  
+                :type "int")
+                nil [4248 4272])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_mutex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4287 4297]))                  
+                :type "int")
+                nil [4273 4298])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_files_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4366 4381]))                  
+                :type "int")
+                nil [4350 4382])
+            ("tty_read" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4408 4422])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [4423 4436])
+                    ("" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4438 4445])
+                    ("" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4446 4455]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [4384 4456])
+            ("tty_write" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4482 4496])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4497 4516])
+                    ("" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4518 4525])
+                    ("" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4526 4535]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [4457 4536])
+            ("redirected_tty_write" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4566 4580])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4581 4600])
+                    ("" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4609 4616])
+                    ("" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4617 4626]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [4537 4627])
+            ("tty_poll" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4657 4671])
+                    ("" variable
+                       (:pointer 1
+                        :type ("poll_table" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4672 4685]))                  
+                :type "unsigned int")
+                nil [4628 4686])
+            ("tty_open" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4707 4722])
+                    ("" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4723 4737]))                  
+                :type "int")
+                nil [4687 4738])
+            ("tty_ioctl" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4754 4772])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4773 4790])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4791 4809]))                  
+                :type "long")
+                nil [4739 4810])
+            ("tty_compat_ioctl" variable (:constant-flag t) nil [4936 4952])
+            ("__tty_fasync" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [4989 4996])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4997 5015])
+                    ("on" variable (:type "int") (reparse-symbol arg-sub-list) [5016 5023]))                  
+                :type "int")
+                nil [4965 5024])
+            ("tty_fasync" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [5047 5054])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5055 5073])
+                    ("on" variable (:type "int") (reparse-symbol arg-sub-list) [5074 5081]))                  
+                :type "int")
+                nil [5025 5082])
+            ("release_tty" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5107 5130])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [5131 5139]))                  
+                :type "void")
+                nil [5083 5140])
+            ("__proc_set_tty" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("tsk" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5168 5192])
+                    ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5193 5216]))                  
+                :type "void")
+                nil [5141 5217])
+            ("proc_set_tty" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("tsk" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5243 5267])
+                    ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5268 5291]))                  
+                :type "void")
+                nil [5218 5292])
+            ("alloc_tty_struct" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5519 5524]))                  
+                :type ("tty_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5483 5584])
+            ("free_tty_struct" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5815 5838]))                  
+                :type "void")
+                nil [5794 5965])
+            ("file_tty" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6009 6027]))                  
+                :type ("tty_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5967 6093])
+            ("tty_alloc_file" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6114 6132]))                  
+                :type "int")
+                nil [6095 6284])
+            ("tty_add_file" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6354 6377])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6378 6396]))                  
+                :type "void")
+                nil [6336 6594])
+            ("tty_free_file" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6760 6778]))                  
+                :type "void")
+                nil [6741 6878])
+            ("tty_del_file" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6936 6954]))                  
+                :type "void")
+                nil [6911 7118])
+            ("TTY_NUMBER" variable (:constant-flag t) nil [7129 7139])
+            ("tty_name" function
+               (:pointer 1
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7452 7475])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7476 7486]))                  
+                :type "char")
+                nil [7437 7612])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_name" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7628 7637]))                  
+                :type "int")
+                nil [7614 7638])
+            ("tty_paranoia_check" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7663 7686])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7687 7707])
+                    ("routine" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7717 7737]))                  
+                :type "int")
+                nil [7640 8079])
+            ("check_tty_count" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8108 8131])
+                    ("routine" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8132 8152]))                  
+                :type "int")
+                nil [8081 8676])
+            ("get_tty_driver" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8996 9009])
+                    ("index" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [9010 9021]))                  
+                :type ("tty_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8955 9287])
+            ("tty_check_change" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10820 10843]))                  
+                :type "int")
+                nil [10799 11481])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_check_change" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11497 11514]))                  
+                :type "int")
+                nil [11483 11515])
+            ("hung_up_tty_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11549 11567])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [11568 11581])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11581 11585])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11590 11603])
+                    ("ppos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11604 11617]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [11517 11632])
+            ("hung_up_tty_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11667 11685])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11686 11705])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11705 11709])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11715 11728])
+                    ("ppos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11729 11742]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [11634 11760])
+            ("hung_up_tty_poll" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11842 11860])
+                    ("wait" variable
+                       (:pointer 1
+                        :type ("poll_table" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11861 11878]))                  
+                :type "unsigned int")
+                nil [11805 11954])
+            ("hung_up_tty_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11986 12004])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12005 12022])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [12025 12043]))                  
+                :type "long")
+                nil [11956 12090])
+            ("hung_up_tty_compat_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12129 12147])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [12157 12174])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [12175 12193]))                  
+                :type "long")
+                nil [12092 12240])
+            ("tty_fops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.llseek		= no_llseek,
+	.read		= tty_read,
+	.write		= tty_write,
+	.poll		= tty_poll,
+	.unlocked_ioctl	= tty_ioctl,
+	.compat_ioctl	= tty_compat_ioctl,
+	.open		= tty_open,
+	.release	= tty_release,
+	.fasync		= tty_fasync,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12242 12512])
+            ("console_fops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.llseek		= no_llseek,
+	.read		= tty_read,
+	.write		= redirected_tty_write,
+	.poll		= tty_poll,
+	.unlocked_ioctl	= tty_ioctl,
+	.compat_ioctl	= tty_compat_ioctl,
+	.open		= tty_open,
+	.release	= tty_release,
+	.fasync		= tty_fasync,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12514 12799])
+            ("hung_up_tty_fops" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	.llseek		= no_llseek,
+	.read		= hung_up_tty_read,
+	.write		= hung_up_tty_write,
+	.poll		= hung_up_tty_poll,
+	.unlocked_ioctl	= hung_up_tty_ioctl,
+	.compat_ioctl	= hung_up_tty_compat_ioctl,
+	.release	= tty_release,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12801 13075])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("redirect_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13100 13114]))                  
+                :type "int")
+                nil [13077 13115])
+            ("redirect" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("file" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13116 13145])
+            ("tty_wakeup" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13392 13415]))                  
+                :type "void")
+                nil [13376 13682])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_wakeup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13702 13713]))                  
+                :type "int")
+                nil [13684 13714])
+            ("tty_signal_session_leader" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14227 14250])
+                    ("exit_session" variable (:type "int") (reparse-symbol arg-sub-list) [14251 14268]))                  
+                :type "int")
+                nil [14190 15296])
+            ("__tty_hangup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16136 16159])
+                    ("exit_session" variable (:type "int") (reparse-symbol arg-sub-list) [16160 16177]))                  
+                :type "void")
+                nil [16111 18526])
+            ("do_tty_hangup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18554 18579]))                  
+                :type "void")
+                nil [18528 18687])
+            ("tty_hangup" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18902 18925]))                  
+                :type "void")
+                nil [18886 19068])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_hangup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19084 19095]))                  
+                :type "int")
+                nil [19070 19096])
+            ("tty_vhangup" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19393 19416]))                  
+                :type "void")
+                nil [19376 19549])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_vhangup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19565 19577]))                  
+                :type "int")
+                nil [19551 19578])
+            ("tty_vhangup_self" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19718 19723]))                  
+                :type "void")
+                nil [19696 19835])
+            ("tty_vhangup_session" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20243 20266]))                  
+                :type "void")
+                nil [20211 20407])
+            ("tty_hung_up_p" function
+               (:arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20582 20600]))                  
+                :type "int")
+                nil [20564 20647])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_hung_up_p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20663 20677]))                  
+                :type "int")
+                nil [20649 20678])
+            ("session_clear_tty" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("session" variable
+                       (:pointer 1
+                        :type ("pid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20710 20730]))                  
+                :type "void")
+                nil [20680 20873])
+            ("disassociate_ctty" function
+               (:arguments 
+                  ( ("on_exit" variable (:type "int") (reparse-symbol arg-sub-list) [21838 21850]))                  
+                :type "void")
+                nil [21815 23362])
+            ("no_tty" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [23458 23463]))                  
+                :type "void")
+                nil [23446 23724])
+            ("stop_tty" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24276 24299]))                  
+                :type "void")
+                nil [24262 24744])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("stop_tty" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24760 24769]))                  
+                :type "int")
+                nil [24746 24770])
+            ("start_tty" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25150 25173]))                  
+                :type "void")
+                nil [25135 25724])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("start_tty" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25740 25750]))                  
+                :type "int")
+                nil [25726 25751])
+            ("tty_update_time" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("time" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25849 25871]))                  
+                :type "void")
+                nil [25821 25975])
+            ("tty_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26423 26441])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [26442 26455])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26455 26459])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26460 26473])
+                    ("ppos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [26477 26490]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [26399 27020])
+            ("__releases" function
+               (:arguments 
+                  ( ("" variable (:type ("tty" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27081 27085])
+                    ("" variable (:type ("atomic_write_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27086 27104]))                  
+                :type "int")
+                nil [27069 27204])
+            ("__acquires" function
+               (:arguments 
+                  ( ("" variable (:type ("tty" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27274 27278])
+                    ("" variable (:type ("atomic_write_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27279 27297]))                  
+                :type "int")
+                nil [27262 27477])
+            ("do_tty_write" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("write" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type ("tty_struct" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [27621 27641])
+                            ("" variable
+                               (:pointer 1
+                                :type ("file" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [27642 27656])
+                            ("" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "unsigned char")
+                                (reparse-symbol arg-sub-list) [27657 27679])
+                            ("" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27680 27687]))                          
+                        :type ("ssize_t" type (:type "class") nil nil))
+                        nil nil)
+                    ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27690 27713])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27715 27733])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [27735 27754])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27754 27758])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27760 27773]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [27567 29460])
+            ("tty_write_message" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29884 29907])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [29908 29918]))                  
+                :type "void")
+                nil [29861 30183])
+            ("tty_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30687 30705])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [30706 30725])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30725 30729])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30736 30749])
+                    ("ppos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [30750 30763]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [30662 31352])
+            ("redirected_tty_write" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31383 31401])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [31402 31421])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31421 31425])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31432 31445])
+                    ("ppos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [31446 31459]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [31354 31729])
+            ("ptychar" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "\"pqrstuvwxyzabcde\""
+                :type "char")
+                nil [31731 31774])
+            ("pty_line_name" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32060 32086])
+                    ("index" variable (:type "int") (reparse-symbol arg-sub-list) [32087 32097])
+                    ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [32098 32106]))                  
+                :type "void")
+                nil [32034 32325])
+            ("tty_line_name" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32614 32640])
+                    ("index" variable (:type "int") (reparse-symbol arg-sub-list) [32641 32651])
+                    ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [32652 32660]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [32585 32840])
+            ("tty_driver_lookup_tty" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33268 33294])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33297 33317])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [33318 33326]))                  
+                :type ("tty_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [33220 33434])
+            ("tty_init_termios" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33675 33698]))                  
+                :type "int")
+                nil [33654 34210])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_init_termios" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34229 34246]))                  
+                :type "int")
+                nil [34211 34247])
+            ("tty_standard_install" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34274 34300])
+                    ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34301 34324]))                  
+                :type "int")
+                nil [34249 34476])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_standard_install" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34495 34516]))                  
+                :type "int")
+                nil [34477 34517])
+            ("tty_driver_install_tty" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34932 34958])
+                    ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [34965 34988]))                  
+                :type "int")
+                nil [34898 35096])
+            ("tty_driver_remove_tty" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35407 35433])
+                    ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35434 35457]))                  
+                :type "void")
+                nil [35380 35564])
+            ("tty_reopen" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35814 35837]))                  
+                :type "int")
+                nil [35792 36310])
+            ("tty_init_dev" function
+               (:pointer 1
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [37279 37305])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [37306 37314]))                  
+                :type ("tty_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [37247 38966])
+            ("tty_free_termios" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38990 39013]))                  
+                :type "void")
+                nil [38968 39477])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_free_termios" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39492 39509]))                  
+                :type "int")
+                nil [39478 39510])
+            ("tty_flush_works" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [39680 39703]))                  
+                :type "void")
+                nil [39652 39768])
+            ("release_one_tty" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40348 40373]))                  
+                :type "void")
+                nil [40320 40789])
+            ("queue_release_one_tty" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kref" variable
+                       (:pointer 1
+                        :type ("kref" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40825 40843]))                  
+                :type "void")
+                nil [40791 41111])
+            ("tty_kref_put" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [41304 41327]))                  
+                :type "void")
+                nil [41286 41388])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_kref_put" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [41403 41416]))                  
+                :type "int")
+                nil [41389 41417])
+            ("release_tty" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [41754 41777])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [41778 41786]))                  
+                :type "void")
+                nil [41730 42214])
+            ("tty_release_checks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42519 42542])
+                    ("o_tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42543 42568])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [42571 42579]))                  
+                :type "int")
+                nil [42489 43319])
+            ("tty_release" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [43971 43991])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [43992 44010]))                  
+                :type "int")
+                nil [43955 49350])
+            ("tty_open_current_tty" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49829 49842])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [49843 49861]))                  
+                :type ("tty_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [49782 50234])
+            ("tty_lookup_driver" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [50756 50769])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [50770 50788])
+                    ("noctty" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [50791 50803])
+                    ("index" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [50804 50815]))                  
+                :type ("tty_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [50712 51507])
+            ("tty_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [52379 52399])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [52400 52418]))                  
+                :type "int")
+                nil [52359 55170])
+            ("tty_poll" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [55514 55532])
+                    ("wait" variable
+                       (:pointer 1
+                        :type ("poll_table" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [55533 55550]))                  
+                :type "unsigned int")
+                nil [55485 55835])
+            ("__tty_fasync" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [55861 55868])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [55869 55887])
+                    ("on" variable (:type "int") (reparse-symbol arg-sub-list) [55888 55895]))                  
+                :type "int")
+                nil [55837 56673])
+            ("tty_fasync" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [56697 56704])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [56705 56723])
+                    ("on" variable (:type "int") (reparse-symbol arg-sub-list) [56724 56731]))                  
+                :type "int")
+                nil [56675 56880])
+            ("tiocsti" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [57295 57318])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [57319 57332])
+                    ("" variable (:type ("p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57332 57334]))                  
+                :type "int")
+                nil [57276 57636])
+            ("tiocgwinsz" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [57919 57942])
+                    ("__user" variable (:type ("winsize" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [57943 57966])
+                    ("" variable (:type ("arg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [57966 57970]))                  
+                :type "int")
+                nil [57897 58137])
+            ("tty_do_resize" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [58387 58410])
+                    ("ws" variable
+                       (:pointer 1
+                        :type ("winsize" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [58411 58430]))                  
+                :type "int")
+                nil [58369 58958])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_do_resize" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [58973 58987]))                  
+                :type "int")
+                nil [58959 58988])
+            ("tiocswinsz" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [59513 59536])
+                    ("__user" variable (:type ("winsize" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [59537 59560])
+                    ("" variable (:type ("arg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59560 59564]))                  
+                :type "int")
+                nil [59491 59768])
+            ("tioccons" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [60022 60040]))                  
+                :type "int")
+                nil [60002 60455])
+            ("fionbio" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [60828 60846])
+                    ("__user" variable (:type "int") (reparse-symbol arg-sub-list) [60847 60859])
+                    ("" variable (:type ("p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60859 60861]))                  
+                :type "int")
+                nil [60809 61079])
+            ("tiocsctty" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [61488 61511])
+                    ("arg" variable (:type "int") (reparse-symbol arg-sub-list) [61512 61520]))                  
+                :type "int")
+                nil [61467 62249])
+            ("tty_get_pgrp" function
+               (:pointer 1
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [62454 62477]))                  
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [62429 62659])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_get_pgrp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [62678 62691]))                  
+                :type "int")
+                nil [62660 62692])
+            ("tiocgpgrp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [63037 63060])
+                    ("real_tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [63061 63089])
+                    ("__user" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63090 63104])
+                    ("" variable (:type ("p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63104 63106]))                  
+                :type "int")
+                nil [63016 63401])
+            ("tiocspgrp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [63731 63754])
+                    ("real_tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [63755 63783])
+                    ("__user" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63784 63798])
+                    ("" variable (:type ("p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63798 63800]))                  
+                :type "int")
+                nil [63710 64594])
+            ("tiocgsid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [64943 64966])
+                    ("real_tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [64967 64995])
+                    ("__user" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64996 65010])
+                    ("" variable (:type ("p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [65010 65012]))                  
+                :type "int")
+                nil [64923 65276])
+            ("tiocsetd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [65511 65534])
+                    ("__user" variable (:type "int") (reparse-symbol arg-sub-list) [65535 65547])
+                    ("" variable (:type ("p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [65547 65549]))                  
+                :type "int")
+                nil [65491 65668])
+            ("send_break" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [65947 65970])
+                    ("duration" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [65971 65993]))                  
+                :type "int")
+                nil [65925 66523])
+            ("tty_tiocmget" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [66832 66855])
+                    ("__user" variable (:type "int") (reparse-symbol arg-sub-list) [66856 66868])
+                    ("" variable (:type ("p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [66868 66870]))                  
+                :type "int")
+                nil [66808 67033])
+            ("tty_tiocmset" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [67368 67391])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [67392 67409])
+                    ("__user" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [67416 67433])
+                    ("" variable (:type ("p" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [67433 67435]))                  
+                :type "int")
+                nil [67344 67934])
+            ("tty_tiocgicount" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [67963 67986])
+                    ("__user" variable (:type "void") (reparse-symbol arg-sub-list) [67987 68000])
+                    ("" variable (:type ("arg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68000 68004]))                  
+                :type "int")
+                nil [67936 68294])
+            ("tty_pair_get_tty" function
+               (:pointer 1
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [68332 68355]))                  
+                :type ("tty_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [68296 68486])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_pair_get_tty" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68501 68518]))                  
+                :type "int")
+                nil [68487 68519])
+            ("tty_pair_get_pty" function
+               (:pointer 1
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [68557 68580]))                  
+                :type ("tty_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [68521 68715])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_pair_get_pty" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [68730 68747]))                  
+                :type "int")
+                nil [68716 68748])
+            ("tty_ioctl" function
+               (:arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [68825 68843])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [68844 68861])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [68862 68880]))                  
+                :type "long")
+                nil [68810 72174])
+            ("this_tty" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("t" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [72845 72859])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72860 72878])
+                    ("fd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [72879 72891]))                  
+                :type "int")
+                nil [72825 72992])
+            ("__do_SAK" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [73949 73972]))                  
+                :type "void")
+                nil [73935 75104])
+            ("do_SAK_work" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [75130 75155]))                  
+                :type "void")
+                nil [75106 75252])
+            ("do_SAK" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [75532 75555]))                  
+                :type "void")
+                nil [75520 75612])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("do_SAK" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [75628 75635]))                  
+                :type "int")
+                nil [75614 75636])
+            ("dev_match_devt" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [75664 75683])
+                    ("data" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [75684 75701]))                  
+                :type "int")
+                nil [75638 75760])
+            ("tty_get_device" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [75842 75865]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [75805 75967])
+            ("initialize_tty_struct" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [76214 76237])
+                    ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [76240 76266])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [76267 76275]))                  
+                :type "void")
+                nil [76187 77014])
+            ("deinitialize_tty_struct" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [77312 77335]))                  
+                :type "void")
+                nil [77283 77363])
+            ("tty_put_char" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [77730 77753])
+                    ("ch" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [77754 77771]))                  
+                :type "int")
+                nil [77713 77876])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_put_char" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [77895 77908]))                  
+                :type "int")
+                nil [77877 77909])
+            ("tty_class" variable
+               (:pointer 1
+                :type ("" type
+                     (:prototype t
+                      :type "class")
+                      nil nil))
+                nil [77918 77935])
+            ("tty_cdev_add" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [77961 77987])
+                    ("dev" variable (:type ("dev_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [77988 77998])
+                    ("index" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [78001 78020])
+                    ("count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [78021 78040]))                  
+                :type "int")
+                nil [77937 78239])
+            ("tty_register_device" function
+               (:pointer 1
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [78979 79005])
+                    ("index" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [79006 79021])
+                    ("device" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [79029 79051]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [78944 79124])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_register_device" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [79139 79159]))                  
+                :type "int")
+                nil [79125 79160])
+            ("tty_device_create_release" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [79200 79219]))                  
+                :type "void")
+                nil [79162 79294])
+            ("tty_register_device_attr" function
+               (:pointer 1
+                :arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80140 80166])
+                    ("index" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [80174 80189])
+                    ("device" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80190 80212])
+                    ("drvdata" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [80220 80234])
+                    ("attr_grp" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type ("attribute_group" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80242 80282]))                  
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [80100 81330])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_register_device_attr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [81349 81374]))                  
+                :type "int")
+                nil [81331 81375])
+            ("tty_unregister_device" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [81741 81767])
+                    ("index" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [81768 81783]))                  
+                :type "void")
+                nil [81714 81953])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_unregister_device" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [81968 81990]))                  
+                :type "int")
+                nil [81954 81991])
+            ("__tty_alloc_driver" function
+               (:pointer 1
+                :arguments 
+                  ( ("lines" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [82396 82415])
+                    ("owner" variable
+                       (:pointer 1
+                        :type ("module" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [82416 82437])
+                    ("flags" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [82440 82460]))                  
+                :type ("tty_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [82358 83616])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__tty_alloc_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [83631 83650]))                  
+                :type "int")
+                nil [83617 83651])
+            ("destruct_tty_driver" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("kref" variable
+                       (:pointer 1
+                        :type ("kref" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [83685 83703]))                  
+                :type "void")
+                nil [83653 84478])
+            ("tty_driver_kref_put" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84505 84531]))                  
+                :type "void")
+                nil [84480 84582])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_driver_kref_put" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [84597 84617]))                  
+                :type "int")
+                nil [84583 84618])
+            ("tty_set_operations" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84644 84670])
+                    ("op" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("tty_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84674 84706]))                  
+                :type "void")
+                nil [84620 84729])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_set_operations" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [84745 84764]))                  
+                :type "int")
+                nil [84731 84765])
+            ("put_tty_driver" function
+               (:arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84787 84808]))                  
+                :type "void")
+                nil [84767 84837])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("put_tty_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [84852 84867]))                  
+                :type "int")
+                nil [84838 84868])
+            ("tty_register_driver" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84947 84973]))                  
+                :type "int")
+                nil [84923 86178])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_register_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [86193 86213]))                  
+                :type "int")
+                nil [86179 86214])
+            ("tty_unregister_driver" function
+               (:arguments 
+                  ( ("driver" variable
+                       (:pointer 1
+                        :type ("tty_driver" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [86297 86323]))                  
+                :type "int")
+                nil [86271 86576])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_unregister_driver" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [86592 86614]))                  
+                :type "int")
+                nil [86578 86615])
+            ("tty_devnum" function
+               (:arguments 
+                  ( ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [86634 86657]))                  
+                :type ("dev_t" type (:type "class") nil nil))
+                nil [86617 86735])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_devnum" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [86750 86761]))                  
+                :type "int")
+                nil [86736 86762])
+            ("proc_clear_tty" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [86784 86806]))                  
+                :type "void")
+                nil [86764 87027])
+            ("__proc_set_tty" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tsk" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87093 87117])
+                    ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87118 87141]))                  
+                :type "void")
+                nil [87066 87692])
+            ("proc_set_tty" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("tsk" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87719 87743])
+                    ("tty" variable
+                       (:pointer 1
+                        :type ("tty_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87744 87767]))                  
+                :type "void")
+                nil [87694 87880])
+            ("get_current_tty" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [87917 87922]))                  
+                :type ("tty_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [87882 88145])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_current_tty" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [88164 88180]))                  
+                :type "int")
+                nil [88146 88181])
+            ("tty_default_fops" function
+               (:arguments 
+                  ( ("fops" variable
+                       (:pointer 1
+                        :type ("file_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [88205 88234]))                  
+                :type "void")
+                nil [88183 88257])
+            ("console_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [88486 88491]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [88466 88779])
+            ("tty_devnode" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [88806 88825])
+                    ("mode" variable
+                       (:pointer 1
+                        :type ("umode_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [88826 88840]))                  
+                :type "char")
+                nil [88781 88987])
+            ("tty_class_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [89022 89027]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [89000 89177])
+            ("postcore_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("tty_class_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [89197 89212]))                  
+                :type "int")
+                nil [89179 89213])
+            ("tty_cdev" variable
+               (:typemodifiers ("static")
+                :type ("cdev" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [89261 89303])
+            ("console_cdev" variable
+               (:typemodifiers ("static")
+                :type ("cdev" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [89261 89303])
+            ("show_cons_active" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dev" variable
+                       (:pointer 1
+                        :type ("device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [89337 89356])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("device_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [89361 89391])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [89392 89402]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [89305 90134])
+            ("DEVICE_ATTR" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("active" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90154 90161])
+                    ("" variable (:type ("S_IRUGO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90162 90170])
+                    ("" variable (:type ("show_cons_active" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90171 90188])
+                    ("" variable (:type ("NULL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [90189 90194]))                  
+                :type "int")
+                nil [90135 90195])
+            ("consdev" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [90197 90227])
+            ("console_sysfs_notify" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [90255 90260]))                  
+                :type "void")
+                nil [90229 90326])
+            ("tty_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [90469 90474]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [90453 91250]))          
+      :file "tty_io.c"
+      :pointmax 91252
+      :fsize 91251
+      :lastmodtime '(21976 3068 328725 563000)
+      :unmatched-syntax '((INT 90449 . 90452) (INT 88996 . 88999) (STATIC 88989 . 88995) (VOID 88461 . 88465) (punctuation 84729 . 84730) (STRUCT 77911 . 77917) (punctuation 67999 . 68000) (punctuation 67432 . 67433) (punctuation 66867 . 66868) (punctuation 65546 . 65547) (punctuation 65009 . 65010) (punctuation 63797 . 63798) (punctuation 63103 . 63104) (punctuation 60858 . 60859) (punctuation 59559 . 59560) (punctuation 57965 . 57966) (punctuation 57331 . 57332) (punctuation 31420 . 31421) (punctuation 30724 . 30725) (punctuation 27753 . 27754) (punctuation 27278 . 27279) (punctuation 27277 . 27278) (punctuation 27273 . 27274) (semantic-list 27224 . 27260) (symbol 27210 . 27224) (INT 27206 . 27209) (punctuation 27085 . 27086) (punctuation 27084 . 27085) (punctuation 27080 . 27081) (semantic-list 27043 . 27067) (symbol 27027 . 27043) (VOID 27022 . 27026) (punctuation 26454 . 26455) (punctuation 11704 . 11705) (punctuation 11580 . 11581) (punctuation 4599 . 4600) (punctuation 4515 . 4516) (punctuation 4435 . 4436) (punctuation 31420 . 31421) (punctuation 30724 . 30725) (punctuation 27753 . 27754) (punctuation 27278 . 27279) (punctuation 27277 . 27278) (punctuation 27273 . 27274) (semantic-list 27224 . 27260) (symbol 27210 . 27224) (INT 27206 . 27209) (punctuation 27085 . 27086) (punctuation 27084 . 27085) (punctuation 27080 . 27081) (semantic-list 27043 . 27067) (symbol 27027 . 27043) (VOID 27022 . 27026) (punctuation 26454 . 26455) (punctuation 11704 . 11705) (punctuation 11580 . 11581) (punctuation 4599 . 4600) (punctuation 4515 . 4516) (punctuation 4435 . 4436) (STRUCT 77911 . 77917) (punctuation 67999 . 68000) (punctuation 67432 . 67433) (punctuation 66867 . 66868) (punctuation 65546 . 65547) (punctuation 65009 . 65010) (punctuation 63797 . 63798) (punctuation 63103 . 63104) (punctuation 60858 . 60859) (punctuation 59559 . 59560) (punctuation 57965 . 57966) (punctuation 57331 . 57332) (punctuation 31420 . 31421) (punctuation 30724 . 30725) (punctuation 27753 . 27754) (punctuation 27278 . 27279) (punctuation 27277 . 27278) (punctuation 27273 . 27274) (semantic-list 27224 . 27260) (symbol 27210 . 27224) (INT 27206 . 27209) (punctuation 27085 . 27086) (punctuation 27084 . 27085) (punctuation 27080 . 27081) (semantic-list 27043 . 27067) (symbol 27027 . 27043) (VOID 27022 . 27026) (punctuation 26454 . 26455) (punctuation 11704 . 11705) (punctuation 11580 . 11581) (punctuation 4599 . 4600) (punctuation 4515 . 4516) (punctuation 4435 . 4436))
+      :lexical-table 
+        '(("TTY_PARANOIA_CHECK" . ((number "1" 3521 . 3522)))
+          ("CHECK_TTY_COUNT" . ((number "1" 3547 . 3548)))
+          ("tty_compat_ioctl" . ((symbol "NULL" 4953 . 4957)))
+          ("TTY_NUMBER" (spp-arg-list ("tty") 7139 . 7144) . ((semantic-list "((tty)->index + (tty)->driver->name_base)" 7145 . 7186)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!drivers!tty!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

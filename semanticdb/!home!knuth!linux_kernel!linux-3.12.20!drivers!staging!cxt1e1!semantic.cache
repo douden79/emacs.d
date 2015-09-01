@@ -1,0 +1,561 @@
+;; Object cxt1e1/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "cxt1e1/"
+  :tables
+  (list
+    (semanticdb-table "pmcc4_private.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_INC_PMCC4_PRIVATE_H_" variable (:constant-flag t) nil [39 60])
+            ("linux/kernel.h" include (:system-flag t) nil [725 750])
+            ("linux/sched.h" include (:system-flag t) nil [751 775])
+            ("linux/semaphore.h" include (:system-flag t) nil [776 804])
+            ("linux/spinlock.h" include (:system-flag t) nil [805 832])
+            ("linux/interrupt.h" include (:system-flag t) nil [833 861])
+            ("linux/timer.h" include (:system-flag t) nil [892 916])
+            ("linux/workqueue.h" include (:system-flag t) nil [948 976])
+            ("linux/hdlc.h" include (:system-flag t) nil [977 1000])
+            ("libsbew.h" include nil nil [1002 1022])
+            ("pmcc4_defs.h" include nil nil [1023 1046])
+            ("pmcc4_cpld.h" include nil nil [1047 1070])
+            ("musycc.h" include nil nil [1071 1090])
+            ("sbe_promformat.h" include nil nil [1091 1118])
+            ("comet.h" include nil nil [1119 1137])
+            ("SBE_DRVR_INIT" variable (:constant-flag t) nil [1167 1180])
+            ("SBE_DRVR_AVAILABLE" variable (:constant-flag t) nil [1200 1218])
+            ("SBE_DRVR_DOWN" variable (:constant-flag t) nil [1240 1253])
+            ("mdesc" type
+               (:members 
+                  ( ("status" variable
+                       (:typemodifiers ("volatile")
+                        :type ("u_int32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1487 1513])
+                    ("data" variable (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1543 1560])
+                    ("next" variable (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1594 1611])
+                    ("mem_token" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1660 1682])
+                    ("snext" variable
+                       (:pointer 1
+                        :type ("mdesc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1703 1723]))                  
+                :type "struct")
+                nil [1468 1726])
+            ("c4_chan_info" type
+               (:members 
+                  ( ("gchan" variable (:type "int") (reparse-symbol classsubparts) [1889 1907])
+                    ("channum" variable (:type "int") (reparse-symbol classsubparts) [1965 1985])
+                    ("status" variable (:type ("u_int8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2033 2052])
+                    ("TX_RECOVERY_MASK" variable (:constant-flag t) (reparse-symbol classsubparts) [2061 2077])
+                    ("TX_ONR_RECOVERY" variable (:constant-flag t) (reparse-symbol classsubparts) [2093 2108])
+                    ("TX_BUFF_RECOVERY" variable (:constant-flag t) (reparse-symbol classsubparts) [2125 2141])
+                    ("RX_RECOVERY_MASK" variable (:constant-flag t) (reparse-symbol classsubparts) [2157 2173])
+                    ("RX_ONR_RECOVERY" variable (:constant-flag t) (reparse-symbol classsubparts) [2189 2204])
+                    ("ch_start_rx" variable (:type "unsigned char") (reparse-symbol classsubparts) [2218 2244])
+                    ("CH_START_RX_NOW" variable (:constant-flag t) (reparse-symbol classsubparts) [2253 2268])
+                    ("CH_START_RX_ONR" variable (:constant-flag t) (reparse-symbol classsubparts) [2282 2297])
+                    ("CH_START_RX_BUF" variable (:constant-flag t) (reparse-symbol classsubparts) [2311 2326])
+                    ("ch_start_tx" variable (:type "unsigned char") (reparse-symbol classsubparts) [2337 2363])
+                    ("CH_START_TX_1ST" variable (:constant-flag t) (reparse-symbol classsubparts) [2372 2387])
+                    ("CH_START_TX_ONR" variable (:constant-flag t) (reparse-symbol classsubparts) [2401 2416])
+                    ("CH_START_TX_BUF" variable (:constant-flag t) (reparse-symbol classsubparts) [2430 2445])
+                    ("tx_full" variable (:type "char") (reparse-symbol classsubparts) [2456 2476])
+                    ("txd_free" variable (:type "short") (reparse-symbol classsubparts) [2502 2523])
+                    ("txd_required" variable (:type "short") (reparse-symbol classsubparts) [2567 2592])
+                    ("rxd_num" variable (:type "unsigned short") (reparse-symbol classsubparts) [2637 2660])
+                    ("txd_num" variable (:type "unsigned short") (reparse-symbol classsubparts) [2705 2728])
+                    ("rxix_irq_srv" variable (:type "int") (reparse-symbol classsubparts) [2773 2798])
+                    ("state" variable (:type ("" type
+                         (:members 
+                            ( ("UNASSIGNED" variable
+                                 (:constant-flag t
+                                  :type "int")
+                                  (reparse-symbol enumsubparts) [2823 2834])
+                              ("DOWN" variable
+                                 (:constant-flag t
+                                  :type "int")
+                                  (reparse-symbol enumsubparts) [2881 2886])
+                              ("UP" variable
+                                 (:constant-flag t
+                                  :type "int")
+                                  (reparse-symbol enumsubparts) [2938 2992]))                            
+                          :type "enum")
+                          nil nil)) (reparse-symbol classsubparts) [2804 3009])
+                    ("up" variable
+                       (:pointer 1
+                        :type ("c4_port_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3015 3039])
+                    ("user" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [3044 3061])
+                    ("ch_work" variable (:type ("work_struct" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3067 3094])
+                    ("mdt" variable
+                       (:pointer 1
+                        :type ("mdesc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3099 3117])
+                    ("mdr" variable
+                       (:pointer 1
+                        :type ("mdesc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3122 3140])
+                    ("txd_irq_srv" variable
+                       (:pointer 1
+                        :type ("mdesc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3145 3171])
+                    ("txd_usr_add" variable
+                       (:pointer 1
+                        :type ("mdesc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3176 3202])
+                    ("ch_rxlock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3630 3652])
+                    ("ch_txlock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3657 3679])
+                    ("tx_pending" variable (:type ("atomic_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3684 3707])
+                    ("s" variable (:type ("sbecom_chan_stats" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3713 3740])
+                    ("p" variable (:type ("sbecom_chan_param" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [3745 3772]))                  
+                :type "struct")
+                nil [1863 3775])
+            ("mch_t" type
+               (:typedef ("c4_chan_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [3776 3810])
+            ("c4_port_info" type
+               (:members 
+                  ( ("reg" variable
+                       (:pointer 1
+                        :type ("musycc_globalr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3839 3866])
+                    ("regram" variable
+                       (:pointer 1
+                        :type ("musycc_groupr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3871 3900])
+                    ("regram_saved" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [3905 3930])
+                    ("cometbase" variable
+                       (:pointer 1
+                        :type ("comet_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4098 4120])
+                    ("up" variable
+                       (:pointer 1
+                        :type ("sbe_card_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4125 4150])
+                    ("wq_port" variable
+                       (:pointer 1
+                        :type ("workqueue_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4267 4300])
+                    ("sr_sem_busy" variable (:type ("semaphore" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4337 4366])
+                    ("sr_sem_wait" variable (:type ("semaphore" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4462 4491])
+                    ("sr_last" variable (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4587 4607])
+                    ("openchans" variable (:type "short") (reparse-symbol classsubparts) [4612 4634])
+                    ("portnum" variable (:type "char") (reparse-symbol classsubparts) [4639 4659])
+                    ("group_is_set" variable (:type "char") (reparse-symbol classsubparts) [4664 4689])
+                    ("chan" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("mch_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4806 4838])
+                    ("p" variable (:type ("sbecom_port_param" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [4843 4870])
+                    ("tsm" variable
+                       (:dereference 1
+                        :type ("u_int8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5043 5063])
+                    ("fifomap" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [5101 5125]))                  
+                :type "struct")
+                nil [3812 5128])
+            ("mpi_t" type
+               (:typedef ("c4_port_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [5129 5163])
+            ("COMET_OFFSET" variable (:constant-flag t) nil [5174 5186])
+            ("EEPROM_OFFSET" variable (:constant-flag t) nil [5220 5233])
+            ("ISPLD_OFFSET" variable (:constant-flag t) nil [5252 5264])
+            ("ISPLD_MCSR" variable (:constant-flag t) nil [5320 5330])
+            ("ISPLD_MCLK" variable (:constant-flag t) nil [5344 5354])
+            ("ISPLD_LEDS" variable (:constant-flag t) nil [5368 5378])
+            ("ISPLD_INTR" variable (:constant-flag t) nil [5392 5402])
+            ("ISPLD_MAX" variable (:constant-flag t) nil [5416 5425])
+            ("sbe_card_info" type
+               (:members 
+                  ( ("reg" variable
+                       (:pointer 1
+                        :type ("musycc_globalr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5460 5487])
+                    ("regram" variable
+                       (:pointer 1
+                        :type ("musycc_groupr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5492 5521])
+                    ("iqd_p" variable
+                       (:pointer 1
+                        :type ("u_int32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5526 5544])
+                    ("iqd_p_saved" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [5652 5676])
+                    ("iqp_headx" variable (:type "unsigned int") (reparse-symbol classsubparts) [5855 5889])
+                    ("iqp_tailx" variable (:type "unsigned int") (reparse-symbol classsubparts) [5855 5889])
+                    ("sem_wdbusy" variable (:type ("semaphore" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [5895 5923])
+                    ("wd" variable (:type ("watchdog" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [5962 5981])
+                    ("bh_pending" variable (:type ("atomic_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6040 6063])
+                    ("brd_id" variable (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6109 6128])
+                    ("hdw_bid" variable (:type ("u_int16_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6161 6181])
+                    ("wdcount" variable (:type "unsigned short") (reparse-symbol classsubparts) [6218 6241])
+                    ("max_port" variable (:type "unsigned char") (reparse-symbol classsubparts) [6246 6269])
+                    ("brdno" variable (:type "unsigned char") (reparse-symbol classsubparts) [6274 6294])
+                    ("wd_notify" variable (:type "unsigned char") (reparse-symbol classsubparts) [6329 6353])
+                    ("WD_NOTIFY_1TX" variable (:constant-flag t) (reparse-symbol classsubparts) [6362 6375])
+                    ("WD_NOTIFY_BUF" variable (:constant-flag t) (reparse-symbol classsubparts) [6392 6405])
+                    ("WD_NOTIFY_ONR" variable (:constant-flag t) (reparse-symbol classsubparts) [6422 6435])
+                    ("state" variable (:type ("" type
+                         (:members 
+                            ( ("C_INIT" variable
+                                 (:constant-flag t
+                                  :type "int")
+                                  (reparse-symbol enumsubparts) [6534 6541])
+                              ("C_IDLE" variable
+                                 (:constant-flag t
+                                  :type "int")
+                                  (reparse-symbol enumsubparts) [6732 6739])
+                              ("C_RUNNING" variable
+                                 (:constant-flag t
+                                  :type "int")
+                                  (reparse-symbol enumsubparts) [6936 6998]))                            
+                          :type "enum")
+                          nil nil)) (reparse-symbol classsubparts) [6448 7015])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("sbe_card_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [7021 7048])
+                    ("eeprombase" variable
+                       (:pointer 1
+                        :type ("u_int32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7053 7076])
+                    ("cpldbase" variable
+                       (:pointer 1
+                        :type ("c4cpld_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7124 7145])
+                    ("release" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [7202 7222])
+                    ("hdw_info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [7272 7293])
+                    ("first_if" variable
+                       (:pointer 1
+                        :type ("hdlc_device" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7426 7448])
+                    ("last_if" variable
+                       (:pointer 1
+                        :type ("hdlc_device" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7453 7474])
+                    ("first_channum" variable (:type "short") (reparse-symbol classsubparts) [7479 7519])
+                    ("last_channum" variable (:type "short") (reparse-symbol classsubparts) [7479 7519])
+                    ("intlog" variable (:type ("intlog" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [7525 7758])
+                    ("intlog" type
+                       (:members 
+                          ( ("this_status_new" variable (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7553 7581])
+                            ("last_status_new" variable (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7590 7618])
+                            ("drvr_intr_thcount" variable (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7627 7657])
+                            ("drvr_intr_bhcount" variable (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7666 7696])
+                            ("drvr_int_failure" variable (:type ("u_int32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7705 7734]))                          
+                        :type "struct")
+                        (reparse-symbol classsubparts) [7525 7758])
+                    ("port" variable
+                       (:dereference 1
+                        :type ("mpi_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7764 7796])
+                    ("devname" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [7801 7845])
+                    ("tx_pending" variable (:type ("atomic_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7850 7873])
+                    ("alarmed" variable
+                       (:dereference 1
+                        :type ("u_int32_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7878 7901]))                  
+                :type "struct")
+                nil [5433 8079])
+            ("ci_t" type
+               (:typedef ("sbe_card_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [8080 8114])
+            ("s_hdw_info" type
+               (:members 
+                  ( ("pci_busno" variable (:type ("u_int8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8140 8162])
+                    ("pci_slot" variable (:type ("u_int8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8167 8188])
+                    ("pci_pin" variable
+                       (:dereference 1
+                        :type ("u_int8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8193 8216])
+                    ("revid" variable
+                       (:dereference 1
+                        :type ("u_int8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8221 8242])
+                    ("mfg_info_sts" variable (:type ("u_int8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8247 8272])
+                    ("EEPROM_OK" variable (:constant-flag t) (reparse-symbol classsubparts) [8281 8290])
+                    ("EEPROM_CRCERR" variable (:constant-flag t) (reparse-symbol classsubparts) [8313 8326])
+                    ("promfmt" variable (:type "char") (reparse-symbol classsubparts) [8341 8361])
+                    ("devname" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [8413 8453])
+                    ("bus" variable
+                       (:pointer 1
+                        :type ("pci_bus" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8458 8478])
+                    ("ndev" variable
+                       (:pointer 1
+                        :type ("net_device" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8483 8507])
+                    ("pdev" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("pci_dev" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8512 8536])
+                    ("addr" variable
+                       (:dereference 1
+                        :type "unsigned long")
+                        (reparse-symbol classsubparts) [8542 8564])
+                    ("addr_mapped" variable
+                       (:dereference 1
+                        :type "unsigned long")
+                        (reparse-symbol classsubparts) [8569 8598])
+                    ("len" variable
+                       (:dereference 1
+                        :type "unsigned long")
+                        (reparse-symbol classsubparts) [8603 8624])
+                    ("mfg_info" variable (:type ("" type
+                         (:members 
+                            ( ("data" variable
+                                 (:dereference 1
+                                  :type "char")
+                                  (reparse-symbol classsubparts) [8650 8672])
+                              ("pft1" variable (:type ("FLD_TYPE1" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8681 8698])
+                              ("pft2" variable (:type ("FLD_TYPE2" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8739 8756]))                            
+                          :type "union")
+                          nil nil)) (reparse-symbol classsubparts) [8630 8814]))                  
+                :type "struct")
+                nil [8116 8817])
+            ("hdw_info_t" type
+               (:typedef ("s_hdw_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [8818 8855])
+            ("c4_priv" type
+               (:members 
+                  ( ("channum" variable (:type "int") (reparse-symbol classsubparts) [8947 8967])
+                    ("ci" variable
+                       (:pointer 1
+                        :type ("sbe_card_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8972 8997]))                  
+                :type "struct")
+                nil [8926 9000])
+            ("c4_list" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :type ("ci_t" type (:type "class") nil nil))
+                nil [9072 9093])
+            ("c4_find_chan" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [9121 9125]))                  
+                :type ("mch_t" type (:type "class") nil nil))
+                nil [9095 9126])
+            ("c4_set_chan" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("channum" variable (:type "int") (reparse-symbol arg-sub-list) [9152 9164])
+                    ("" variable
+                       (:pointer 1
+                        :type ("sbecom_chan_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9165 9192]))                  
+                :type "int")
+                nil [9127 9193])
+            ("c4_get_chan" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("channum" variable (:type "int") (reparse-symbol arg-sub-list) [9219 9231])
+                    ("" variable
+                       (:pointer 1
+                        :type ("sbecom_chan_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9232 9259]))                  
+                :type "int")
+                nil [9194 9260])
+            ("c4_get_chan_stats" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("channum" variable (:type "int") (reparse-symbol arg-sub-list) [9292 9304])
+                    ("" variable
+                       (:pointer 1
+                        :type ("sbecom_chan_stats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9305 9332]))                  
+                :type "int")
+                nil [9261 9333]))          
+      :file "pmcc4_private.h"
+      :pointmax 9395
+      :fsize 9394
+      :lastmodtime '(21976 3068 725 573000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ISPLD_MCLK" . ((number "0x1" 5356 . 5359)))
+          ("CH_START_RX_ONR" . ((number "2" 2301 . 2302)))
+          ("COMET_OFFSET" (spp-arg-list ("x") 5186 . 5189) . ((semantic-list "(0x80000+(x)*0x10000)" 5190 . 5211)))
+          ("ISPLD_LEDS" . ((number "0x2" 5380 . 5383)))
+          ("CH_START_TX_BUF" . ((number "3" 2449 . 2450)))
+          ("EEPROM_CRCERR" . ((number "0x01" 8332 . 8336)))
+          ("ISPLD_MCSR" . ((number "0x0" 5332 . 5335)))
+          ("RX_RECOVERY_MASK" . ((number "0xf0" 2176 . 2180)))
+          ("RX_ONR_RECOVERY" . ((number "0x10" 2208 . 2212)))
+          ("_INC_PMCC4_PRIVATE_H_")
+          ("TX_RECOVERY_MASK" . ((number "0x0f" 2080 . 2084)))
+          ("CH_START_TX_ONR" . ((number "2" 2420 . 2421)))
+          ("WD_NOTIFY_BUF" . ((number "2" 6412 . 6413)))
+          ("SBE_DRVR_INIT" . ((number "0x0" 1188 . 1191)))
+          ("ISPLD_OFFSET" . ((number "0xD0000" 5268 . 5275)))
+          ("ISPLD_MAX" . ((number "0x3" 5428 . 5431)))
+          ("TX_ONR_RECOVERY" . ((number "0x01" 2112 . 2116)))
+          ("EEPROM_OK" . ((number "0x00" 8300 . 8304)))
+          ("SBE_DRVR_DOWN" . ((number "0x1" 1261 . 1264)))
+          ("EEPROM_OFFSET" . ((number "0xC0000" 5236 . 5243)))
+          ("ISPLD_INTR" . ((number "0x3" 5404 . 5407)))
+          ("CH_START_RX_BUF" . ((number "3" 2330 . 2331)))
+          ("WD_NOTIFY_ONR" . ((number "4" 6442 . 6443)))
+          ("TX_BUFF_RECOVERY" . ((number "0x02" 2144 . 2148)))
+          ("WD_NOTIFY_1TX" . ((number "1" 6382 . 6383)))
+          ("SBE_DRVR_AVAILABLE" . ((number "0x69734F4E" 1221 . 1231)))
+          ("CH_START_RX_NOW" . ((number "1" 2272 . 2273)))
+          ("CH_START_TX_1ST" . ((number "1" 2391 . 2392)))
+          )
+)
+    (semanticdb-table "libsbew.h"
+      :file "libsbew.h"
+      :fsize 21891
+      :lastmodtime '(21976 3068 725 573000))
+    (semanticdb-table "pmcc4_defs.h"
+      :file "pmcc4_defs.h"
+      :fsize 2301
+      :lastmodtime '(21976 3068 725 573000))
+    (semanticdb-table "pmcc4_cpld.h"
+      :file "pmcc4_cpld.h"
+      :fsize 3692
+      :lastmodtime '(21976 3068 725 573000))
+    (semanticdb-table "musycc.h"
+      :file "musycc.h"
+      :fsize 19623
+      :lastmodtime '(21976 3068 725 573000))
+    (semanticdb-table "sbe_promformat.h"
+      :file "sbe_promformat.h"
+      :fsize 4830
+      :lastmodtime '(21976 3068 725 573000))
+    (semanticdb-table "comet.h"
+      :file "comet.h"
+      :fsize 17495
+      :lastmodtime '(21976 3068 725 573000)))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!drivers!staging!cxt1e1!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

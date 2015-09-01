@@ -1,0 +1,84 @@
+;; Object mm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mm/"
+  :tables
+  (list
+    (semanticdb-table "init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [277 302])
+            ("linux/mm.h" include (:system-flag t) nil [303 324])
+            ("linux/bootmem.h" include (:system-flag t) nil [325 351])
+            ("linux/memblock.h" include (:system-flag t) nil [352 379])
+            ("linux/swap.h" include (:system-flag t) nil [380 403])
+            ("linux/module.h" include (:system-flag t) nil [404 429])
+            ("asm/page.h" include (:system-flag t) nil [430 451])
+            ("asm/pgalloc.h" include (:system-flag t) nil [452 476])
+            ("asm/sections.h" include (:system-flag t) nil [477 502])
+            ("asm/arcregs.h" include (:system-flag t) nil [503 527])
+            ("__aligned" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("PAGE_SIZE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [574 584]))                  
+                :type "int")
+                nil [564 585])
+            ("__aligned" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("PAGE_SIZE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [628 638]))                  
+                :type "int")
+                nil [618 639])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("empty_zero_page" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [654 670]))                  
+                :type "int")
+                nil [640 671])
+            ("arc_mem_sz" variable
+               (:typemodifiers ("static")
+                :default-value "0x20000000"
+                :type "unsigned long")
+                nil [708 753])
+            ("setup_mem_sz" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [869 879]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [849 1081])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("setup_mem_sz" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1101 1114]))                  
+                :type "int")
+                nil [1082 1115])
+            ("early_init_dt_add_memory_arch" function
+               (:arguments 
+                  ( ("base" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1159 1168])
+                    ("size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1169 1178]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1122 1284])
+            ("setup_arch_memory" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1487 1492]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1462 3111])
+            ("mem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3246 3251]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3230 3366])
+            ("free_initmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3451 3456]))                  
+                :type ("__init_refok" type (:type "class") nil nil))
+                nil [3425 3487]))          
+      :file "init.c"
+      :pointmax 3838
+      :fsize 3837
+      :lastmodtime '(21976 3065 48725 660000)
+      :unmatched-syntax '((VOID 3420 . 3424) (VOID 3225 . 3229) (VOID 1457 . 1461) (VOID 1117 . 1121) (string 1094 . 1099) (INT 845 . 848) (STATIC 838 . 844) (semantic-list 606 . 617) (symbol 591 . 606) (CHAR 586 . 590) (semantic-list 549 . 563) (symbol 535 . 549) (symbol 529 . 534))))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!arc!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

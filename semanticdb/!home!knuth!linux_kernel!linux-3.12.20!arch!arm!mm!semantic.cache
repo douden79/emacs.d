@@ -1,0 +1,827 @@
+;; Object mm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mm/"
+  :tables
+  (list
+    (semanticdb-table "init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [271 296])
+            ("linux/errno.h" include (:system-flag t) nil [297 321])
+            ("linux/swap.h" include (:system-flag t) nil [322 345])
+            ("linux/init.h" include (:system-flag t) nil [346 369])
+            ("linux/bootmem.h" include (:system-flag t) nil [370 396])
+            ("linux/mman.h" include (:system-flag t) nil [397 420])
+            ("linux/export.h" include (:system-flag t) nil [421 446])
+            ("linux/nodemask.h" include (:system-flag t) nil [447 474])
+            ("linux/initrd.h" include (:system-flag t) nil [475 500])
+            ("linux/of_fdt.h" include (:system-flag t) nil [501 526])
+            ("linux/highmem.h" include (:system-flag t) nil [527 553])
+            ("linux/gfp.h" include (:system-flag t) nil [554 576])
+            ("linux/memblock.h" include (:system-flag t) nil [577 604])
+            ("linux/dma-contiguous.h" include (:system-flag t) nil [605 638])
+            ("linux/sizes.h" include (:system-flag t) nil [639 663])
+            ("asm/mach-types.h" include (:system-flag t) nil [665 692])
+            ("asm/memblock.h" include (:system-flag t) nil [693 718])
+            ("asm/prom.h" include (:system-flag t) nil [719 740])
+            ("asm/sections.h" include (:system-flag t) nil [741 766])
+            ("asm/setup.h" include (:system-flag t) nil [767 789])
+            ("asm/tlb.h" include (:system-flag t) nil [790 810])
+            ("asm/fixmap.h" include (:system-flag t) nil [811 834])
+            ("asm/mach/arch.h" include (:system-flag t) nil [836 862])
+            ("asm/mach/map.h" include (:system-flag t) nil [863 888])
+            ("mm.h" include nil nil [890 905])
+            ("__initdata" variable
+               (:default-value "0"
+                :type ("phys_initrd_start" type (:type "class") nil nil))
+                nil [926 959])
+            ("__initdata" variable
+               (:default-value "0"
+                :type ("phys_initrd_size" type (:type "class") nil nil))
+                nil [981 1013])
+            ("early_initrd" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1046 1054]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1026 1269])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_initrd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1292 1305]))                  
+                :type "int")
+                nil [1270 1306])
+            ("parse_tag_initrd" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1343 1365]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1319 1568])
+            ("__tagtable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ATAG_INITRD" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1581 1593])
+                    ("" variable (:type ("parse_tag_initrd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1594 1611]))                  
+                :type "int")
+                nil [1570 1612])
+            ("parse_tag_initrd2" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1650 1672]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1625 1769])
+            ("__tagtable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ATAG_INITRD2" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1782 1795])
+                    ("" variable (:type ("parse_tag_initrd2" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1796 1814]))                  
+                :type "int")
+                nil [1771 1815])
+            ("meminfo" variable (:type ("meminfo" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [2213 2236])
+            ("show_mem" function
+               (:arguments 
+                  ( ("filter" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2252 2272]))                  
+                :type "void")
+                nil [2238 3244])
+            ("find_limits" function
+               (:arguments 
+                  ( ("min" variable
+                       (:pointer 1
+                        :type "unsigned long")
+                        (reparse-symbol arg-sub-list) [3277 3296])
+                    ("max_low" variable
+                       (:pointer 1
+                        :type "unsigned long")
+                        (reparse-symbol arg-sub-list) [3297 3320])
+                    ("max_high" variable
+                       (:pointer 1
+                        :type "unsigned long")
+                        (reparse-symbol arg-sub-list) [3331 3355]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3258 3881])
+            ("arm_bootmem_init" function
+               (:arguments 
+                  ( ("start_pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3981 4005])
+                    ("end_pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [4007 4029]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3957 5401])
+            ("setup_dma_zone" function
+               (:arguments 
+                  ( ("mdesc" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("machine_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6109 6142]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6087 6342])
+            ("arm_bootmem_free" function
+               (:arguments 
+                  ( ("min" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6475 6493])
+                    ("max_low" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6494 6516])
+                    ("max_high" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6518 6541]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6451 8300])
+            ("arm_memory_present" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8518 8523]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [8492 8527])
+            ("arm_memblock_steal_permitted" variable
+               (:typemodifiers ("static")
+                :default-value "true"
+                :type "bool")
+                nil [8759 8807])
+            ("arm_memblock_steal" function
+               (:arguments 
+                  ( ("size" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8847 8864])
+                    ("align" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8865 8883]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [8821 9088])
+            ("arm_memblock_init" function
+               (:arguments 
+                  ( ("mi" variable
+                       (:pointer 1
+                        :type ("meminfo" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9120 9139])
+                    ("mdesc" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("machine_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9141 9174]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [9095 11229])
+            ("bootmem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11256 11261]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11236 12484])
+            ("poison_init_mem" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12638 12646])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12647 12660]))                  
+                :type "void")
+                nil [12603 12737])
+            ("free_memmap" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("start_pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [12770 12794])
+                    ("end_pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [12795 12817]))                  
+                :type "void")
+                nil [12739 13333])
+            ("free_unused_memmap" function
+               (:arguments 
+                  ( ("mi" variable
+                       (:pointer 1
+                        :type ("meminfo" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13460 13479]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13434 14821])
+            ("free_highpages" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [15028 15033]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [15006 16125])
+            ("mem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [16347 16352]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [16331 19102])
+            ("free_initmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19122 19127]))                  
+                :type "void")
+                nil [19104 19469]))          
+      :file "init.c"
+      :pointmax 19872
+      :fsize 20397
+      :lastmodtime '(21985 35260 178409 877000)
+      :unmatched-syntax '((thing 11231 . 11235) (thing 9090 . 9094) (thing 8809 . 8820) (thing 8487 . 8491) (thing 8480 . 8486) (thing 6446 . 6450) (thing 6439 . 6445) (thing 6082 . 6086) (thing 3952 . 3956) (thing 3945 . 3951) (thing 3253 . 3257) (thing 3246 . 3252) (thing 1621 . 1624) (thing 1614 . 1620) (thing 1315 . 1318) (thing 1308 . 1314) (thing 1282 . 1290) (thing 1022 . 1025) (thing 1015 . 1021) (thing 976 . 980) (thing 967 . 975) (thing 960 . 966) (thing 914 . 925) (thing 907 . 913) (thing 13422 . 13428) (thing 13429 . 13433) (thing 14994 . 15000) (thing 15001 . 15005) (thing 16326 . 16330)))
+    (semanticdb-table "mmu.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/module.h" include (:system-flag t) nil [270 295])
+            ("linux/kernel.h" include (:system-flag t) nil [296 321])
+            ("linux/errno.h" include (:system-flag t) nil [322 346])
+            ("linux/init.h" include (:system-flag t) nil [347 370])
+            ("linux/mman.h" include (:system-flag t) nil [371 394])
+            ("linux/nodemask.h" include (:system-flag t) nil [395 422])
+            ("linux/memblock.h" include (:system-flag t) nil [423 450])
+            ("linux/fs.h" include (:system-flag t) nil [451 472])
+            ("linux/vmalloc.h" include (:system-flag t) nil [473 499])
+            ("linux/sizes.h" include (:system-flag t) nil [500 524])
+            ("asm/cp15.h" include (:system-flag t) nil [526 547])
+            ("asm/cputype.h" include (:system-flag t) nil [548 572])
+            ("asm/sections.h" include (:system-flag t) nil [573 598])
+            ("asm/cachetype.h" include (:system-flag t) nil [599 625])
+            ("asm/setup.h" include (:system-flag t) nil [626 648])
+            ("asm/smp_plat.h" include (:system-flag t) nil [649 674])
+            ("asm/tlb.h" include (:system-flag t) nil [675 695])
+            ("asm/highmem.h" include (:system-flag t) nil [696 720])
+            ("asm/system_info.h" include (:system-flag t) nil [721 749])
+            ("asm/traps.h" include (:system-flag t) nil [750 772])
+            ("asm/mach/arch.h" include (:system-flag t) nil [774 800])
+            ("asm/mach/map.h" include (:system-flag t) nil [801 826])
+            ("asm/mach/pci.h" include (:system-flag t) nil [827 852])
+            ("mm.h" include nil nil [854 869])
+            ("tcm.h" include nil nil [870 886])
+            ("empty_zero_page" variable
+               (:pointer 1
+                :type ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [983 1012])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("empty_zero_page" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1027 1043]))                  
+                :type "int")
+                nil [1013 1044])
+            ("top_pmd" variable
+               (:pointer 1
+                :type ("pmd_t" type (:type "class") nil nil))
+                nil [1103 1118])
+            ("CPOLICY_UNCACHED" variable (:constant-flag t) nil [1128 1144])
+            ("CPOLICY_BUFFERED" variable (:constant-flag t) nil [1155 1171])
+            ("CPOLICY_WRITETHROUGH" variable (:constant-flag t) nil [1182 1202])
+            ("CPOLICY_WRITEBACK" variable (:constant-flag t) nil [1213 1230])
+            ("CPOLICY_WRITEALLOC" variable (:constant-flag t) nil [1241 1259])
+            ("__initdata" variable
+               (:default-value "CPOLICY_WRITEBACK"
+                :type ("cachepolicy" type (:type "class") nil nil))
+                nil [1283 1326])
+            ("__initdata" variable
+               (:default-value "0"
+                :type ("ecc_mask" type (:type "class") nil nil))
+                nil [1347 1371])
+            ("pgprot_user" variable (:type ("pgprot_t" type (:type "class") nil nil)) nil [1372 1393])
+            ("pgprot_kernel" variable (:type ("pgprot_t" type (:type "class") nil nil)) nil [1394 1417])
+            ("pgprot_hyp_device" variable (:type ("pgprot_t" type (:type "class") nil nil)) nil [1418 1445])
+            ("pgprot_s2" variable (:type ("pgprot_t" type (:type "class") nil nil)) nil [1446 1465])
+            ("pgprot_s2_device" variable (:type ("pgprot_t" type (:type "class") nil nil)) nil [1466 1492])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pgprot_user" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1508 1520]))                  
+                :type "int")
+                nil [1494 1521])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pgprot_kernel" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1536 1550]))                  
+                :type "int")
+                nil [1522 1551])
+            ("cachepolicy" type
+               (:members 
+                  ( ("policy" variable
+                       (:dereference 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1575 1597])
+                    ("cr_mask" variable (:type "unsigned int") (reparse-symbol classsubparts) [1599 1620])
+                    ("pmd" variable (:type ("pmdval_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1622 1635])
+                    ("pte" variable (:type ("pteval_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1637 1650])
+                    ("pte_s2" variable (:type ("pteval_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1652 1668]))                  
+                :type "struct")
+                nil [1553 1671])
+            ("s2_policy" variable (:constant-flag t) nil [1743 1752])
+            ("__initdata" variable
+               (:default-value "{
+	{
+		.policy		= \"uncached\",
+		.cr_mask	= CR_W|CR_C,
+		.pmd		= PMD_SECT_UNCACHED,
+		.pte		= L_PTE_MT_UNCACHED,
+		.pte_s2		= s2_policy(L_PTE_S2_MT_UNCACHED),
+	}, {
+		.policy		= \"buffered\",
+		.cr_mask	= CR_C,
+		.pmd		= PMD_SECT_BUFFERED,
+		.pte		= L_PTE_MT_BUFFERABLE,
+		.pte_s2		= s2_policy(L_PTE_S2_MT_UNCACHED),
+	}, {
+		.policy		= \"writethrough\",
+		.cr_mask	= 0,
+		.pmd		= PMD_SECT_WT,
+		.pte		= L_PTE_MT_WRITETHROUGH,
+		.pte_s2		= s2_policy(L_PTE_S2_MT_WRITETHROUGH),
+	}, {
+		.policy		= \"writeback\",
+		.cr_mask	= 0,
+		.pmd		= PMD_SECT_WB,
+		.pte		= L_PTE_MT_WRITEBACK,
+		.pte_s2		= s2_policy(L_PTE_S2_MT_WRITEBACK),
+	}, {
+		.policy		= \"writealloc\",
+		.cr_mask	= 0,
+		.pmd		= PMD_SECT_WBWA,
+		.pte		= L_PTE_MT_WRITEALLOC,
+		.pte_s2		= s2_policy(L_PTE_S2_MT_WRITEBACK),
+	}
+}"
+                :type "int")
+                nil [1865 2654])
+            ("early_cachepolicy" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5136 5144]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5111 5222])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_cachepolicy" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5250 5268]))                  
+                :type "int")
+                nil [5223 5269])
+            ("noalign_setup" function
+               (:arguments 
+                  ( ("__unused" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5303 5318]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5282 5392])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("noalign_setup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5412 5426]))                  
+                :type "int")
+                nil [5393 5427])
+            ("PROT_PTE_DEVICE" variable (:constant-flag t) nil [5480 5495])
+            ("PROT_PTE_S2_DEVICE" variable (:constant-flag t) nil [5552 5570])
+            ("PROT_SECT_DEVICE" variable (:constant-flag t) nil [5595 5611])
+            ("mem_types" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	[MT_DEVICE] = {		  /* Strongly ordered / ARMv6 shared device */
+		.prot_pte	= PROT_PTE_DEVICE | L_PTE_MT_DEV_SHARED |
+				  L_PTE_SHARED,
+		.prot_pte_s2	= s2_policy(PROT_PTE_S2_DEVICE) |
+				  s2_policy(L_PTE_S2_MT_DEV_SHARED) |
+				  L_PTE_SHARED,
+		.prot_l1	= PMD_TYPE_TABLE,
+		.prot_sect	= PROT_SECT_DEVICE | PMD_SECT_S,
+		.domain		= DOMAIN_IO,
+	},
+	[MT_DEVICE_NONSHARED] = { /* ARMv6 non-shared device */
+		.prot_pte	= PROT_PTE_DEVICE | L_PTE_MT_DEV_NONSHARED,
+		.prot_l1	= PMD_TYPE_TABLE,
+		.prot_sect	= PROT_SECT_DEVICE,
+		.domain		= DOMAIN_IO,
+	},
+	[MT_DEVICE_CACHED] = {	  /* ioremap_cached */
+		.prot_pte	= PROT_PTE_DEVICE | L_PTE_MT_DEV_CACHED,
+		.prot_l1	= PMD_TYPE_TABLE,
+		.prot_sect	= PROT_SECT_DEVICE | PMD_SECT_WB,
+		.domain		= DOMAIN_IO,
+	},
+	[MT_DEVICE_WC] = {	/* ioremap_wc */
+		.prot_pte	= PROT_PTE_DEVICE | L_PTE_MT_DEV_WC,
+		.prot_l1	= PMD_TYPE_TABLE,
+		.prot_sect	= PROT_SECT_DEVICE,
+		.domain		= DOMAIN_IO,
+	},
+	[MT_UNCACHED] = {
+		.prot_pte	= PROT_PTE_DEVICE,
+		.prot_l1	= PMD_TYPE_TABLE,
+		.prot_sect	= PMD_TYPE_SECT | PMD_SECT_XN,
+		.domain		= DOMAIN_IO,
+	},
+	[MT_CACHECLEAN] = {
+		.prot_sect = PMD_TYPE_SECT | PMD_SECT_XN,
+		.domain    = DOMAIN_KERNEL,
+	},
+#ifndef CONFIG_ARM_LPAE
+	[MT_MINICLEAN] = {
+		.prot_sect = PMD_TYPE_SECT | PMD_SECT_XN | PMD_SECT_MINICACHE,
+		.domain    = DOMAIN_KERNEL,
+	},
+#endif
+	[MT_LOW_VECTORS] = {
+		.prot_pte  = L_PTE_PRESENT | L_PTE_YOUNG | L_PTE_DIRTY |
+				L_PTE_RDONLY,
+		.prot_l1   = PMD_TYPE_TABLE,
+		.domain    = DOMAIN_USER,
+	},
+	[MT_HIGH_VECTORS] = {
+		.prot_pte  = L_PTE_PRESENT | L_PTE_YOUNG | L_PTE_DIRTY |
+				L_PTE_USER | L_PTE_RDONLY,
+		.prot_l1   = PMD_TYPE_TABLE,
+		.domain    = DOMAIN_USER,
+	},
+	[MT_MEMORY] = {
+		.prot_pte  = L_PTE_PRESENT | L_PTE_YOUNG | L_PTE_DIRTY,
+		.prot_l1   = PMD_TYPE_TABLE,
+		.prot_sect = PMD_TYPE_SECT | PMD_SECT_AP_WRITE,
+		.domain    = DOMAIN_KERNEL,
+	},
+	[MT_ROM] = {
+		.prot_sect = PMD_TYPE_SECT,
+		.domain    = DOMAIN_KERNEL,
+	},
+	[MT_MEMORY_NONCACHED] = {
+		.prot_pte  = L_PTE_PRESENT | L_PTE_YOUNG | L_PTE_DIRTY |
+				L_PTE_MT_BUFFERABLE,
+		.prot_l1   = PMD_TYPE_TABLE,
+		.prot_sect = PMD_TYPE_SECT | PMD_SECT_AP_WRITE,
+		.domain    = DOMAIN_KERNEL,
+	},
+	[MT_MEMORY_DTCM] = {
+		.prot_pte  = L_PTE_PRESENT | L_PTE_YOUNG | L_PTE_DIRTY |
+				L_PTE_XN,
+		.prot_l1   = PMD_TYPE_TABLE,
+		.prot_sect = PMD_TYPE_SECT | PMD_SECT_XN,
+		.domain    = DOMAIN_KERNEL,
+	},
+	[MT_MEMORY_ITCM] = {
+		.prot_pte  = L_PTE_PRESENT | L_PTE_YOUNG | L_PTE_DIRTY,
+		.prot_l1   = PMD_TYPE_TABLE,
+		.domain    = DOMAIN_KERNEL,
+	},
+	[MT_MEMORY_SO] = {
+		.prot_pte  = L_PTE_PRESENT | L_PTE_YOUNG | L_PTE_DIRTY |
+				L_PTE_MT_UNCACHED | L_PTE_XN,
+		.prot_l1   = PMD_TYPE_TABLE,
+		.prot_sect = PMD_TYPE_SECT | PMD_SECT_AP_WRITE | PMD_SECT_S |
+				PMD_SECT_UNCACHED | PMD_SECT_XN,
+		.domain    = DOMAIN_KERNEL,
+	},
+	[MT_MEMORY_DMA_READY] = {
+		.prot_pte  = L_PTE_PRESENT | L_PTE_YOUNG | L_PTE_DIRTY,
+		.prot_l1   = PMD_TYPE_TABLE,
+		.domain    = DOMAIN_KERNEL,
+	},
+}"
+                :type ("mem_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5704 8691])
+            ("get_mem_type" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8729 8747]))                  
+                :type ("mem_type" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8693 8815])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_mem_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8830 8843]))                  
+                :type "int")
+                nil [8816 8844])
+            ("build_mem_type_table" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8956 8961]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [8928 18157])
+            ("vectors_base" variable (:constant-flag t) nil [18520 18532])
+            ("early_alloc_aligned" function
+               (:pointer 1
+                :arguments 
+                  ( ("sz" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18610 18627])
+                    ("align" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18628 18648]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [18582 18732])
+            ("early_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("sz" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18766 18783]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [18746 18824])
+            ("early_pte_alloc" function
+               (:arguments 
+                  ( ("pmd" variable
+                       (:pointer 1
+                        :type ("pmd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18908 18919])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18920 18939])
+                    ("prot" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18940 18959]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [18885 19155])
+            ("alloc_init_pte" function
+               (:arguments 
+                  ( ("pmd" variable
+                       (:pointer 1
+                        :type ("pmd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19191 19202])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19203 19222])
+                    ("end" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19229 19247])
+                    ("pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19248 19266])
+                    ("type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19273 19301]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [19169 19490])
+            ("__map_init_section" function
+               (:arguments 
+                  ( ("pmd" variable
+                       (:pointer 1
+                        :type ("pmd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19530 19541])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19542 19561])
+                    ("end" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [19565 19583])
+                    ("phys" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19584 19601])
+                    ("type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19605 19633]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [19504 20251])
+            ("alloc_init_pmd" function
+               (:arguments 
+                  ( ("pud" variable
+                       (:pointer 1
+                        :type ("pud_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20287 20298])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [20299 20318])
+                    ("end" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [20329 20347])
+                    ("phys" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20348 20365])
+                    ("type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20376 20404]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [20265 20988])
+            ("alloc_init_pud" function
+               (:arguments 
+                  ( ("pgd" variable
+                       (:pointer 1
+                        :type ("pgd_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21024 21035])
+                    ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [21036 21055])
+                    ("end" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [21062 21080])
+                    ("phys" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21081 21098])
+                    ("type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21105 21133]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [21002 21350])
+            ("create_36bit_mapping" function
+               (:arguments 
+                  ( ("md" variable
+                       (:pointer 1
+                        :type ("map_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21416 21436])
+                    ("type" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mem_type" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21442 21470]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [21388 23284])
+            ("create_mapping" function
+               (:arguments 
+                  ( ("md" variable
+                       (:pointer 1
+                        :type ("map_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23595 23615]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [23573 25578])
+            ("iotable_init" function
+               (:arguments 
+                  ( ("io_desc" variable
+                       (:pointer 1
+                        :type ("map_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25657 25682])
+                    ("nr" variable (:type "int") (reparse-symbol arg-sub-list) [25683 25690]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [25637 26307])
+            ("vm_reserve_area_early" function
+               (:arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [26343 26362])
+                    ("size" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [26363 26382])
+                    ("caller" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [26389 26402]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [26314 26673])
+            ("pmd_empty_section_gap" function
+               (:arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [27370 27389]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [27341 27460])
+            ("fill_pmd_gaps" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [27632 27637]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [27611 28720])
+            ("pci_reserve_io" variable (:constant-flag t) nil [29060 29074])
+            ("vmalloc_min" variable
+               (:default-value "(void *)(VMALLOC_END - (240 << 20) - VMALLOC_OFFSET)"
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [29709 29788])
+            ("early_vmalloc" function
+               (:arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [29986 29996]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [29965 30511])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_vmalloc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30535 30549]))                  
+                :type "int")
+                nil [30512 30550])
+            ("__initdata" variable
+               (:default-value "0"
+                :type ("arm_lowmem_limit" type (:type "class") nil nil))
+                nil [30564 30596])
+            ("sanity_check_meminfo" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [30631 30636]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [30603 35958])
+            ("prepare_page_table" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [35998 36003]))                  
+                :type "void")
+                nil [35960 37388])
+            ("SWAPPER_PG_DIR_SIZE" variable (:constant-flag t) nil [37561 37580])
+            ("arm_mm_memblock_reserve" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [37704 37709]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [37673 38203])
+            ("devicemaps_init" function
+               (:arguments 
+                  ( ("mdesc" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("machine_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38615 38648]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [38592 41198])
+            ("kmap_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [41345 41350]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [41328 41524])
+            ("map_lowmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [41556 41561]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [41538 42195])
+            ("paging_init" function
+               (:arguments 
+                  ( ("mdesc" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("machine_desc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42364 42397]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [42345 42912]))          
+      :file "mmu.c"
+      :pointmax 42913
+      :fsize 45466
+      :lastmodtime '(21976 20222 827889 115000)
+      :unmatched-syntax '((thing 41533 . 41537) (thing 41526 . 41532) (thing 41323 . 41327) (thing 41316 . 41322) (thing 38587 . 38591) (thing 38580 . 38586) (thing 37668 . 37672) (thing 30598 . 30602) (thing 30552 . 30563) (thing 30524 . 30533) (thing 29961 . 29964) (thing 29954 . 29960) (thing 29707 . 29708) (thing 29702 . 29706) (thing 29695 . 29701) (thing 27606 . 27610) (thing 27599 . 27605) (thing 27336 . 27340) (thing 27329 . 27335) (thing 26309 . 26313) (thing 25632 . 25636) (thing 23568 . 23572) (thing 23561 . 23567) (thing 21383 . 21387) (thing 21376 . 21382) (thing 20997 . 21001) (thing 20990 . 20996) (thing 20260 . 20264) (thing 20253 . 20259) (thing 19499 . 19503) (thing 19492 . 19498) (thing 19164 . 19168) (thing 19157 . 19163) (thing 18883 . 18884) (thing 18877 . 18882) (thing 18870 . 18876) (thing 18741 . 18745) (thing 18734 . 18740) (thing 18577 . 18581) (thing 18570 . 18576) (thing 8923 . 8927) (thing 8916 . 8922) (thing 5401 . 5410) (thing 5278 . 5281) (thing 5271 . 5277) (thing 5235 . 5248) (thing 5107 . 5110) (thing 5100 . 5106) (thing 1862 . 1864) (thing 1848 . 1862) (thing 1836 . 1847) (thing 1829 . 1835) (thing 1822 . 1828) (thing 1343 . 1346) (thing 1334 . 1342) (thing 1327 . 1333) (thing 1279 . 1282) (thing 1270 . 1278) (thing 1263 . 1269) (thing 42340 . 42344))
+      :lexical-table 
+        '(("SWAPPER_PG_DIR_SIZE" . ((semantic-list "(PTRS_PER_PGD * sizeof(pgd_t))" 37581 . 37611)))
+          ("PROT_SECT_DEVICE" . 
+              ((symbol "PMD_TYPE_SECT" 5612 . 5625) (punctuation "|" 5625 . 5626) (symbol "PMD_SECT_AP_WRITE" 5626 . 5643)))
+          ("CPOLICY_BUFFERED" . ((number "1" 1172 . 1173)))
+          ("CPOLICY_WRITEALLOC" . ((number "4" 1260 . 1261)))
+          ("pci_reserve_io" (spp-arg-list nil 29074 . 29076) . 
+              ((DO "do" 29077 . 29079) (semantic-list "{ }" 29080 . 29083) (WHILE "while" 29084 . 29089) (semantic-list "(0)" 29090 . 29093)))
+          ("CPOLICY_UNCACHED" . ((number "0" 1145 . 1146)))
+          ("CPOLICY_WRITETHROUGH" . ((number "2" 1203 . 1204)))
+          ("CPOLICY_WRITEBACK" . ((number "3" 1231 . 1232)))
+          ("s2_policy" (spp-arg-list ("policy") 1752 . 1760) . ((number "0" 1761 . 1762)))
+          ("vectors_base" (spp-arg-list nil 18532 . 18534) . ((semantic-list "(vectors_high() ? 0xffff0000 : 0)" 18535 . 18568)))
+          ("PROT_PTE_DEVICE" . 
+              ((symbol "L_PTE_PRESENT" 5497 . 5510) (punctuation "|" 5510 . 5511) (symbol "L_PTE_YOUNG" 5511 . 5522) (punctuation "|" 5522 . 5523) (symbol "L_PTE_DIRTY" 5523 . 5534) (punctuation "|" 5534 . 5535) (symbol "L_PTE_XN" 5535 . 5543)))
+          ("PROT_PTE_S2_DEVICE" . ((symbol "PROT_PTE_DEVICE" 5571 . 5586)))
+          )
+)
+    (semanticdb-table "mm.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("arm_dma_limit" variable (:constant-flag t) nil [2121 2134])
+            ("arm_lowmem_limit" variable
+               (:typemodifiers ("extern")
+                :type ("phys_addr_t" type (:type "class") nil nil))
+                nil [2161 2197])
+            ("bootmem_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2224 2229]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2204 2230])
+            ("arm_mm_memblock_reserve" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2260 2265]))                  
+                :type "void")
+                nil [2231 2266])
+            ("dma_contiguous_remap" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2293 2298]))                  
+                :type "void")
+                nil [2267 2299]))          
+      :file "mm.h"
+      :pointmax 2300
+      :fsize 2299
+      :lastmodtime '(21976 3065 652725 642000)
+      :unmatched-syntax '((VOID 2199 . 2203))
+      :lexical-table 
+        '(("arm_dma_limit" . ((semantic-list "((phys_addr_t)~0)" 2135 . 2152)))
+          )
+)
+    (semanticdb-table "tcm.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("tcm_init" function
+               (:typemodifiers ("inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [413 418]))                  
+                :type "void")
+                nil [392 422]))          
+      :file "tcm.h"
+      :pointmax 430
+      :fsize 429
+      :lastmodtime '(21976 3065 656725 642000)
+      :unmatched-syntax nil))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!arm!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

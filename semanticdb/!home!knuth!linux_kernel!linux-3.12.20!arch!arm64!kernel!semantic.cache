@@ -1,0 +1,450 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "psci.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("pr_fmt" variable (:constant-flag t) nil [538 544])
+            ("linux/init.h" include (:system-flag t) nil [564 587])
+            ("linux/of.h" include (:system-flag t) nil [588 609])
+            ("asm/compiler.h" include (:system-flag t) nil [611 636])
+            ("asm/errno.h" include (:system-flag t) nil [637 659])
+            ("asm/psci.h" include (:system-flag t) nil [660 681])
+            ("psci_ops" variable (:type ("psci_operations" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [683 715])
+            ("invoke_psci_fn" function
+               (:prototype-flag t
+                :function-pointer t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [746 750])
+                    ("" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [751 755])
+                    ("" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [756 760])
+                    ("" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [761 765]))                  
+                :type "int")
+                nil [717 766])
+            ("psci_function" type
+               (:members 
+                  ( ("PSCI_FN_CPU_SUSPEND" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [790 810])
+                    ("PSCI_FN_CPU_ON" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [812 827])
+                    ("PSCI_FN_CPU_OFF" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [829 845])
+                    ("PSCI_FN_MIGRATE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [847 863])
+                    ("PSCI_FN_MAX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [865 877]))                  
+                :type "enum")
+                nil [768 880])
+            ("psci_function_id" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("u32" type (:type "class") nil nil))
+                nil [882 923])
+            ("PSCI_RET_SUCCESS" variable (:constant-flag t) nil [933 949])
+            ("PSCI_RET_EOPNOTSUPP" variable (:constant-flag t) nil [961 980])
+            ("PSCI_RET_EINVAL" variable (:constant-flag t) nil [993 1008])
+            ("PSCI_RET_EPERM" variable (:constant-flag t) nil [1022 1036])
+            ("psci_to_linux_errno" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("errno" variable (:type "int") (reparse-symbol arg-sub-list) [1074 1084]))                  
+                :type "int")
+                nil [1043 1293])
+            ("PSCI_POWER_STATE_ID_MASK" variable (:constant-flag t) nil [1303 1327])
+            ("PSCI_POWER_STATE_ID_SHIFT" variable (:constant-flag t) nil [1343 1368])
+            ("PSCI_POWER_STATE_TYPE_MASK" variable (:constant-flag t) nil [1379 1405])
+            ("PSCI_POWER_STATE_TYPE_SHIFT" variable (:constant-flag t) nil [1418 1445])
+            ("PSCI_POWER_STATE_AFFL_MASK" variable (:constant-flag t) nil [1457 1483])
+            ("PSCI_POWER_STATE_AFFL_SHIFT" variable (:constant-flag t) nil [1496 1523])
+            ("psci_power_state_pack" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable (:type ("psci_power_state" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1561 1591]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [1528 1850])
+            ("__invoke_psci_fn_hvc" function
+               (:arguments 
+                  ( ("function_id" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2041 2057])
+                    ("arg0" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2058 2067])
+                    ("arg1" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2068 2077])
+                    ("arg2" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2084 2093]))                  
+                :type "int")
+                nil [2016 2304])
+            ("__invoke_psci_fn_smc" function
+               (:arguments 
+                  ( ("function_id" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2347 2363])
+                    ("arg0" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2364 2373])
+                    ("arg1" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2374 2383])
+                    ("arg2" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2390 2399]))                  
+                :type "int")
+                nil [2322 2610])
+            ("psci_cpu_suspend" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable (:type ("psci_power_state" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2640 2670])
+                    ("entry_point" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2678 2704]))                  
+                :type "int")
+                nil [2612 2921])
+            ("psci_cpu_off" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable (:type ("psci_power_state" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2947 2977]))                  
+                :type "int")
+                nil [2923 3180])
+            ("psci_cpu_on" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpuid" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3205 3225])
+                    ("entry_point" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3226 3252]))                  
+                :type "int")
+                nil [3182 3400])
+            ("psci_migrate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpuid" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3426 3446]))                  
+                :type "int")
+                nil [3402 3585])
+            ("__initconst" variable
+               (:default-value "{
+	{ .compatible = \"arm,psci\",	},
+	{},
+}"
+                :type "int")
+                nil [3636 3691])
+            ("psci_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3714 3719]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3697 4912]))          
+      :file "psci.c"
+      :pointmax 4913
+      :fsize 4912
+      :lastmodtime '(21976 3065 672725 641000)
+      :unmatched-syntax '((INT 3693 . 3696) (semantic-list 3633 . 3635) (symbol 3620 . 3633) (symbol 3607 . 3619) (STRUCT 3600 . 3606) (CONST 3594 . 3599) (STATIC 3587 . 3593) (symbol 2313 . 2321) (STATIC 2306 . 2312) (symbol 2007 . 2015) (STATIC 2000 . 2006))
+      :lexical-table 
+        '(("PSCI_RET_EPERM" . ((punctuation "-" 1039 . 1040) (number "3" 1040 . 1041)))
+          ("PSCI_POWER_STATE_AFFL_MASK" . ((number "0x3" 1484 . 1487)))
+          ("PSCI_POWER_STATE_TYPE_SHIFT" . ((number "16" 1446 . 1448)))
+          ("PSCI_RET_SUCCESS" . ((number "0" 951 . 952)))
+          ("PSCI_RET_EOPNOTSUPP" . ((punctuation "-" 982 . 983) (number "1" 983 . 984)))
+          ("PSCI_POWER_STATE_ID_MASK" . ((number "0xffff" 1328 . 1334)))
+          ("PSCI_POWER_STATE_ID_SHIFT" . ((number "0" 1369 . 1370)))
+          ("PSCI_POWER_STATE_TYPE_MASK" . ((number "0x1" 1406 . 1409)))
+          ("PSCI_POWER_STATE_AFFL_SHIFT" . ((number "24" 1524 . 1526)))
+          ("pr_fmt" (spp-arg-list ("fmt") 544 . 549) . ((string "\"psci: \"" 550 . 558) (symbol "fmt" 559 . 562)))
+          ("PSCI_RET_EINVAL" . ((punctuation "-" 1011 . 1012) (number "2" 1012 . 1013)))
+          )
+)
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/export.h" include (:system-flag t) nil [703 728])
+            ("linux/kernel.h" include (:system-flag t) nil [729 754])
+            ("linux/stddef.h" include (:system-flag t) nil [755 780])
+            ("linux/ioport.h" include (:system-flag t) nil [781 806])
+            ("linux/delay.h" include (:system-flag t) nil [807 831])
+            ("linux/utsname.h" include (:system-flag t) nil [832 858])
+            ("linux/initrd.h" include (:system-flag t) nil [859 884])
+            ("linux/console.h" include (:system-flag t) nil [885 911])
+            ("linux/bootmem.h" include (:system-flag t) nil [912 938])
+            ("linux/seq_file.h" include (:system-flag t) nil [939 966])
+            ("linux/screen_info.h" include (:system-flag t) nil [967 997])
+            ("linux/init.h" include (:system-flag t) nil [998 1021])
+            ("linux/kexec.h" include (:system-flag t) nil [1022 1046])
+            ("linux/crash_dump.h" include (:system-flag t) nil [1047 1076])
+            ("linux/root_dev.h" include (:system-flag t) nil [1077 1104])
+            ("linux/clk-provider.h" include (:system-flag t) nil [1105 1136])
+            ("linux/cpu.h" include (:system-flag t) nil [1137 1159])
+            ("linux/interrupt.h" include (:system-flag t) nil [1160 1188])
+            ("linux/smp.h" include (:system-flag t) nil [1189 1211])
+            ("linux/fs.h" include (:system-flag t) nil [1212 1233])
+            ("linux/proc_fs.h" include (:system-flag t) nil [1234 1260])
+            ("linux/memblock.h" include (:system-flag t) nil [1261 1288])
+            ("linux/of_fdt.h" include (:system-flag t) nil [1289 1314])
+            ("linux/of_platform.h" include (:system-flag t) nil [1315 1345])
+            ("asm/cputype.h" include (:system-flag t) nil [1347 1371])
+            ("asm/elf.h" include (:system-flag t) nil [1372 1392])
+            ("asm/cputable.h" include (:system-flag t) nil [1393 1418])
+            ("asm/sections.h" include (:system-flag t) nil [1419 1444])
+            ("asm/setup.h" include (:system-flag t) nil [1445 1467])
+            ("asm/smp_plat.h" include (:system-flag t) nil [1468 1493])
+            ("asm/cacheflush.h" include (:system-flag t) nil [1494 1521])
+            ("asm/tlbflush.h" include (:system-flag t) nil [1522 1547])
+            ("asm/traps.h" include (:system-flag t) nil [1548 1570])
+            ("asm/memblock.h" include (:system-flag t) nil [1571 1596])
+            ("asm/psci.h" include (:system-flag t) nil [1597 1618])
+            ("processor_id" variable (:type "unsigned int") nil [1620 1646])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("processor_id" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1661 1674]))                  
+                :type "int")
+                nil [1647 1675])
+            ("__read_mostly" variable (:type ("elf_hwcap" type (:type "class") nil nil)) nil [1691 1715])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("elf_hwcap" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1734 1744]))                  
+                :type "int")
+                nil [1716 1745])
+            ("cpu_name" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :type "char")
+                nil [1747 1775])
+            ("machine_name" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :type "char")
+                nil [1776 1808])
+            ("__initdata" variable (:type ("__fdt_pointer" type (:type "class") nil nil)) nil [1821 1846])
+            ("mem_res" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	{
+		.name = \"Kernel code\",
+		.start = 0,
+		.end = 0,
+		.flags = IORESOURCE_MEM
+	},
+	{
+		.name = \"Kernel data\",
+		.start = 0,
+		.end = 0,
+		.flags = IORESOURCE_MEM
+	}
+}"
+                :type ("resource" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1884 2090])
+            ("kernel_code" variable (:constant-flag t) nil [2100 2111])
+            ("kernel_data" variable (:constant-flag t) nil [2131 2142])
+            ("early_print" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2179 2195])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [2196 2200]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2160 2327])
+            ("setup_processor" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2364 2369]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2341 2937])
+            ("setup_machine_fdt" function
+               (:arguments 
+                  ( ("dt_phys" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2976 2996]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2951 4379])
+            ("early_init_dt_add_memory_arch" function
+               (:arguments 
+                  ( ("base" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4423 4432])
+                    ("size" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4433 4442]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4386 4806])
+            ("early_mem" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4896 4904]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4879 5096])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_mem" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5116 5126]))                  
+                :type "int")
+                nil [5097 5127])
+            ("request_standard_resources" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5175 5180]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5141 6005])
+            ("__cpu_logical_map" variable
+               (:dereference 1
+                :default-value "{ [0 ... NR_CPUS-1] = INVALID_HWID }"
+                :type ("u64" type (:type "class") nil nil))
+                nil [6007 6077])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6102 6119]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6084 6786])
+            ("arm64_device_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [6824 6829]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6799 6933])
+            ("arch_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("arm64_device_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6948 6966]))                  
+                :type "int")
+                nil [6934 6967])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("cpu" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6991 7002])
+                    ("" variable (:type ("cpu_data" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7003 7012]))                  
+                :type "int")
+                nil [6969 7013])
+            ("topology_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7047 7052]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7026 7200])
+            ("subsys_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("topology_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7217 7231]))                  
+                :type "int")
+                nil [7201 7232])
+            ("hwcap_str" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	\"fp\",
+	\"asimd\",
+	NULL
+}"
+                :type "char")
+                nil [7234 7294])
+            ("c_show" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7314 7333])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7334 7342]))                  
+                :type "int")
+                nil [7296 8303])
+            ("c_start" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8326 8345])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8346 8358]))                  
+                :type "void")
+                nil [8305 8399])
+            ("c_next" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8421 8440])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8441 8449])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8450 8462]))                  
+                :type "void")
+                nil [8401 8489])
+            ("c_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8510 8529])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8530 8538]))                  
+                :type "void")
+                nil [8491 8542])
+            ("cpuinfo_op" variable
+               (:constant-flag t
+                :default-value "{
+	.start	= c_start,
+	.next	= c_next,
+	.stop	= c_stop,
+	.show	= c_show
+}"
+                :type ("seq_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8544 8658]))          
+      :file "setup.c"
+      :pointmax 8659
+      :fsize 8658
+      :lastmodtime '(21976 3065 672725 641000)
+      :unmatched-syntax '((INT 7022 . 7025) (STATIC 7015 . 7021) (INT 6795 . 6798) (STATIC 6788 . 6794) (VOID 6079 . 6083) (VOID 5136 . 5140) (STATIC 5129 . 5135) (string 5109 . 5114) (INT 4875 . 4878) (STATIC 4868 . 4874) (VOID 4381 . 4385) (VOID 2946 . 2950) (STATIC 2939 . 2945) (VOID 2336 . 2340) (STATIC 2329 . 2335) (VOID 2155 . 2159) (symbol 1809 . 1820) (LONG 1686 . 1690) (UNSIGNED 1677 . 1685))
+      :lexical-table 
+        '(("kernel_data" . ((symbol "mem_res" 2143 . 2150) (semantic-list "[1]" 2150 . 2153)))
+          ("kernel_code" . ((symbol "mem_res" 2112 . 2119) (semantic-list "[0]" 2119 . 2122)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!arm64!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

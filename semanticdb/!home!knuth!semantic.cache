@@ -1,0 +1,63 @@
+;; Object knuth/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "knuth/"
+  :tables
+  (list
+    (semanticdb-table "test.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("u32" type
+               (:typedef ("unsigned int")
+                :type "typedef")
+                nil [21 46])
+            ("phys_addr_t" type
+               (:typedef ("u32" type (:type "class") nil nil)
+                :type "typedef")
+                nil [47 71])
+            ("resource_size_t" type
+               (:typedef ("phys_addr_t" type (:type "class") nil nil)
+                :type "typedef")
+                nil [72 108])
+            ("resource" type
+               (:members 
+                  ( ("start" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [129 151])
+                    ("end" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [153 173])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [175 192])
+                    ("flags" variable (:type "unsigned long") (reparse-symbol classsubparts) [194 214])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("resource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [216 258])
+                    ("sibling" variable
+                       (:pointer 1
+                        :type ("resource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [216 258])
+                    ("child" variable
+                       (:pointer 1
+                        :type ("resource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [216 258]))                  
+                :type "struct")
+                nil [110 261])
+            ("main" function (:type "int") nil [263 356]))          
+      :file "test.c"
+      :pointmax 357
+      :fsize 356
+      :lastmodtime '(21985 12077 258123 732000)
+      :unmatched-syntax '((thing 18 . 19) (thing 18 . 19) (thing 17 . 18) (thing 17 . 18) (thing 16 . 17) (thing 16 . 17) (thing 11 . 16) (thing 11 . 16) (thing 10 . 11) (thing 10 . 11) (thing 2 . 9) (thing 2 . 9) (thing 1 . 2) (thing 1 . 2) (thing 1 . 1) (thing 1 . 1))))
+  :file "!home!knuth!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

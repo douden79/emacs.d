@@ -1,0 +1,180 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "atomic.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_CRIS_ATOMIC__" variable (:constant-flag t) nil [97 116])
+            ("linux/compiler.h" include (:system-flag t) nil [118 145])
+            ("linux/types.h" include (:system-flag t) nil [146 170])
+            ("asm/cmpxchg.h" include (:system-flag t) nil [171 195])
+            ("arch/atomic.h" include (:system-flag t) nil [196 220])
+            ("ATOMIC_INIT" variable (:constant-flag t) nil [325 336])
+            ("atomic_read" variable (:constant-flag t) nil [358 369])
+            ("atomic_set" variable (:constant-flag t) nil [414 424])
+            ("atomic_add" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [549 555])
+                    ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [556 577]))                  
+                :type "void")
+                nil [519 682])
+            ("atomic_sub" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [714 720])
+                    ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [721 742]))                  
+                :type "void")
+                nil [684 847])
+            ("atomic_add_return" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [885 891])
+                    ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [892 913]))                  
+                :type "int")
+                nil [849 1058])
+            ("atomic_add_negative" variable (:constant-flag t) nil [1068 1087])
+            ("atomic_sub_return" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [1165 1171])
+                    ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1172 1193]))                  
+                :type "int")
+                nil [1129 1338])
+            ("atomic_sub_and_test" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [1378 1384])
+                    ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1385 1406]))                  
+                :type "int")
+                nil [1340 1556])
+            ("atomic_inc" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1588 1609]))                  
+                :type "void")
+                nil [1558 1713])
+            ("atomic_dec" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1745 1766]))                  
+                :type "void")
+                nil [1715 1870])
+            ("atomic_inc_return" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1908 1929]))                  
+                :type "int")
+                nil [1872 2071])
+            ("atomic_dec_return" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2109 2130]))                  
+                :type "int")
+                nil [2073 2272])
+            ("atomic_dec_and_test" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2311 2332]))                  
+                :type "int")
+                nil [2273 2479])
+            ("atomic_inc_and_test" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2519 2540]))                  
+                :type "int")
+                nil [2481 2687])
+            ("atomic_cmpxchg" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2722 2734])
+                    ("old" variable (:type "int") (reparse-symbol arg-sub-list) [2735 2743])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2744 2751]))                  
+                :type "int")
+                nil [2689 2927])
+            ("atomic_xchg" variable (:constant-flag t) nil [2937 2948])
+            ("__atomic_add_unless" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3025 3037])
+                    ("a" variable (:type "int") (reparse-symbol arg-sub-list) [3038 3044])
+                    ("u" variable (:type "int") (reparse-symbol arg-sub-list) [3045 3051]))                  
+                :type "int")
+                nil [2987 3215])
+            ("smp_mb__before_atomic_dec" variable (:constant-flag t) nil [3273 3298])
+            ("smp_mb__after_atomic_dec" variable (:constant-flag t) nil [3322 3346])
+            ("smp_mb__before_atomic_inc" variable (:constant-flag t) nil [3371 3396])
+            ("smp_mb__after_atomic_inc" variable (:constant-flag t) nil [3420 3444]))          
+      :file "atomic.h"
+      :pointmax 3469
+      :fsize 3468
+      :lastmodtime '(21976 3065 740725 639000)
+      :unmatched-syntax '((NEW 2748 . 2751))
+      :lexical-table 
+        '(("smp_mb__before_atomic_inc" (spp-arg-list nil 3396 . 3398) . ((symbol "barrier" 3402 . 3409) (semantic-list "()" 3409 . 3411)))
+          ("smp_mb__after_atomic_dec" (spp-arg-list nil 3346 . 3348) . ((symbol "barrier" 3353 . 3360) (semantic-list "()" 3360 . 3362)))
+          ("atomic_set" (spp-arg-list ("v" "i") 424 . 429) . ((semantic-list "(((v)->counter) = (i))" 430 . 452)))
+          ("atomic_xchg" (spp-arg-list ("v" "new") 2948 . 2956) . ((semantic-list "(xchg(&((v)->counter), new))" 2957 . 2985)))
+          ("smp_mb__before_atomic_dec" (spp-arg-list nil 3298 . 3300) . ((symbol "barrier" 3304 . 3311) (semantic-list "()" 3311 . 3313)))
+          ("__ASM_CRIS_ATOMIC__")
+          ("atomic_read" (spp-arg-list ("v") 369 . 372) . ((semantic-list "(*(volatile int *)&(v)->counter)" 373 . 405)))
+          ("smp_mb__after_atomic_inc" (spp-arg-list nil 3444 . 3446) . ((symbol "barrier" 3451 . 3458) (semantic-list "()" 3458 . 3460)))
+          ("ATOMIC_INIT" (spp-arg-list ("i") 336 . 339) . ((semantic-list "{ (i) }" 341 . 348)))
+          ("atomic_add_negative" (spp-arg-list ("a" "v") 1087 . 1093) . ((semantic-list "(atomic_add_return((a), (v)) < 0)" 1094 . 1127)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!cris!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

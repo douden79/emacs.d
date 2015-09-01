@@ -451,81 +451,81 @@
                (:arguments 
                   ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13013 13018]))                  
                 :type ("__init" type (:type "class") nil nil))
-                nil [12993 18735])
+                nil [12993 18728])
             ("do_ctors" function
                (:arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18826 18831]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18819 18824]))                  
                 :type ("__init" type (:type "class") nil nil))
-                nil [18810 18973])
-            ("initcall_debug" variable (:type "bool") nil [18975 18995])
+                nil [18803 18966])
+            ("initcall_debug" variable (:type "bool") nil [18968 18988])
             ("core_param" function
                (:prototype-flag t
                 :arguments 
-                  ( ("" variable (:type ("initcall_debug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19007 19022])
-                    ("" variable (:type ("initcall_debug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19023 19038])
-                    ("" variable (:type "bool") (reparse-symbol arg-sub-list) [19039 19044]))                  
+                  ( ("" variable (:type ("initcall_debug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19000 19015])
+                    ("" variable (:type ("initcall_debug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19016 19031])
+                    ("" variable (:type "bool") (reparse-symbol arg-sub-list) [19032 19037]))                  
                 :type "int")
-                nil [18996 19051])
+                nil [18989 19044])
             ("do_one_initcall_debug" function
                (:arguments 
-                  ( ("fn" variable (:type ("initcall_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19103 19117]))                  
+                  ( ("fn" variable (:type ("initcall_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19096 19110]))                  
                 :type ("__init_or_module" type (:type "class") nil nil))
-                nil [19064 19511])
+                nil [19057 19504])
             ("do_one_initcall" function
                (:arguments 
-                  ( ("fn" variable (:type ("initcall_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19550 19564]))                  
+                  ( ("fn" variable (:type ("initcall_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19543 19557]))                  
                 :type ("__init_or_module" type (:type "class") nil nil))
-                nil [19517 20015])
+                nil [19510 20008])
             ("__initcall_start" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20018 20055])
+                nil [20011 20048])
             ("__initcall0_start" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20056 20094])
+                nil [20049 20087])
             ("__initcall1_start" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20095 20133])
+                nil [20088 20126])
             ("__initcall2_start" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20134 20172])
+                nil [20127 20165])
             ("__initcall3_start" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20173 20211])
+                nil [20166 20204])
             ("__initcall4_start" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20212 20250])
+                nil [20205 20243])
             ("__initcall5_start" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20251 20289])
+                nil [20244 20282])
             ("__initcall6_start" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20290 20328])
+                nil [20283 20321])
             ("__initcall7_start" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20329 20367])
+                nil [20322 20360])
             ("__initcall_end" variable
                (:dereference 1
                 :typemodifiers ("extern")
                 :type ("initcall_t" type (:type "class") nil nil))
-                nil [20368 20403])
+                nil [20361 20396])
             ("__initdata" variable
                (:default-value "{
 	__initcall0_start,
@@ -539,7 +539,7 @@
 	__initcall_end,
 }"
                 :type "int")
-                nil [20442 20636])
+                nil [20435 20629])
             ("__initdata" variable
                (:default-value "{
 	\"early\",
@@ -552,32 +552,32 @@
 	\"late\",
 }"
                 :type "int")
-                nil [20738 20834])
+                nil [20731 20827])
             ("do_initcall_level" function
                (:arguments 
-                  ( ("level" variable (:type "int") (reparse-symbol arg-sub-list) [20873 20883]))                  
+                  ( ("level" variable (:type "int") (reparse-symbol arg-sub-list) [20866 20876]))                  
                 :type ("__init" type (:type "class") nil nil))
-                nil [20848 21291])
+                nil [20841 21284])
             ("do_initcalls" function
                (:arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21325 21330]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21318 21323]))                  
                 :type ("__init" type (:type "class") nil nil))
-                nil [21305 21442])
+                nil [21298 21435])
             ("do_basic_setup" function
                (:arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21709 21714]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21702 21707]))                  
                 :type ("__init" type (:type "class") nil nil))
-                nil [21687 21894])
+                nil [21680 21887])
             ("do_pre_smp_initcalls" function
                (:arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21936 21941]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [21929 21934]))                  
                 :type ("__init" type (:type "class") nil nil))
-                nil [21908 22046])
+                nil [21901 22039])
             ("load_default_modules" function
                (:arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22355 22360]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22348 22353]))                  
                 :type ("__init" type (:type "class") nil nil))
-                nil [22327 22397])
+                nil [22320 22390])
             ("run_init_process" function
                (:typemodifiers ("static")
                 :arguments 
@@ -585,39 +585,150 @@
                        (:pointer 1
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [22427 22453]))                  
+                        (reparse-symbol arg-sub-list) [22420 22446]))                  
                 :type "int")
-                nil [22399 22618])
+                nil [22392 22611])
             ("kernel_init_freeable" function
                (:prototype-flag t
                 :arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22669 22674]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22662 22667]))                  
                 :type ("__init" type (:type "class") nil nil))
-                nil [22641 22675])
+                nil [22634 22668])
             ("kernel_init" function
                (:arguments 
                   ( ("unused" variable
                        (:pointer 1
                         :type "void")
-                        (reparse-symbol arg-sub-list) [22706 22719]))                  
+                        (reparse-symbol arg-sub-list) [22699 22712]))                  
                 :type ("__ref" type (:type "class") nil nil))
-                nil [22688 23735])
+                nil [22681 23728])
             ("kernel_init_freeable" function
                (:arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [23786 23791]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [23779 23784]))                  
                 :type ("__init" type (:type "class") nil nil))
-                nil [23758 25123]))          
+                nil [23751 25116]))          
       :file "main.c"
-      :pointmax 25124
-      :fsize 26309
-      :lastmodtime '(21986 44084 61347 52000)
-      :unmatched-syntax '((thing 12988 . 12992) (thing 12977 . 12987) (thing 12267 . 12271) (thing 12260 . 12266) (thing 12163 . 12169) (thing 12158 . 12162) (thing 12080 . 12086) (thing 12075 . 12079) (thing 11718 . 11722) (thing 11711 . 11717) (thing 11367 . 11371) (thing 11170 . 11174) (thing 10623 . 10626) (thing 10623 . 10626) (thing 10616 . 10622) (thing 10616 . 10622) (thing 9796 . 9800) (thing 9796 . 9800) (thing 9787 . 9795) (thing 9787 . 9795) (thing 9780 . 9786) (thing 9780 . 9786) (thing 9144 . 9148) (thing 9144 . 9148) (thing 9137 . 9143) (thing 9137 . 9143) (thing 8509 . 8518) (thing 8509 . 8518) (thing 8301 . 8304) (thing 8301 . 8304) (thing 8294 . 8300) (thing 8294 . 8300) (thing 7836 . 7839) (thing 7836 . 7839) (thing 7829 . 7835) (thing 7829 . 7835) (thing 6946 . 6949) (thing 6946 . 6949) (thing 6939 . 6945) (thing 6939 . 6945) (thing 6480 . 6483) (thing 6480 . 6483) (thing 6473 . 6479) (thing 6473 . 6479) (thing 6380 . 6390) (thing 6380 . 6390) (thing 6048 . 6051) (thing 6048 . 6051) (thing 6041 . 6047) (thing 6041 . 6047) (thing 6016 . 6023) (thing 6016 . 6023) (thing 5980 . 5987) (thing 5980 . 5987) (thing 5894 . 5897) (thing 5894 . 5897) (thing 5887 . 5893) (thing 5887 . 5893) (thing 5812 . 5815) (thing 5812 . 5815) (thing 5805 . 5811) (thing 5805 . 5811) (thing 4881 . 4884) (thing 4881 . 4884) (thing 4874 . 4880) (thing 4874 . 4880) (thing 4346 . 4361) (thing 4346 . 4361) (thing 4262 . 4265) (thing 4262 . 4265) (thing 4255 . 4261) (thing 4255 . 4261) (thing 3516 . 3520) (thing 3516 . 3520) (thing 3423 . 3424) (thing 3423 . 3424) (thing 3417 . 3423) (thing 3417 . 3423) (thing 3389 . 3417) (thing 3389 . 3417) (thing 3384 . 3388) (thing 3384 . 3388) (thing 3079 . 3092) (thing 3079 . 3092) (thing 3074 . 3078) (thing 3074 . 3078) (thing 3028 . 3032) (thing 3028 . 3032) (thing 18798 . 18804) (thing 18805 . 18809) (thing 19045 . 19049) (thing 19053 . 19059) (thing 19060 . 19063) (thing 19513 . 19516) (thing 20405 . 20411) (thing 20412 . 20422) (thing 20423 . 20424) (thing 20424 . 20439) (thing 20439 . 20441) (thing 20702 . 20708) (thing 20709 . 20713) (thing 20714 . 20715) (thing 20715 . 20735) (thing 20735 . 20737) (thing 20836 . 20842) (thing 20843 . 20847) (thing 21293 . 21299) (thing 21300 . 21304) (thing 21675 . 21681) (thing 21682 . 21686) (thing 21896 . 21902) (thing 21903 . 21907) (thing 22322 . 22326) (thing 22620 . 22626) (thing 22627 . 22635) (thing 22636 . 22640) (thing 22677 . 22683) (thing 22684 . 22687) (thing 23737 . 23743) (thing 23744 . 23752) (thing 23753 . 23757))
+      :pointmax 25117
+      :fsize 26302
+      :lastmodtime '(21989 47297 89581 813000)
+      :unmatched-syntax '((thing 12988 . 12992) (thing 12977 . 12987) (thing 12267 . 12271) (thing 12260 . 12266) (thing 12163 . 12169) (thing 12158 . 12162) (thing 12080 . 12086) (thing 12075 . 12079) (thing 11718 . 11722) (thing 11711 . 11717) (thing 11367 . 11371) (thing 11170 . 11174) (thing 10623 . 10626) (thing 10616 . 10622) (thing 9796 . 9800) (thing 9787 . 9795) (thing 9780 . 9786) (thing 9144 . 9148) (thing 9137 . 9143) (thing 8509 . 8518) (thing 8301 . 8304) (thing 8294 . 8300) (thing 7836 . 7839) (thing 7829 . 7835) (thing 6946 . 6949) (thing 6939 . 6945) (thing 6480 . 6483) (thing 6473 . 6479) (thing 6380 . 6390) (thing 6048 . 6051) (thing 6041 . 6047) (thing 6016 . 6023) (thing 5980 . 5987) (thing 5894 . 5897) (thing 5887 . 5893) (thing 5812 . 5815) (thing 5805 . 5811) (thing 4881 . 4884) (thing 4874 . 4880) (thing 4346 . 4361) (thing 4262 . 4265) (thing 4255 . 4261) (thing 3516 . 3520) (thing 3423 . 3424) (thing 3417 . 3423) (thing 3389 . 3417) (thing 3384 . 3388) (thing 3079 . 3092) (thing 3074 . 3078) (thing 3028 . 3032) (thing 18791 . 18797) (thing 18798 . 18802) (thing 19038 . 19042) (thing 19046 . 19052) (thing 19053 . 19056) (thing 19506 . 19509) (thing 20398 . 20404) (thing 20405 . 20415) (thing 20416 . 20417) (thing 20417 . 20432) (thing 20432 . 20434) (thing 20695 . 20701) (thing 20702 . 20706) (thing 20707 . 20708) (thing 20708 . 20728) (thing 20728 . 20730) (thing 20829 . 20835) (thing 20836 . 20840) (thing 21286 . 21292) (thing 21293 . 21297) (thing 21668 . 21674) (thing 21675 . 21679) (thing 21889 . 21895) (thing 21896 . 21900) (thing 22315 . 22319) (thing 22613 . 22619) (thing 22620 . 22628) (thing 22629 . 22633) (thing 22670 . 22676) (thing 22677 . 22680) (thing 23730 . 23736) (thing 23737 . 23745) (thing 23746 . 23750))
       :lexical-table 
         '(("MAX_INIT_ARGS" . ((symbol "CONFIG_INIT_ENV_ARG_LIMIT" 3211 . 3236)))
           ("MAX_INIT_ENVS" . ((symbol "CONFIG_INIT_ENV_ARG_LIMIT" 3259 . 3284)))
           ("DEBUG")
           ("smp_init" (spp-arg-list nil 8723 . 8725) . 
               ((DO "do" 8726 . 8728) (semantic-list "{ }" 8729 . 8732) (WHILE "while" 8733 . 8738) (semantic-list "(0)" 8739 . 8742)))
+          )
+)
+    (semanticdb-table "version.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("generated/compile.h" include (:system-flag t) nil [126 156])
+            ("linux/module.h" include (:system-flag t) nil [157 182])
+            ("linux/uts.h" include (:system-flag t) nil [183 205])
+            ("linux/utsname.h" include (:system-flag t) nil [206 232])
+            ("generated/utsrelease.h" include (:system-flag t) nil [233 266])
+            ("linux/version.h" include (:system-flag t) nil [267 293])
+            ("linux/proc_ns.h" include (:system-flag t) nil [294 320])
+            ("version" variable (:constant-flag t) nil [354 361])
+            ("version_string" variable (:constant-flag t) nil [387 401])
+            ("Version_LINUX_VERSION_CODE" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [417 463])
+            ("Version_LINUX_VERSION_CODE" variable (:type "int") nil [464 503])
+            ("init_uts_ns" variable
+               (:default-value "{
+	.kref = {
+		.refcount	= ATOMIC_INIT(2),
+	},
+	.name = {
+		.sysname	= UTS_SYSNAME,
+		.nodename	= UTS_NODENAME,
+		.release	= UTS_RELEASE,
+		.version	= UTS_VERSION,
+		.machine	= UTS_MACHINE,
+		.domainname	= UTS_DOMAINNAME,
+	},
+	.user_ns = &init_user_ns,
+	.proc_inum = PROC_UTS_INIT_INO,
+}"
+                :type ("uts_namespace" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [512 835])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("init_uts_ns" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [854 866]))                  
+                :type "int")
+                nil [836 867]))          
+      :file "version.c"
+      :pointmax 1183
+      :fsize 1182
+      :lastmodtime '(21976 3069 196725 537000)
+      :unmatched-syntax '((punctuation 1181 . 1182) (string 1173 . 1181) (symbol 1158 . 1172) (string 1153 . 1157) (string 1148 . 1151) (symbol 1129 . 1147) (string 1125 . 1128) (symbol 1108 . 1124) (string 1103 . 1107) (string 1086 . 1101) (punctuation 1083 . 1084) (semantic-list 1080 . 1082) (symbol 1063 . 1080) (CHAR 1058 . 1062) (CONST 1052 . 1057) (punctuation 1049 . 1050) (string 1045 . 1049) (symbol 1033 . 1044) (string 1028 . 1032) (symbol 1013 . 1027) (string 1007 . 1012) (symbol 988 . 1006) (string 983 . 986) (symbol 966 . 982) (string 961 . 965) (symbol 949 . 960) (string 932 . 948) (punctuation 929 . 930) (semantic-list 926 . 928) (symbol 914 . 926) (CHAR 909 . 913) (CONST 903 . 908))
+      :lexical-table 
+        '(("version_string" (spp-arg-list ("a") 401 . 404) . ((symbol "version" 405 . 412) (semantic-list "(a)" 412 . 415)))
+          ("version" (spp-arg-list ("a") 361 . 364) . ((spp-symbol-merge ((symbol "Version_" 365 . 373) (symbol "a" 377 . 378)) 365 . 378)))
+          )
+)
+    (semanticdb-table "calibrate.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/jiffies.h" include (:system-flag t) nil [124 150])
+            ("linux/delay.h" include (:system-flag t) nil [151 175])
+            ("linux/init.h" include (:system-flag t) nil [176 199])
+            ("linux/timex.h" include (:system-flag t) nil [200 224])
+            ("linux/smp.h" include (:system-flag t) nil [225 247])
+            ("linux/percpu.h" include (:system-flag t) nil [248 273])
+            ("lpj_fine" variable (:type "unsigned long") nil [275 298])
+            ("preset_lpj" variable (:type "unsigned long") nil [299 324])
+            ("lpj_setup" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [353 363]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [336 420])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lpj_setup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [438 448]))                  
+                :type "int")
+                nil [422 449])
+            ("calibrate_delay_direct" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4959 4964]))                  
+                :type "unsigned long")
+                nil [4915 4979])
+            ("LPS_PREC" variable (:constant-flag t) nil [5446 5454])
+            ("calibrate_delay_converge" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5504 5509]))                  
+                :type "unsigned long")
+                nil [5458 6966])
+            ("calibrate_delay_is_known" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7365 7370]))                  
+                :type "unsigned long")
+                nil [7304 7385])
+            ("calibrate_delay" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7408 7413]))                  
+                :type "void")
+                nil [7387 8477]))          
+      :file "calibrate.c"
+      :pointmax 8478
+      :fsize 8477
+      :lastmodtime '(21976 3069 196725 537000)
+      :unmatched-syntax '((punctuation 7033 . 7034) (semantic-list 7028 . 7033) (punctuation 7026 . 7027) (semantic-list 6989 . 7025) (symbol 6975 . 6989) (STATIC 6968 . 6974) (string 430 . 436) (INT 332 . 335) (STATIC 325 . 331))
+      :lexical-table 
+        '(("LPS_PREC" . ((number "8" 5455 . 5456)))
           )
 ))
   :file "!home!knuth!linux_kernel!linux-3.12.20!init!semantic.cache"

@@ -1,0 +1,113 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "atomic.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ASM_ATOMIC_H" variable (:constant-flag t) nil [844 857])
+            ("linux/types.h" include (:system-flag t) nil [859 883])
+            ("asm/cmpxchg.h" include (:system-flag t) nil [884 908])
+            ("ATOMIC_INIT" variable (:constant-flag t) nil [918 929])
+            ("atomic_set" variable (:constant-flag t) nil [950 960])
+            ("atomic_read" variable (:constant-flag t) nil [1139 1150])
+            ("atomic_xchg" variable (:constant-flag t) nil [1312 1323])
+            ("atomic_cmpxchg" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2007 2019])
+                    ("old" variable (:type "int") (reparse-symbol arg-sub-list) [2020 2028])
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) [2029 2036]))                  
+                :type "int")
+                nil [1974 2341])
+            ("atomic_add_return" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [2379 2385])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2386 2398]))                  
+                :type "int")
+                nil [2343 2638])
+            ("atomic_add" variable (:constant-flag t) nil [2648 2658])
+            ("atomic_sub_return" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [2728 2734])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2735 2747]))                  
+                :type "int")
+                nil [2692 2984])
+            ("atomic_sub" variable (:constant-flag t) nil [2994 3004])
+            ("__atomic_add_unless" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type ("atomic_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3256 3268])
+                    ("a" variable (:type "int") (reparse-symbol arg-sub-list) [3269 3275])
+                    ("u" variable (:type "int") (reparse-symbol arg-sub-list) [3276 3282]))                  
+                :type "int")
+                nil [3218 3639])
+            ("atomic_inc_not_zero" variable (:constant-flag t) nil [3649 3668])
+            ("atomic_inc" variable (:constant-flag t) nil [3710 3720])
+            ("atomic_dec" variable (:constant-flag t) nil [3751 3761])
+            ("atomic_inc_and_test" variable (:constant-flag t) nil [3793 3812])
+            ("atomic_dec_and_test" variable (:constant-flag t) nil [3857 3876])
+            ("atomic_sub_and_test" variable (:constant-flag t) nil [3921 3940])
+            ("atomic_add_negative" variable (:constant-flag t) nil [3988 4007])
+            ("atomic_inc_return" variable (:constant-flag t) nil [4056 4073])
+            ("atomic_dec_return" variable (:constant-flag t) nil [4111 4128]))          
+      :file "atomic.h"
+      :pointmax 4166
+      :fsize 4165
+      :lastmodtime '(21976 3065 760725 639000)
+      :unmatched-syntax '((NEW 2033 . 2036))
+      :lexical-table 
+        '(("atomic_inc_return" (spp-arg-list ("v") 4073 . 4076) . ((semantic-list "(atomic_add_return(1, v))" 4077 . 4102)))
+          ("atomic_inc" (spp-arg-list ("v") 3720 . 3723) . ((symbol "atomic_add" 3724 . 3734) (semantic-list "(1, (v))" 3734 . 3742)))
+          ("atomic_inc_not_zero" (spp-arg-list ("v") 3668 . 3671) . ((symbol "atomic_add_unless" 3672 . 3689) (semantic-list "((v), 1, 0)" 3689 . 3700)))
+          ("atomic_inc_and_test" (spp-arg-list ("v") 3812 . 3815) . ((semantic-list "(atomic_add_return(1, (v)) == 0)" 3816 . 3848)))
+          ("atomic_set" (spp-arg-list ("v" "i") 960 . 966) . ((semantic-list "((v)->counter = (i))" 967 . 987)))
+          ("_ASM_ATOMIC_H")
+          ("atomic_xchg" (spp-arg-list ("v" "new") 1323 . 1331) . ((semantic-list "(xchg(&((v)->counter), (new)))" 1332 . 1362)))
+          ("atomic_add" (spp-arg-list ("i" "v") 2658 . 2664) . ((symbol "atomic_add_return" 2665 . 2682) (semantic-list "(i, (v))" 2682 . 2690)))
+          ("atomic_dec_return" (spp-arg-list ("v") 4128 . 4131) . ((semantic-list "(atomic_sub_return(1, v))" 4132 . 4157)))
+          ("atomic_read" (spp-arg-list ("v") 1150 . 1153) . ((semantic-list "((v)->counter)" 1155 . 1169)))
+          ("ATOMIC_INIT" (spp-arg-list ("i") 929 . 932) . ((semantic-list "{ (i) }" 934 . 941)))
+          ("atomic_sub" (spp-arg-list ("i" "v") 3004 . 3010) . ((symbol "atomic_sub_return" 3011 . 3028) (semantic-list "(i, (v))" 3028 . 3036)))
+          ("atomic_dec" (spp-arg-list ("v") 3761 . 3764) . ((symbol "atomic_sub" 3765 . 3775) (semantic-list "(1, (v))" 3775 . 3783)))
+          ("atomic_add_negative" (spp-arg-list ("i" "v") 4007 . 4013) . ((semantic-list "(atomic_add_return(i, (v)) < 0)" 4014 . 4045)))
+          ("atomic_dec_and_test" (spp-arg-list ("v") 3876 . 3879) . ((semantic-list "(atomic_sub_return(1, (v)) == 0)" 3880 . 3912)))
+          ("atomic_sub_and_test" (spp-arg-list ("i" "v") 3940 . 3946) . ((semantic-list "(atomic_sub_return(i, (v)) == 0)" 3947 . 3979)))
+          )
+)
+    (semanticdb-table "page.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ASM_PAGE_H" variable (:constant-flag t) nil [849 860])
+            ("linux/const.h" include (:system-flag t) nil [862 886])
+            ("PAGE_SIZE" variable (:constant-flag t) nil [1886 1895])
+            ("PAGE_MASK" variable (:constant-flag t) nil [1925 1934]))          
+      :file "page.h"
+      :pointmax 4858
+      :fsize 4857
+      :lastmodtime '(21976 3065 764725 639000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PAGE_MASK" . ((semantic-list "(~((1 << PAGE_SHIFT) - 1))" 1936 . 1962)))
+          ("_ASM_PAGE_H")
+          ("PAGE_SIZE" . ((semantic-list "(1UL << PAGE_SHIFT)" 1897 . 1916)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!hexagon!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

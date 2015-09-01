@@ -1,0 +1,143 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [322 345])
+            ("linux/clocksource.h" include (:system-flag t) nil [346 376])
+            ("linux/string.h" include (:system-flag t) nil [377 402])
+            ("linux/seq_file.h" include (:system-flag t) nil [403 430])
+            ("linux/cpu.h" include (:system-flag t) nil [431 453])
+            ("linux/initrd.h" include (:system-flag t) nil [454 479])
+            ("linux/console.h" include (:system-flag t) nil [480 506])
+            ("linux/debugfs.h" include (:system-flag t) nil [507 533])
+            ("asm/setup.h" include (:system-flag t) nil [535 557])
+            ("asm/sections.h" include (:system-flag t) nil [558 583])
+            ("asm/page.h" include (:system-flag t) nil [584 605])
+            ("linux/io.h" include (:system-flag t) nil [606 627])
+            ("linux/bug.h" include (:system-flag t) nil [628 650])
+            ("linux/param.h" include (:system-flag t) nil [651 675])
+            ("linux/pci.h" include (:system-flag t) nil [676 698])
+            ("linux/cache.h" include (:system-flag t) nil [699 723])
+            ("linux/of_platform.h" include (:system-flag t) nil [724 754])
+            ("linux/dma-mapping.h" include (:system-flag t) nil [755 785])
+            ("asm/cacheflush.h" include (:system-flag t) nil [786 813])
+            ("asm/entry.h" include (:system-flag t) nil [814 836])
+            ("asm/cpuinfo.h" include (:system-flag t) nil [837 861])
+            ("asm/prom.h" include (:system-flag t) nil [863 884])
+            ("asm/pgtable.h" include (:system-flag t) nil [885 909])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [926 939])
+                    ("" variable (:type ("KSP" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [940 944]))                  
+                :type "int")
+                nil [911 945])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [994 1007])
+                    ("" variable (:type ("KM" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1008 1011]))                  
+                :type "int")
+                nil [979 1012])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1051 1064])
+                    ("" variable (:type ("ENTRY_SP" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1065 1074]))                  
+                :type "int")
+                nil [1036 1075])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1122 1135])
+                    ("" variable (:type ("R11_SAVE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1136 1145]))                  
+                :type "int")
+                nil [1107 1146])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1192 1205])
+                    ("" variable (:type ("CURRENT_SAVE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1206 1219]))                  
+                :type "int")
+                nil [1177 1220])
+            ("boot_cpuid" variable (:type "unsigned int") nil [1250 1274])
+            ("cmd_line" variable
+               (:dereference 1
+                :type "char")
+                nil [1440 1508])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1533 1550]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1515 1968])
+            ("kernel_tlb" variable (:type "unsigned long") nil [2463 2488])
+            ("machine_early_init" function
+               (:arguments 
+                  ( ("cmdline" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2521 2541])
+                    ("ram" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2542 2559])
+                    ("fdt" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2562 2579])
+                    ("msr" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2580 2597])
+                    ("tlb0" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2598 2616])
+                    ("tlb1" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2619 2637]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2495 4683])
+            ("offset" variable
+               (:default-value "0x2"
+                :type "int")
+                nil [4932 4945])
+            ("dst" variable
+               (:default-value "(unsigned long *) (offset * sizeof(u32))"
+                :type "int")
+                nil [4954 5001])
+            ("dst" variable
+               (:pointer 1
+                :default-value "*src"
+                :type "int")
+                nil [5069 5081])
+            ("current" variable (:type "int") nil [5209 5217])
+            ("clocksource_of_init" function
+               (:prototype-flag t
+                :type "int")
+                nil [5252 5274])
+            ("dev" variable
+               (:pointer 1
+                :default-value "data"
+                :type ("device" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5888 5914])
+            ("set_dma_ops" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dev" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6028 6032])
+                    ("" variable (:type ("dma_direct_ops" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6034 6049]))                  
+                :type "int")
+                nil [6016 6050])
+            ("NOTIFY_DONE" variable (:type "int") nil [6060 6072])
+            ("bus_register_notifier" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("platform_bus_type" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6262 6280])
+                    ("" variable (:type ("dflt_plat_bus_notifier" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6282 6305]))                  
+                :type "int")
+                nil [6239 6306]))          
+      :file "setup.c"
+      :pointmax 6357
+      :fsize 6356
+      :lastmodtime '(21976 3065 896725 635000)
+      :unmatched-syntax '((punctuation 6355 . 6356) (close-paren 6354 . 6355) (symbol 6336 . 6354) (open-paren 6335 . 6336) (symbol 6322 . 6335) (close-paren 6319 . 6320) (punctuation 6317 . 6318) (number 6316 . 6317) (RETURN 6309 . 6315) (punctuation 6281 . 6282) (punctuation 6261 . 6262) (open-paren 6236 . 6237) (close-paren 6234 . 6235) (VOID 6230 . 6234) (open-paren 6229 . 6230) (symbol 6211 . 6229) (symbol 6204 . 6210) (INT 6200 . 6203) (STATIC 6193 . 6199) (punctuation 6190 . 6191) (close-paren 6189 . 6190) (punctuation 6187 . 6188) (symbol 6180 . 6187) (punctuation 6178 . 6179) (symbol 6169 . 6177) (punctuation 6168 . 6169) (punctuation 6165 . 6166) (symbol 6150 . 6165) (punctuation 6148 . 6149) (symbol 6134 . 6147) (punctuation 6133 . 6134) (open-paren 6130 . 6131) (punctuation 6128 . 6129) (symbol 6105 . 6127) (symbol 6090 . 6104) (STRUCT 6083 . 6089) (STATIC 6076 . 6082) (close-paren 6073 . 6074) (RETURN 6053 . 6059) (punctuation 6033 . 6034) (punctuation 6012 . 6013) (number 6011 . 6012) (RETURN 6004 . 6010) (semantic-list 5968 . 6001) (IF 5965 . 5967) (open-paren 5885 . 5886) (close-paren 5883 . 5884) (symbol 5879 . 5883) (punctuation 5878 . 5879) (VOID 5873 . 5877) (punctuation 5871 . 5872) (symbol 5865 . 5871) (LONG 5860 . 5864) (UNSIGNED 5851 . 5859) (punctuation 5845 . 5846) (symbol 5843 . 5845) (punctuation 5842 . 5843) (symbol 5827 . 5841) (STRUCT 5820 . 5826) (open-paren 5819 . 5820) (symbol 5804 . 5819) (INT 5800 . 5803) (STATIC 5793 . 5799) (close-paren 5275 . 5276) (open-paren 5249 . 5250) (close-paren 5247 . 5248) (VOID 5243 . 5247) (open-paren 5242 . 5243) (symbol 5233 . 5242) (symbol 5226 . 5232) (VOID 5221 . 5225) (close-paren 5218 . 5219) (semantic-list 5194 . 5209) (punctuation 5192 . 5193) (semantic-list 5174 . 5191) (symbol 5167 . 5174) (number 5189 . 5190) (punctuation 5134 . 5135) (number 5131 . 5134) (punctuation 5129 . 5130) (semantic-list 5121 . 5128) (symbol 5114 . 5121) (number 5126 . 5127) (semantic-list 5007 . 5066) (FOR 5003 . 5006) (VOID 2490 . 2494) (VOID 1510 . 1514))))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!microblaze!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

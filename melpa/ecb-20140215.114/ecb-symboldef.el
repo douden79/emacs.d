@@ -544,7 +544,7 @@ with semanticdb and then - if no success - with current etags-file."
          (result (or (ecb-symboldef-find-tag-by-semanticdb symbol-name edit-buffer)
                      (ecb-symboldef-find-tag-by-etags symbol-name edit-buffer)
                      (list nil nil nil)))
-         (num-tag-lines (- (/ symboldef-window-height 2) 0))
+		 (num-tag-lines (- (/ symboldef-window-height 2) 2))
          (tag-buf (nth 0 result))
          (tag-point (nth 1 result))
          (tag-point-max (nth 2 result))
@@ -552,7 +552,7 @@ with semanticdb and then - if no success - with current etags-file."
          (extend-point-max nil)
          (hilight-point-min nil)
          (hilight-point-max nil))
-    (setq truncate-lines t)
+;    (setq truncate-lines t)
     (when tag-buf
       (with-current-buffer tag-buf
         (save-excursion

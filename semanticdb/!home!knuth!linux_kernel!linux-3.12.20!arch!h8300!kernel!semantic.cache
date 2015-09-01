@@ -1,0 +1,158 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [616 641])
+            ("linux/sched.h" include (:system-flag t) nil [642 666])
+            ("linux/delay.h" include (:system-flag t) nil [667 691])
+            ("linux/interrupt.h" include (:system-flag t) nil [692 720])
+            ("linux/mm.h" include (:system-flag t) nil [721 742])
+            ("linux/fs.h" include (:system-flag t) nil [743 764])
+            ("linux/fb.h" include (:system-flag t) nil [765 786])
+            ("linux/console.h" include (:system-flag t) nil [787 813])
+            ("linux/genhd.h" include (:system-flag t) nil [814 838])
+            ("linux/errno.h" include (:system-flag t) nil [839 863])
+            ("linux/string.h" include (:system-flag t) nil [864 889])
+            ("linux/major.h" include (:system-flag t) nil [890 914])
+            ("linux/bootmem.h" include (:system-flag t) nil [915 941])
+            ("linux/seq_file.h" include (:system-flag t) nil [942 969])
+            ("linux/init.h" include (:system-flag t) nil [970 993])
+            ("asm/setup.h" include (:system-flag t) nil [995 1017])
+            ("asm/irq.h" include (:system-flag t) nil [1018 1038])
+            ("asm/pgtable.h" include (:system-flag t) nil [1039 1063])
+            ("asm/sections.h" include (:system-flag t) nil [1064 1089])
+            ("STUBSIZE" variable (:constant-flag t) nil [1255 1263])
+            ("rom_length" variable (:type "unsigned long") nil [1272 1297])
+            ("memory_start" variable (:type "unsigned long") nil [1298 1325])
+            ("memory_end" variable (:type "unsigned long") nil [1326 1351])
+            ("command_line" variable
+               (:dereference 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1358 1401])
+            ("_ramstart" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [1403 1433])
+            ("_ramend" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [1403 1433])
+            ("_target_name" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type "char")
+                nil [1434 1461])
+            ("h8300_gpio_init" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1490 1495]))                  
+                :type "void")
+                nil [1462 1496])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2332 2349]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2314 5687])
+            ("show_cpuinfo" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5767 5786])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5787 5795]))                  
+                :type "int")
+                nil [5743 6259])
+            ("c_start" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6282 6301])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6302 6314]))                  
+                :type "void")
+                nil [6261 6373])
+            ("c_next" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6395 6414])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6415 6423])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6424 6436]))                  
+                :type "void")
+                nil [6375 6474])
+            ("c_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6495 6514])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6515 6523]))                  
+                :type "void")
+                nil [6476 6527])
+            ("cpuinfo_op" variable
+               (:constant-flag t
+                :default-value "{
+	.start	= c_start,
+	.next	= c_next,
+	.stop	= c_stop,
+	.show	= show_cpuinfo,
+}"
+                :type ("seq_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6529 6650]))          
+      :file "setup.c"
+      :pointmax 6651
+      :fsize 6650
+      :lastmodtime '(21976 3065 760725 639000)
+      :unmatched-syntax '((VOID 2309 . 2313) (CHAR 1353 . 1357))
+      :lexical-table 
+        '(("STUBSIZE" . ((number "0xc000" 1264 . 1270)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!h8300!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

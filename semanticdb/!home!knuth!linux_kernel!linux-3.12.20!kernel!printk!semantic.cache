@@ -1,0 +1,609 @@
+;; Object printk/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "printk/"
+  :tables
+  (list
+    (semanticdb-table "printk.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [646 671])
+            ("linux/mm.h" include (:system-flag t) nil [672 693])
+            ("linux/tty.h" include (:system-flag t) nil [694 716])
+            ("linux/tty_driver.h" include (:system-flag t) nil [717 746])
+            ("linux/console.h" include (:system-flag t) nil [747 773])
+            ("linux/init.h" include (:system-flag t) nil [774 797])
+            ("linux/jiffies.h" include (:system-flag t) nil [798 824])
+            ("linux/nmi.h" include (:system-flag t) nil [825 847])
+            ("linux/module.h" include (:system-flag t) nil [848 873])
+            ("linux/moduleparam.h" include (:system-flag t) nil [874 904])
+            ("linux/interrupt.h" include (:system-flag t) nil [905 933])
+            ("linux/delay.h" include (:system-flag t) nil [961 985])
+            ("linux/smp.h" include (:system-flag t) nil [986 1008])
+            ("linux/security.h" include (:system-flag t) nil [1009 1036])
+            ("linux/bootmem.h" include (:system-flag t) nil [1037 1063])
+            ("linux/memblock.h" include (:system-flag t) nil [1064 1091])
+            ("linux/aio.h" include (:system-flag t) nil [1092 1114])
+            ("linux/syscalls.h" include (:system-flag t) nil [1115 1142])
+            ("linux/kexec.h" include (:system-flag t) nil [1143 1167])
+            ("linux/kdb.h" include (:system-flag t) nil [1168 1190])
+            ("linux/ratelimit.h" include (:system-flag t) nil [1191 1219])
+            ("linux/kmsg_dump.h" include (:system-flag t) nil [1220 1248])
+            ("linux/syslog.h" include (:system-flag t) nil [1249 1274])
+            ("linux/cpu.h" include (:system-flag t) nil [1275 1297])
+            ("linux/notifier.h" include (:system-flag t) nil [1298 1325])
+            ("linux/rculist.h" include (:system-flag t) nil [1326 1352])
+            ("linux/poll.h" include (:system-flag t) nil [1353 1376])
+            ("linux/irq_work.h" include (:system-flag t) nil [1377 1404])
+            ("linux/utsname.h" include (:system-flag t) nil [1405 1431])
+            ("asm/uaccess.h" include (:system-flag t) nil [1433 1457])
+            ("CREATE_TRACE_POINTS" variable (:constant-flag t) nil [1467 1486])
+            ("trace/events/printk.h" include (:system-flag t) nil [1487 1519])
+            ("console_cmdline.h" include nil nil [1521 1549])
+            ("braille.h" include nil nil [1550 1570])
+            ("DEFAULT_MESSAGE_LOGLEVEL" variable (:constant-flag t) nil [1625 1649])
+            ("MINIMUM_CONSOLE_LOGLEVEL" variable (:constant-flag t) nil [1751 1775])
+            ("DEFAULT_CONSOLE_LOGLEVEL" variable (:constant-flag t) nil [1827 1851])
+            ("console_printk" variable
+               (:dereference 1
+                :default-value "{
+	DEFAULT_CONSOLE_LOGLEVEL,	/* console_loglevel */
+	DEFAULT_MESSAGE_LOGLEVEL,	/* default_message_loglevel */
+	MINIMUM_CONSOLE_LOGLEVEL,	/* minimum_console_loglevel */
+	DEFAULT_CONSOLE_LOGLEVEL,	/* default_console_loglevel */
+}"
+                :type "int")
+                nil [1899 2151])
+            ("oops_in_progress" variable (:type "int") nil [2283 2304])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("oops_in_progress" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2319 2336]))                  
+                :type "int")
+                nil [2305 2337])
+            ("DEFINE_SEMAPHORE" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("console_sem" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2506 2518]))                  
+                :type "int")
+                nil [2482 2519])
+            ("console_drivers" variable
+               (:pointer 1
+                :type ("console" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2520 2552])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_drivers" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2571 2587]))                  
+                :type "int")
+                nil [2553 2588])
+            ("console_locked" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [3060 3105])
+            ("console_suspended" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [3060 3105])
+            ("exclusive_console" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("console" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3194 3235])
+            ("MAX_CMDLINECONSOLES" variable (:constant-flag t) nil [3317 3336])
+            ("console_cmdline" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("console_cmdline" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3340 3407])
+            ("selected_console" variable
+               (:typemodifiers ("static")
+                :default-value "-1"
+                :type "int")
+                nil [3409 3442])
+            ("preferred_console" variable
+               (:typemodifiers ("static")
+                :default-value "-1"
+                :type "int")
+                nil [3443 3477])
+            ("console_set_on_cmdline" variable (:type "int") nil [3478 3505])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_set_on_cmdline" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3520 3543]))                  
+                :type "int")
+                nil [3506 3544])
+            ("console_may_schedule" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [3591 3623])
+            ("log_flags" type
+               (:members 
+                  ( ("LOG_NOCONS" variable
+                       (:constant-flag t
+                        :default-value (6934 6935)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [6921 6935])
+                    ("LOG_NEWLINE" variable
+                       (:constant-flag t
+                        :default-value (6999 7000)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [6985 7000])
+                    ("LOG_PREFIX" variable
+                       (:constant-flag t
+                        :default-value (7048 7049)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [7035 7049])
+                    ("LOG_CONT" variable
+                       (:constant-flag t
+                        :default-value (7096 7097)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [7085 7097]))                  
+                :type "enum")
+                nil [6903 7149])
+            ("printk_log" type
+               (:members 
+                  ( ("ts_nsec" variable (:type ("u64" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7172 7184])
+                    ("len" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7218 7226])
+                    ("text_len" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7259 7272])
+                    ("dict_len" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7303 7316])
+                    ("facility" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7353 7365])
+                    ("flags" variable
+                       (:suffix ":5"
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7390 7401])
+                    ("level" variable
+                       (:suffix ":3"
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7432 7443]))                  
+                :type "struct")
+                nil [7151 7466])
+            ("DEFINE_RAW_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("logbuf_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7646 7658]))                  
+                :type "int")
+                nil [7619 7659])
+            ("LOG_LINE_MAX" variable (:constant-flag t) nil [42758 42770])
+            ("PREFIX_MAX" variable (:constant-flag t) nil [42782 42792])
+            ("LOG_LINE_MAX" variable (:constant-flag t) nil [42804 42816])
+            ("syslog_seq" variable
+               (:typemodifiers ("static")
+                :type ("u64" type (:type "class") nil nil))
+                nil [42819 42841])
+            ("syslog_idx" variable
+               (:typemodifiers ("static")
+                :type ("u32" type (:type "class") nil nil))
+                nil [42842 42864])
+            ("console_seq" variable
+               (:typemodifiers ("static")
+                :type ("u64" type (:type "class") nil nil))
+                nil [42865 42888])
+            ("console_idx" variable
+               (:typemodifiers ("static")
+                :type ("u32" type (:type "class") nil nil))
+                nil [42889 42912])
+            ("syslog_prev" variable
+               (:typemodifiers ("static")
+                :type ("log_flags" type (:type "enum") nil nil))
+                nil [42913 42947])
+            ("log_first_seq" variable
+               (:typemodifiers ("static")
+                :type ("u64" type (:type "class") nil nil))
+                nil [42948 42973])
+            ("log_first_idx" variable
+               (:typemodifiers ("static")
+                :type ("u32" type (:type "class") nil nil))
+                nil [42974 42999])
+            ("log_next_seq" variable
+               (:typemodifiers ("static")
+                :type ("u64" type (:type "class") nil nil))
+                nil [43000 43024])
+            ("console_prev" variable
+               (:typemodifiers ("static")
+                :type ("log_flags" type (:type "enum") nil nil))
+                nil [43025 43060])
+            ("cont" variable
+               (:typemodifiers ("static")
+                :type ("cont" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [43061 43144])
+            ("cont" type
+               (:members 
+                  ( ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [43083 43094])
+                    ("cons" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [43096 43108])
+                    ("level" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [43110 43119])
+                    ("flushed" variable
+                       (:suffix ":1"
+                        :type "bool")
+                        (reparse-symbol classsubparts) [43121 43136]))                  
+                :type "struct")
+                nil [43061 43144])
+            ("log_from_idx" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("idx" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [43184 43192]))                  
+                :type ("printk_log" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [43145 43209])
+            ("log_next" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("idx" variable (:type ("u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [43230 43238]))                  
+                :type ("u32" type (:type "class") nil nil))
+                nil [43210 43252])
+            ("call_console_drivers" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("level" variable (:type "int") (reparse-symbol arg-sub-list) [43286 43296])
+                    ("text" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [43297 43314])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [43315 43326]))                  
+                :type "void")
+                nil [43253 43329])
+            ("msg_print_text" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("printk_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [43359 43388])
+                    ("prev" variable (:type ("log_flags" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [43389 43409])
+                    ("syslog" variable (:type "bool") (reparse-symbol arg-sub-list) [43418 43430])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [43431 43441])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [43442 43454]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [43330 43468])
+            ("cont_print_text" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("text" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [43499 43510])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [43511 43523]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [43469 43537])
+            ("__add_preferred_console" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [43988 43999])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [44000 44008])
+                    ("options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [44009 44023])
+                    ("brl_options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [44031 44049]))                  
+                :type "int")
+                nil [43953 44697])
+            ("console_setup" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [44863 44873]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [44842 45756])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_setup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45777 45791]))                  
+                :type "int")
+                nil [45757 45792])
+            ("add_preferred_console" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [46374 46385])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [46386 46394])
+                    ("options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [46395 46409]))                  
+                :type "int")
+                nil [46348 46472])
+            ("update_console_cmdline" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [46501 46512])
+                    ("idx" variable (:type "int") (reparse-symbol arg-sub-list) [46513 46521])
+                    ("name_new" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [46522 46537])
+                    ("idx_new" variable (:type "int") (reparse-symbol arg-sub-list) [46538 46550])
+                    ("options" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [46551 46565]))                  
+                :type "int")
+                nil [46474 46935])
+            ("console_suspend_enabled" variable
+               (:default-value "1"
+                :type "bool")
+                nil [46937 46970])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_suspend_enabled" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46985 47009]))                  
+                :type "int")
+                nil [46971 47010])
+            ("console_suspend_disable" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [47054 47064]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [47023 47109])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_suspend_disable" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47140 47164]))                  
+                :type "int")
+                nil [47110 47165])
+            ("module_param_named" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_suspend" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47185 47201])
+                    ("" variable (:type ("console_suspend_enabled" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47202 47226])
+                    ("" variable (:type "bool") (reparse-symbol arg-sub-list) [47229 47234])
+                    ("" variable (:type ("S_IRUGO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47235 47244])
+                    ("" variable (:type ("S_IWUSR" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47245 47253]))                  
+                :type "int")
+                nil [47166 47254])
+            ("MODULE_PARM_DESC" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_suspend" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47272 47288]))                  
+                :type "int")
+                nil [47255 47352])
+            ("suspend_console" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [47495 47500]))                  
+                :type "void")
+                nil [47474 47675])
+            ("resume_console" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [47697 47702]))                  
+                :type "void")
+                nil [47677 47811])
+            ("console_cpu_notify" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [48259 48287])
+                    ("action" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [48289 48310])
+                    ("hcpu" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [48311 48322]))                  
+                :type "int")
+                nil [48229 48485])
+            ("console_lock" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [48739 48744]))                  
+                :type "void")
+                nil [48721 48923])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [48938 48951]))                  
+                :type "int")
+                nil [48924 48952])
+            ("console_trylock" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [49258 49263]))                  
+                :type "int")
+                nil [49238 49487])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_trylock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49502 49518]))                  
+                :type "int")
+                nil [49488 49519])
+            ("is_console_locked" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [49543 49548]))                  
+                :type "int")
+                nil [49521 49576])
+            ("console_cont_flush" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("text" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [49609 49620])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49621 49633]))                  
+                :type "void")
+                nil [49578 50272])
+            ("console_unlock" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [50767 50772]))                  
+                :type "void")
+                nil [50747 53089])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_unlock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53104 53119]))                  
+                :type "int")
+                nil [53090 53120])
+            ("console_conditional_schedule" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [53406 53411]))                  
+                :type ("__sched" type (:type "class") nil nil))
+                nil [53369 53460])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_conditional_schedule" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53475 53504]))                  
+                :type "int")
+                nil [53461 53505])
+            ("console_unblank" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [53528 53533]))                  
+                :type "void")
+                nil [53507 53927])
+            ("console_device" function
+               (:pointer 1
+                :arguments 
+                  ( ("index" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [54038 54049]))                  
+                :type ("tty_driver" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [54004 54274])
+            ("console_stop" function
+               (:arguments 
+                  ( ("console" variable
+                       (:pointer 1
+                        :type ("console" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [54489 54513]))                  
+                :type "void")
+                nil [54471 54586])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_stop" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54601 54614]))                  
+                :type "int")
+                nil [54587 54615])
+            ("console_start" function
+               (:arguments 
+                  ( ("console" variable
+                       (:pointer 1
+                        :type ("console" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [54636 54660]))                  
+                :type "void")
+                nil [54617 54732])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("console_start" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54747 54761]))                  
+                :type "int")
+                nil [54733 54762])
+            ("keep_bootcon" variable (:type ("__read_mostly" type (:type "class") nil nil)) nil [54775 54802])
+            ("keep_bootcon_setup" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [54841 54851]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [54815 54952])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("keep_bootcon_setup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54982 55001]))                  
+                :type "int")
+                nil [54954 55002])
+            ("register_console" function
+               (:arguments 
+                  ( ("newcon" variable
+                       (:pointer 1
+                        :type ("console" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [55926 55949]))                  
+                :type "void")
+                nil [55904 60222])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("register_console" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [60237 60254]))                  
+                :type "int")
+                nil [60223 60255])
+            ("unregister_console" function
+               (:arguments 
+                  ( ("console" variable
+                       (:pointer 1
+                        :type ("console" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [60280 60304]))                  
+                :type "int")
+                nil [60257 61006])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("unregister_console" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [61021 61040]))                  
+                :type "int")
+                nil [61007 61041])
+            ("printk_late_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [61078 61083]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [61054 61350])
+            ("late_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("printk_late_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [61365 61382]))                  
+                :type "int")
+                nil [61351 61383]))          
+      :file "printk.c"
+      :pointmax 74042
+      :fsize 74149
+      :lastmodtime '(21976 3069 212725 537000)
+      :unmatched-syntax '((INT 61050 . 61053) (STATIC 61043 . 61049) (string 54966 . 54980) (INT 54811 . 54814) (STATIC 54804 . 54810) (INT 54771 . 54774) (STATIC 54764 . 54770) (VOID 53364 . 53368) (string 47323 . 47350) (string 47289 . 47321) (punctuation 47243 . 47244) (string 47118 . 47138) (INT 47019 . 47022) (STATIC 47012 . 47018) (string 45765 . 45775) (INT 44838 . 44841) (STATIC 44831 . 44837))
+      :lexical-table 
+        '(("CREATE_TRACE_POINTS")
+          ("DEFAULT_MESSAGE_LOGLEVEL" . ((symbol "CONFIG_DEFAULT_MESSAGE_LOGLEVEL" 1650 . 1681)))
+          ("DEFAULT_CONSOLE_LOGLEVEL" . ((number "7" 1852 . 1853)))
+          ("PREFIX_MAX" . ((number "0" 42794 . 42795)))
+          ("LOG_LINE_MAX" . ((number "0" 42817 . 42818)))
+          ("MAX_CMDLINECONSOLES" . ((number "8" 3337 . 3338)))
+          ("MINIMUM_CONSOLE_LOGLEVEL" . ((number "1" 1776 . 1777)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!kernel!printk!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

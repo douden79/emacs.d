@@ -1,0 +1,135 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/init.h" include (:system-flag t) nil [795 818])
+            ("linux/bootmem.h" include (:system-flag t) nil [819 845])
+            ("linux/mmzone.h" include (:system-flag t) nil [846 871])
+            ("linux/mm.h" include (:system-flag t) nil [872 893])
+            ("linux/seq_file.h" include (:system-flag t) nil [894 921])
+            ("linux/console.h" include (:system-flag t) nil [922 948])
+            ("linux/of_fdt.h" include (:system-flag t) nil [949 974])
+            ("asm/io.h" include (:system-flag t) nil [975 994])
+            ("asm/sections.h" include (:system-flag t) nil [995 1020])
+            ("asm/setup.h" include (:system-flag t) nil [1021 1043])
+            ("asm/processor.h" include (:system-flag t) nil [1044 1070])
+            ("asm/hexagon_vm.h" include (:system-flag t) nil [1071 1098])
+            ("asm/vm_mmu.h" include (:system-flag t) nil [1099 1122])
+            ("asm/time.h" include (:system-flag t) nil [1123 1144])
+            ("cmd_line" variable
+               (:dereference 1
+                :type "char")
+                nil [1192 1225])
+            ("__initdata" variable
+               (:default-value "CONFIG_CMDLINE"
+                :type "int")
+                nil [1278 1306])
+            ("on_simulator" variable (:type "int") nil [1308 1325])
+            ("calibrate_delay" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1348 1353]))                  
+                :type "void")
+                nil [1327 1408])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1557 1574]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1539 2740])
+            ("c_start" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2869 2888])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2889 2901]))                  
+                :type "void")
+                nil [2848 2976])
+            ("c_next" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2998 3017])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3018 3026])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3027 3039]))                  
+                :type "void")
+                nil [2978 3077])
+            ("c_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3098 3117])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3118 3126]))                  
+                :type "void")
+                nil [3079 3130])
+            ("show_cpuinfo" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("m" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3259 3278])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3279 3287]))                  
+                :type "int")
+                nil [3235 3640])
+            ("cpuinfo_op" variable
+               (:constant-flag t
+                :default-value "{
+	.start  = &c_start,
+	.next   = &c_next,
+	.stop   = &c_stop,
+	.show   = &show_cpuinfo,
+}"
+                :type ("seq_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3642 3774]))          
+      :file "setup.c"
+      :pointmax 3775
+      :fsize 3774
+      :lastmodtime '(21976 3065 764725 639000)
+      :unmatched-syntax '((VOID 1534 . 1538) (semantic-list 1258 . 1277) (symbol 1238 . 1258) (CHAR 1233 . 1237) (STATIC 1226 . 1232))))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!hexagon!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

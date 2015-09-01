@@ -1,0 +1,27 @@
+;; Object linux/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "linux/"
+  :tables
+  (list
+    (semanticdb-table "bug.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("BUG_H" variable (:constant-flag t) nil [23 28])
+            ("BUG_ON" variable (:constant-flag t) nil [38 44])
+            ("BUILD_BUG_ON" variable (:constant-flag t) nil [94 106])
+            ("BUG" variable (:constant-flag t) nil [119 122]))          
+      :file "bug.h"
+      :pointmax 153
+      :fsize 152
+      :lastmodtime '(21976 3069 808725 519000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BUILD_BUG_ON" (spp-arg-list ("x") 106 . 109))
+          ("BUG_H")
+          ("BUG_ON" (spp-arg-list ("__BUG_ON_cond") 44 . 59) . ((symbol "assert" 60 . 66) (semantic-list "(!(__BUG_ON_cond))" 66 . 84)))
+          ("BUG" (spp-arg-list nil 122 . 124) . ((symbol "abort" 125 . 130) (semantic-list "()" 130 . 132)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!tools!virtio!linux!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

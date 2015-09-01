@@ -1,0 +1,32 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "stackprotector.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_SH_STACKPROTECTOR_H" variable (:constant-flag t) nil [43 68])
+            ("linux/random.h" include (:system-flag t) nil [70 95])
+            ("linux/version.h" include (:system-flag t) nil [96 122])
+            ("__stack_chk_guard" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [124 163])
+            ("boot_init_stack_canary" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [375 380]))                  
+                :type "void")
+                nil [347 608]))          
+      :file "stackprotector.h"
+      :pointmax 649
+      :fsize 648
+      :lastmodtime '(21976 3066 288725 623000)
+      :unmatched-syntax '((symbol "__inline" 331 . 346) (STATIC 324 . 330))
+      :lexical-table 
+        '(("__ASM_SH_STACKPROTECTOR_H")
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!sh!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

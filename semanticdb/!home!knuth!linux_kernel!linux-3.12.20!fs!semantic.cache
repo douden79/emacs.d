@@ -1,0 +1,2142 @@
+;; Object fs/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "fs/"
+  :tables
+  (list
+    (semanticdb-table "dcache.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/syscalls.h" include (:system-flag t) nil [368 395])
+            ("linux/string.h" include (:system-flag t) nil [396 421])
+            ("linux/mm.h" include (:system-flag t) nil [422 443])
+            ("linux/fs.h" include (:system-flag t) nil [444 465])
+            ("linux/fsnotify.h" include (:system-flag t) nil [466 493])
+            ("linux/slab.h" include (:system-flag t) nil [494 517])
+            ("linux/init.h" include (:system-flag t) nil [518 541])
+            ("linux/hash.h" include (:system-flag t) nil [542 565])
+            ("linux/cache.h" include (:system-flag t) nil [566 590])
+            ("linux/export.h" include (:system-flag t) nil [591 616])
+            ("linux/mount.h" include (:system-flag t) nil [617 641])
+            ("linux/file.h" include (:system-flag t) nil [642 665])
+            ("asm/uaccess.h" include (:system-flag t) nil [666 690])
+            ("linux/security.h" include (:system-flag t) nil [691 718])
+            ("linux/seqlock.h" include (:system-flag t) nil [719 745])
+            ("linux/swap.h" include (:system-flag t) nil [746 769])
+            ("linux/bootmem.h" include (:system-flag t) nil [770 796])
+            ("linux/fs_struct.h" include (:system-flag t) nil [797 825])
+            ("linux/hardirq.h" include (:system-flag t) nil [826 852])
+            ("linux/bit_spinlock.h" include (:system-flag t) nil [853 884])
+            ("linux/rculist_bl.h" include (:system-flag t) nil [885 914])
+            ("linux/prefetch.h" include (:system-flag t) nil [915 942])
+            ("linux/ratelimit.h" include (:system-flag t) nil [943 971])
+            ("linux/list_lru.h" include (:system-flag t) nil [972 999])
+            ("internal.h" include nil nil [1000 1021])
+            ("mount.h" include nil nil [1022 1040])
+            ("__read_mostly" variable
+               (:default-value "100"
+                :type ("sysctl_vfs_cache_pressure" type (:type "class") nil nil))
+                nil [1971 2017])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sysctl_vfs_cache_pressure" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2036 2062]))                  
+                :type "int")
+                nil [2018 2063])
+            ("DEFINE_SEQLOCK" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("rename_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2107 2119]))                  
+                :type ("__cacheline_aligned_in_smp" type (:type "class") nil nil))
+                nil [2065 2120])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("rename_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2136 2148]))                  
+                :type "int")
+                nil [2122 2149])
+            ("__read_mostly" variable (:type ("dentry_cache" type (:type "class") nil nil)) nil [2177 2204])
+            ("read_seqbegin_or_lock" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("seqlock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2663 2679])
+                    ("seq" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [2680 2689]))                  
+                :type "void")
+                nil [2622 2797])
+            ("need_seqretry" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("seqlock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2831 2847])
+                    ("seq" variable (:type "int") (reparse-symbol arg-sub-list) [2848 2856]))                  
+                :type "int")
+                nil [2799 2908])
+            ("done_seqretry" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("lock" variable
+                       (:pointer 1
+                        :type ("seqlock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2943 2959])
+                    ("seq" variable (:type "int") (reparse-symbol arg-sub-list) [2960 2968]))                  
+                :type "void")
+                nil [2910 3015])
+            ("D_HASHBITS" variable (:constant-flag t) nil [3340 3350])
+            ("D_HASHMASK" variable (:constant-flag t) nil [3376 3386])
+            ("__read_mostly" variable (:type ("d_hash_mask" type (:type "class") nil nil)) nil [3424 3450])
+            ("__read_mostly" variable (:type ("d_hash_shift" type (:type "class") nil nil)) nil [3471 3498])
+            ("__read_mostly" variable (:type ("dentry_hashtable" type (:type "class") nil nil)) nil [3529 3560])
+            ("d_hash" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3605 3633])
+                    ("hash" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3639 3657]))                  
+                :type ("hlist_bl_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3562 3796])
+            ("dentry_stat" variable
+               (:default-value "{
+	.age_limit = 45,
+}"
+                :type ("dentry_stat_t" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3826 3883])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "long") (reparse-symbol arg-sub-list) [3907 3912])
+                    ("" variable (:type ("nr_dentry" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3913 3923]))                  
+                :type "int")
+                nil [3885 3924])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "long") (reparse-symbol arg-sub-list) [3947 3952])
+                    ("" variable (:type ("nr_dentry_unused" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3953 3970]))                  
+                :type "int")
+                nil [3925 3971])
+            ("dentry_string_cmp" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("cs" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [6265 6289])
+                    ("ct" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [6290 6314])
+                    ("tcount" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6315 6331]))                  
+                :type "int")
+                nil [6229 6430])
+            ("dentry_cmp" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6469 6497])
+                    ("ct" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [6498 6522])
+                    ("tcount" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6523 6539]))                  
+                :type "int")
+                nil [6440 7281])
+            ("__d_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("head" variable
+                       (:pointer 1
+                        :type ("rcu_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7304 7326]))                  
+                :type "void")
+                nil [7283 7547])
+            ("d_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7596 7618]))                  
+                :type "void")
+                nil [7577 7961])
+            ("dentry_rcuwalk_barrier" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8294 8316]))                  
+                :type "void")
+                nil [8252 8427])
+            ("__releases" function
+               (:arguments 
+                  ( ("" variable (:type ("dentry" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8653 8660])
+                    ("" variable (:type ("d_inode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8661 8669])
+                    ("" variable (:type ("i_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8670 8677]))                  
+                :type "int")
+                nil [8642 9067])
+            ("__releases" function
+               (:arguments 
+                  ( ("" variable (:type ("dentry" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9281 9288])
+                    ("" variable (:type ("d_inode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9289 9297])
+                    ("" variable (:type ("i_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9298 9305]))                  
+                :type "int")
+                nil [9270 9659])
+            ("D_FLAG_VERIFY" variable (:constant-flag t) nil [10162 10175])
+            ("d_lru_add" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10290 10312]))                  
+                :type "void")
+                nil [10268 10488])
+            ("d_lru_del" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10512 10534]))                  
+                :type "void")
+                nil [10490 10725])
+            ("d_shrink_del" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10752 10774]))                  
+                :type "void")
+                nil [10727 10966])
+            ("d_shrink_add" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10993 11015])
+                    ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11016 11039]))                  
+                :type "void")
+                nil [10968 11194])
+            ("d_lru_isolate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11450 11472]))                  
+                :type "void")
+                nil [11424 11620])
+            ("d_lru_shrink_move" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11652 11674])
+                    ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11675 11698]))                  
+                :type "void")
+                nil [11622 11822])
+            ("dentry_lru_add" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11921 11943]))                  
+                :type "void")
+                nil [11894 12021])
+            ("dentry_lru_del" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12320 12342]))                  
+                :type "void")
+                nil [12293 12488])
+            ("__releases" function
+               (:arguments 
+                  ( ("" variable (:type ("dentry" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12957 12964])
+                    ("" variable (:type ("d_inode" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12965 12973])
+                    ("" variable (:type ("i_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12974 12981]))                  
+                :type "int")
+                nil [12946 13372])
+            ("__d_shrink" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13562 13584]))                  
+                :type "void")
+                nil [13539 13901])
+            ("__d_drop" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14483 14505]))                  
+                :type "void")
+                nil [14469 14596])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__d_drop" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14611 14620]))                  
+                :type "int")
+                nil [14597 14621])
+            ("d_drop" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14635 14657]))                  
+                :type "void")
+                nil [14623 14740])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_drop" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14755 14762]))                  
+                :type "int")
+                nil [14741 14763])
+            ("__releases" function
+               (:arguments 
+                  ( ("" variable (:type ("dentry" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15091 15098])
+                    ("" variable (:type ("d_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15099 15106]))                  
+                :type "int")
+                nil [15080 15981])
+            ("dput" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16931 16953]))                  
+                :type "void")
+                nil [16921 17506])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dput" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17521 17526]))                  
+                :type "int")
+                nil [17507 17527])
+            ("d_invalidate" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17855 17878]))                  
+                :type "int")
+                nil [17838 18879])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_invalidate" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18894 18907]))                  
+                :type "int")
+                nil [18880 18908])
+            ("__dget_dlock" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18985 19007]))                  
+                :type "void")
+                nil [18953 19039])
+            ("__dget" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19067 19089]))                  
+                :type "void")
+                nil [19041 19127])
+            ("dget_parent" function
+               (:pointer 1
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19156 19178]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [19129 19915])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dget_parent" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19930 19942]))                  
+                :type "int")
+                nil [19916 19943])
+            ("__d_find_alias" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20697 20717])
+                    ("want_discon" variable (:type "int") (reparse-symbol arg-sub-list) [20718 20734]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [20660 21546])
+            ("d_find_alias" function
+               (:pointer 1
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21576 21596]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [21548 21775])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_find_alias" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21790 21803]))                  
+                :type "int")
+                nil [21776 21804])
+            ("d_prune_aliases" function
+               (:arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21933 21953]))                  
+                :type "void")
+                nil [21912 22572])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_prune_aliases" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22587 22603]))                  
+                :type "int")
+                nil [22573 22604])
+            ("__releases" function
+               (:arguments 
+                  ( ("" variable (:type ("dentry" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22923 22930])
+                    ("" variable (:type ("d_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22931 22938]))                  
+                :type "int")
+                nil [22912 23621])
+            ("shrink_dentry_list" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23654 23677]))                  
+                :type "void")
+                nil [23623 25093])
+            ("dentry_lru_isolate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("item" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25137 25160])
+                    ("lru_lock" variable
+                       (:pointer 1
+                        :type ("spinlock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25161 25182])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [25183 25193]))                  
+                :type ("lru_status" type (:type "enum") nil nil))
+                nil [25095 26896])
+            ("prune_dcache_sb" function
+               (:arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27338 27361])
+                    ("nr_to_scan" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [27362 27387])
+                    ("nid" variable (:type "int") (reparse-symbol arg-sub-list) [27395 27403]))                  
+                :type "long")
+                nil [27317 27595])
+            ("dentry_lru_isolate_shrink" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("item" variable
+                       (:pointer 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27646 27669])
+                    ("lru_lock" variable
+                       (:pointer 1
+                        :type ("spinlock_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27676 27697])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [27698 27708]))                  
+                :type ("lru_status" type (:type "enum") nil nil))
+                nil [27597 28094])
+            ("shrink_dcache_sb" function
+               (:arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28322 28345]))                  
+                :type "void")
+                nil [28300 28582])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("shrink_dcache_sb" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28597 28614]))                  
+                :type "int")
+                nil [28583 28615])
+            ("shrink_dcache_for_umount_subtree" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28811 28833]))                  
+                :type "void")
+                nil [28766 30687])
+            ("shrink_dcache_for_umount" function
+               (:arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31220 31243]))                  
+                :type "void")
+                nil [31190 31601])
+            ("try_to_ascend" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("old" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31847 31866])
+                    ("seq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [31867 31880]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [31811 32273])
+            ("d_walk_ret" type
+               (:members 
+                  ( ("D_WALK_CONTINUE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [32516 32532])
+                    ("D_WALK_QUIT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [32534 32546])
+                    ("D_WALK_NORETRY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [32548 32563])
+                    ("D_WALK_SKIP" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [32565 32577]))                  
+                :type "enum")
+                nil [32497 32580])
+            ("d_walk" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32896 32918])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [32919 32930])
+                    ("" variable (:type ("d_walk_ret" type
+                         (:prototype t
+                          :type "enum")
+                          nil nil)) (reparse-symbol arg-sub-list) [32936 32985])
+                    ("d_walk_ret" type
+                       (:members 
+                          ( ("enter" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [32954 32960]))                          
+                        :type "enum")
+                        (reparse-symbol arg-sub-list) [32936 32985])
+                    ("finish" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [33007 33014]))                          
+                        :type "void")
+                        nil nil))                  
+                :type "void")
+                nil [32877 34831])
+            ("check_mount" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [35038 35049])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35050 35072]))                  
+                :type ("d_walk_ret" type (:type "enum") nil nil))
+                nil [35003 35185])
+            ("have_submounts" function
+               (:arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35373 35395]))                  
+                :type "int")
+                nil [35354 35470])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("have_submounts" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35485 35500]))                  
+                :type "int")
+                nil [35471 35501])
+            ("d_set_mounted" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [35866 35888]))                  
+                :type "int")
+                nil [35848 36399])
+            ("select_data" type
+               (:members 
+                  ( ("start" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [36964 36985])
+                    ("dispose" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [36987 37012])
+                    ("found" variable (:type "int") (reparse-symbol classsubparts) [37014 37024]))                  
+                :type "struct")
+                nil [36942 37027])
+            ("select_collect" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [37067 37079])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [37080 37102]))                  
+                :type ("d_walk_ret" type (:type "enum") nil nil))
+                nil [37029 38075])
+            ("shrink_dcache_parent" function
+               (:arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38260 38282]))                  
+                :type "void")
+                nil [38234 38536])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("shrink_dcache_parent" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38551 38572]))                  
+                :type "int")
+                nil [38537 38573])
+            ("check_and_collect" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [38616 38628])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38629 38651]))                  
+                :type ("d_walk_ret" type (:type "enum") nil nil))
+                nil [38575 38809])
+            ("check_and_drop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [38838 38850]))                  
+                :type "void")
+                nil [38811 38990])
+            ("check_submounts_and_drop" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [39318 39340]))                  
+                :type "int")
+                nil [39289 39817])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("check_submounts_and_drop" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39832 39857]))                  
+                :type "int")
+                nil [39818 39858])
+            ("__d_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40210 40233])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40234 40258]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [40185 41621])
+            ("d_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [41970 41993])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [41994 42018]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [41947 42374])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_alloc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42389 42397]))                  
+                :type "int")
+                nil [42375 42398])
+            ("d_alloc_pseudo" function
+               (:pointer 1
+                :arguments 
+                  ( ("sb" variable
+                       (:pointer 1
+                        :type ("super_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42430 42453])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42454 42478]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [42400 42599])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_alloc_pseudo" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42614 42629]))                  
+                :type "int")
+                nil [42600 42630])
+            ("d_alloc_name" function
+               (:pointer 1
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42660 42682])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [42683 42700]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [42632 42830])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_alloc_name" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42845 42858]))                  
+                :type "int")
+                nil [42831 42859])
+            ("d_set_d_op" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42877 42899])
+                    ("op" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dentry_operations" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [42900 42935]))                  
+                :type "void")
+                nil [42861 43537])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_set_d_op" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [43552 43563]))                  
+                :type "int")
+                nil [43538 43564])
+            ("__d_instantiate" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [43594 43616])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [43617 43637]))                  
+                :type "void")
+                nil [43566 43953])
+            ("d_instantiate" function
+               (:arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [44394 44415])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [44416 44437]))                  
+                :type "void")
+                nil [44375 44639])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_instantiate" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [44654 44668]))                  
+                :type "int")
+                nil [44640 44669])
+            ("__d_instantiate_unique" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45347 45368])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45379 45399]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [45302 46132])
+            ("d_instantiate_unique" function
+               (:pointer 1
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46170 46191])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46192 46212]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [46134 46553])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_instantiate_unique" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46569 46590]))                  
+                :type "int")
+                nil [46555 46591])
+            ("d_make_root" function
+               (:pointer 1
+                :arguments 
+                  ( ("root_inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46620 46645]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [46593 46885])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_make_root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46900 46912]))                  
+                :type "int")
+                nil [46886 46913])
+            ("__d_find_any_alias" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [46957 46977]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [46915 47156])
+            ("d_find_any_alias" function
+               (:pointer 1
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [47423 47443]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [47391 47571])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_find_any_alias" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47586 47603]))                  
+                :type "int")
+                nil [47572 47604])
+            ("d_obtain_alias" function
+               (:pointer 1
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [48513 48533]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [48483 49541])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_obtain_alias" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [49556 49571]))                  
+                :type "int")
+                nil [49542 49572])
+            ("d_splice_alias" function
+               (:pointer 1
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [50626 50646])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [50647 50669]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [50596 51334])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_splice_alias" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [51349 51364]))                  
+                :type "int")
+                nil [51335 51365])
+            ("d_add_ci" function
+               (:pointer 1
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [52110 52132])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [52133 52153])
+                    ("name" variable
+                       (:pointer 1
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [52157 52175]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [52086 53295])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_add_ci" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [53310 53319]))                  
+                :type "int")
+                nil [53296 53320])
+            ("slow_d_compare" type
+               (:members 
+                  ( ("D_COMP_OK" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [53884 53894])
+                    ("D_COMP_NOMATCH" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [53896 53911])
+                    ("D_COMP_SEQRETRY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [53913 53929]))                  
+                :type "enum")
+                nil [53861 53932])
+            ("slow_dentry_cmp" function
+               (:arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [53989 54017])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [54020 54042])
+                    ("seq" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [54045 54062])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [54065 54089]))                  
+                :type ("slow_d_compare" type (:type "enum") nil nil))
+                nil [53950 54370])
+            ("__d_lookup_rcu" function
+               (:pointer 1
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [55630 55658])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [55663 55687])
+                    ("seqp" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [55692 55707]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [55600 57889])
+            ("d_lookup" function
+               (:pointer 1
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [58351 58379])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [58380 58404]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [58327 58662])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_lookup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [58677 58686]))                  
+                :type "int")
+                nil [58663 58687])
+            ("__d_lookup" function
+               (:pointer 1
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [59199 59227])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [59228 59252]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [59173 61043])
+            ("d_hash_and_lookup" function
+               (:pointer 1
+                :arguments 
+                  ( ("dir" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [61291 61310])
+                    ("name" variable
+                       (:pointer 1
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [61311 61329]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [61258 61736])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_hash_and_lookup" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [61751 61769]))                  
+                :type "int")
+                nil [61737 61770])
+            ("d_validate" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [62242 62264])
+                    ("dparent" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [62265 62288]))                  
+                :type "int")
+                nil [62227 62651])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_validate" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [62666 62677]))                  
+                :type "int")
+                nil [62652 62678])
+            ("d_delete" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [63308 63331]))                  
+                :type "void")
+                nil [63294 63887])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_delete" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [63902 63911]))                  
+                :type "int")
+                nil [63888 63912])
+            ("__d_rehash" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [63937 63959])
+                    ("b" variable
+                       (:pointer 1
+                        :type ("hlist_bl_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [63960 63984]))                  
+                :type "void")
+                nil [63914 64137])
+            ("_d_rehash" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [64161 64183]))                  
+                :type "void")
+                nil [64139 64252])
+            ("d_rehash" function
+               (:arguments 
+                  ( ("entry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [64414 64436]))                  
+                :type "void")
+                nil [64400 64517])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_rehash" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [64532 64541]))                  
+                :type "int")
+                nil [64518 64542])
+            ("dentry_update_name_case" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [65075 65097])
+                    ("name" variable
+                       (:pointer 1
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [65098 65116]))                  
+                :type "void")
+                nil [65046 65459])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dentry_update_name_case" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [65474 65498]))                  
+                :type "int")
+                nil [65460 65499])
+            ("switch_names" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [65526 65548])
+                    ("target" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [65549 65571]))                  
+                :type "void")
+                nil [65501 66620])
+            ("dentry_lock_for_move" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [66655 66677])
+                    ("target" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [66678 66700]))                  
+                :type "void")
+                nil [66622 67380])
+            ("dentry_unlock_parents_for_move" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [67425 67447])
+                    ("target" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [67453 67475]))                  
+                :type "void")
+                nil [67382 67639])
+            ("__d_move" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [68539 68562])
+                    ("target" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [68563 68586]))                  
+                :type "void")
+                nil [68518 70032])
+            ("d_move" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [70294 70316])
+                    ("target" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [70317 70339]))                  
+                :type "void")
+                nil [70282 70432])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_move" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [70447 70454]))                  
+                :type "int")
+                nil [70433 70455])
+            ("d_ancestor" function
+               (:pointer 1
+                :arguments 
+                  ( ("p1" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [70681 70699])
+                    ("p2" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [70700 70718]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [70655 70843])
+            ("__d_unalias" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [71177 71197])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [71200 71222])
+                    ("alias" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [71223 71244]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [71143 71919])
+            ("__d_materialise_dentry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72130 72152])
+                    ("anon" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [72153 72173]))                  
+                :type "void")
+                nil [72095 72813])
+            ("d_materialise_unique" function
+               (:pointer 1
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [73209 73231])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [73232 73252]))                  
+                :type ("dentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [73173 74889])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_materialise_unique" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [74908 74929]))                  
+                :type "int")
+                nil [74890 74930])
+            ("prepend" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [74951 74965])
+                    ("buflen" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [74966 74978])
+                    ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [74979 74995])
+                    ("namelen" variable (:type "int") (reparse-symbol arg-sub-list) [74996 75008]))                  
+                :type "int")
+                nil [74932 75139])
+            ("prepend_name" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [75940 75954])
+                    ("buflen" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [75955 75967])
+                    ("name" variable
+                       (:pointer 1
+                        :type ("qstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [75968 75986]))                  
+                :type "int")
+                nil [75916 76271])
+            ("prepend_path" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [77155 77179])
+                    ("root" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [77183 77207])
+                    ("buffer" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [77211 77225])
+                    ("buflen" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [77226 77238]))                  
+                :type "int")
+                nil [77131 78711])
+            ("__d_path" function
+               (:pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [79150 79174])
+                    ("root" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [79183 79207])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [79216 79226])
+                    ("buflen" variable (:type "int") (reparse-symbol arg-sub-list) [79227 79238]))                  
+                :type "char")
+                nil [79135 79516])
+            ("d_absolute_path" function
+               (:pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [79540 79564])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [79573 79583])
+                    ("buflen" variable (:type "int") (reparse-symbol arg-sub-list) [79584 79595]))                  
+                :type "char")
+                nil [79518 79902])
+            ("path_with_deleted" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80004 80028])
+                    ("root" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80037 80061])
+                    ("buf" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [80070 80081])
+                    ("buflen" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [80082 80094]))                  
+                :type "int")
+                nil [79975 80298])
+            ("prepend_unreachable" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [80331 80345])
+                    ("buflen" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [80346 80358]))                  
+                :type "int")
+                nil [80300 80416])
+            ("get_fs_root_rcu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fs" variable
+                       (:pointer 1
+                        :type ("fs_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80446 80467])
+                    ("root" variable
+                       (:pointer 1
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [80468 80486]))                  
+                :type "void")
+                nil [80418 80618])
+            ("d_path" function
+               (:pointer 1
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [81229 81253])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [81254 81264])
+                    ("buflen" variable (:type "int") (reparse-symbol arg-sub-list) [81265 81276]))                  
+                :type "char")
+                nil [81216 82337])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_path" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [82352 82359]))                  
+                :type "int")
+                nil [82338 82360])
+            ("dynamic_dname" function
+               (:pointer 1
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [82448 82470])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [82471 82484])
+                    ("buflen" variable (:type "int") (reparse-symbol arg-sub-list) [82485 82496])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [82500 82516])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [82517 82521]))                  
+                :type "char")
+                nil [82428 82787])
+            ("simple_dname" function
+               (:pointer 1
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [82808 82830])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [82831 82844])
+                    ("buflen" variable (:type "int") (reparse-symbol arg-sub-list) [82845 82856]))                  
+                :type "char")
+                nil [82789 83160])
+            ("__dentry_path" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("d" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [83268 83285])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [83286 83296])
+                    ("buflen" variable (:type "int") (reparse-symbol arg-sub-list) [83297 83308]))                  
+                :type "char")
+                nil [83241 84063])
+            ("dentry_path_raw" function
+               (:pointer 1
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84087 84109])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [84110 84120])
+                    ("buflen" variable (:type "int") (reparse-symbol arg-sub-list) [84121 84132]))                  
+                :type "char")
+                nil [84065 84180])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dentry_path_raw" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [84195 84211]))                  
+                :type "int")
+                nil [84181 84212])
+            ("dentry_path" function
+               (:pointer 1
+                :arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84232 84254])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [84255 84265])
+                    ("buflen" variable (:type "int") (reparse-symbol arg-sub-list) [84266 84277]))                  
+                :type "char")
+                nil [84214 84619])
+            ("get_fs_root_and_pwd_rcu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fs" variable
+                       (:pointer 1
+                        :type ("fs_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84657 84678])
+                    ("root" variable
+                       (:pointer 1
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84679 84697])
+                    ("pwd" variable
+                       (:pointer 1
+                        :type ("path" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [84706 84723]))                  
+                :type "void")
+                nil [84621 84873])
+            ("SYSCALL_DEFINE2" function
+               (:arguments 
+                  ( ("" variable (:type ("getcwd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [85335 85342])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [85343 85356])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [85358 85362])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [85363 85377])
+                    ("" variable (:type ("size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [85378 85383]))                  
+                :type "int")
+                nil [85319 86278])
+            ("is_subdir" function
+               (:arguments 
+                  ( ("new_dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [86719 86745])
+                    ("old_dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [86746 86772]))                  
+                :type "int")
+                nil [86705 87222])
+            ("d_genocide_kill" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [87263 87274])
+                    ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87275 87297]))                  
+                :type ("d_walk_ret" type (:type "enum") nil nil))
+                nil [87224 87570])
+            ("d_genocide" function
+               (:arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87588 87610]))                  
+                :type "void")
+                nil [87572 87662])
+            ("d_tmpfile" function
+               (:arguments 
+                  ( ("dentry" variable
+                       (:pointer 1
+                        :type ("dentry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87679 87701])
+                    ("inode" variable
+                       (:pointer 1
+                        :type ("inode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [87702 87722]))                  
+                :type "void")
+                nil [87664 88164])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_tmpfile" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [88179 88189]))                  
+                :type "int")
+                nil [88165 88190])
+            ("dhash_entries" variable (:type "unsigned long") nil [88210 88238])
+            ("set_dhash_entries" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [88275 88285]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [88250 88370])
+            ("__setup" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("set_dhash_entries" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [88397 88415]))                  
+                :type "int")
+                nil [88371 88416])
+            ("dcache_init_early" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [88455 88460]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [88430 88925])
+            ("dcache_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [88958 88963]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [88939 89608])
+            ("__read_mostly" variable (:type ("names_cachep" type (:type "class") nil nil)) nil [89672 89699])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("names_cachep" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [89714 89727]))                  
+                :type "int")
+                nil [89700 89728])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("d_genocide" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [89744 89755]))                  
+                :type "int")
+                nil [89730 89756])
+            ("vfs_caches_init_early" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [89792 89797]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [89763 89844])
+            ("vfs_caches_init" function
+               (:arguments 
+                  ( ("mempages" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [89874 89897]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [89851 90330]))          
+      :file "dcache.c"
+      :pointmax 90331
+      :fsize 90330
+      :lastmodtime '(21976 3068 692725 552000)
+      :unmatched-syntax '((VOID 89846 . 89850) (VOID 89758 . 89762) (punctuation 89671 . 89672) (symbol 89660 . 89670) (STRUCT 89653 . 89659) (VOID 88934 . 88938) (STATIC 88927 . 88933) (VOID 88425 . 88429) (STATIC 88418 . 88424) (string 88379 . 88395) (INT 88246 . 88249) (STATIC 88239 . 88245) (symbol 88199 . 88209) (STATIC 88192 . 88198) (punctuation 85355 . 85356) (symbol 53941 . 53949) (STATIC 53934 . 53940) (semantic-list 32960 . 32985) (close-paren 32959 . 32960) (punctuation 32953 . 32954) (open-paren 32952 . 32953) (punctuation 22930 . 22931) (punctuation 22929 . 22930) (semantic-list 22887 . 22910) (symbol 22867 . 22887) (punctuation 22865 . 22866) (symbol 22858 . 22864) (STRUCT 22851 . 22857) (STATIC 22844 . 22850) (punctuation 15098 . 15099) (punctuation 15097 . 15098) (semantic-list 15032 . 15078) (symbol 15021 . 15032) (punctuation 15019 . 15020) (symbol 15012 . 15018) (STRUCT 15005 . 15011) (STATIC 14998 . 15004) (punctuation 12973 . 12974) (punctuation 12972 . 12973) (punctuation 12964 . 12965) (punctuation 12963 . 12964) (semantic-list 12928 . 12944) (symbol 12918 . 12928) (punctuation 12936 . 12937) (punctuation 12935 . 12936) (semantic-list 12900 . 12916) (symbol 12890 . 12900) (punctuation 12908 . 12909) (punctuation 12907 . 12908) (semantic-list 12842 . 12888) (symbol 12836 . 12842) (punctuation 12835 . 12836) (symbol 12828 . 12834) (STRUCT 12821 . 12827) (STATIC 12814 . 12820) (punctuation 9297 . 9298) (punctuation 9296 . 9297) (punctuation 9288 . 9289) (punctuation 9287 . 9288) (semantic-list 9252 . 9268) (symbol 9242 . 9252) (punctuation 9260 . 9261) (punctuation 9259 . 9260) (semantic-list 9216 . 9240) (symbol 9197 . 9216) (VOID 9192 . 9196) (STATIC 9185 . 9191) (punctuation 8669 . 8670) (punctuation 8668 . 8669) (punctuation 8660 . 8661) (punctuation 8659 . 8660) (semantic-list 8624 . 8640) (symbol 8614 . 8624) (punctuation 8632 . 8633) (punctuation 8631 . 8632) (semantic-list 8588 . 8612) (symbol 8577 . 8588) (VOID 8572 . 8576) (STATIC 8565 . 8571) (punctuation 3528 . 3529) (symbol 3514 . 3527) (STRUCT 3507 . 3513) (STATIC 3500 . 3506) (INT 3467 . 3470) (UNSIGNED 3458 . 3466) (STATIC 3451 . 3457) (INT 3420 . 3423) (UNSIGNED 3411 . 3419) (STATIC 3404 . 3410) (punctuation 2176 . 2177) (symbol 2165 . 2175) (STRUCT 2158 . 2164) (STATIC 2151 . 2157) (INT 1967 . 1970))
+      :lexical-table 
+        '(("D_FLAG_VERIFY" (spp-arg-list ("dentry" "x") 10175 . 10185) . ((symbol "WARN_ON_ONCE" 10186 . 10198) (semantic-list "(((dentry)->d_flags & (DCACHE_LRU_LIST | DCACHE_SHRINK_LIST)) != (x))" 10198 . 10267)))
+          ("D_HASHBITS" . ((symbol "d_hash_shift" 3355 . 3367)))
+          ("D_HASHMASK" . ((symbol "d_hash_mask" 3391 . 3402)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!fs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

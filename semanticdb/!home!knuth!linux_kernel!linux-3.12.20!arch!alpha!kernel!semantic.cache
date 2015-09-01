@@ -1,0 +1,1127 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/sched.h" include (:system-flag t) nil [179 203])
+            ("linux/kernel.h" include (:system-flag t) nil [204 229])
+            ("linux/mm.h" include (:system-flag t) nil [230 251])
+            ("linux/stddef.h" include (:system-flag t) nil [252 277])
+            ("linux/unistd.h" include (:system-flag t) nil [278 303])
+            ("linux/ptrace.h" include (:system-flag t) nil [304 329])
+            ("linux/slab.h" include (:system-flag t) nil [330 353])
+            ("linux/user.h" include (:system-flag t) nil [354 377])
+            ("linux/screen_info.h" include (:system-flag t) nil [378 408])
+            ("linux/delay.h" include (:system-flag t) nil [409 433])
+            ("linux/mc146818rtc.h" include (:system-flag t) nil [434 464])
+            ("linux/console.h" include (:system-flag t) nil [465 491])
+            ("linux/cpu.h" include (:system-flag t) nil [492 514])
+            ("linux/errno.h" include (:system-flag t) nil [515 539])
+            ("linux/init.h" include (:system-flag t) nil [540 563])
+            ("linux/string.h" include (:system-flag t) nil [564 589])
+            ("linux/ioport.h" include (:system-flag t) nil [590 615])
+            ("linux/platform_device.h" include (:system-flag t) nil [616 650])
+            ("linux/bootmem.h" include (:system-flag t) nil [651 677])
+            ("linux/pci.h" include (:system-flag t) nil [678 700])
+            ("linux/seq_file.h" include (:system-flag t) nil [701 728])
+            ("linux/root_dev.h" include (:system-flag t) nil [729 756])
+            ("linux/initrd.h" include (:system-flag t) nil [757 782])
+            ("linux/eisa.h" include (:system-flag t) nil [783 806])
+            ("linux/pfn.h" include (:system-flag t) nil [807 829])
+            ("linux/notifier.h" include (:system-flag t) nil [914 941])
+            ("asm/setup.h" include (:system-flag t) nil [942 964])
+            ("asm/io.h" include (:system-flag t) nil [965 984])
+            ("linux/log2.h" include (:system-flag t) nil [985 1008])
+            ("linux/export.h" include (:system-flag t) nil [1009 1034])
+            ("panic_notifier_list" variable
+               (:typemodifiers ("extern")
+                :type ("atomic_notifier_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1036 1091])
+            ("alpha_panic_event" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1121 1145])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1146 1160])
+                    ("" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1161 1168]))                  
+                :type "int")
+                nil [1092 1169])
+            ("alpha_panic_block" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	alpha_panic_event,
+        NULL,
+        INT_MAX /* try to do it first */
+}"
+                :type ("notifier_block" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1170 1298])
+            ("asm/uaccess.h" include (:system-flag t) nil [1300 1324])
+            ("asm/pgtable.h" include (:system-flag t) nil [1325 1349])
+            ("asm/hwrpb.h" include (:system-flag t) nil [1350 1372])
+            ("asm/dma.h" include (:system-flag t) nil [1373 1393])
+            ("asm/mmu_context.h" include (:system-flag t) nil [1394 1422])
+            ("asm/console.h" include (:system-flag t) nil [1423 1447])
+            ("proto.h" include nil nil [1449 1467])
+            ("pci_impl.h" include nil nil [1468 1489])
+            ("hwrpb" variable
+               (:pointer 1
+                :type ("hwrpb_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1492 1519])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("hwrpb" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1534 1540]))                  
+                :type "int")
+                nil [1520 1541])
+            ("srm_hae" variable (:type "unsigned long") nil [1542 1564])
+            ("alpha_l1i_cacheshape" variable (:type "int") nil [1566 1591])
+            ("alpha_l1d_cacheshape" variable (:type "int") nil [1592 1617])
+            ("alpha_l2_cacheshape" variable (:type "int") nil [1618 1642])
+            ("alpha_l3_cacheshape" variable (:type "int") nil [1643 1667])
+            ("boot_cpuid" variable (:type "int") nil [2044 2059])
+            ("srmcons_output" variable
+               (:default-value "0"
+                :type "int")
+                nil [2922 2945])
+            ("mem_size_limit" variable
+               (:default-value "0"
+                :type "unsigned long")
+                nil [3020 3053])
+            ("alpha_agpgart_size" variable
+               (:default-value "DEFAULT_AGP_APER_SIZE"
+                :type "unsigned long")
+                nil [3106 3163])
+            ("get_sysvec" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3339 3353])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3354 3368])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3381 3395]))                  
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3292 3396])
+            ("get_sysvec_byname" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3451 3464]))                  
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3397 3465])
+            ("get_sysnames" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3491 3505])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3506 3520])
+                    ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3521 3535])
+                    ("" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3540 3548])
+                    ("" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3549 3557]))                  
+                :type "void")
+                nil [3466 3558])
+            ("determine_cpu_caches" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3593 3606]))                  
+                :type "void")
+                nil [3559 3607])
+            ("command_line" variable
+               (:dereference 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [3621 3664])
+            ("screen_info" variable
+               (:default-value "{
+	.orig_x = 0,
+	.orig_y = 25,
+	.orig_video_cols = 80,
+	.orig_video_lines = 25,
+	.orig_video_isVGA = 1,
+	.orig_video_points = 16
+}"
+                :type ("screen_info" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3838 4002])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("screen_info" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4018 4030]))                  
+                :type "int")
+                nil [4004 4031])
+            ("__direct_map_base" variable (:type "unsigned long") nil [4155 4187])
+            ("__direct_map_size" variable (:type "unsigned long") nil [4188 4220])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__direct_map_base" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4235 4253]))                  
+                :type "int")
+                nil [4221 4254])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__direct_map_size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4269 4287]))                  
+                :type "int")
+                nil [4255 4288])
+            ("WEAK" variable (:constant-flag t) nil [4513 4517])
+            ("alcor_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4582 4596])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("alcor_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4582 4597])
+            ("alphabook1_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4598 4617])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("alphabook1_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4598 4618])
+            ("avanti_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4619 4634])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("avanti_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4619 4635])
+            ("cabriolet_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4636 4654])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("cabriolet_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4636 4655])
+            ("clipper_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4656 4672])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("clipper_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4656 4673])
+            ("dp264_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4674 4688])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("dp264_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4674 4689])
+            ("eb164_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4690 4704])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("eb164_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4690 4705])
+            ("eb64p_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4706 4720])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("eb64p_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4706 4721])
+            ("eb66_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4722 4735])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("eb66_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4722 4736])
+            ("eb66p_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4737 4751])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("eb66p_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4737 4752])
+            ("eiger_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4753 4767])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("eiger_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4753 4768])
+            ("jensen_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4769 4784])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("jensen_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4769 4785])
+            ("lx164_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4786 4800])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lx164_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4786 4801])
+            ("lynx_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4802 4815])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("lynx_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4802 4816])
+            ("marvel_ev7_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4817 4836])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("marvel_ev7_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4817 4837])
+            ("miata_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4838 4852])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("miata_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4838 4853])
+            ("mikasa_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4854 4869])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("mikasa_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4854 4870])
+            ("mikasa_primo_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4871 4892])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("mikasa_primo_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4871 4893])
+            ("monet_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4894 4908])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("monet_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4894 4909])
+            ("nautilus_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4910 4927])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("nautilus_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4910 4928])
+            ("noname_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4929 4944])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("noname_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4929 4945])
+            ("noritake_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4946 4963])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("noritake_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4946 4964])
+            ("noritake_primo_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4965 4988])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("noritake_primo_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4965 4989])
+            ("p2k_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4990 5002])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("p2k_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [4990 5003])
+            ("pc164_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5004 5018])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pc164_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5004 5019])
+            ("privateer_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5020 5038])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("privateer_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5020 5039])
+            ("rawhide_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5040 5056])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("rawhide_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5040 5057])
+            ("ruffian_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5058 5074])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ruffian_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5058 5075])
+            ("rx164_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5076 5090])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("rx164_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5076 5091])
+            ("sable_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5092 5106])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sable_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5092 5107])
+            ("sable_gamma_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5108 5128])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sable_gamma_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5108 5129])
+            ("shark_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5130 5144])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("shark_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5130 5145])
+            ("sx164_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5146 5160])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sx164_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5146 5161])
+            ("takara_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5162 5177])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("takara_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5162 5178])
+            ("titan_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5179 5193])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("titan_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5179 5194])
+            ("webbrick_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5195 5212])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("webbrick_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5195 5213])
+            ("wildfire_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5214 5231])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("wildfire_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5214 5232])
+            ("xl_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5233 5244])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("xl_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5233 5245])
+            ("xlt_mv" variable
+               (:typemodifiers ("extern")
+                :type ("alpha_machine_vector" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5246 5258])
+            ("asm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("xlt_mv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [5246 5259])
+            ("reserve_std_resources" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5550 5555]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [5521 6556])
+            ("PFN_MAX" variable (:constant-flag t) nil [6566 6573])
+            ("for_each_mem_cluster" variable (:constant-flag t) nil [6604 6624])
+            ("get_mem_size_limit" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6806 6814]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6780 7322])
+            ("setup_memory" function
+               (:arguments 
+                  ( ("kernel_end" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7878 7895]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7858 12707])
+            ("page_is_ram" function
+               (:arguments 
+                  ( ("pfn" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [12806 12824]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [12787 13196])
+            ("register_cpus" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13230 13235]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13209 13392])
+            ("arch_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("register_cpus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13408 13422]))                  
+                :type "int")
+                nil [13394 13423])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13448 13465]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13430 19649])
+            ("sys_unknown" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "\"Unknown\""
+                :type "char")
+                nil [19651 19689])
+            ("systype_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{
+	\"0\",
+	\"ADU\", \"Cobra\", \"Ruby\", \"Flamingo\", \"Mannequin\", \"Jensen\",
+	\"Pelican\", \"Morgan\", \"Sable\", \"Medulla\", \"Noname\",
+	\"Turbolaser\", \"Avanti\", \"Mustang\", \"Alcor\", \"Tradewind\",
+	\"Mikasa\", \"EB64\", \"EB66\", \"EB64+\", \"AlphaBook1\",
+	\"Rawhide\", \"K2\", \"Lynx\", \"XL\", \"EB164\", \"Noritake\",
+	\"Cortex\", \"29\", \"Miata\", \"XXM\", \"Takara\", \"Yukon\",
+	\"Tsunami\", \"Wildfire\", \"CUSCO\", \"Eiger\", \"Titan\", \"Marvel\"
+}"
+                :type "char")
+                nil [19690 20119])
+            ("unofficial_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{\"100\", \"Ruffian\"}"
+                :type "char")
+                nil [20121 20176])
+            ("api_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{\"200\", \"Nautilus\"}"
+                :type "char")
+                nil [20178 20228])
+            ("eb164_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{\"EB164\", \"PC164\", \"LX164\", \"SX164\", \"RX164\"}"
+                :type "char")
+                nil [20230 20307])
+            ("eb164_indices" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0,0,0,1,1,1,1,1,2,2,2,2,3,3,3,3,4}"
+                :type "int")
+                nil [20308 20373])
+            ("alcor_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{\"Alcor\", \"Maverick\", \"Bret\"}"
+                :type "char")
+                nil [20375 20437])
+            ("alcor_indices" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0,0,0,1,1,1,0,0,0,0,0,0,2,2,2,2,2,2}"
+                :type "int")
+                nil [20438 20505])
+            ("eb64p_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{\"EB64+\", \"Cabriolet\", \"AlphaPCI64\"}"
+                :type "char")
+                nil [20507 20576])
+            ("eb64p_indices" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0,0,1,2}"
+                :type "int")
+                nil [20577 20616])
+            ("eb66_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{\"EB66\", \"EB66+\"}"
+                :type "char")
+                nil [20618 20666])
+            ("eb66_indices" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0,0,1}"
+                :type "int")
+                nil [20667 20703])
+            ("marvel_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{
+	\"Marvel/EV7\"
+}"
+                :type "char")
+                nil [20705 20756])
+            ("marvel_indices" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{ 0 }"
+                :type "int")
+                nil [20757 20793])
+            ("rawhide_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{
+	\"Dodge\", \"Wrangler\", \"Durango\", \"Tincup\", \"DaVinci\"
+}"
+                :type "char")
+                nil [20795 20886])
+            ("rawhide_indices" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0,0,0,1,1,2,2,3,3,4,4}"
+                :type "int")
+                nil [20887 20942])
+            ("titan_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{
+	\"DEFAULT\", \"Privateer\", \"Falcon\", \"Granite\"
+}"
+                :type "char")
+                nil [20944 21025])
+            ("titan_indices" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0,1,2,2,3}"
+                :type "int")
+                nil [21026 21067])
+            ("tsunami_names" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :default-value "{
+	\"0\", \"DP264\", \"Warhol\", \"Windjammer\", \"Monet\", \"Clipper\",
+	\"Goldrush\", \"Webbrick\", \"Catamaran\", \"Brisbane\", \"Melbourne\",
+	\"Flying Clipper\", \"Shark\"
+}"
+                :type "char")
+                nil [21069 21256])
+            ("tsunami_indices" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{0,1,2,3,4,5,6,7,8,9,10,11,12}"
+                :type "int")
+                nil [21257 21319])
+            ("get_sysvec" function
+               (:arguments 
+                  ( ("type" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [21376 21395])
+                    ("variation" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [21396 21420])
+                    ("cpu" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [21421 21439]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [21358 26070])
+            ("get_sysvec_byname" function
+               (:arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [26134 26151]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [26109 26937])
+            ("get_sysnames" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("type" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [26964 26983])
+                    ("variation" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [26984 27008])
+                    ("cpu" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [27009 27027])
+                    ("type_name" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [27034 27051])
+                    ("variation_name" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [27052 27074]))                  
+                :type "void")
+                nil [26939 29306])
+            ("platform_string" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [29960 29965]))                  
+                :type "char")
+                nil [29930 30531])
+            ("get_nr_processors" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpubase" variable
+                       (:pointer 1
+                        :type ("percpu_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30562 30592])
+                    ("num" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [30593 30611]))                  
+                :type "int")
+                nil [30533 30855])
+            ("show_cache_size" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("f" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30886 30905])
+                    ("which" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [30906 30924])
+                    ("shape" variable (:type "int") (reparse-symbol arg-sub-list) [30925 30935]))                  
+                :type "void")
+                nil [30857 31198])
+            ("show_cpuinfo" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("f" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31224 31243])
+                    ("slot" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [31244 31255]))                  
+                :type "int")
+                nil [31200 33796])
+            ("read_mem_block" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [33831 33841])
+                    ("stride" variable (:type "int") (reparse-symbol arg-sub-list) [33842 33853])
+                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [33854 33863]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [33809 34374])
+            ("CSHAPE" variable (:constant-flag t) nil [34384 34390])
+            ("MAX_BCACHE_SIZE" variable (:constant-flag t) nil [34578 34593])
+            ("external_cache_probe" function
+               (:arguments 
+                  ( ("minsize" variable (:type "int") (reparse-symbol arg-sub-list) [34715 34727])
+                    ("width" variable (:type "int") (reparse-symbol arg-sub-list) [34728 34738]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [34687 35587])
+            ("determine_cpu_caches" function
+               (:arguments 
+                  ( ("cpu_type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [35630 35652]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [35601 38304])
+            ("c_start" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("f" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38364 38383])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38384 38396]))                  
+                :type "void")
+                nil [38342 38463])
+            ("c_next" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("f" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38486 38505])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [38506 38514])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38515 38527]))                  
+                :type "void")
+                nil [38465 38545])
+            ("c_stop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("f" variable
+                       (:pointer 1
+                        :type ("seq_file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38566 38585])
+                    ("v" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [38586 38594]))                  
+                :type "void")
+                nil [38547 38598])
+            ("cpuinfo_op" variable
+               (:constant-flag t
+                :default-value "{
+	.start	= c_start,
+	.next	= c_next,
+	.stop	= c_stop,
+	.show	= show_cpuinfo,
+}"
+                :type ("seq_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [38600 38721])
+            ("alpha_panic_event" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("this" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38753 38781])
+                    ("event" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [38782 38802])
+                    ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [38803 38813]))                  
+                :type "int")
+                nil [38724 39003])
+            ("add_pcspkr" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [39034 39039]))                  
+                :type "int")
+                nil [39019 39238])
+            ("device_initcall" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("add_pcspkr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39255 39266]))                  
+                :type "int")
+                nil [39239 39267]))          
+      :file "setup.c"
+      :pointmax 39268
+      :fsize 39267
+      :lastmodtime '(21976 3065 36725 660000)
+      :unmatched-syntax '((symbol 39012 . 39018) (STATIC 39005 . 39011) (VOID 35596 . 35600) (STATIC 35589 . 35595) (INT 34683 . 34686) (STATIC 34676 . 34682) (INT 33805 . 33808) (STATIC 33798 . 33804) (punctuation 26107 . 26108) (symbol 26086 . 26106) (STRUCT 26079 . 26085) (STATIC 26072 . 26078) (punctuation 21356 . 21357) (symbol 21335 . 21355) (STRUCT 21328 . 21334) (STATIC 21321 . 21327) (VOID 13425 . 13429) (INT 13205 . 13208) (STATIC 13198 . 13204) (INT 12783 . 12786) (VOID 7853 . 7857) (STATIC 7846 . 7852) (LONG 6775 . 6779) (UNSIGNED 6766 . 6774) (STATIC 6759 . 6765) (VOID 5516 . 5520) (STATIC 5509 . 5515) (CHAR 3616 . 3620) (STATIC 3609 . 3615))
+      :lexical-table 
+        '(("PFN_MAX" . ((symbol "PFN_DOWN" 6575 . 6583) (semantic-list "(0x80000000)" 6583 . 6595)))
+          ("for_each_mem_cluster" (spp-arg-list ("memdesc" "_cluster" "i") 6624 . 6646) . ((FOR "for" 6651 . 6654) (semantic-list "((_cluster) = (memdesc)->cluster, (i) = 0;		\\
+	     (i) < (memdesc)->numclusters; (i)++, (_cluster)++)" 6655 . 6757)))
+          ("CSHAPE" (spp-arg-list ("totalsize" "linesize" "assoc") 34390 . 34418) . ((semantic-list "((totalsize & ~0xff) | (linesize << 4) | assoc)" 34423 . 34470)))
+          ("MAX_BCACHE_SIZE" . 
+              ((number "16" 34594 . 34596) (punctuation "*" 34596 . 34597) (number "1024" 34597 . 34601) (punctuation "*" 34601 . 34602) (number "1024" 34602 . 34606)))
+          )
+)
+    (semanticdb-table "proto.h"
+      :file "proto.h"
+      :fsize 7278
+      :lastmodtime '(21976 3065 36725 660000))
+    (semanticdb-table "pci_impl.h"
+      :file "pci_impl.h"
+      :fsize 6591
+      :lastmodtime '(21976 3065 36725 660000)))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!alpha!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

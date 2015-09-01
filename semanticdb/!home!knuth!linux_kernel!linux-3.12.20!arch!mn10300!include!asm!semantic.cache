@@ -1,0 +1,27 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "page.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ASM_PAGE_H" variable (:constant-flag t) nil [432 443])
+            ("PAGE_SHIFT" variable (:constant-flag t) nil [495 505])
+            ("PAGE_SIZE" variable (:constant-flag t) nil [539 548])
+            ("PAGE_MASK" variable (:constant-flag t) nil [577 586]))          
+      :file "page.h"
+      :pointmax 3646
+      :fsize 3645
+      :lastmodtime '(21976 3066 44725 630000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PAGE_MASK" . ((semantic-list "(~(PAGE_SIZE - 1))" 587 . 605)))
+          ("PAGE_SHIFT" . ((number "12" 506 . 508)))
+          ("_ASM_PAGE_H")
+          ("PAGE_SIZE" . ((semantic-list "(1UL << PAGE_SHIFT)" 549 . 568)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!mn10300!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

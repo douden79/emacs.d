@@ -1,0 +1,174 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "page_mm.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_M68K_PAGE_MM_H" variable (:constant-flag t) nil [33 48])
+            ("linux/compiler.h" include (:system-flag t) nil [72 99])
+            ("asm/module.h" include (:system-flag t) nil [100 123])
+            ("get_user_page" variable (:constant-flag t) nil [133 146])
+            ("free_user_page" variable (:constant-flag t) nil [191 205])
+            ("clear_page" variable (:constant-flag t) nil [1145 1155])
+            ("copy_page" variable (:constant-flag t) nil [1199 1208])
+            ("clear_user_page" variable (:constant-flag t) nil [1266 1281])
+            ("copy_user_page" variable (:constant-flag t) nil [1380 1394])
+            ("m68k_memoffset" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [1493 1529])
+            ("WANT_PAGE_VIRTUAL" variable (:constant-flag t) nil [1560 1577])
+            ("___pa" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("vaddr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1613 1625]))                  
+                :type "unsigned long")
+                nil [1579 1780])
+            ("__pa" variable (:constant-flag t) nil [1789 1793])
+            ("__va" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("paddr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1855 1875]))                  
+                :type "void")
+                nil [1830 2022])
+            ("virt_to_pfn" variable (:constant-flag t) nil [2836 2847])
+            ("pfn_to_virt" variable (:constant-flag t) nil [2891 2902])
+            ("m68k_virt_to_node_shift" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [2935 2970])
+            ("pg_data_table" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("extern")
+                :type ("pglist_data" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3059 3102])
+            ("__virt_to_node_shift" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [3163 3168]))                  
+                :type "int")
+                nil [3104 3302])
+            ("__virt_to_node" variable (:constant-flag t) nil [3312 3326])
+            ("virt_to_page" variable (:constant-flag t) nil [3414 3426])
+            ("page_to_virt" variable (:constant-flag t) nil [3493 3505])
+            ("pfn_to_page" variable (:constant-flag t) nil [3573 3584])
+            ("page_to_pfn" variable (:constant-flag t) nil [3802 3813])
+            ("virt_addr_valid" variable (:constant-flag t) nil [4022 4037])
+            ("pfn_valid" variable (:constant-flag t) nil [4127 4136]))          
+      :file "page_mm.h"
+      :pointmax 4234
+      :fsize 4233
+      :lastmodtime '(21976 3065 848725 636000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__virt_to_node" (spp-arg-list ("addr") 3326 . 3332) . ((semantic-list "(pg_data_table[(unsigned long)(addr) >> __virt_to_node_shift()])" 3333 . 3397)))
+          ("page_to_pfn" (spp-arg-list ("_page") 3813 . 3820) . ((semantic-list "({						\\
+	const struct page *__p = (_page);				\\
+	struct pglist_data *pgdat;					\\
+	pgdat = &pg_data_map[page_to_nid(__p)];				\\
+	((__p) - pgdat->node_mem_map) + pgdat->node_start_pfn;		\\
+})" 3821 . 4012)))
+          ("virt_to_pfn" (spp-arg-list ("kaddr") 2847 . 2854) . ((semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 2855 . 2882)))
+          ("_M68K_PAGE_MM_H")
+          ("free_user_page" (spp-arg-list ("page" "addr") 205 . 217) . ((symbol "free_page" 218 . 227) (semantic-list "(addr)" 227 . 233)))
+          ("clear_page" (spp-arg-list ("page") 1155 . 1161) . ((symbol "memset" 1162 . 1168) (semantic-list "((page), 0, PAGE_SIZE)" 1168 . 1190)))
+          ("get_user_page" (spp-arg-list ("vaddr") 146 . 153) . ((symbol "__get_free_page" 155 . 170) (semantic-list "(GFP_KERNEL)" 170 . 182)))
+          ("__pa" (spp-arg-list ("vaddr") 1793 . 1800) . ((symbol "___pa" 1801 . 1806) (semantic-list "((void *)(long)(vaddr))" 1806 . 1829)))
+          ("page_to_virt" (spp-arg-list ("page") 3505 . 3511) . ((semantic-list "({						\\
+	pfn_to_virt(page_to_pfn(page));					\\
+})" 3512 . 3563)))
+          ("clear_user_page" (spp-arg-list ("addr" "vaddr" "page") 1281 . 1300) . 
+              ((DO "do" 1304 . 1306) (semantic-list "{	clear_page(addr);		\\
+		flush_dcache_page(page);	\\
+	}" 1307 . 1361) (WHILE "while" 1362 . 1367) (semantic-list "(0)" 1368 . 1371)))
+          ("pfn_to_virt" (spp-arg-list ("pfn") 2902 . 2907) . ((symbol "__va" 2908 . 2912) (semantic-list "((pfn) << PAGE_SHIFT)" 2912 . 2933)))
+          ("WANT_PAGE_VIRTUAL")
+          ("copy_user_page" (spp-arg-list ("to" "from" "vaddr" "page") 1394 . 1417) . 
+              ((DO "do" 1421 . 1423) (semantic-list "{	copy_page(to, from);		\\
+		flush_dcache_page(page);	\\
+	}" 1424 . 1481) (WHILE "while" 1482 . 1487) (semantic-list "(0)" 1488 . 1491)))
+          ("virt_addr_valid" (spp-arg-list ("kaddr") 4037 . 4044) . ((semantic-list "((void *)(kaddr) >= (void *)PAGE_OFFSET && (void *)(kaddr) < high_memory)" 4045 . 4118)))
+          ("pfn_valid" (spp-arg-list ("pfn") 4136 . 4141) . ((symbol "virt_addr_valid" 4143 . 4158) (semantic-list "(pfn_to_virt(pfn))" 4158 . 4176)))
+          ("copy_page" (spp-arg-list ("to" "from") 1208 . 1217) . ((symbol "memcpy" 1218 . 1224) (semantic-list "((to), (from), PAGE_SIZE)" 1224 . 1249)))
+          ("pfn_to_page" (spp-arg-list ("pfn") 3584 . 3589) . ((semantic-list "({						\\
+	unsigned long __pfn = (pfn);					\\
+	struct pglist_data *pgdat;					\\
+	pgdat = __virt_to_node((unsigned long)pfn_to_virt(__pfn));	\\
+	pgdat->node_mem_map + (__pfn - pgdat->node_start_pfn);		\\
+})" 3590 . 3793)))
+          ("virt_to_page" (spp-arg-list ("addr") 3426 . 3432) . ((semantic-list "({						\\
+	pfn_to_page(virt_to_pfn(addr));					\\
+})" 3433 . 3484)))
+          )
+)
+    (semanticdb-table "page_no.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_M68K_PAGE_NO_H" variable (:constant-flag t) nil [33 48])
+            ("memory_start" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [73 107])
+            ("memory_end" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [108 140])
+            ("get_user_page" variable (:constant-flag t) nil [150 163])
+            ("free_user_page" variable (:constant-flag t) nil [208 222])
+            ("clear_page" variable (:constant-flag t) nil [260 270])
+            ("copy_page" variable (:constant-flag t) nil [314 323])
+            ("clear_user_page" variable (:constant-flag t) nil [374 389])
+            ("copy_user_page" variable (:constant-flag t) nil [432 446])
+            ("__alloc_zeroed_user_highpage" variable (:constant-flag t) nil [497 525])
+            ("__HAVE_ARCH_ALLOC_ZEROED_USER_HIGHPAGE" variable (:constant-flag t) nil [632 670])
+            ("__pa" variable (:constant-flag t) nil [680 684])
+            ("__va" variable (:constant-flag t) nil [726 730])
+            ("virt_to_pfn" variable (:constant-flag t) nil [766 777])
+            ("pfn_to_virt" variable (:constant-flag t) nil [821 832])
+            ("virt_to_page" variable (:constant-flag t) nil [873 885])
+            ("page_to_virt" variable (:constant-flag t) nil [964 976])
+            ("pfn_to_page" variable (:constant-flag t) nil [1049 1060])
+            ("page_to_pfn" variable (:constant-flag t) nil [1105 1116])
+            ("pfn_valid" variable (:constant-flag t) nil [1163 1172])
+            ("virt_addr_valid" variable (:constant-flag t) nil [1215 1230]))          
+      :file "page_no.h"
+      :pointmax 1386
+      :fsize 1385
+      :lastmodtime '(21976 3065 848725 636000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("page_to_pfn" (spp-arg-list ("page") 1116 . 1122) . ((symbol "virt_to_pfn" 1123 . 1134) (semantic-list "(page_to_virt(page))" 1134 . 1154)))
+          ("virt_to_pfn" (spp-arg-list ("kaddr") 777 . 784) . ((semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 785 . 812)))
+          ("__alloc_zeroed_user_highpage" (spp-arg-list ("movableflags" "vma" "vaddr") 525 . 551) . ((symbol "alloc_page_vma" 555 . 569) (semantic-list "(GFP_HIGHUSER | __GFP_ZERO | movableflags, vma, vaddr)" 569 . 623)))
+          ("free_user_page" (spp-arg-list ("page" "addr") 222 . 234) . ((symbol "free_page" 235 . 244) (semantic-list "(addr)" 244 . 250)))
+          ("clear_page" (spp-arg-list ("page") 270 . 276) . ((symbol "memset" 277 . 283) (semantic-list "((page), 0, PAGE_SIZE)" 283 . 305)))
+          ("get_user_page" (spp-arg-list ("vaddr") 163 . 170) . ((symbol "__get_free_page" 172 . 187) (semantic-list "(GFP_KERNEL)" 187 . 199)))
+          ("__HAVE_ARCH_ALLOC_ZEROED_USER_HIGHPAGE")
+          ("__pa" (spp-arg-list ("vaddr") 684 . 691) . ((semantic-list "((unsigned long)(vaddr))" 693 . 717)))
+          ("page_to_virt" (spp-arg-list ("page") 976 . 982) . ((symbol "__va" 983 . 987) (semantic-list "(((((page) - mem_map) << PAGE_SHIFT) + PAGE_OFFSET))" 987 . 1039)))
+          ("clear_user_page" (spp-arg-list ("page" "vaddr" "pg") 389 . 406) . ((symbol "clear_page" 407 . 417) (semantic-list "(page)" 417 . 423)))
+          ("pfn_to_virt" (spp-arg-list ("pfn") 832 . 837) . ((symbol "__va" 838 . 842) (semantic-list "((pfn) << PAGE_SHIFT)" 842 . 863)))
+          ("copy_user_page" (spp-arg-list ("to" "from" "vaddr" "pg") 446 . 467) . ((symbol "copy_page" 468 . 477) (semantic-list "(to, from)" 477 . 487)))
+          ("virt_addr_valid" (spp-arg-list ("kaddr") 1230 . 1237) . ((semantic-list "(((void *)(kaddr) >= (void *)PAGE_OFFSET) && \\
+				((void *)(kaddr) < (void *)memory_end))" 1238 . 1328)))
+          ("pfn_valid" (spp-arg-list ("pfn") 1172 . 1177) . ((semantic-list "((pfn) < max_mapnr)" 1186 . 1205)))
+          ("_M68K_PAGE_NO_H")
+          ("copy_page" (spp-arg-list ("to" "from") 323 . 332) . ((symbol "memcpy" 333 . 339) (semantic-list "((to), (from), PAGE_SIZE)" 339 . 364)))
+          ("__va" (spp-arg-list ("paddr") 730 . 737) . ((semantic-list "((void *)(paddr))" 739 . 756)))
+          ("pfn_to_page" (spp-arg-list ("pfn") 1060 . 1065) . ((symbol "virt_to_page" 1066 . 1078) (semantic-list "(pfn_to_virt(pfn))" 1078 . 1096)))
+          ("virt_to_page" (spp-arg-list ("addr") 885 . 891) . ((semantic-list "(mem_map + (((unsigned long)(addr)-PAGE_OFFSET) >> PAGE_SHIFT))" 892 . 955)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!m68k!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

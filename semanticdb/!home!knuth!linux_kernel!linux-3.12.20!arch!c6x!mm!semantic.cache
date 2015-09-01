@@ -1,0 +1,45 @@
+;; Object mm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mm/"
+  :tables
+  (list
+    (semanticdb-table "init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/mm.h" include (:system-flag t) nil [390 411])
+            ("linux/swap.h" include (:system-flag t) nil [412 435])
+            ("linux/module.h" include (:system-flag t) nil [436 461])
+            ("linux/bootmem.h" include (:system-flag t) nil [462 488])
+            ("linux/initrd.h" include (:system-flag t) nil [548 573])
+            ("asm/sections.h" include (:system-flag t) nil [575 600])
+            ("asm/uaccess.h" include (:system-flag t) nil [601 625])
+            ("empty_zero_page" variable (:type "unsigned long") nil [716 746])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("empty_zero_page" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [761 777]))                  
+                :type "int")
+                nil [747 778])
+            ("paging_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1045 1050]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1026 1534])
+            ("mem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1557 1562]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1541 1717])
+            ("free_initmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1916 1921]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1896 1952]))          
+      :file "init.c"
+      :pointmax 1953
+      :fsize 1952
+      :lastmodtime '(21976 3065 720725 640000)
+      :unmatched-syntax '((VOID 1891 . 1895) (VOID 1536 . 1540) (VOID 1021 . 1025))))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!c6x!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

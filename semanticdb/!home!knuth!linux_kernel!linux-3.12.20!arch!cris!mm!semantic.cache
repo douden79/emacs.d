@@ -1,0 +1,32 @@
+;; Object mm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mm/"
+  :tables
+  (list
+    (semanticdb-table "init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/gfp.h" include (:system-flag t) nil [183 205])
+            ("linux/init.h" include (:system-flag t) nil [206 229])
+            ("linux/bootmem.h" include (:system-flag t) nil [230 256])
+            ("asm/tlb.h" include (:system-flag t) nil [257 277])
+            ("asm/sections.h" include (:system-flag t) nil [278 303])
+            ("empty_zero_page" variable (:type "unsigned long") nil [305 335])
+            ("mem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [358 363]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [342 629])
+            ("free_initmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [704 709]))                  
+                :type "void")
+                nil [685 740]))          
+      :file "init.c"
+      :pointmax 741
+      :fsize 740
+      :lastmodtime '(21976 3065 748725 639000)
+      :unmatched-syntax '((VOID 337 . 341))))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!cris!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

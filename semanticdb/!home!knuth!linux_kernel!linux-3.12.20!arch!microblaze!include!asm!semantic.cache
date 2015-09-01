@@ -1,0 +1,27 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "page.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ASM_MICROBLAZE_PAGE_H" variable (:constant-flag t) nil [462 484])
+            ("linux/pfn.h" include (:system-flag t) nil [486 508])
+            ("asm/setup.h" include (:system-flag t) nil [509 531])
+            ("asm/asm-compat.h" include (:system-flag t) nil [532 559])
+            ("linux/const.h" include (:system-flag t) nil [560 584])
+            ("asm-generic/memory_model.h" include (:system-flag t) nil [6112 6149])
+            ("asm-generic/getorder.h" include (:system-flag t) nil [6150 6183]))          
+      :file "page.h"
+      :pointmax 6221
+      :fsize 6220
+      :lastmodtime '(21976 3065 888725 635000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_ASM_MICROBLAZE_PAGE_H")
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!microblaze!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

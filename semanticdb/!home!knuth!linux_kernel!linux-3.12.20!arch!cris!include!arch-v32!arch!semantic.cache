@@ -1,0 +1,21 @@
+;; Object arch/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "arch/"
+  :tables
+  (list
+    (semanticdb-table "page.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ASM_CRIS_ARCH_PAGE_H" variable (:constant-flag t) nil [39 60]))          
+      :file "page.h"
+      :pointmax 622
+      :fsize 621
+      :lastmodtime '(21976 3065 736725 640000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_ASM_CRIS_ARCH_PAGE_H")
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!cris!include!arch-v32!arch!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

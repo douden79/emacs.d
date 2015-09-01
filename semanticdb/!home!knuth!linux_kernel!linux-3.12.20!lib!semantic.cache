@@ -1,0 +1,2652 @@
+;; Object lib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "lib/"
+  :tables
+  (list
+    (semanticdb-table "debugobjects.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/debugobjects.h" include (:system-flag t) nil [217 248])
+            ("linux/interrupt.h" include (:system-flag t) nil [249 277])
+            ("linux/sched.h" include (:system-flag t) nil [278 302])
+            ("linux/seq_file.h" include (:system-flag t) nil [303 330])
+            ("linux/debugfs.h" include (:system-flag t) nil [331 357])
+            ("linux/slab.h" include (:system-flag t) nil [358 381])
+            ("linux/hash.h" include (:system-flag t) nil [382 405])
+            ("ODEBUG_HASH_BITS" variable (:constant-flag t) nil [415 431])
+            ("ODEBUG_HASH_SIZE" variable (:constant-flag t) nil [443 459])
+            ("ODEBUG_POOL_SIZE" variable (:constant-flag t) nil [493 509])
+            ("ODEBUG_POOL_MIN_LEVEL" variable (:constant-flag t) nil [522 543])
+            ("ODEBUG_CHUNK_SHIFT" variable (:constant-flag t) nil [557 575])
+            ("ODEBUG_CHUNK_SIZE" variable (:constant-flag t) nil [595 612])
+            ("ODEBUG_CHUNK_MASK" variable (:constant-flag t) nil [647 664])
+            ("debug_bucket" type
+               (:members 
+                  ( ("list" variable (:type ("hlist_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [716 739])
+                    ("lock" variable (:type ("raw_spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [741 762]))                  
+                :type "struct")
+                nil [693 765])
+            ("obj_hash" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("debug_bucket" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [767 821])
+            ("__initdata" variable (:type "int") nil [882 893])
+            ("DEFINE_RAW_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("pool_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [922 932]))                  
+                :type "int")
+                nil [895 933])
+            ("HLIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("obj_pool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [953 962]))                  
+                :type "int")
+                nil [935 963])
+            ("obj_pool_min_free" variable
+               (:typemodifiers ("static")
+                :default-value "ODEBUG_POOL_SIZE"
+                :type "int")
+                nil [965 1015])
+            ("obj_pool_free" variable
+               (:typemodifiers ("static")
+                :default-value "ODEBUG_POOL_SIZE"
+                :type "int")
+                nil [1016 1062])
+            ("obj_pool_used" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1063 1090])
+            ("obj_pool_max_used" variable
+               (:typemodifiers ("static")
+                :type "int")
+                nil [1091 1122])
+            ("obj_cache" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("kmem_cache" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1123 1159])
+            ("__read_mostly" variable (:type ("debug_objects_maxchain" type (:type "class") nil nil)) nil [1174 1211])
+            ("__read_mostly" variable (:type ("debug_objects_fixups" type (:type "class") nil nil)) nil [1225 1260])
+            ("__read_mostly" variable (:type ("debug_objects_warnings" type (:type "class") nil nil)) nil [1274 1311])
+            ("__read_mostly" variable
+               (:default-value "CONFIG_DEBUG_OBJECTS_ENABLE_DEFAULT"
+                :type ("debug_objects_enabled" type (:type "class") nil nil))
+                nil [1325 1403])
+            ("__read_mostly" variable (:type ("descr_test" type (:type "class") nil nil)) nil [1436 1462])
+            ("free_obj_work" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1490 1515]))                  
+                :type "void")
+                nil [1464 1516])
+            ("DECLARE_WORK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("debug_obj_work" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1537 1552])
+                    ("" variable (:type ("free_obj_work" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1553 1567]))                  
+                :type "int")
+                nil [1517 1568])
+            ("enable_object_debug" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1608 1618]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1581 1661])
+            ("disable_object_debug" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1702 1712]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1674 1755])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("enable_object_debug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1786 1806]))                  
+                :type "int")
+                nil [1757 1807])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("disable_object_debug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1840 1861]))                  
+                :type "int")
+                nil [1808 1862])
+            ("obj_states" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+	[ODEBUG_STATE_NONE]		= \"none\",
+	[ODEBUG_STATE_INIT]		= \"initialized\",
+	[ODEBUG_STATE_INACTIVE]		= \"inactive\",
+	[ODEBUG_STATE_ACTIVE]		= \"active\",
+	[ODEBUG_STATE_DESTROYED]	= \"destroyed\",
+	[ODEBUG_STATE_NOTAVAILABLE]	= \"not available\",
+}"
+                :type "char")
+                nil [1864 2154])
+            ("fill_pool" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2178 2183]))                  
+                :type "void")
+                nil [2156 2665])
+            ("lookup_object" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2753 2764])
+                    ("b" variable
+                       (:pointer 1
+                        :type ("debug_bucket" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2765 2788]))                  
+                :type ("debug_obj" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2714 3012])
+            ("alloc_object" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3177 3188])
+                    ("b" variable
+                       (:pointer 1
+                        :type ("debug_bucket" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3189 3212])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3213 3243]))                  
+                :type ("debug_obj" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3138 3802])
+            ("free_obj_work" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("work" variable
+                       (:pointer 1
+                        :type ("work_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3876 3901]))                  
+                :type "void")
+                nil [3850 4420])
+            ("free_object" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("obj" variable
+                       (:pointer 1
+                        :type ("debug_obj" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4541 4563]))                  
+                :type "void")
+                nil [4517 5014])
+            ("debug_objects_oom" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [5136 5141]))                  
+                :type "void")
+                nil [5106 5666])
+            ("get_bucket" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5844 5863]))                  
+                :type ("debug_bucket" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5805 5981])
+            ("debug_print_object" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("obj" variable
+                       (:pointer 1
+                        :type ("debug_obj" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6014 6036])
+                    ("msg" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6037 6047]))                  
+                :type "void")
+                nil [5983 6433])
+            ("debug_object_fixup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fixup" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("addr" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [6572 6583])
+                            ("state" variable (:type ("debug_obj_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [6584 6611]))                          
+                        :type "int")
+                        nil nil)
+                    ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6618 6630])
+                    ("state" variable (:type ("debug_obj_state" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [6631 6658]))                  
+                :type "int")
+                nil [6529 6768])
+            ("debug_object_is_on_stack" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6807 6818])
+                    ("onstack" variable (:type "int") (reparse-symbol arg-sub-list) [6819 6831]))                  
+                :type "void")
+                nil [6770 7194])
+            ("__debug_object_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7228 7239])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7240 7270])
+                    ("onstack" variable (:type "int") (reparse-symbol arg-sub-list) [7271 7283]))                  
+                :type "void")
+                nil [7196 8238])
+            ("debug_object_init" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8438 8449])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8450 8480]))                  
+                :type "void")
+                nil [8415 8562])
+            ("debug_object_init_on_stack" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8795 8806])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8807 8837]))                  
+                :type "void")
+                nil [8763 8919])
+            ("debug_object_activate" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9176 9187])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9188 9218]))                  
+                :type "int")
+                nil [9150 10536])
+            ("debug_object_deactivate" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10748 10759])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10760 10790]))                  
+                :type "void")
+                nil [10719 11593])
+            ("debug_object_destroy" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11797 11808])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11809 11839]))                  
+                :type "void")
+                nil [11771 12643])
+            ("debug_object_free" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12837 12848])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12849 12879]))                  
+                :type "void")
+                nil [12814 13566])
+            ("debug_object_assert_init" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13780 13791])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13792 13822]))                  
+                :type "void")
+                nil [13750 14529])
+            ("debug_object_active_state" function
+               (:arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14823 14834])
+                    ("descr" variable
+                       (:pointer 1
+                        :type ("debug_obj_descr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14835 14865])
+                    ("expect" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [14871 14891])
+                    ("next" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [14892 14910]))                  
+                :type "void")
+                nil [14792 15615])
+            ("debug_objects_init_debugfs" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18530 18535]))                  
+                :type "void")
+                nil [18484 18539])
+            ("debug_objects_selftest" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [24213 24218]))                  
+                :type "void")
+                nil [24171 24222])
+            ("debug_objects_early_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [24457 24462]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [24425 24652])
+            ("debug_objects_replace_static_objects" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [24777 24782]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [24733 26148])
+            ("debug_objects_mem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [26450 26455]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [26420 26859]))          
+      :file "debugobjects.c"
+      :pointmax 26860
+      :fsize 26859
+      :lastmodtime '(21989 50202 549665 784000)
+      :unmatched-syntax '((thing 24420 . 24424) (thing 1820 . 1838) (thing 1769 . 1784) (thing 1670 . 1673) (thing 1663 . 1669) (thing 1577 . 1580) (thing 1570 . 1576) (thing 1435 . 1436) (thing 1419 . 1434) (thing 1412 . 1418) (thing 1405 . 1411) (thing 1319 . 1322) (thing 1312 . 1318) (thing 1268 . 1271) (thing 1261 . 1267) (thing 1219 . 1222) (thing 1212 . 1218) (thing 1168 . 1171) (thing 1161 . 1167) (thing 863 . 881) (thing 848 . 863) (thing 837 . 846) (thing 830 . 836) (thing 823 . 829) (thing 24722 . 24728) (thing 24729 . 24732) (thing 26415 . 26419))
+      :lexical-table 
+        '(("ODEBUG_POOL_SIZE" . ((number "512" 510 . 513)))
+          ("ODEBUG_HASH_BITS" . ((number "14" 432 . 434)))
+          ("ODEBUG_CHUNK_MASK" . ((semantic-list "(~(ODEBUG_CHUNK_SIZE - 1))" 665 . 691)))
+          ("ODEBUG_POOL_MIN_LEVEL" . ((number "256" 544 . 547)))
+          ("ODEBUG_CHUNK_SIZE" . ((semantic-list "(1 << ODEBUG_CHUNK_SHIFT)" 613 . 638)))
+          ("ODEBUG_HASH_SIZE" . ((semantic-list "(1 << ODEBUG_HASH_BITS)" 460 . 483)))
+          ("ODEBUG_CHUNK_SHIFT" . ((symbol "PAGE_SHIFT" 576 . 586)))
+          )
+)
+    (semanticdb-table "string.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/types.h" include (:system-flag t) nil [611 635])
+            ("linux/string.h" include (:system-flag t) nil [636 661])
+            ("linux/ctype.h" include (:system-flag t) nil [662 686])
+            ("linux/kernel.h" include (:system-flag t) nil [687 712])
+            ("linux/export.h" include (:system-flag t) nil [713 738])
+            ("linux/bug.h" include (:system-flag t) nil [739 761])
+            ("linux/errno.h" include (:system-flag t) nil [762 786])
+            ("strnicmp" function
+               (:arguments 
+                  ( ("s1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1000 1015])
+                    ("s2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1016 1031])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1032 1043]))                  
+                :type "int")
+                nil [987 1345])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strnicmp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1360 1369]))                  
+                :type "int")
+                nil [1346 1370])
+            ("strcasecmp" function
+               (:arguments 
+                  ( ("s1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1425 1440])
+                    ("s2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1441 1456]))                  
+                :type "int")
+                nil [1410 1575])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strcasecmp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1590 1601]))                  
+                :type "int")
+                nil [1576 1602])
+            ("strncasecmp" function
+               (:arguments 
+                  ( ("s1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1659 1674])
+                    ("s2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1675 1690])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1691 1700]))                  
+                :type "int")
+                nil [1643 1832])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strncasecmp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1847 1859]))                  
+                :type "int")
+                nil [1833 1860])
+            ("strcpy" function
+               (:pointer 1
+                :arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2050 2061])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2062 2078]))                  
+                :type "char")
+                nil [2037 2168])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strcpy" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2183 2190]))                  
+                :type "int")
+                nil [2169 2191])
+            ("strncpy" function
+               (:pointer 1
+                :arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2640 2651])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2652 2668])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2669 2682]))                  
+                :type "char")
+                nil [2626 2796])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strncpy" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2811 2819]))                  
+                :type "int")
+                nil [2797 2820])
+            ("strlcpy" function
+               (:arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3267 3278])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3279 3295])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3296 3308]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [3252 3462])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strlcpy" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3477 3485]))                  
+                :type "int")
+                nil [3463 3486])
+            ("strcat" function
+               (:pointer 1
+                :arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3689 3700])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3701 3717]))                  
+                :type "char")
+                nil [3676 3819])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strcat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3834 3841]))                  
+                :type "int")
+                nil [3820 3842])
+            ("strncat" function
+               (:pointer 1
+                :arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4185 4196])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4197 4213])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4214 4227]))                  
+                :type "char")
+                nil [4171 4405])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strncat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4420 4428]))                  
+                :type "int")
+                nil [4406 4429])
+            ("strlcat" function
+               (:arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4683 4694])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4695 4711])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4712 4725]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [4668 4990])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strlcat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5005 5013]))                  
+                :type "int")
+                nil [4991 5014])
+            ("strcmp" function
+               (:arguments 
+                  ( ("cs" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5157 5172])
+                    ("ct" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5173 5188]))                  
+                :type "int")
+                nil [5146 5336])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strcmp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5351 5358]))                  
+                :type "int")
+                nil [5337 5359])
+            ("strncmp" function
+               (:arguments 
+                  ( ("cs" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5556 5571])
+                    ("ct" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5572 5587])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5588 5601]))                  
+                :type "int")
+                nil [5544 5764])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strncmp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5779 5787]))                  
+                :type "int")
+                nil [5765 5788])
+            ("strchr" function
+               (:pointer 1
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5978 5992])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [5993 5999]))                  
+                :type "char")
+                nil [5965 6084])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strchr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6099 6106]))                  
+                :type "int")
+                nil [6085 6107])
+            ("strrchr" function
+               (:pointer 1
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6299 6313])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [6314 6320]))                  
+                :type "char")
+                nil [6285 6484])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strrchr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6499 6507]))                  
+                :type "int")
+                nil [6485 6508])
+            ("strnchr" function
+               (:pointer 1
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6743 6757])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6758 6771])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [6772 6778]))                  
+                :type "char")
+                nil [6729 6874])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strnchr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6889 6897]))                  
+                :type "int")
+                nil [6875 6898])
+            ("skip_spaces" function
+               (:pointer 1
+                :arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7095 7111]))                  
+                :type "char")
+                nil [7077 7168])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("skip_spaces" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7183 7195]))                  
+                :type "int")
+                nil [7169 7196])
+            ("strim" function
+               (:pointer 1
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7486 7494]))                  
+                :type "char")
+                nil [7474 7679])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strim" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7694 7700]))                  
+                :type "int")
+                nil [7680 7701])
+            ("strlen" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7822 7836]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [7808 7924])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strlen" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7939 7946]))                  
+                :type "int")
+                nil [7925 7947])
+            ("strnlen" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8142 8156])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8157 8170]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [8127 8269])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strnlen" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8284 8292]))                  
+                :type "int")
+                nil [8270 8293])
+            ("strspn" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8523 8537])
+                    ("accept" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8538 8557]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [8509 8779])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strspn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8795 8802]))                  
+                :type "int")
+                nil [8781 8803])
+            ("strcspn" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9035 9049])
+                    ("reject" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9050 9069]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [9020 9263])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strcspn" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9278 9286]))                  
+                :type "int")
+                nil [9264 9287])
+            ("strpbrk" function
+               (:pointer 1
+                :arguments 
+                  ( ("cs" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9479 9494])
+                    ("ct" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9495 9510]))                  
+                :type "char")
+                nil [9465 9684])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strpbrk" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9699 9707]))                  
+                :type "int")
+                nil [9685 9708])
+            ("strsep" function
+               (:pointer 1
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10135 10144])
+                    ("ct" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10145 10160]))                  
+                :type "char")
+                nil [10122 10316])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strsep" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10331 10338]))                  
+                :type "int")
+                nil [10317 10339])
+            ("sysfs_streq" function
+               (:arguments 
+                  ( ("s1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10769 10784])
+                    ("s2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10785 10800]))                  
+                :type "bool")
+                nil [10752 11002])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("sysfs_streq" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11017 11029]))                  
+                :type "int")
+                nil [11003 11030])
+            ("strtobool" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11323 11337])
+                    ("res" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol arg-sub-list) [11338 11348]))                  
+                :type "int")
+                nil [11309 11526])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strtobool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11541 11551]))                  
+                :type "int")
+                nil [11527 11552])
+            ("memset" function
+               (:pointer 1
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11842 11850])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [11851 11857])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11858 11871]))                  
+                :type "void")
+                nil [11829 11932])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("memset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11947 11954]))                  
+                :type "int")
+                nil [11933 11955])
+            ("memcpy" function
+               (:pointer 1
+                :arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12255 12266])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12267 12283])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12284 12297]))                  
+                :type "void")
+                nil [12242 12391])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("memcpy" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12406 12413]))                  
+                :type "int")
+                nil [12392 12414])
+            ("memmove" function
+               (:pointer 1
+                :arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12672 12683])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12684 12700])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12701 12714]))                  
+                :type "void")
+                nil [12658 12946])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("memmove" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12961 12969]))                  
+                :type "int")
+                nil [12947 12970])
+            ("memcmp" function
+               (:arguments 
+                  ( ("cs" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13170 13185])
+                    ("ct" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13186 13201])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13202 13215]))                  
+                :type "int")
+                nil [13159 13382])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("memcmp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13397 13404]))                  
+                :type "int")
+                nil [13383 13405])
+            ("memscan" function
+               (:pointer 1
+                :arguments 
+                  ( ("addr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13707 13718])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [13719 13725])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13726 13738]))                  
+                :type "void")
+                nil [13693 13862])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("memscan" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13877 13885]))                  
+                :type "int")
+                nil [13863 13886])
+            ("strstr" function
+               (:pointer 1
+                :arguments 
+                  ( ("s1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14075 14090])
+                    ("s2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14091 14106]))                  
+                :type "char")
+                nil [14062 14296])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14311 14318]))                  
+                :type "int")
+                nil [14297 14319])
+            ("strnstr" function
+               (:pointer 1
+                :arguments 
+                  ( ("s1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14562 14577])
+                    ("s2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14578 14593])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14594 14605]))                  
+                :type "char")
+                nil [14548 14775])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("strnstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14790 14798]))                  
+                :type "int")
+                nil [14776 14799])
+            ("memchr" function
+               (:pointer 1
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [15077 15091])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [15092 15098])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15099 15108]))                  
+                :type "void")
+                nil [15064 15250])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("memchr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15265 15272]))                  
+                :type "int")
+                nil [15251 15273])
+            ("check_bytes8" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("start" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [15308 15324])
+                    ("value" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15325 15334])
+                    ("bytes" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [15335 15354]))                  
+                :type "void")
+                nil [15282 15462])
+            ("memchr_inv" function
+               (:pointer 1
+                :arguments 
+                  ( ("start" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [15767 15785])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [15786 15792])
+                    ("bytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15793 15806]))                  
+                :type "void")
+                nil [15750 16605])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("memchr_inv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16620 16631]))                  
+                :type "int")
+                nil [16606 16632]))          
+      :file "string.c"
+      :pointmax 16633
+      :fsize 16632
+      :lastmodtime '(21976 3069 248725 536000)
+      :unmatched-syntax nil)
+    (semanticdb-table "idr.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/slab.h" include (:system-flag t) nil [1193 1216])
+            ("linux/init.h" include (:system-flag t) nil [1217 1240])
+            ("linux/export.h" include (:system-flag t) nil [1241 1266])
+            ("linux/err.h" include (:system-flag t) nil [1274 1296])
+            ("linux/string.h" include (:system-flag t) nil [1297 1322])
+            ("linux/idr.h" include (:system-flag t) nil [1323 1345])
+            ("linux/spinlock.h" include (:system-flag t) nil [1346 1373])
+            ("linux/percpu.h" include (:system-flag t) nil [1374 1399])
+            ("linux/hardirq.h" include (:system-flag t) nil [1400 1426])
+            ("MAX_IDR_SHIFT" variable (:constant-flag t) nil [1436 1449])
+            ("MAX_IDR_BIT" variable (:constant-flag t) nil [1481 1492])
+            ("MAX_IDR_LEVEL" variable (:constant-flag t) nil [1582 1595])
+            ("MAX_IDR_FREE" variable (:constant-flag t) nil [1704 1716])
+            ("idr_layer_cache" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("kmem_cache" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1738 1780])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("idr_layer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1803 1822])
+                    ("" variable (:type ("idr_preload_head" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1823 1840]))                  
+                :type "int")
+                nil [1781 1841])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [1864 1868])
+                    ("" variable (:type ("idr_preload_cnt" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1869 1885]))                  
+                :type "int")
+                nil [1842 1886])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("simple_ida_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1910 1926]))                  
+                :type "int")
+                nil [1887 1927])
+            ("idr_max" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("layers" variable (:type "int") (reparse-symbol arg-sub-list) [2010 2021]))                  
+                :type "int")
+                nil [1991 2109])
+            ("idr_layer_prefix_mask" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("layer" variable (:type "int") (reparse-symbol arg-sub-list) [2312 2322]))                  
+                :type "int")
+                nil [2279 2355])
+            ("get_from_free_list" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2401 2417]))                  
+                :type ("idr_layer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2357 2661])
+            ("idr_layer_alloc" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3207 3222])
+                    ("layer_idr" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3223 3245]))                  
+                :type ("idr_layer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3166 4361])
+            ("idr_layer_rcu_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("head" variable
+                       (:pointer 1
+                        :type ("rcu_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4394 4416]))                  
+                :type "void")
+                nil [4363 4546])
+            ("free_layer" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("idr" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4578 4594])
+                    ("p" variable
+                       (:pointer 1
+                        :type ("idr_layer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4595 4615]))                  
+                :type "void")
+                nil [4548 4735])
+            ("__move_to_free_list" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4810 4826])
+                    ("p" variable
+                       (:pointer 1
+                        :type ("idr_layer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4827 4847]))                  
+                :type "void")
+                nil [4778 4918])
+            ("move_to_free_list" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4950 4966])
+                    ("p" variable
+                       (:pointer 1
+                        :type ("idr_layer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4967 4987]))                  
+                :type "void")
+                nil [4920 5184])
+            ("idr_mark_full" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pa" variable
+                       (:pointer 2
+                        :type ("idr_layer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5212 5234])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [5235 5242]))                  
+                :type "void")
+                nil [5186 5673])
+            ("__idr_pre_get" function
+               (:arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5693 5709])
+                    ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5710 5725]))                  
+                :type "int")
+                nil [5675 5930])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__idr_pre_get" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5945 5959]))                  
+                :type "int")
+                nil [5931 5960])
+            ("sub_alloc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6591 6607])
+                    ("starting_id" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [6608 6625])
+                    ("pa" variable
+                       (:pointer 2
+                        :type ("idr_layer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6626 6648])
+                    ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6656 6671])
+                    ("layer_idr" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6672 6694]))                  
+                :type "int")
+                nil [6570 8055])
+            ("idr_get_empty_slot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8087 8103])
+                    ("starting_id" variable (:type "int") (reparse-symbol arg-sub-list) [8104 8120])
+                    ("pa" variable
+                       (:pointer 2
+                        :type ("idr_layer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8130 8152])
+                    ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8153 8168])
+                    ("layer_idr" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8178 8200]))                  
+                :type "int")
+                nil [8057 9651])
+            ("idr_fill_slot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("idr" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9818 9834])
+                    ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9835 9845])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [9846 9853])
+                    ("pa" variable
+                       (:pointer 2
+                        :type ("idr_layer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9859 9881]))                  
+                :type "void")
+                nil [9792 10101])
+            ("__idr_get_new_above" function
+               (:arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10127 10143])
+                    ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10144 10154])
+                    ("starting_id" variable (:type "int") (reparse-symbol arg-sub-list) [10155 10171])
+                    ("id" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [10172 10180]))                  
+                :type "int")
+                nil [10103 10401])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__idr_get_new_above" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10416 10436]))                  
+                :type "int")
+                nil [10402 10437])
+            ("idr_preload" function
+               (:arguments 
+                  ( ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11325 11340]))                  
+                :type "void")
+                nil [11308 12280])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_preload" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12295 12307]))                  
+                :type "int")
+                nil [12281 12308])
+            ("idr_alloc" function
+               (:arguments 
+                  ( ("idr" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13178 13194])
+                    ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13195 13205])
+                    ("start" variable (:type "int") (reparse-symbol arg-sub-list) [13206 13216])
+                    ("end" variable (:type "int") (reparse-symbol arg-sub-list) [13217 13225])
+                    ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13226 13241]))                  
+                :type "int")
+                nil [13164 13725])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_alloc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13744 13754]))                  
+                :type "int")
+                nil [13726 13755])
+            ("idr_alloc_cyclic" function
+               (:arguments 
+                  ( ("idr" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14297 14313])
+                    ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14314 14324])
+                    ("start" variable (:type "int") (reparse-symbol arg-sub-list) [14325 14335])
+                    ("end" variable (:type "int") (reparse-symbol arg-sub-list) [14336 14344])
+                    ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14348 14363]))                  
+                :type "int")
+                nil [14276 14567])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_alloc_cyclic" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14582 14599]))                  
+                :type "int")
+                nil [14568 14600])
+            ("idr_remove_warning" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("id" variable (:type "int") (reparse-symbol arg-sub-list) [14633 14640]))                  
+                :type "void")
+                nil [14602 14715])
+            ("sub_remove" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14740 14756])
+                    ("shift" variable (:type "int") (reparse-symbol arg-sub-list) [14757 14767])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [14768 14775]))                  
+                :type "void")
+                nil [14717 15513])
+            ("idr_remove" function
+               (:arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15632 15648])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [15649 15656]))                  
+                :type "void")
+                nil [15616 16557])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_remove" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16572 16583]))                  
+                :type "int")
+                nil [16558 16584])
+            ("__idr_remove_all" function
+               (:arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16608 16624]))                  
+                :type "void")
+                nil [16586 17239])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__idr_remove_all" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17254 17271]))                  
+                :type "int")
+                nil [17240 17272])
+            ("idr_destroy" function
+               (:arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17817 17833]))                  
+                :type "void")
+                nil [17800 17981])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_destroy" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17996 18008]))                  
+                :type "int")
+                nil [17982 18009])
+            ("idr_find_slowpath" function
+               (:pointer 1
+                :arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18035 18051])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [18052 18059]))                  
+                :type "void")
+                nil [18011 18433])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_find_slowpath" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18448 18466]))                  
+                :type "int")
+                nil [18434 18467])
+            ("idr_for_each" function
+               (:arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19222 19238])
+                    ("fn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("id" variable (:type "int") (reparse-symbol arg-sub-list) [19252 19259])
+                            ("p" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [19260 19268])
+                            ("data" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [19269 19280]))                          
+                        :type "int")
+                        nil nil)
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19282 19293]))                  
+                :type "int")
+                nil [19205 19852])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_for_each" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19867 19880]))                  
+                :type "int")
+                nil [19853 19881])
+            ("idr_get_next" function
+               (:pointer 1
+                :arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20309 20325])
+                    ("nextidp" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [20326 20339]))                  
+                :type "void")
+                nil [20290 21202])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_get_next" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21217 21230]))                  
+                :type "int")
+                nil [21203 21231])
+            ("idr_replace" function
+               (:pointer 1
+                :arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21643 21659])
+                    ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21660 21670])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [21671 21678]))                  
+                :type "void")
+                nil [21625 22165])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_replace" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22180 22192]))                  
+                :type "int")
+                nil [22166 22193])
+            ("idr_init_cache" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [22222 22227]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [22200 22339])
+            ("idr_init" function
+               (:arguments 
+                  ( ("idp" variable
+                       (:pointer 1
+                        :type ("idr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22526 22542]))                  
+                :type "void")
+                nil [22512 22612])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("idr_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22627 22636]))                  
+                :type "int")
+                nil [22613 22637])
+            ("free_bitmap" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ida" variable
+                       (:pointer 1
+                        :type ("ida" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23010 23026])
+                    ("bitmap" variable
+                       (:pointer 1
+                        :type ("ida_bitmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23027 23053]))                  
+                :type "void")
+                nil [22986 23298])
+            ("ida_pre_get" function
+               (:arguments 
+                  ( ("ida" variable
+                       (:pointer 1
+                        :type ("ida" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23691 23707])
+                    ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23708 23723]))                  
+                :type "int")
+                nil [23675 24022])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ida_pre_get" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24037 24049]))                  
+                :type "int")
+                nil [24023 24050])
+            ("ida_get_new_above" function
+               (:arguments 
+                  ( ("ida" variable
+                       (:pointer 1
+                        :type ("ida" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24588 24604])
+                    ("starting_id" variable (:type "int") (reparse-symbol arg-sub-list) [24605 24621])
+                    ("p_id" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [24622 24632]))                  
+                :type "int")
+                nil [24566 26325])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ida_get_new_above" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26340 26358]))                  
+                :type "int")
+                nil [26326 26359])
+            ("ida_remove" function
+               (:arguments 
+                  ( ("ida" variable
+                       (:pointer 1
+                        :type ("ida" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26461 26477])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [26478 26485]))                  
+                :type "void")
+                nil [26445 27361])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ida_remove" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27376 27387]))                  
+                :type "int")
+                nil [27362 27388])
+            ("ida_destroy" function
+               (:arguments 
+                  ( ("ida" variable
+                       (:pointer 1
+                        :type ("ida" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27498 27514]))                  
+                :type "void")
+                nil [27481 27569])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ida_destroy" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27584 27596]))                  
+                :type "int")
+                nil [27570 27597])
+            ("ida_simple_get" function
+               (:arguments 
+                  ( ("ida" variable
+                       (:pointer 1
+                        :type ("ida" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28010 28026])
+                    ("start" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [28027 28046])
+                    ("end" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [28047 28064])
+                    ("gfp_mask" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28070 28085]))                  
+                :type "int")
+                nil [27991 28643])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ida_simple_get" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28658 28673]))                  
+                :type "int")
+                nil [28644 28674])
+            ("ida_simple_remove" function
+               (:arguments 
+                  ( ("ida" variable
+                       (:pointer 1
+                        :type ("ida" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28829 28845])
+                    ("id" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [28846 28862]))                  
+                :type "void")
+                nil [28806 29028])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ida_simple_remove" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29043 29061]))                  
+                :type "int")
+                nil [29029 29062])
+            ("ida_init" function
+               (:arguments 
+                  ( ("ida" variable
+                       (:pointer 1
+                        :type ("ida" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29249 29265]))                  
+                :type "void")
+                nil [29235 29329])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ida_init" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29344 29353]))                  
+                :type "int")
+                nil [29330 29354]))          
+      :file "idr.c"
+      :pointmax 29355
+      :fsize 29354
+      :lastmodtime '(21976 3069 244725 536000)
+      :unmatched-syntax '((VOID 22195 . 22199))
+      :lexical-table 
+        '(("MAX_IDR_LEVEL" . ((semantic-list "((MAX_IDR_SHIFT + IDR_BITS - 1) / IDR_BITS)" 1596 . 1639)))
+          ("MAX_IDR_FREE" . ((semantic-list "(MAX_IDR_LEVEL * 2)" 1717 . 1736)))
+          ("MAX_IDR_BIT" . ((semantic-list "(1U << MAX_IDR_SHIFT)" 1494 . 1515)))
+          ("MAX_IDR_SHIFT" . ((semantic-list "(sizeof(int) * 8 - 1)" 1451 . 1472)))
+          )
+)
+    (semanticdb-table "radix-tree.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/errno.h" include (:system-flag t) nil [904 928])
+            ("linux/init.h" include (:system-flag t) nil [929 952])
+            ("linux/kernel.h" include (:system-flag t) nil [953 978])
+            ("linux/export.h" include (:system-flag t) nil [979 1004])
+            ("linux/radix-tree.h" include (:system-flag t) nil [1005 1034])
+            ("linux/percpu.h" include (:system-flag t) nil [1035 1060])
+            ("linux/slab.h" include (:system-flag t) nil [1061 1084])
+            ("linux/notifier.h" include (:system-flag t) nil [1085 1112])
+            ("linux/cpu.h" include (:system-flag t) nil [1113 1135])
+            ("linux/string.h" include (:system-flag t) nil [1136 1161])
+            ("linux/bitops.h" include (:system-flag t) nil [1162 1187])
+            ("linux/rcupdate.h" include (:system-flag t) nil [1188 1215])
+            ("linux/hardirq.h" include (:system-flag t) nil [1216 1242])
+            ("RADIX_TREE_MAP_SHIFT" variable (:constant-flag t) nil [1356 1376])
+            ("RADIX_TREE_MAP_SIZE" variable (:constant-flag t) nil [1428 1447])
+            ("RADIX_TREE_MAP_MASK" variable (:constant-flag t) nil [1486 1505])
+            ("RADIX_TREE_TAG_LONGS" variable (:constant-flag t) nil [1539 1559])
+            ("radix_tree_node" type
+               (:members 
+                  ( ("height" variable (:type "unsigned int") (reparse-symbol classsubparts) [1650 1670])
+                    ("count" variable (:type "unsigned int") (reparse-symbol classsubparts) [1702 1721])
+                    ("" type
+                       (:members 
+                          ( ("parent" variable
+                               (:pointer 1
+                                :type ("radix_tree_node" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [1733 1764])
+                            ("rcu_head" variable (:type ("rcu_head" type
+                                 (:prototype t
+                                  :type "struct")
+                                  nil nil)) (reparse-symbol classsubparts) [1798 1823]))                          
+                        :type "union")
+                        (reparse-symbol classsubparts) [1723 1856])
+                    ("slots" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type ("__rcu" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1863 1897])
+                    ("tags" variable
+                       (:dereference 2
+                        :type "unsigned long")
+                        (reparse-symbol classsubparts) [1899 1961]))                  
+                :type "struct")
+                nil [1624 1964])
+            ("RADIX_TREE_INDEX_BITS" variable (:constant-flag t) nil [1974 1995])
+            ("RADIX_TREE_MAX_PATH" variable (:constant-flag t) nil [2048 2067])
+            ("__read_mostly" variable (:type "int") nil [2322 2336])
+            ("radix_tree_node_cachep" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("kmem_cache" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2371 2420])
+            ("RADIX_TREE_PRELOAD_SIZE" variable (:constant-flag t) nil [2919 2942])
+            ("nr" variable (:type "int") nil [3045 3052])
+            ("nodes" variable
+               (:pointer 1
+                :dereference 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3054 3109])
+            ("__GFP_BITS_MASK" variable (:type ("gfp_mask" type (:type "class") nil nil)) nil [3507 3534])
+            ("__set_bit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("offset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3640 3647])
+                    ("" variable (:type ("node" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3648 3653])
+                    ("" variable (:type ("tags" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3654 3663]))                  
+                :type "int")
+                nil [3630 3665])
+            ("__clear_bit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("offset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3775 3782])
+                    ("" variable (:type ("node" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3783 3788])
+                    ("" variable (:type ("tags" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3789 3798]))                  
+                :type "int")
+                nil [3763 3800])
+            ("test_bit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("offset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3911 3918])
+                    ("" variable (:type ("node" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3919 3924])
+                    ("" variable (:type ("tags" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3925 3934]))                  
+                :type "int")
+                nil [3902 3936])
+            ("__GFP_BITS_MASK" variable (:type "int") nil [4336 4352])
+            ("idx" variable (:type "int") nil [4683 4691])
+            ("find_next_bit" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("addr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5406 5411])
+                    ("" variable (:type ("size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5412 5417])
+                    ("" variable (:type ("offset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5418 5425]))                  
+                :type "int")
+                nil [5392 5426])
+            ("size" variable (:type "int") nil [5782 5787])
+            ("ret" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6035 6070])
+            ("gfp_mask" variable
+               (:default-value "root_gfp_mask(root)"
+                :type ("gfp_t" type (:type "class") nil nil))
+                nil [6072 6109])
+            ("ret" variable
+               (:default-value "kmem_cache_alloc(radix_tree_node_cachep, gfp_mask)"
+                :type "int")
+                nil [6724 6781])
+            ("BUG_ON" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("radix_tree_is_indirect_ptr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6791 6822]))                  
+                :type "int")
+                nil [6784 6824])
+            ("ret" variable (:type "int") nil [6833 6837])
+            ("node" variable
+               (:pointer 1
+                :default-value "container_of(head, struct radix_tree_node, rcu_head)"
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6904 6991])
+            ("i" variable (:type "int") nil [6993 6999])
+            ("tag_clear" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("node" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7225 7230])
+                    ("" variable (:type ("i" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7231 7233]))                  
+                :type "int")
+                nil [7215 7237])
+            ("slots" variable
+               (:dereference 1
+                :default-value "NULL"
+                :type "int")
+                nil [7246 7262])
+            ("count" variable
+               (:default-value "0"
+                :type "int")
+                nil [7270 7280])
+            ("kmem_cache_free" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("radix_tree_node_cachep" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7299 7322])
+                    ("" variable (:type ("node" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7323 7328]))                  
+                :type "int")
+                nil [7283 7329])
+            ("call_rcu" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("node" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7416 7421])
+                    ("" variable (:type ("rcu_head" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7422 7431])
+                    ("" variable (:type ("radix_tree_node_rcu_free" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7432 7457]))                  
+                :type "int")
+                nil [7406 7458])
+            ("rtp" variable
+               (:pointer 1
+                :type ("radix_tree_preload" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7907 7938])
+            ("node" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7940 7969])
+            ("ret" variable
+               (:default-value "-ENOMEM"
+                :type "int")
+                nil [7971 7989])
+            ("preempt_disable" function
+               (:prototype-flag t
+                :type "int")
+                nil [7992 8010])
+            ("rtp" variable
+               (:default-value "&__get_cpu_var(radix_tree_preloads)"
+                :type "int")
+                nil [8012 8054])
+            ("ret" variable
+               (:default-value "0"
+                :type "int")
+                nil [8413 8421])
+            ("ret" variable (:type "int") nil [8435 8439])
+            ("WARN_ON_ONCE" function
+               (:prototype-flag t
+                :type "int")
+                nil [8914 8953])
+            ("__radix_tree_preload" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("gfp_mask" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8983 8992]))                  
+                :type "int")
+                nil [8962 8993])
+            ("__radix_tree_preload" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("gfp_mask" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9365 9374]))                  
+                :type "int")
+                nil [9344 9375])
+            ("preempt_disable" function
+               (:prototype-flag t
+                :type "int")
+                nil [9445 9463])
+            ("height_to_maxindex" variable
+               (:dereference 1
+                :type "int")
+                nil [9691 9718])
+            ("node" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9863 9892])
+            ("slot" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9894 9923])
+            ("height" variable (:type "unsigned int") nil [9925 9945])
+            ("tag" variable (:type "int") nil [9947 9955])
+            ("height" variable
+               (:default-value "root->height + 1"
+                :type "int")
+                nil [10004 10030])
+            ("node" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11135 11178])
+            ("slot" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11135 11178])
+            ("height" variable (:type "unsigned int") nil [11180 11207])
+            ("shift" variable (:type "unsigned int") nil [11180 11207])
+            ("offset" variable (:type "int") nil [11209 11220])
+            ("error" variable (:type "int") nil [11222 11232])
+            ("BUG_ON" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("radix_tree_is_indirect_ptr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11242 11274]))                  
+                :type "int")
+                nil [11235 11276])
+            ("slot" variable
+               (:default-value "indirect_to_ptr(root->rnode)"
+                :type "int")
+                nil [11448 11484])
+            ("height" variable
+               (:default-value "root->height;"
+                :type "int")
+                nil [11487 11509])
+            ("shift" variable
+               (:default-value "(height-1) * RADIX_TREE_MAP_SHIFT"
+                :type "int")
+                nil [11511 11553])
+            ("offset" variable
+               (:default-value "0"
+                :type "int")
+                nil [11556 11567])
+            ("EEXIST" variable (:type "int") nil [12156 12163])
+            ("height" variable (:type "unsigned int") nil [12680 12707])
+            ("shift" variable (:type "unsigned int") nil [12680 12707])
+            ("node" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12709 12746])
+            ("slot" variable
+               (:pointer 2
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12709 12746])
+            ("node" variable
+               (:default-value "rcu_dereference_raw(root->rnode)"
+                :type "int")
+                nil [12749 12789])
+            ("NULL" variable (:type "int") nil [12818 12823])
+            ("node" variable
+               (:default-value "indirect_to_ptr(node)"
+                :type "int")
+                nil [12952 12981])
+            ("height" variable
+               (:default-value "node->height;"
+                :type "int")
+                nil [12984 13006])
+            ("NULL" variable (:type "int") nil [13058 13063])
+            ("shift" variable
+               (:default-value "(height-1) * RADIX_TREE_MAP_SHIFT"
+                :type "int")
+                nil [13066 13108])
+            ("indirect_to_ptr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("node" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13404 13409]))                  
+                :type "int")
+                nil [13388 13410])
+            ("radix_tree_lookup_element" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14047 14052])
+                    ("" variable (:type ("index" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14053 14059]))                  
+                :type "int")
+                nil [14021 14063])
+            ("radix_tree_lookup_element" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14658 14663])
+                    ("" variable (:type ("index" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14664 14670]))                  
+                :type "int")
+                nil [14632 14674])
+            ("height" variable (:type "unsigned int") nil [15204 15231])
+            ("shift" variable (:type "unsigned int") nil [15204 15231])
+            ("slot" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [15233 15262])
+            ("height" variable
+               (:default-value "root->height;"
+                :type "int")
+                nil [15265 15287])
+            ("BUG_ON" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("index" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15296 15303])
+                    ("" variable (:type ("radix_tree_maxindex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15304 15331]))                  
+                :type "int")
+                nil [15289 15333])
+            ("slot" variable
+               (:default-value "indirect_to_ptr(root->rnode)"
+                :type "int")
+                nil [15336 15372])
+            ("shift" variable
+               (:default-value "(height - 1) * RADIX_TREE_MAP_SHIFT"
+                :type "int")
+                nil [15374 15418])
+            ("root_tag_set" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15761 15766])
+                    ("" variable (:type ("tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15767 15771]))                  
+                :type "int")
+                nil [15748 15772])
+            ("slot" variable (:type "int") nil [15782 15787])
+            ("node" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16422 16458])
+            ("slot" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16460 16496])
+            ("height" variable (:type "unsigned int") nil [16498 16525])
+            ("shift" variable (:type "unsigned int") nil [16498 16525])
+            ("uninitialized_var" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("offset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16549 16556]))                  
+                :type "int")
+                nil [16527 16557])
+            ("height" variable
+               (:default-value "root->height;"
+                :type "int")
+                nil [16560 16582])
+            ("out" variable (:type ("goto" type (:type "class") nil nil)) nil [16627 16636])
+            ("shift" variable
+               (:default-value "height * RADIX_TREE_MAP_SHIFT"
+                :type "int")
+                nil [16639 16677])
+            ("slot" variable
+               (:default-value "indirect_to_ptr(root->rnode)"
+                :type "int")
+                nil [16679 16715])
+            ("out" variable (:type ("goto" type (:type "class") nil nil)) nil [16922 16931])
+            ("root_tag_clear" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17253 17258])
+                    ("" variable (:type ("tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17259 17263]))                  
+                :type "int")
+                nil [17238 17264])
+            ("slot" variable (:type "int") nil [17279 17284])
+            ("height" variable (:type "unsigned int") nil [17834 17861])
+            ("shift" variable (:type "unsigned int") nil [17834 17861])
+            ("node" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [17863 17892])
+            ("node" variable
+               (:default-value "rcu_dereference_raw(root->rnode)"
+                :type "int")
+                nil [17971 18011])
+            ("node" variable
+               (:default-value "indirect_to_ptr(node)"
+                :type "int")
+                nil [18108 18137])
+            ("height" variable
+               (:default-value "node->height;"
+                :type "int")
+                nil [18140 18162])
+            ("shift" variable
+               (:default-value "(height - 1) * RADIX_TREE_MAP_SHIFT"
+                :type "int")
+                nil [18219 18263])
+            ("shift" variable (:type "unsigned int") nil [18960 19015])
+            ("tag" variable
+               (:default-value "flags & RADIX_TREE_ITER_TAG_MASK"
+                :type "unsigned int")
+                nil [18960 19015])
+            ("rnode" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [19017 19054])
+            ("node" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [19017 19054])
+            ("index" variable (:type "unsigned long") nil [19056 19084])
+            ("offset" variable (:type "unsigned long") nil [19056 19084])
+            ("NULL" variable (:type "int") nil [19162 19167])
+            ("index" variable
+               (:default-value "iter->next_index;"
+                :type "int")
+                nil [19553 19578])
+            ("NULL" variable (:type "int") nil [19616 19621])
+            ("rnode" variable
+               (:default-value "rcu_dereference_raw(root->rnode)"
+                :type "int")
+                nil [19624 19665])
+            ("NULL" variable (:type "int") nil [19908 19913])
+            ("shift" variable
+               (:default-value "(rnode->height - 1) * RADIX_TREE_MAP_SHIFT"
+                :type "int")
+                nil [19925 19976])
+            ("shift" variable (:type "int") nil [19996 20002])
+            ("NULL" variable (:type "int") nil [20082 20087])
+            ("node" variable
+               (:default-value "rnode"
+                :type "int")
+                nil [20090 20103])
+            ("index" variable
+               (:default-value "index"
+                :type "int")
+                nil [21025 21039])
+            ("next_index" variable
+               (:default-value "(index | RADIX_TREE_MAP_MASK) + 1"
+                :type "int")
+                nil [21047 21094])
+            ("offset" variable (:type "int") nil [21725 21732])
+            ("height" variable
+               (:default-value "root->height;"
+                :type "unsigned int")
+                nil [23321 23356])
+            ("node" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [23358 23394])
+            ("slot" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [23396 23425])
+            ("shift" variable (:type "unsigned int") nil [23427 23446])
+            ("tagged" variable
+               (:default-value "0"
+                :type "unsigned long")
+                nil [23448 23473])
+            ("index" variable
+               (:default-value "*first_indexp"
+                :type "unsigned long")
+                nil [23475 23511])
+            ("last_index" variable
+               (:default-value "min(last_index, radix_tree_maxindex(height))"
+                :type "int")
+                nil [23514 23572])
+            ("shift" variable
+               (:default-value "(height - 1) * RADIX_TREE_MAP_SHIFT"
+                :type "int")
+                nil [23824 23868])
+            ("slot" variable
+               (:default-value "indirect_to_ptr(root->rnode)"
+                :type "int")
+                nil [23870 23906])
+            ("root_tag_set" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25653 25658])
+                    ("" variable (:type ("settag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25659 25666]))                  
+                :type "int")
+                nil [25640 25667])
+            ("first_indexp" variable
+               (:pointer 1
+                :default-value "index"
+                :type "int")
+                nil [25669 25691])
+            ("tagged" variable (:type "int") nil [25701 25708])
+            ("i" variable (:type "unsigned long") nil [26736 26752])
+            ("index" variable (:type "int") nil [26888 26894])
+            ("i" variable (:type "unsigned long") nil [27913 27929])
+            ("index" variable (:type "int") nil [28073 28079])
+            ("iter" variable (:type ("radix_tree_iter" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [29092 29120])
+            ("slot" variable
+               (:pointer 2
+                :type "void")
+                nil [29122 29134])
+            ("ret" variable
+               (:default-value "0"
+                :type "unsigned int")
+                nil [29136 29157])
+            ("radix_tree_for_each_slot" function
+               (:arguments 
+                  ( ("" variable (:type ("slot" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29225 29230])
+                    ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29231 29236])
+                    ("" variable (:type ("iter" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29238 29243])
+                    ("" variable (:type ("first_index" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29244 29256]))                  
+                :type "int")
+                nil [29200 29393])
+            ("ret" variable (:type "int") nil [29403 29407])
+            ("iter" variable (:type ("radix_tree_iter" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [30380 30408])
+            ("slot" variable
+               (:pointer 2
+                :type "void")
+                nil [30410 30422])
+            ("ret" variable
+               (:default-value "0"
+                :type "unsigned int")
+                nil [30424 30445])
+            ("radix_tree_for_each_slot" function
+               (:arguments 
+                  ( ("" variable (:type ("slot" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30513 30518])
+                    ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30519 30524])
+                    ("" variable (:type ("iter" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30526 30531])
+                    ("" variable (:type ("first_index" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30532 30544]))                  
+                :type "int")
+                nil [30488 30653])
+            ("ret" variable (:type "int") nil [30663 30667])
+            ("iter" variable (:type ("radix_tree_iter" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [31448 31476])
+            ("slot" variable
+               (:pointer 2
+                :type "void")
+                nil [31478 31490])
+            ("ret" variable
+               (:default-value "0"
+                :type "unsigned int")
+                nil [31492 31513])
+            ("radix_tree_for_each_tagged" function
+               (:arguments 
+                  ( ("" variable (:type ("slot" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31583 31588])
+                    ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31589 31594])
+                    ("" variable (:type ("iter" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31596 31601])
+                    ("" variable (:type ("first_index" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31602 31614])
+                    ("" variable (:type ("tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31615 31619]))                  
+                :type "int")
+                nil [31556 31756])
+            ("ret" variable (:type "int") nil [31766 31770])
+            ("iter" variable (:type ("radix_tree_iter" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [32543 32571])
+            ("slot" variable
+               (:pointer 2
+                :type "void")
+                nil [32573 32585])
+            ("ret" variable
+               (:default-value "0"
+                :type "unsigned int")
+                nil [32587 32608])
+            ("radix_tree_for_each_tagged" function
+               (:arguments 
+                  ( ("" variable (:type ("slot" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32678 32683])
+                    ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32684 32689])
+                    ("" variable (:type ("iter" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32691 32696])
+                    ("" variable (:type ("first_index" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32697 32709])
+                    ("" variable (:type ("tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32710 32714]))                  
+                :type "int")
+                nil [32651 32778])
+            ("ret" variable (:type "int") nil [32788 32792])
+            ("node" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [37562 37598])
+            ("slot" variable
+               (:pointer 1
+                :default-value "NULL"
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [37600 37636])
+            ("to_free" variable
+               (:pointer 1
+                :type ("radix_tree_node" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [37638 37670])
+            ("height" variable (:type "unsigned int") nil [37672 37699])
+            ("shift" variable (:type "unsigned int") nil [37672 37699])
+            ("tag" variable (:type "int") nil [37701 37709])
+            ("uninitialized_var" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("offset" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37733 37740]))                  
+                :type "int")
+                nil [37711 37741])
+            ("height" variable
+               (:default-value "root->height;"
+                :type "int")
+                nil [37744 37766])
+            ("out" variable (:type ("goto" type (:type "class") nil nil)) nil [37811 37820])
+            ("slot" variable
+               (:default-value "root->rnode;"
+                :type "int")
+                nil [37823 37842])
+            ("slot" variable
+               (:default-value "indirect_to_ptr(slot)"
+                :type "int")
+                nil [37929 37958])
+            ("shift" variable
+               (:default-value "height * RADIX_TREE_MAP_SHIFT"
+                :type "int")
+                nil [37960 37998])
+            ("out" variable (:type ("goto" type (:type "class") nil nil)) nil [38209 38218])
+            ("to_free" variable
+               (:default-value "NULL"
+                :type "int")
+                nil [38491 38506])
+            ("root_tag_clear_all" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39087 39092]))                  
+                :type "int")
+                nil [39068 39093])
+            ("height" variable
+               (:default-value "0"
+                :type "int")
+                nil [39101 39112])
+            ("rnode" variable
+               (:default-value "NULL"
+                :type "int")
+                nil [39120 39133])
+            ("radix_tree_node_free" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("to_free" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39171 39179]))                  
+                :type "int")
+                nil [39150 39180])
+            ("slot" variable (:type "int") nil [39195 39200])
+            ("root_tag_get" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("root" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39457 39462])
+                    ("" variable (:type ("tag" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39463 39467]))                  
+                :type "int")
+                nil [39444 39468])
+            ("memset" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("node" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39561 39566]))                  
+                :type "int")
+                nil [39554 39602])
+            ("width" variable
+               (:default-value "height * RADIX_TREE_MAP_SHIFT"
+                :type "unsigned int")
+                nil [39669 39720])
+            ("shift" variable
+               (:default-value "RADIX_TREE_INDEX_BITS - width"
+                :type "int")
+                nil [39722 39764])
+            ("0UL" variable (:type "int") nil [39792 39796])
+            ("0UL" variable (:type "int") nil [39835 39839])
+            ("shift" variable (:type "int") nil [39856 39862])
+            ("i" variable (:type "unsigned int") nil [39919 39934])
+            ("height_to_maxindex" variable
+               (:dereference 1
+                :default-value "__maxindex(i)"
+                :type "int")
+                nil [39992 40030])
+            ("cpu" variable
+               (:default-value "(long)hcpu"
+                :type "int")
+                nil [40192 40213])
+            ("rtp" variable
+               (:pointer 1
+                :type ("radix_tree_preload" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [40221 40252])
+            ("NOTIFY_OK" variable (:type "int") nil [40709 40719])
+            ("radix_tree_node_cachep" variable
+               (:default-value "kmem_cache_create(\"radix_tree_node\",
+			sizeof(struct radix_tree_node), 0,
+			SLAB_PANIC | SLAB_RECLAIM_ACCOUNT,
+			radix_tree_node_ctor)"
+                :type "int")
+                nil [40760 40923])
+            ("radix_tree_init_maxindex" function
+               (:prototype-flag t
+                :type "int")
+                nil [40925 40952])
+            ("hotcpu_notifier" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("radix_tree_callback" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [40970 40990]))                  
+                :type "int")
+                nil [40954 40994]))          
+      :file "radix-tree.c"
+      :pointmax 40997
+      :fsize 40996
+      :lastmodtime '(21976 3069 248725 536000)
+      :unmatched-syntax '((close-paren 40995 . 40996) (number 40991 . 40992) (open-paren 40757 . 40758) (close-paren 40755 . 40756) (VOID 40751 . 40755) (open-paren 40750 . 40751) (symbol 40735 . 40750) (symbol 40728 . 40734) (VOID 40723 . 40727) (close-paren 40720 . 40721) (RETURN 40702 . 40708) (semantic-list 40364 . 40694) (semantic-list 40314 . 40363) (IF 40311 . 40313) (open-paren 40183 . 40184) (close-paren 40181 . 40182) (symbol 40177 . 40181) (punctuation 40176 . 40177) (VOID 40171 . 40175) (punctuation 40141 . 40142) (symbol 40135 . 40141) (LONG 40130 . 40134) (UNSIGNED 40121 . 40129) (punctuation 40091 . 40092) (symbol 40088 . 40091) (punctuation 40087 . 40088) (symbol 40072 . 40086) (STRUCT 40065 . 40071) (open-paren 40064 . 40065) (symbol 40045 . 40064) (INT 40041 . 40044) (STATIC 40034 . 40040) (close-paren 40031 . 40032) (semantic-list 39941 . 39989) (FOR 39937 . 39940) (open-paren 39916 . 39917) (close-paren 39914 . 39915) (VOID 39910 . 39914) (open-paren 39909 . 39910) (symbol 39885 . 39909) (VOID 39880 . 39884) (symbol 39873 . 39879) (STATIC 39866 . 39872) (close-paren 39863 . 39864) (punctuation 39854 . 39855) (punctuation 39853 . 39854) (symbol 39849 . 39852) (punctuation 39848 . 39849) (RETURN 39841 . 39847) (RETURN 39828 . 39834) (semantic-list 39801 . 39825) (IF 39798 . 39800) (punctuation 39791 . 39792) (RETURN 39784 . 39790) (semantic-list 39770 . 39781) (IF 39767 . 39769) (open-paren 39666 . 39667) (close-paren 39664 . 39665) (symbol 39658 . 39664) (INT 39654 . 39657) (UNSIGNED 39645 . 39653) (open-paren 39644 . 39645) (symbol 39634 . 39644) (LONG 39629 . 39633) (UNSIGNED 39620 . 39628) (symbol 39613 . 39619) (STATIC 39606 . 39612) (close-paren 39603 . 39604) (semantic-list 39576 . 39600) (SIZEOF 39570 . 39576) (number 39567 . 39568) (open-paren 39551 . 39552) (close-paren 39549 . 39550) (symbol 39545 . 39549) (punctuation 39544 . 39545) (VOID 39539 . 39543) (open-paren 39538 . 39539) (symbol 39518 . 39538) (VOID 39513 . 39517) (STATIC 39506 . 39512) (punctuation 39503 . 39504) (close-paren 39502 . 39503) (symbol 39485 . 39502) (open-paren 39484 . 39485) (symbol 39471 . 39484) (close-paren 39469 . 39470) (RETURN 39437 . 39443) (open-paren 39434 . 39435) (close-paren 39432 . 39433) (symbol 39429 . 39432) (INT 39425 . 39428) (UNSIGNED 39416 . 39424) (punctuation 39414 . 39415) (symbol 39410 . 39414) (punctuation 39409 . 39410) (symbol 39393 . 39408) (STRUCT 39386 . 39392) (open-paren 39385 . 39386) (symbol 39368 . 39385) (INT 39364 . 39367) (punctuation 39235 . 39236) (close-paren 39234 . 39235) (symbol 39217 . 39234) (open-paren 39216 . 39217) (symbol 39203 . 39216) (close-paren 39201 . 39202) (RETURN 39188 . 39194) (punctuation 39185 . 39186) (symbol 39182 . 39185) (semantic-list 39138 . 39147) (IF 39135 . 39137) (punctuation 39119 . 39120) (punctuation 39118 . 39119) (symbol 39114 . 39118) (punctuation 39100 . 39101) (punctuation 39099 . 39100) (symbol 39095 . 39099) (semantic-list 38570 . 39065) (semantic-list 38563 . 38569) (WHILE 38557 . 38562) (semantic-list 38407 . 38488) (semantic-list 38363 . 38406) (FOR 38359 . 38362) (semantic-list 38192 . 38206) (IF 38189 . 38191) (punctuation 38185 . 38186) (semantic-list 38178 . 38185) (WHILE 38172 . 38177) (semantic-list 38004 . 38171) (DO 38001 . 38003) (semantic-list 37861 . 37927) (semantic-list 37847 . 37860) (IF 37844 . 37846) (semantic-list 37771 . 37808) (IF 37768 . 37770) (open-paren 37559 . 37560) (close-paren 37557 . 37558) (symbol 37552 . 37557) (LONG 37547 . 37551) (UNSIGNED 37538 . 37546) (punctuation 37536 . 37537) (symbol 37532 . 37536) (punctuation 37531 . 37532) (symbol 37515 . 37530) (STRUCT 37508 . 37514) (open-paren 37507 . 37508) (symbol 37490 . 37507) (punctuation 37489 . 37490) (VOID 37484 . 37488) (close-paren 37215 . 37216) (semantic-list 35324 . 37214) (semantic-list 35305 . 35323) (WHILE 35299 . 35304) (open-paren 35263 . 35264) (close-paren 35261 . 35262) (symbol 35257 . 35261) (punctuation 35256 . 35257) (symbol 35240 . 35255) (STRUCT 35233 . 35239) (open-paren 35232 . 35233) (symbol 35215 . 35232) (VOID 35210 . 35214) (INLINE 35203 . 35209) (STATIC 35196 . 35202) (close-paren 35048 . 35049) (punctuation 35046 . 35047) (number 35045 . 35046) (punctuation 35044 . 35045) (RETURN 35037 . 35043) (open-paren 35034 . 35035) (close-paren 35032 . 35033) (symbol 35028 . 35032) (punctuation 35027 . 35028) (VOID 35022 . 35026) (punctuation 35020 . 35021) (symbol 35016 . 35020) (punctuation 35015 . 35016) (symbol 34999 . 35014) (STRUCT 34992 . 34998) (open-paren 34991 . 34992) (symbol 34969 . 34991) (LONG 34964 . 34968) (UNSIGNED 34955 . 34963) (punctuation 32841 . 32842) (close-paren 32840 . 32841) (symbol 32809 . 32840) (open-paren 32808 . 32809) (symbol 32795 . 32808) (close-paren 32793 . 32794) (RETURN 32781 . 32787) (punctuation 32690 . 32691) (punctuation 32647 . 32648) (number 32646 . 32647) (RETURN 32639 . 32645) (semantic-list 32614 . 32636) (IF 32611 . 32613) (open-paren 32540 . 32541) (close-paren 32538 . 32539) (symbol 32535 . 32538) (INT 32531 . 32534) (UNSIGNED 32522 . 32530) (punctuation 32518 . 32519) (symbol 32509 . 32518) (INT 32505 . 32508) (UNSIGNED 32496 . 32504) (punctuation 32494 . 32495) (symbol 32483 . 32494) (LONG 32478 . 32482) (UNSIGNED 32469 . 32477) (punctuation 32465 . 32466) (symbol 32458 . 32465) (punctuation 32457 . 32458) (punctuation 32456 . 32457) (punctuation 32455 . 32456) (VOID 32450 . 32454) (punctuation 32448 . 32449) (symbol 32444 . 32448) (punctuation 32443 . 32444) (symbol 32427 . 32442) (STRUCT 32420 . 32426) (open-paren 32419 . 32420) (symbol 32388 . 32419) (INT 32384 . 32387) (UNSIGNED 32375 . 32383) (punctuation 31814 . 31815) (close-paren 31813 . 31814) (symbol 31787 . 31813) (open-paren 31786 . 31787) (symbol 31773 . 31786) (close-paren 31771 . 31772) (RETURN 31759 . 31765) (punctuation 31595 . 31596) (punctuation 31552 . 31553) (number 31551 . 31552) (RETURN 31544 . 31550) (semantic-list 31519 . 31541) (IF 31516 . 31518) (open-paren 31445 . 31446) (close-paren 31443 . 31444) (symbol 31440 . 31443) (INT 31436 . 31439) (UNSIGNED 31427 . 31435) (punctuation 31423 . 31424) (symbol 31414 . 31423) (INT 31410 . 31413) (UNSIGNED 31401 . 31409) (punctuation 31399 . 31400) (symbol 31388 . 31399) (LONG 31383 . 31387) (UNSIGNED 31374 . 31382) (punctuation 31370 . 31371) (symbol 31363 . 31370) (punctuation 31362 . 31363) (punctuation 31361 . 31362) (VOID 31356 . 31360) (punctuation 31354 . 31355) (symbol 31350 . 31354) (punctuation 31349 . 31350) (symbol 31333 . 31348) (STRUCT 31326 . 31332) (open-paren 31325 . 31326) (symbol 31299 . 31325) (INT 31295 . 31298) (UNSIGNED 31286 . 31294) (punctuation 30712 . 30713) (close-paren 30711 . 30712) (symbol 30684 . 30711) (open-paren 30683 . 30684) (symbol 30670 . 30683) (close-paren 30668 . 30669) (RETURN 30656 . 30662) (punctuation 30525 . 30526) (punctuation 30484 . 30485) (number 30483 . 30484) (RETURN 30476 . 30482) (semantic-list 30451 . 30473) (IF 30448 . 30450) (open-paren 30377 . 30378) (close-paren 30375 . 30376) (symbol 30366 . 30375) (INT 30362 . 30365) (UNSIGNED 30353 . 30361) (punctuation 30351 . 30352) (symbol 30340 . 30351) (LONG 30335 . 30339) (UNSIGNED 30326 . 30334) (punctuation 30321 . 30322) (symbol 30314 . 30321) (punctuation 30313 . 30314) (LONG 30308 . 30312) (UNSIGNED 30299 . 30307) (punctuation 30297 . 30298) (symbol 30290 . 30297) (punctuation 30289 . 30290) (punctuation 30288 . 30289) (punctuation 30287 . 30288) (VOID 30282 . 30286) (punctuation 30277 . 30278) (symbol 30273 . 30277) (punctuation 30272 . 30273) (symbol 30256 . 30271) (STRUCT 30249 . 30255) (open-paren 30248 . 30249) (symbol 30221 . 30248) (INT 30217 . 30220) (UNSIGNED 30208 . 30216) (punctuation 29447 . 29448) (close-paren 29446 . 29447) (symbol 29424 . 29446) (open-paren 29423 . 29424) (symbol 29410 . 29423) (close-paren 29408 . 29409) (RETURN 29396 . 29402) (punctuation 29237 . 29238) (punctuation 29196 . 29197) (number 29195 . 29196) (RETURN 29188 . 29194) (semantic-list 29163 . 29185) (IF 29160 . 29162) (open-paren 29089 . 29090) (close-paren 29087 . 29088) (symbol 29078 . 29087) (INT 29074 . 29077) (UNSIGNED 29065 . 29073) (punctuation 29063 . 29064) (symbol 29052 . 29063) (LONG 29047 . 29051) (UNSIGNED 29038 . 29046) (punctuation 29033 . 29034) (symbol 29026 . 29033) (punctuation 29025 . 29026) (punctuation 29024 . 29025) (VOID 29019 . 29023) (punctuation 29017 . 29018) (symbol 29013 . 29017) (punctuation 29012 . 29013) (symbol 28996 . 29011) (STRUCT 28989 . 28995) (open-paren 28988 . 28989) (symbol 28966 . 28988) (INT 28962 . 28965) (UNSIGNED 28953 . 28961) (punctuation 28117 . 28118) (close-paren 28116 . 28117) (symbol 28096 . 28116) (open-paren 28095 . 28096) (symbol 28082 . 28095) (close-paren 28080 . 28081) (RETURN 28066 . 28072) (semantic-list 27963 . 28063) (semantic-list 27936 . 27962) (FOR 27932 . 27935) (open-paren 27910 . 27911) (close-paren 27908 . 27909) (symbol 27900 . 27908) (LONG 27895 . 27899) (UNSIGNED 27886 . 27894) (punctuation 27884 . 27885) (symbol 27879 . 27884) (LONG 27874 . 27878) (UNSIGNED 27865 . 27873) (punctuation 27856 . 27857) (symbol 27852 . 27856) (punctuation 27851 . 27852) (symbol 27835 . 27850) (STRUCT 27828 . 27834) (open-paren 27827 . 27828) (symbol 27807 . 27827) (LONG 27802 . 27806) (UNSIGNED 27793 . 27801) (punctuation 26932 . 26933) (close-paren 26931 . 26932) (symbol 26911 . 26931) (open-paren 26910 . 26911) (symbol 26897 . 26910) (close-paren 26895 . 26896) (RETURN 26881 . 26887) (semantic-list 26786 . 26878) (semantic-list 26759 . 26785) (FOR 26755 . 26758) (open-paren 26733 . 26734) (close-paren 26731 . 26732) (symbol 26723 . 26731) (LONG 26718 . 26722) (UNSIGNED 26709 . 26717) (punctuation 26707 . 26708) (symbol 26702 . 26707) (LONG 26697 . 26701) (UNSIGNED 26688 . 26696) (punctuation 26682 . 26683) (symbol 26678 . 26682) (punctuation 26677 . 26678) (symbol 26661 . 26676) (STRUCT 26654 . 26660) (open-paren 26653 . 26654) (symbol 26633 . 26653) (LONG 26628 . 26632) (UNSIGNED 26619 . 26627) (punctuation 25756 . 25757) (close-paren 25755 . 25756) (symbol 25725 . 25755) (open-paren 25724 . 25725) (symbol 25711 . 25724) (close-paren 25709 . 25710) (RETURN 25694 . 25700) (semantic-list 25625 . 25637) (IF 25622 . 25624) (semantic-list 23918 . 25476) (semantic-list 23913 . 23917) (FOR 23909 . 23912) (semantic-list 23741 . 23821) (semantic-list 23727 . 23740) (IF 23724 . 23726) (semantic-list 23672 . 23722) (semantic-list 23643 . 23671) (IF 23640 . 23642) (punctuation 23637 . 23638) (number 23636 . 23637) (RETURN 23629 . 23635) (semantic-list 23614 . 23626) (IF 23611 . 23613) (punctuation 23608 . 23609) (number 23607 . 23608) (RETURN 23600 . 23606) (semantic-list 23577 . 23597) (IF 23574 . 23576) (open-paren 23318 . 23319) (close-paren 23316 . 23317) (symbol 23310 . 23316) (INT 23306 . 23309) (UNSIGNED 23297 . 23305) (punctuation 23295 . 23296) (symbol 23290 . 23295) (INT 23286 . 23289) (UNSIGNED 23277 . 23285) (punctuation 23273 . 23274) (symbol 23264 . 23273) (LONG 23259 . 23263) (UNSIGNED 23250 . 23258) (punctuation 23246 . 23247) (symbol 23236 . 23246) (LONG 23231 . 23235) (UNSIGNED 23222 . 23230) (punctuation 23220 . 23221) (symbol 23208 . 23220) (punctuation 23207 . 23208) (LONG 23202 . 23206) (UNSIGNED 23193 . 23201) (punctuation 23189 . 23190) (symbol 23185 . 23189) (punctuation 23184 . 23185) (symbol 23168 . 23183) (STRUCT 23161 . 23167) (open-paren 23160 . 23161) (symbol 23130 . 23160) (LONG 23125 . 23129) (UNSIGNED 23116 . 23124) (punctuation 21771 . 21772) (close-paren 21770 . 21771) (symbol 21749 . 21770) (open-paren 21748 . 21749) (symbol 21735 . 21748) (close-paren 21733 . 21734) (punctuation 21723 . 21724) (symbol 21717 . 21722) (punctuation 21716 . 21717) (punctuation 21715 . 21716) (symbol 21711 . 21715) (RETURN 21704 . 21710) (semantic-list 21197 . 21701) (semantic-list 21164 . 21196) (IF 21161 . 21163) (punctuation 21046 . 21047) (punctuation 21045 . 21046) (symbol 21041 . 21045) (punctuation 21024 . 21025) (punctuation 21023 . 21024) (symbol 21019 . 21023) (semantic-list 20115 . 20983) (semantic-list 20111 . 20114) (WHILE 20105 . 20110) (RETURN 20075 . 20081) (semantic-list 20041 . 20072) (IF 20038 . 20040) (punctuation 19994 . 19995) (punctuation 19993 . 19994) (symbol 19987 . 19992) (punctuation 19985 . 19986) (symbol 19978 . 19984) (punctuation 19922 . 19923) (symbol 19915 . 19922) (RETURN 19901 . 19907) (ELSE 19894 . 19898) (semantic-list 19771 . 19893) (semantic-list 19753 . 19770) (IF 19750 . 19752) (ELSE 19745 . 19749) (semantic-list 19706 . 19744) (semantic-list 19670 . 19705) (IF 19667 . 19669) (RETURN 19609 . 19615) (semantic-list 19583 . 19606) (IF 19580 . 19582) (RETURN 19155 . 19161) (semantic-list 19090 . 19152) (IF 19087 . 19089) (open-paren 18957 . 18958) (close-paren 18955 . 18956) (symbol 18950 . 18955) (UNSIGNED 18941 . 18949) (punctuation 18939 . 18940) (symbol 18935 . 18939) (punctuation 18934 . 18935) (symbol 18918 . 18933) (STRUCT 18911 . 18917) (punctuation 18901 . 18902) (symbol 18897 . 18901) (punctuation 18896 . 18897) (symbol 18880 . 18895) (STRUCT 18873 . 18879) (open-paren 18872 . 18873) (symbol 18851 . 18872) (punctuation 18850 . 18851) (punctuation 18849 . 18850) (VOID 18844 . 18848) (punctuation 18594 . 18595) (close-paren 18593 . 18594) (symbol 18575 . 18593) (open-paren 18574 . 18575) (symbol 18561 . 18574) (close-paren 18559 . 18560) (semantic-list 18278 . 18558) (semantic-list 18270 . 18277) (FOR 18266 . 18269) (punctuation 18215 . 18216) (number 18214 . 18215) (RETURN 18207 . 18213) (semantic-list 18167 . 18204) (IF 18164 . 18166) (punctuation 18105 . 18106) (semantic-list 18093 . 18105) (RETURN 18086 . 18092) (semantic-list 18048 . 18083) (IF 18045 . 18047) (punctuation 18041 . 18042) (number 18040 . 18041) (RETURN 18033 . 18039) (semantic-list 18016 . 18030) (IF 18013 . 18015) (punctuation 17967 . 17968) (number 17966 . 17967) (RETURN 17959 . 17965) (semantic-list 17930 . 17956) (IF 17927 . 17929) (open-paren 17831 . 17832) (close-paren 17829 . 17830) (symbol 17826 . 17829) (INT 17822 . 17825) (UNSIGNED 17813 . 17821) (punctuation 17811 . 17812) (symbol 17806 . 17811) (LONG 17801 . 17805) (UNSIGNED 17792 . 17800) (punctuation 17787 . 17788) (symbol 17783 . 17787) (punctuation 17782 . 17783) (symbol 17766 . 17781) (STRUCT 17759 . 17765) (open-paren 17758 . 17759) (symbol 17740 . 17758) (INT 17736 . 17739) (punctuation 17322 . 17323) (close-paren 17321 . 17322) (symbol 17301 . 17321) (open-paren 17300 . 17301) (symbol 17287 . 17300) (close-paren 17285 . 17286) (RETURN 17272 . 17278) (punctuation 17269 . 17270) (symbol 17266 . 17269) (semantic-list 17210 . 17235) (IF 17207 . 17209) (semantic-list 16947 . 17172) (semantic-list 16940 . 16946) (WHILE 16934 . 16939) (semantic-list 16905 . 16919) (IF 16902 . 16904) (semantic-list 16732 . 16899) (semantic-list 16724 . 16731) (WHILE 16718 . 16723) (semantic-list 16587 . 16624) (IF 16584 . 16586) (open-paren 16419 . 16420) (close-paren 16417 . 16418) (symbol 16414 . 16417) (INT 16410 . 16413) (UNSIGNED 16401 . 16409) (punctuation 16399 . 16400) (symbol 16394 . 16399) (LONG 16389 . 16393) (UNSIGNED 16380 . 16388) (punctuation 16375 . 16376) (symbol 16371 . 16375) (punctuation 16370 . 16371) (symbol 16354 . 16369) (STRUCT 16347 . 16353) (open-paren 16346 . 16347) (symbol 16326 . 16346) (punctuation 16325 . 16326) (VOID 16320 . 16324) (punctuation 15823 . 15824) (close-paren 15822 . 15823) (symbol 15804 . 15822) (open-paren 15803 . 15804) (symbol 15790 . 15803) (close-paren 15788 . 15789) (RETURN 15775 . 15781) (semantic-list 15711 . 15745) (IF 15708 . 15710) (semantic-list 15440 . 15675) (semantic-list 15427 . 15439) (WHILE 15421 . 15426) (semantic-list 15323 . 15331) (punctuation 15302 . 15303) (open-paren 15201 . 15202) (close-paren 15199 . 15200) (symbol 15196 . 15199) (INT 15192 . 15195) (UNSIGNED 15183 . 15191) (punctuation 15181 . 15182) (symbol 15176 . 15181) (LONG 15171 . 15175) (UNSIGNED 15162 . 15170) (punctuation 15157 . 15158) (symbol 15153 . 15157) (punctuation 15152 . 15153) (symbol 15136 . 15151) (STRUCT 15129 . 15135) (open-paren 15128 . 15129) (symbol 15110 . 15128) (punctuation 15109 . 15110) (VOID 15104 . 15108) (punctuation 14709 . 14710) (close-paren 14708 . 14709) (symbol 14691 . 14708) (open-paren 14690 . 14691) (symbol 14677 . 14690) (close-paren 14675 . 14676) (number 14671 . 14672) (RETURN 14625 . 14631) (open-paren 14622 . 14623) (close-paren 14620 . 14621) (symbol 14615 . 14620) (LONG 14610 . 14614) (UNSIGNED 14601 . 14609) (punctuation 14599 . 14600) (symbol 14595 . 14599) (punctuation 14594 . 14595) (symbol 14578 . 14593) (STRUCT 14571 . 14577) (open-paren 14570 . 14571) (symbol 14553 . 14570) (punctuation 14552 . 14553) (VOID 14547 . 14551) (punctuation 14103 . 14104) (close-paren 14102 . 14103) (symbol 14080 . 14102) (open-paren 14079 . 14080) (symbol 14066 . 14079) (close-paren 14064 . 14065) (number 14060 . 14061) (semantic-list 14012 . 14021) (RETURN 14005 . 14011) (open-paren 14002 . 14003) (close-paren 14000 . 14001) (symbol 13995 . 14000) (LONG 13990 . 13994) (UNSIGNED 13981 . 13989) (punctuation 13979 . 13980) (symbol 13975 . 13979) (punctuation 13974 . 13975) (symbol 13958 . 13973) (STRUCT 13951 . 13957) (open-paren 13950 . 13951) (symbol 13928 . 13950) (punctuation 13927 . 13928) (punctuation 13926 . 13927) (VOID 13921 . 13925) (close-paren 13411 . 13412) (punctuation 13386 . 13387) (symbol 13381 . 13385) (semantic-list 13373 . 13381) (punctuation 13371 . 13372) (symbol 13363 . 13370) (RETURN 13356 . 13362) (punctuation 13352 . 13353) (semantic-list 13340 . 13352) (WHILE 13334 . 13339) (semantic-list 13114 . 13333) (DO 13111 . 13113) (RETURN 13051 . 13057) (semantic-list 13011 . 13048) (IF 13008 . 13010) (semantic-list 12865 . 12950) (semantic-list 12829 . 12864) (IF 12826 . 12828) (RETURN 12811 . 12817) (semantic-list 12794 . 12808) (IF 12791 . 12793) (open-paren 12677 . 12678) (close-paren 12675 . 12676) (symbol 12668 . 12675) (INT 12664 . 12667) (punctuation 12662 . 12663) (symbol 12657 . 12662) (LONG 12652 . 12656) (UNSIGNED 12643 . 12651) (punctuation 12637 . 12638) (symbol 12633 . 12637) (punctuation 12632 . 12633) (symbol 12616 . 12631) (STRUCT 12609 . 12615) (open-paren 12608 . 12609) (symbol 12583 . 12608) (punctuation 12582 . 12583) (VOID 12577 . 12581) (STATIC 12570 . 12576) (punctuation 12482 . 12483) (close-paren 12481 . 12482) (symbol 12464 . 12481) (open-paren 12463 . 12464) (symbol 12450 . 12463) (close-paren 12448 . 12449) (punctuation 12446 . 12447) (number 12445 . 12446) (RETURN 12438 . 12444) (semantic-list 12324 . 12435) (ELSE 12319 . 12323) (semantic-list 12176 . 12318) (semantic-list 12169 . 12175) (IF 12166 . 12168) (punctuation 12155 . 12156) (RETURN 12148 . 12154) (semantic-list 12131 . 12145) (IF 12128 . 12130) (semantic-list 11622 . 12125) (semantic-list 11609 . 11621) (WHILE 11603 . 11608) (semantic-list 11369 . 11445) (semantic-list 11325 . 11368) (IF 11322 . 11324) (semantic-list 11268 . 11274) (open-paren 11132 . 11133) (close-paren 11130 . 11131) (symbol 11126 . 11130) (punctuation 11125 . 11126) (VOID 11120 . 11124) (punctuation 11118 . 11119) (symbol 11113 . 11118) (LONG 11108 . 11112) (UNSIGNED 11099 . 11107) (punctuation 11094 . 11095) (symbol 11090 . 11094) (punctuation 11089 . 11090) (symbol 11073 . 11088) (STRUCT 11066 . 11072) (open-paren 11065 . 11066) (symbol 11048 . 11065) (INT 11044 . 11047) (close-paren 10843 . 10844) (punctuation 10841 . 10842) (number 10840 . 10841) (RETURN 10833 . 10839) (punctuation 10830 . 10831) (symbol 10827 . 10830) (punctuation 10825 . 10826) (semantic-list 10802 . 10825) (WHILE 10796 . 10801) (semantic-list 10162 . 10795) (DO 10159 . 10161) (semantic-list 10115 . 10156) (semantic-list 10093 . 10114) (IF 10090 . 10092) (punctuation 10086 . 10087) (punctuation 10085 . 10086) (punctuation 10084 . 10085) (symbol 10078 . 10084) (semantic-list 10038 . 10075) (WHILE 10032 . 10037) (open-paren 9860 . 9861) (close-paren 9858 . 9859) (symbol 9853 . 9858) (LONG 9848 . 9852) (UNSIGNED 9839 . 9847) (punctuation 9837 . 9838) (symbol 9833 . 9837) (punctuation 9832 . 9833) (symbol 9816 . 9831) (STRUCT 9809 . 9815) (open-paren 9808 . 9809) (symbol 9791 . 9808) (INT 9787 . 9790) (STATIC 9780 . 9786) (close-paren 9719 . 9720) (RETURN 9684 . 9690) (open-paren 9681 . 9682) (close-paren 9679 . 9680) (symbol 9673 . 9679) (INT 9669 . 9672) (UNSIGNED 9660 . 9668) (open-paren 9659 . 9660) (symbol 9640 . 9659) (LONG 9635 . 9639) (UNSIGNED 9626 . 9634) (INLINE 9619 . 9625) (STATIC 9612 . 9618) (punctuation 9516 . 9517) (close-paren 9515 . 9516) (symbol 9491 . 9515) (open-paren 9490 . 9491) (symbol 9477 . 9490) (close-paren 9475 . 9476) (punctuation 9473 . 9474) (number 9472 . 9473) (RETURN 9465 . 9471) (RETURN 9337 . 9343) (semantic-list 9311 . 9334) (IF 9308 . 9310) (open-paren 9305 . 9306) (close-paren 9303 . 9304) (symbol 9295 . 9303) (symbol 9289 . 9294) (open-paren 9288 . 9289) (symbol 9264 . 9288) (INT 9260 . 9263) (punctuation 9029 . 9030) (close-paren 9028 . 9029) (symbol 9010 . 9028) (open-paren 9009 . 9010) (symbol 8996 . 9009) (close-paren 8994 . 8995) (RETURN 8955 . 8961) (semantic-list 8928 . 8951) (punctuation 8927 . 8928) (open-paren 8876 . 8877) (close-paren 8874 . 8875) (symbol 8866 . 8874) (symbol 8860 . 8865) (open-paren 8859 . 8860) (symbol 8841 . 8859) (INT 8837 . 8840) (close-paren 8440 . 8441) (RETURN 8428 . 8434) (punctuation 8425 . 8426) (symbol 8422 . 8425) (semantic-list 8097 . 8411) (semantic-list 8062 . 8096) (WHILE 8056 . 8061) (open-paren 7904 . 7905) (close-paren 7902 . 7903) (symbol 7894 . 7902) (symbol 7888 . 7893) (open-paren 7887 . 7888) (symbol 7867 . 7887) (INT 7863 . 7866) (STATIC 7856 . 7862) (close-paren 7459 . 7460) (punctuation 7421 . 7422) (punctuation 7420 . 7421) (punctuation 7415 . 7416) (open-paren 7403 . 7404) (close-paren 7401 . 7402) (symbol 7397 . 7401) (punctuation 7396 . 7397) (symbol 7380 . 7395) (STRUCT 7373 . 7379) (open-paren 7372 . 7373) (symbol 7352 . 7372) (VOID 7347 . 7351) (INLINE 7340 . 7346) (STATIC 7333 . 7339) (close-paren 7330 . 7331) (punctuation 7269 . 7270) (punctuation 7268 . 7269) (symbol 7264 . 7268) (punctuation 7245 . 7246) (punctuation 7244 . 7245) (symbol 7240 . 7244) (number 7234 . 7235) (semantic-list 7175 . 7212) (FOR 7171 . 7174) (open-paren 6901 . 6902) (close-paren 6899 . 6900) (symbol 6895 . 6899) (punctuation 6894 . 6895) (symbol 6885 . 6893) (STRUCT 6878 . 6884) (open-paren 6877 . 6878) (symbol 6853 . 6877) (VOID 6848 . 6852) (STATIC 6841 . 6847) (close-paren 6838 . 6839) (RETURN 6826 . 6832) (semantic-list 6817 . 6822) (semantic-list 6708 . 6721) (IF 6705 . 6707) (semantic-list 6368 . 6703) (semantic-list 6322 . 6367) (IF 6319 . 6321) (open-paren 6032 . 6033) (close-paren 6030 . 6031) (symbol 6026 . 6030) (punctuation 6025 . 6026) (symbol 6009 . 6024) (STRUCT 6002 . 6008) (open-paren 6001 . 6002) (symbol 5980 . 6001) (punctuation 5978 . 5979) (symbol 5962 . 5977) (STRUCT 5955 . 5961) (STATIC 5948 . 5954) (close-paren 5788 . 5789) (RETURN 5775 . 5781) (semantic-list 5448 . 5773) (semantic-list 5432 . 5447) (IF 5429 . 5431) (RETURN 5385 . 5391) (semantic-list 5353 . 5382) (IF 5350 . 5352) (open-paren 5347 . 5348) (close-paren 5345 . 5346) (symbol 5339 . 5345) (LONG 5334 . 5338) (UNSIGNED 5325 . 5333) (punctuation 5323 . 5324) (symbol 5319 . 5323) (LONG 5314 . 5318) (UNSIGNED 5305 . 5313) (punctuation 5299 . 5300) (symbol 5295 . 5299) (punctuation 5294 . 5295) (LONG 5289 . 5293) (UNSIGNED 5280 . 5288) (CONST 5274 . 5279) (open-paren 5273 . 5274) (symbol 5249 . 5273) (LONG 5244 . 5248) (UNSIGNED 5235 . 5243) (symbol "__inline" 5219 . 5234) (STATIC 5212 . 5218) (close-paren 4799 . 4800) (punctuation 4797 . 4798) (number 4796 . 4797) (RETURN 4789 . 4795) (semantic-list 4742 . 4787) (semantic-list 4697 . 4741) (FOR 4693 . 4696) (open-paren 4680 . 4681) (close-paren 4678 . 4679) (symbol 4675 . 4678) (INT 4671 . 4674) (UNSIGNED 4662 . 4670) (punctuation 4660 . 4661) (symbol 4656 . 4660) (punctuation 4655 . 4656) (symbol 4639 . 4654) (STRUCT 4632 . 4638) (open-paren 4631 . 4632) (symbol 4620 . 4631) (INT 4616 . 4619) (INLINE 4609 . 4615) (STATIC 4602 . 4608) (close-paren 4513 . 4514) (punctuation 4511 . 4512) (semantic-list 4480 . 4511) (punctuation 4478 . 4479) (symbol 4469 . 4477) (punctuation 4468 . 4469) (punctuation 4467 . 4468) (symbol 4463 . 4467) (semantic-list 4445 . 4463) (RETURN 4438 . 4444) (open-paren 4435 . 4436) (close-paren 4433 . 4434) (symbol 4430 . 4433) (INT 4426 . 4429) (UNSIGNED 4417 . 4425) (punctuation 4415 . 4416) (symbol 4411 . 4415) (punctuation 4410 . 4411) (symbol 4394 . 4409) (STRUCT 4387 . 4393) (open-paren 4386 . 4387) (symbol 4374 . 4386) (INT 4370 . 4373) (INLINE 4363 . 4369) (STATIC 4356 . 4362) (close-paren 4353 . 4354) (punctuation 4334 . 4335) (punctuation 4333 . 4334) (symbol 4324 . 4332) (punctuation 4323 . 4324) (punctuation 4322 . 4323) (symbol 4318 . 4322) (open-paren 4315 . 4316) (close-paren 4313 . 4314) (symbol 4309 . 4313) (punctuation 4308 . 4309) (symbol 4292 . 4307) (STRUCT 4285 . 4291) (open-paren 4284 . 4285) (symbol 4266 . 4284) (VOID 4261 . 4265) (INLINE 4254 . 4260) (STATIC 4247 . 4253) (close-paren 4244 . 4245) (punctuation 4242 . 4243) (semantic-list 4211 . 4242) (punctuation 4210 . 4211) (semantic-list 4195 . 4210) (punctuation 4193 . 4194) (punctuation 4192 . 4193) (symbol 4183 . 4191) (punctuation 4182 . 4183) (punctuation 4181 . 4182) (symbol 4177 . 4181) (open-paren 4174 . 4175) (close-paren 4172 . 4173) (symbol 4169 . 4172) (INT 4165 . 4168) (UNSIGNED 4156 . 4164) (punctuation 4154 . 4155) (symbol 4150 . 4154) (punctuation 4149 . 4150) (symbol 4133 . 4148) (STRUCT 4126 . 4132) (open-paren 4125 . 4126) (symbol 4111 . 4125) (VOID 4106 . 4110) (INLINE 4099 . 4105) (STATIC 4092 . 4098) (close-paren 4089 . 4090) (punctuation 4087 . 4088) (semantic-list 4056 . 4087) (semantic-list 4041 . 4056) (punctuation 4039 . 4040) (punctuation 4038 . 4039) (symbol 4029 . 4037) (punctuation 4028 . 4029) (punctuation 4027 . 4028) (symbol 4023 . 4027) (open-paren 4020 . 4021) (close-paren 4018 . 4019) (symbol 4015 . 4018) (INT 4011 . 4014) (UNSIGNED 4002 . 4010) (punctuation 4000 . 4001) (symbol 3996 . 4000) (punctuation 3995 . 3996) (symbol 3979 . 3994) (STRUCT 3972 . 3978) (open-paren 3971 . 3972) (symbol 3959 . 3971) (VOID 3954 . 3958) (INLINE 3947 . 3953) (STATIC 3940 . 3946) (close-paren 3937 . 3938) (semantic-list 3929 . 3934) (punctuation 3924 . 3925) (punctuation 3923 . 3924) (RETURN 3895 . 3901) (open-paren 3892 . 3893) (close-paren 3890 . 3891) (symbol 3884 . 3890) (INT 3880 . 3883) (punctuation 3876 . 3877) (symbol 3873 . 3876) (INT 3869 . 3872) (UNSIGNED 3860 . 3868) (punctuation 3858 . 3859) (symbol 3854 . 3858) (punctuation 3853 . 3854) (symbol 3837 . 3852) (STRUCT 3830 . 3836) (open-paren 3829 . 3830) (symbol 3822 . 3829) (INT 3818 . 3821) (INLINE 3811 . 3817) (STATIC 3804 . 3810) (close-paren 3801 . 3802) (semantic-list 3793 . 3798) (punctuation 3788 . 3789) (punctuation 3787 . 3788) (open-paren 3760 . 3761) (close-paren 3758 . 3759) (symbol 3752 . 3758) (INT 3748 . 3751) (punctuation 3744 . 3745) (symbol 3741 . 3744) (INT 3737 . 3740) (UNSIGNED 3728 . 3736) (punctuation 3726 . 3727) (symbol 3722 . 3726) (punctuation 3721 . 3722) (symbol 3705 . 3720) (STRUCT 3698 . 3704) (open-paren 3697 . 3698) (symbol 3688 . 3697) (VOID 3683 . 3687) (INLINE 3676 . 3682) (STATIC 3669 . 3675) (close-paren 3666 . 3667) (semantic-list 3658 . 3663) (punctuation 3653 . 3654) (punctuation 3652 . 3653) (open-paren 3627 . 3628) (close-paren 3625 . 3626) (symbol 3619 . 3625) (INT 3615 . 3618) (punctuation 3611 . 3612) (symbol 3608 . 3611) (INT 3604 . 3607) (UNSIGNED 3595 . 3603) (punctuation 3593 . 3594) (symbol 3589 . 3593) (punctuation 3588 . 3589) (symbol 3572 . 3587) (STRUCT 3565 . 3571) (open-paren 3564 . 3565) (symbol 3557 . 3564) (VOID 3552 . 3556) (INLINE 3545 . 3551) (STATIC 3538 . 3544) (close-paren 3535 . 3536) (punctuation 3506 . 3507) (punctuation 3505 . 3506) (symbol 3501 . 3505) (RETURN 3494 . 3500) (open-paren 3491 . 3492) (close-paren 3489 . 3490) (symbol 3485 . 3489) (punctuation 3484 . 3485) (symbol 3468 . 3483) (STRUCT 3461 . 3467) (open-paren 3460 . 3461) (symbol 3447 . 3460) (symbol 3441 . 3446) (INLINE 3434 . 3440) (STATIC 3427 . 3433) (close-paren 3424 . 3425) (punctuation 3422 . 3423) (semantic-list 3375 . 3422) (semantic-list 3367 . 3375) (RETURN 3360 . 3366) (open-paren 3357 . 3358) (close-paren 3355 . 3356) (symbol 3352 . 3355) (punctuation 3351 . 3352) (VOID 3346 . 3350) (open-paren 3345 . 3346) (symbol 3330 . 3345) (punctuation 3329 . 3330) (VOID 3324 . 3328) (INLINE 3317 . 3323) (STATIC 3310 . 3316) (close-paren 3307 . 3308) (punctuation 3305 . 3306) (semantic-list 3259 . 3305) (semantic-list 3251 . 3259) (RETURN 3244 . 3250) (open-paren 3241 . 3242) (close-paren 3239 . 3240) (symbol 3236 . 3239) (punctuation 3235 . 3236) (VOID 3230 . 3234) (open-paren 3229 . 3230) (symbol 3214 . 3229) (punctuation 3213 . 3214) (VOID 3208 . 3212) (INLINE 3201 . 3207) (STATIC 3194 . 3200) (punctuation 3191 . 3192) (close-paren 3190 . 3191) (punctuation 3188 . 3189) (number 3187 . 3188) (open-paren 3185 . 3186) (punctuation 3183 . 3184) (close-paren 3181 . 3182) (symbol 3162 . 3181) (punctuation 3160 . 3161) (symbol 3142 . 3160) (STRUCT 3135 . 3141) (open-paren 3134 . 3135) (symbol 3120 . 3134) (STATIC 3113 . 3119) (punctuation 3111 . 3112) (close-paren 3110 . 3111) (open-paren 3042 . 3043) (symbol 3023 . 3041) (STRUCT 3016 . 3022) (close-paren 2320 . 2321) (number 2319 . 2320) (punctuation 2317 . 2318) (semantic-list "(DIV_ROUND_UP(RADIX_TREE_INDEX_BITS, \\
+					  RADIX_TREE_MAP_SHIFT))" 2297 . 2316) (open-paren 2296 . 2297) (symbol 2278 . 2296) (LONG 2273 . 2277) (UNSIGNED 2264 . 2272) (STATIC 2257 . 2263) (close-paren 2038 . 2039) (semantic-list 2023 . 2038) (SIZEOF 2017 . 2023) (punctuation 2015 . 2016) (VOID 1858 . 1862) (DO 10159 . 10161) (semantic-list 10115 . 10156) (semantic-list 10093 . 10114) (IF 10090 . 10092) (punctuation 10086 . 10087) (punctuation 10085 . 10086) (punctuation 10084 . 10085) (symbol 10078 . 10084) (semantic-list 10038 . 10075) (WHILE 10032 . 10037) (open-paren 9860 . 9861) (close-paren 9858 . 9859) (symbol 9853 . 9858) (LONG 9848 . 9852) (UNSIGNED 9839 . 9847) (punctuation 9837 . 9838) (symbol 9833 . 9837) (punctuation 9832 . 9833) (symbol 9816 . 9831) (STRUCT 9809 . 9815) (open-paren 9808 . 9809) (symbol 9791 . 9808) (INT 9787 . 9790) (STATIC 9780 . 9786) (close-paren 9719 . 9720) (RETURN 9684 . 9690) (open-paren 9681 . 9682) (close-paren 9679 . 9680) (symbol 9673 . 9679) (INT 9669 . 9672) (UNSIGNED 9660 . 9668) (open-paren 9659 . 9660) (symbol 9640 . 9659) (LONG 9635 . 9639) (UNSIGNED 9626 . 9634) (INLINE 9619 . 9625) (STATIC 9612 . 9618) (punctuation 9516 . 9517) (close-paren 9515 . 9516) (symbol 9491 . 9515) (open-paren 9490 . 9491) (symbol 9477 . 9490) (close-paren 9475 . 9476) (punctuation 9473 . 9474) (number 9472 . 9473) (RETURN 9465 . 9471) (RETURN 9337 . 9343) (semantic-list 9311 . 9334) (IF 9308 . 9310) (open-paren 9305 . 9306) (close-paren 9303 . 9304) (symbol 9295 . 9303) (symbol 9289 . 9294) (open-paren 9288 . 9289) (symbol 9264 . 9288) (INT 9260 . 9263) (punctuation 9029 . 9030) (close-paren 9028 . 9029) (symbol 9010 . 9028) (open-paren 9009 . 9010) (symbol 8996 . 9009) (close-paren 8994 . 8995) (RETURN 8955 . 8961) (semantic-list 8928 . 8951) (punctuation 8927 . 8928) (open-paren 8876 . 8877) (close-paren 8874 . 8875) (symbol 8866 . 8874) (symbol 8860 . 8865) (open-paren 8859 . 8860) (symbol 8841 . 8859) (INT 8837 . 8840) (close-paren 8440 . 8441) (RETURN 8428 . 8434) (punctuation 8425 . 8426) (symbol 8422 . 8425) (semantic-list 8097 . 8411) (semantic-list 8062 . 8096) (WHILE 8056 . 8061) (open-paren 7904 . 7905) (close-paren 7902 . 7903) (symbol 7894 . 7902) (symbol 7888 . 7893) (open-paren 7887 . 7888) (symbol 7867 . 7887) (INT 7863 . 7866) (STATIC 7856 . 7862) (close-paren 7459 . 7460) (punctuation 7421 . 7422) (punctuation 7420 . 7421) (punctuation 7415 . 7416) (open-paren 7403 . 7404) (close-paren 7401 . 7402) (symbol 7397 . 7401) (punctuation 7396 . 7397) (symbol 7380 . 7395) (STRUCT 7373 . 7379) (open-paren 7372 . 7373) (symbol 7352 . 7372) (VOID 7347 . 7351) (INLINE 7340 . 7346) (STATIC 7333 . 7339) (close-paren 7330 . 7331) (punctuation 7269 . 7270) (punctuation 7268 . 7269) (symbol 7264 . 7268) (punctuation 7245 . 7246) (punctuation 7244 . 7245) (symbol 7240 . 7244) (number 7234 . 7235) (semantic-list 7175 . 7212) (FOR 7171 . 7174) (open-paren 6901 . 6902) (close-paren 6899 . 6900) (symbol 6895 . 6899) (punctuation 6894 . 6895) (symbol 6885 . 6893) (STRUCT 6878 . 6884) (open-paren 6877 . 6878) (symbol 6853 . 6877) (VOID 6848 . 6852) (STATIC 6841 . 6847) (close-paren 6838 . 6839) (RETURN 6826 . 6832) (semantic-list 6817 . 6822) (semantic-list 6708 . 6721) (IF 6705 . 6707) (semantic-list 6368 . 6703) (semantic-list 6322 . 6367) (IF 6319 . 6321) (open-paren 6032 . 6033) (close-paren 6030 . 6031) (symbol 6026 . 6030) (punctuation 6025 . 6026) (symbol 6009 . 6024) (STRUCT 6002 . 6008) (open-paren 6001 . 6002) (symbol 5980 . 6001) (punctuation 5978 . 5979) (symbol 5962 . 5977) (STRUCT 5955 . 5961) (STATIC 5948 . 5954) (close-paren 5788 . 5789) (RETURN 5775 . 5781) (semantic-list 5448 . 5773) (semantic-list 5432 . 5447) (IF 5429 . 5431) (RETURN 5385 . 5391) (semantic-list 5353 . 5382) (IF 5350 . 5352) (open-paren 5347 . 5348) (close-paren 5345 . 5346) (symbol 5339 . 5345) (LONG 5334 . 5338) (UNSIGNED 5325 . 5333) (punctuation 5323 . 5324) (symbol 5319 . 5323) (LONG 5314 . 5318) (UNSIGNED 5305 . 5313) (punctuation 5299 . 5300) (symbol 5295 . 5299) (punctuation 5294 . 5295) (LONG 5289 . 5293) (UNSIGNED 5280 . 5288) (CONST 5274 . 5279) (open-paren 5273 . 5274) (symbol 5249 . 5273) (LONG 5244 . 5248) (UNSIGNED 5235 . 5243) (symbol "__inline" 5219 . 5234) (STATIC 5212 . 5218) (close-paren 4799 . 4800) (punctuation 4797 . 4798) (number 4796 . 4797) (RETURN 4789 . 4795) (semantic-list 4742 . 4787) (semantic-list 4697 . 4741) (FOR 4693 . 4696) (open-paren 4680 . 4681) (close-paren 4678 . 4679) (symbol 4675 . 4678) (INT 4671 . 4674) (UNSIGNED 4662 . 4670) (punctuation 4660 . 4661) (symbol 4656 . 4660) (punctuation 4655 . 4656) (symbol 4639 . 4654) (STRUCT 4632 . 4638) (open-paren 4631 . 4632) (symbol 4620 . 4631) (INT 4616 . 4619) (INLINE 4609 . 4615) (STATIC 4602 . 4608) (close-paren 4513 . 4514) (punctuation 4511 . 4512) (semantic-list 4480 . 4511) (punctuation 4478 . 4479) (symbol 4469 . 4477) (punctuation 4468 . 4469) (punctuation 4467 . 4468) (symbol 4463 . 4467) (semantic-list 4445 . 4463) (RETURN 4438 . 4444) (open-paren 4435 . 4436) (close-paren 4433 . 4434) (symbol 4430 . 4433) (INT 4426 . 4429) (UNSIGNED 4417 . 4425) (punctuation 4415 . 4416) (symbol 4411 . 4415) (punctuation 4410 . 4411) (symbol 4394 . 4409) (STRUCT 4387 . 4393) (open-paren 4386 . 4387) (symbol 4374 . 4386) (INT 4370 . 4373) (INLINE 4363 . 4369) (STATIC 4356 . 4362) (close-paren 4353 . 4354) (punctuation 4334 . 4335) (punctuation 4333 . 4334) (symbol 4324 . 4332) (punctuation 4323 . 4324) (punctuation 4322 . 4323) (symbol 4318 . 4322) (open-paren 4315 . 4316) (close-paren 4313 . 4314) (symbol 4309 . 4313) (punctuation 4308 . 4309) (symbol 4292 . 4307) (STRUCT 4285 . 4291) (open-paren 4284 . 4285) (symbol 4266 . 4284) (VOID 4261 . 4265) (INLINE 4254 . 4260) (STATIC 4247 . 4253) (close-paren 4244 . 4245) (punctuation 4242 . 4243) (semantic-list 4211 . 4242) (punctuation 4210 . 4211) (semantic-list 4195 . 4210) (punctuation 4193 . 4194) (punctuation 4192 . 4193) (symbol 4183 . 4191) (punctuation 4182 . 4183) (punctuation 4181 . 4182) (symbol 4177 . 4181) (open-paren 4174 . 4175) (close-paren 4172 . 4173) (symbol 4169 . 4172) (INT 4165 . 4168) (UNSIGNED 4156 . 4164) (punctuation 4154 . 4155) (symbol 4150 . 4154) (punctuation 4149 . 4150) (symbol 4133 . 4148) (STRUCT 4126 . 4132) (open-paren 4125 . 4126) (symbol 4111 . 4125) (VOID 4106 . 4110) (INLINE 4099 . 4105) (STATIC 4092 . 4098) (close-paren 4089 . 4090) (punctuation 4087 . 4088) (semantic-list 4056 . 4087) (semantic-list 4041 . 4056) (punctuation 4039 . 4040) (punctuation 4038 . 4039) (symbol 4029 . 4037) (punctuation 4028 . 4029) (punctuation 4027 . 4028) (symbol 4023 . 4027) (open-paren 4020 . 4021) (close-paren 4018 . 4019) (symbol 4015 . 4018) (INT 4011 . 4014) (UNSIGNED 4002 . 4010) (punctuation 4000 . 4001) (symbol 3996 . 4000) (punctuation 3995 . 3996) (symbol 3979 . 3994) (STRUCT 3972 . 3978) (open-paren 3971 . 3972) (symbol 3959 . 3971) (VOID 3954 . 3958) (INLINE 3947 . 3953) (STATIC 3940 . 3946) (close-paren 3937 . 3938) (semantic-list 3929 . 3934) (punctuation 3924 . 3925) (punctuation 3923 . 3924) (RETURN 3895 . 3901) (open-paren 3892 . 3893) (close-paren 3890 . 3891) (symbol 3884 . 3890) (INT 3880 . 3883) (punctuation 3876 . 3877) (symbol 3873 . 3876) (INT 3869 . 3872) (UNSIGNED 3860 . 3868) (punctuation 3858 . 3859) (symbol 3854 . 3858) (punctuation 3853 . 3854) (symbol 3837 . 3852) (STRUCT 3830 . 3836) (open-paren 3829 . 3830) (symbol 3822 . 3829) (INT 3818 . 3821) (INLINE 3811 . 3817) (STATIC 3804 . 3810) (close-paren 3801 . 3802) (semantic-list 3793 . 3798) (punctuation 3788 . 3789) (punctuation 3787 . 3788) (open-paren 3760 . 3761) (close-paren 3758 . 3759) (symbol 3752 . 3758) (INT 3748 . 3751) (punctuation 3744 . 3745) (symbol 3741 . 3744) (INT 3737 . 3740) (UNSIGNED 3728 . 3736) (punctuation 3726 . 3727) (symbol 3722 . 3726) (punctuation 3721 . 3722) (symbol 3705 . 3720) (STRUCT 3698 . 3704) (open-paren 3697 . 3698) (symbol 3688 . 3697) (VOID 3683 . 3687) (INLINE 3676 . 3682) (STATIC 3669 . 3675) (close-paren 3666 . 3667) (semantic-list 3658 . 3663) (punctuation 3653 . 3654) (punctuation 3652 . 3653) (open-paren 3627 . 3628) (close-paren 3625 . 3626) (symbol 3619 . 3625) (INT 3615 . 3618) (punctuation 3611 . 3612) (symbol 3608 . 3611) (INT 3604 . 3607) (UNSIGNED 3595 . 3603) (punctuation 3593 . 3594) (symbol 3589 . 3593) (punctuation 3588 . 3589) (symbol 3572 . 3587) (STRUCT 3565 . 3571) (open-paren 3564 . 3565) (symbol 3557 . 3564) (VOID 3552 . 3556) (INLINE 3545 . 3551) (STATIC 3538 . 3544) (close-paren 3535 . 3536) (punctuation 3506 . 3507) (punctuation 3505 . 3506) (symbol 3501 . 3505) (RETURN 3494 . 3500) (open-paren 3491 . 3492) (close-paren 3489 . 3490) (symbol 3485 . 3489) (punctuation 3484 . 3485) (symbol 3468 . 3483) (STRUCT 3461 . 3467) (open-paren 3460 . 3461) (symbol 3447 . 3460) (symbol 3441 . 3446) (INLINE 3434 . 3440) (STATIC 3427 . 3433) (close-paren 3424 . 3425) (punctuation 3422 . 3423) (semantic-list 3375 . 3422) (semantic-list 3367 . 3375) (RETURN 3360 . 3366) (open-paren 3357 . 3358) (close-paren 3355 . 3356) (symbol 3352 . 3355) (punctuation 3351 . 3352) (VOID 3346 . 3350) (open-paren 3345 . 3346) (symbol 3330 . 3345) (punctuation 3329 . 3330) (VOID 3324 . 3328) (INLINE 3317 . 3323) (STATIC 3310 . 3316) (close-paren 3307 . 3308) (punctuation 3305 . 3306) (semantic-list 3259 . 3305) (semantic-list 3251 . 3259) (RETURN 3244 . 3250) (open-paren 3241 . 3242) (close-paren 3239 . 3240) (symbol 3236 . 3239) (punctuation 3235 . 3236) (VOID 3230 . 3234) (open-paren 3229 . 3230) (symbol 3214 . 3229) (punctuation 3213 . 3214) (VOID 3208 . 3212) (INLINE 3201 . 3207) (STATIC 3194 . 3200) (punctuation 3191 . 3192) (close-paren 3190 . 3191) (punctuation 3188 . 3189) (number 3187 . 3188) (open-paren 3185 . 3186) (punctuation 3183 . 3184) (close-paren 3181 . 3182) (symbol 3162 . 3181) (punctuation 3160 . 3161) (symbol 3142 . 3160) (STRUCT 3135 . 3141) (open-paren 3134 . 3135) (symbol 3120 . 3134) (STATIC 3113 . 3119) (punctuation 3111 . 3112) (close-paren 3110 . 3111) (open-paren 3042 . 3043) (symbol 3023 . 3041) (STRUCT 3016 . 3022) (close-paren 2320 . 2321) (number 2319 . 2320) (punctuation 2317 . 2318) (semantic-list "(DIV_ROUND_UP(RADIX_TREE_INDEX_BITS, \\
+					  RADIX_TREE_MAP_SHIFT))" 2297 . 2316) (open-paren 2296 . 2297) (symbol 2278 . 2296) (LONG 2273 . 2277) (UNSIGNED 2264 . 2272) (STATIC 2257 . 2263) (close-paren 2038 . 2039) (semantic-list 2023 . 2038) (SIZEOF 2017 . 2023) (punctuation 2015 . 2016) (VOID 1858 . 1862))
+      :lexical-table 
+        '(("RADIX_TREE_MAP_MASK" . ((semantic-list "(RADIX_TREE_MAP_SIZE-1)" 1506 . 1529)))
+          ("RADIX_TREE_MAP_SHIFT" . ((number "3" 1377 . 1378)))
+          ("RADIX_TREE_MAP_SIZE" . ((semantic-list "(1UL << RADIX_TREE_MAP_SHIFT)" 1448 . 1477)))
+          ("RADIX_TREE_MAX_PATH" . ((semantic-list "(DIV_ROUND_UP(RADIX_TREE_INDEX_BITS, \\
+					  RADIX_TREE_MAP_SHIFT))" 2068 . 2136)))
+          ("RADIX_TREE_TAG_LONGS" . ((semantic-list "((RADIX_TREE_MAP_SIZE + BITS_PER_LONG - 1) / BITS_PER_LONG)" 1563 . 1622)))
+          ("RADIX_TREE_INDEX_BITS" . ((semantic-list "(8" 1997 . 1999)))
+          ("RADIX_TREE_PRELOAD_SIZE" . ((semantic-list "(RADIX_TREE_MAX_PATH * 2 - 1)" 2943 . 2972)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!lib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

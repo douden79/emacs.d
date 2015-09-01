@@ -1,0 +1,66 @@
+;; Object mm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mm/"
+  :tables
+  (list
+    (semanticdb-table "init.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [244 269])
+            ("linux/gfp.h" include (:system-flag t) nil [270 292])
+            ("linux/mm.h" include (:system-flag t) nil [293 314])
+            ("linux/swap.h" include (:system-flag t) nil [315 338])
+            ("linux/init.h" include (:system-flag t) nil [339 362])
+            ("linux/mmzone.h" include (:system-flag t) nil [363 388])
+            ("linux/module.h" include (:system-flag t) nil [389 414])
+            ("linux/bootmem.h" include (:system-flag t) nil [415 441])
+            ("linux/pagemap.h" include (:system-flag t) nil [442 468])
+            ("linux/nodemask.h" include (:system-flag t) nil [469 496])
+            ("asm/page.h" include (:system-flag t) nil [498 519])
+            ("asm/mmu_context.h" include (:system-flag t) nil [520 548])
+            ("asm/tlb.h" include (:system-flag t) nil [549 569])
+            ("asm/io.h" include (:system-flag t) nil [570 589])
+            ("asm/dma.h" include (:system-flag t) nil [590 610])
+            ("asm/setup.h" include (:system-flag t) nil [611 633])
+            ("asm/sections.h" include (:system-flag t) nil [634 659])
+            ("__page_aligned_data" variable (:type "int") nil [696 716])
+            ("empty_zero_page" variable
+               (:pointer 1
+                :type ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [718 747])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("empty_zero_page" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [762 778]))                  
+                :type "int")
+                nil [748 779])
+            ("mmu_context_cache" variable
+               (:default-value "NO_CONTEXT"
+                :type "unsigned long")
+                nil [823 868])
+            ("paging_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1083 1088]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1064 2532])
+            ("mem_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2555 2560]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2539 2816])
+            ("free_initmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2836 2841]))                  
+                :type "void")
+                nil [2818 2872]))          
+      :file "init.c"
+      :pointmax 3038
+      :fsize 3037
+      :lastmodtime '(21976 3065 684725 641000)
+      :unmatched-syntax '((VOID 2534 . 2538) (VOID 1059 . 1063) (semantic-list 681 . 695) (symbol 667 . 681) (symbol 661 . 666))))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!avr32!mm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

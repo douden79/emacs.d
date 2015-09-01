@@ -1,0 +1,235 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "stackprotector.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ASM_STACKPROTECTOR_H" variable (:constant-flag t) nil [477 498])
+            ("linux/random.h" include (:system-flag t) nil [502 527])
+            ("linux/version.h" include (:system-flag t) nil [528 554])
+            ("__stack_chk_guard" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [556 595])
+            ("boot_init_stack_canary" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [865 870]))                  
+                :type "void")
+                nil [837 1289]))          
+      :file "stackprotector.h"
+      :pointmax 1326
+      :fsize 1433
+      :lastmodtime '(21976 3065 500725 647000)
+      :unmatched-syntax '((thing 821 . 836) (thing 814 . 820))
+      :lexical-table 
+        '(("_ASM_STACKPROTECTOR_H" . ((number "1" 499 . 500)))
+          )
+)
+    (semanticdb-table "atomic.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_ARM_ATOMIC_H" variable (:constant-flag t) nil [355 373])
+            ("linux/compiler.h" include (:system-flag t) nil [375 402])
+            ("linux/types.h" include (:system-flag t) nil [403 427])
+            ("linux/irqflags.h" include (:system-flag t) nil [428 455])
+            ("asm/barrier.h" include (:system-flag t) nil [456 480])
+            ("asm/cmpxchg.h" include (:system-flag t) nil [481 505])
+            ("ATOMIC_INIT" variable (:constant-flag t) nil [515 526]))          
+      :file "atomic.h"
+      :pointmax 11068
+      :fsize 11277
+      :lastmodtime '(21976 3065 496725 647000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__ASM_ARM_ATOMIC_H")
+          ("ATOMIC_INIT" (spp-arg-list ("i") 526 . 529) . ((semantic-list "{ (i) }" 530 . 537)))
+          )
+)
+    (semanticdb-table "psci.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_ARM_PSCI_H" variable (:constant-flag t) nil [515 531])
+            ("PSCI_POWER_STATE_TYPE_STANDBY" variable (:constant-flag t) nil [541 570])
+            ("PSCI_POWER_STATE_TYPE_POWER_DOWN" variable (:constant-flag t) nil [582 614])
+            ("psci_power_state" type
+               (:members 
+                  ( ("id" variable (:type ("u16" type (:type "class") nil nil)) (reparse-symbol classsubparts) [645 652])
+                    ("type" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [654 662])
+                    ("affinity_level" variable (:type ("u8" type (:type "class") nil nil)) (reparse-symbol classsubparts) [664 682]))                  
+                :type "struct")
+                nil [618 685])
+            ("psci_operations" type
+               (:members 
+                  ( ("cpu_suspend" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("state" variable (:type ("psci_power_state" type
+                                 (:prototype t
+                                  :type "struct")
+                                  nil nil)) (reparse-symbol arg-sub-list) [732 762])
+                            ("entry_point" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [769 795]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [713 796])
+                    ("cpu_off" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("state" variable (:type ("psci_power_state" type
+                                 (:prototype t
+                                  :type "struct")
+                                  nil nil)) (reparse-symbol arg-sub-list) [813 843]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [798 844])
+                    ("cpu_on" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("cpuid" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [860 880])
+                            ("entry_point" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [881 907]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [846 908])
+                    ("migrate" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("cpuid" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [925 945]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [910 946]))                  
+                :type "struct")
+                nil [687 949])
+            ("psci_ops" variable
+               (:typemodifiers ("extern")
+                :type ("psci_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [951 990])
+            ("psci_smp_ops" variable
+               (:typemodifiers ("extern")
+                :type ("smp_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [991 1033])
+            ("psci_init" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1146 1151]))                  
+                :type "void")
+                nil [1117 1155])
+            ("psci_smp_available" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1194 1199]))                  
+                :type "bool")
+                nil [1156 1217]))          
+      :file "psci.h"
+      :pointmax 1256
+      :fsize 1255
+      :lastmodtime '(21976 3065 500725 647000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__ASM_ARM_PSCI_H")
+          ("PSCI_POWER_STATE_TYPE_POWER_DOWN" . ((number "1" 615 . 616)))
+          ("PSCI_POWER_STATE_TYPE_STANDBY" . ((number "0" 572 . 573)))
+          )
+)
+    (semanticdb-table "memory.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_ARM_MEMORY_H" variable (:constant-flag t) nil [424 442])
+            ("linux/compiler.h" include (:system-flag t) nil [444 471])
+            ("linux/const.h" include (:system-flag t) nil [472 496])
+            ("linux/types.h" include (:system-flag t) nil [497 521])
+            ("linux/sizes.h" include (:system-flag t) nil [522 546])
+            ("asm/cache.h" include (:system-flag t) nil [548 570])
+            ("UL" variable (:constant-flag t) nil [787 789])
+            ("TASK_SIZE" variable (:constant-flag t) nil [2626 2635])
+            ("TASK_UNMAPPED_BASE" variable (:constant-flag t) nil [2699 2717])
+            ("PHYS_OFFSET" variable (:constant-flag t) nil [2769 2780])
+            ("END_MEM" variable (:constant-flag t) nil [2836 2843])
+            ("PAGE_OFFSET" variable (:constant-flag t) nil [2928 2939])
+            ("MODULES_END" variable (:constant-flag t) nil [3034 3045])
+            ("MODULES_VADDR" variable (:constant-flag t) nil [3065 3078])
+            ("XIP_VIRT_ADDR" variable (:constant-flag t) nil [3103 3116])
+            ("__phys_to_pfn" variable (:constant-flag t) nil [3426 3439])
+            ("__pfn_to_phys" variable (:constant-flag t) nil [3496 3509])
+            ("page_to_phys" variable (:constant-flag t) nil [3611 3623])
+            ("phys_to_page" variable (:constant-flag t) nil [3673 3685])
+            ("ARCH_PGD_SHIFT" variable (:constant-flag t) nil [4151 4165])
+            ("ARCH_PGD_MASK" variable (:constant-flag t) nil [4184 4197])
+            ("__virt_to_phys" variable (:constant-flag t) nil [5472 5486])
+            ("__phys_to_virt" variable (:constant-flag t) nil [5532 5546])
+            ("PHYS_PFN_OFFSET" variable (:constant-flag t) nil [6047 6062])
+            ("virt_to_phys" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("x" variable
+                       (:pointer 1
+                        :typemodifiers ("volatile")
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6378 6401]))                  
+                :type ("phys_addr_t" type (:type "class") nil nil))
+                nil [6339 6449])
+            ("phys_to_virt" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("x" variable (:type ("phys_addr_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6484 6498]))                  
+                :type "void")
+                nil [6451 6556])
+            ("__pa" variable (:constant-flag t) nil [6613 6617])
+            ("__va" variable (:constant-flag t) nil [6666 6670])
+            ("pfn_to_kaddr" variable (:constant-flag t) nil [6729 6741])
+            ("__virt_to_bus" variable (:constant-flag t) nil [7051 7064])
+            ("__bus_to_virt" variable (:constant-flag t) nil [7088 7101])
+            ("__pfn_to_bus" variable (:constant-flag t) nil [7125 7137])
+            ("__bus_to_pfn" variable (:constant-flag t) nil [7166 7178])
+            ("ARCH_PFN_OFFSET" variable (:constant-flag t) nil [7798 7813])
+            ("virt_to_page" variable (:constant-flag t) nil [7840 7852])
+            ("virt_addr_valid" variable (:constant-flag t) nil [7907 7922])
+            ("asm-generic/memory_model.h" include (:system-flag t) nil [8034 8071]))          
+      :file "memory.h"
+      :pointmax 8080
+      :fsize 8079
+      :lastmodtime '(21976 3065 500725 647000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PHYS_OFFSET" . ((symbol "UL" 2783 . 2785) (semantic-list "(CONFIG_DRAM_BASE)" 2785 . 2803)))
+          ("ARCH_PGD_SHIFT" . ((number "0" 4167 . 4168)))
+          ("__virt_to_phys" (spp-arg-list ("x") 5486 . 5489) . ((semantic-list "((x) - PAGE_OFFSET + PHYS_OFFSET)" 5490 . 5523)))
+          ("PHYS_PFN_OFFSET" . ((semantic-list "((unsigned long)(PHYS_OFFSET >> PAGE_SHIFT))" 6063 . 6107)))
+          ("__phys_to_pfn" (spp-arg-list ("paddr") 3439 . 3446) . ((semantic-list "((unsigned long)((paddr) >> PAGE_SHIFT))" 3447 . 3487)))
+          ("ARCH_PGD_MASK" . ((semantic-list "((1 << ARCH_PGD_SHIFT) - 1)" 4199 . 4226)))
+          ("__phys_to_virt" (spp-arg-list ("x") 5546 . 5549) . ((semantic-list "((x) - PHYS_OFFSET + PAGE_OFFSET)" 5550 . 5583)))
+          ("__virt_to_bus" . ((symbol "__virt_to_phys" 7065 . 7079)))
+          ("TASK_SIZE" . ((semantic-list "(CONFIG_DRAM_SIZE)" 2637 . 2655)))
+          ("phys_to_page" (spp-arg-list ("phys") 3685 . 3691) . ((semantic-list "(pfn_to_page(__phys_to_pfn(phys)))" 3692 . 3726)))
+          ("__pa" (spp-arg-list ("x") 6617 . 6620) . ((symbol "__virt_to_phys" 6623 . 6637) (semantic-list "((unsigned long)(x))" 6637 . 6657)))
+          ("UL" (spp-arg-list ("x") 789 . 792) . ((symbol "_AC" 793 . 796) (semantic-list "(x, UL)" 796 . 803)))
+          ("END_MEM" . ((semantic-list "(UL(CONFIG_DRAM_BASE) + CONFIG_DRAM_SIZE)" 2850 . 2891)))
+          ("MODULES_VADDR" . ((semantic-list "(PHYS_OFFSET)" 3080 . 3093)))
+          ("__pfn_to_bus" (spp-arg-list ("x") 7137 . 7140) . ((symbol "__pfn_to_phys" 7141 . 7154) (semantic-list "(x)" 7154 . 7157)))
+          ("MODULES_END" . ((semantic-list "(END_MEM)" 3047 . 3056)))
+          ("pfn_to_kaddr" (spp-arg-list ("pfn") 6741 . 6746) . ((symbol "__va" 6747 . 6751) (semantic-list "((pfn) << PAGE_SHIFT)" 6751 . 6772)))
+          ("virt_addr_valid" (spp-arg-list ("kaddr") 7922 . 7929) . ((semantic-list "((unsigned long)(kaddr) >= PAGE_OFFSET && (unsigned long)(kaddr) < (unsigned long)high_memory)" 7930 . 8024)))
+          ("__ASM_ARM_MEMORY_H")
+          ("page_to_phys" (spp-arg-list ("page") 3623 . 3629) . ((semantic-list "(__pfn_to_phys(page_to_pfn(page)))" 3630 . 3664)))
+          ("__va" (spp-arg-list ("x") 6670 . 6673) . ((semantic-list "((void *)__phys_to_virt((unsigned long)(x)))" 6676 . 6720)))
+          ("TASK_UNMAPPED_BASE" . ((symbol "UL" 2718 . 2720) (semantic-list "(0x00000000)" 2720 . 2732)))
+          ("__bus_to_pfn" (spp-arg-list ("x") 7178 . 7181) . ((symbol "__phys_to_pfn" 7182 . 7195) (semantic-list "(x)" 7195 . 7198)))
+          ("ARCH_PFN_OFFSET" . ((symbol "PHYS_PFN_OFFSET" 7815 . 7830)))
+          ("PAGE_OFFSET" . ((semantic-list "(PHYS_OFFSET)" 2941 . 2954)))
+          ("XIP_VIRT_ADDR" (spp-arg-list ("physaddr") 3116 . 3126) . ((semantic-list "(physaddr)" 3128 . 3138)))
+          ("__pfn_to_phys" (spp-arg-list ("pfn") 3509 . 3514) . ((semantic-list "((phys_addr_t)(pfn) << PAGE_SHIFT)" 3515 . 3549)))
+          ("__bus_to_virt" . ((symbol "__phys_to_virt" 7102 . 7116)))
+          ("virt_to_page" (spp-arg-list ("kaddr") 7852 . 7859) . ((symbol "pfn_to_page" 7860 . 7871) (semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 7871 . 7898)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!arm!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

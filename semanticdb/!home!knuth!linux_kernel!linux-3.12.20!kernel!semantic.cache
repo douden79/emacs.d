@@ -1223,9 +1223,219 @@
           )
 )
     (semanticdb-table "lockdep_internals.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("lock_usage_bit" type
+               (:members 
+                  ( ("LOCK_USED" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [408 418])
+                    ("LOCK_USAGE_STATES" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [420 439]))                  
+                :type "enum")
+                nil [180 440])
+            ("__LOCKF" variable (:constant-flag t) nil [482 489])
+            ("" type
+               (:members 
+                  ( ("LOCKF_USED" variable
+                       (:constant-flag t
+                        :default-value (779 792)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [779 792]))                  
+                :type "enum")
+                nil [541 795])
+            ("LOCKF_ENABLED_IRQ" variable (:constant-flag t) nil [805 822])
+            ("LOCKF_USED_IN_IRQ" variable (:constant-flag t) nil [879 896])
+            ("LOCKF_ENABLED_IRQ_READ" variable (:constant-flag t) nil [954 976])
+            ("LOCKF_USED_IN_IRQ_READ" variable (:constant-flag t) nil [1047 1069])
+            ("MAX_LOCKDEP_ENTRIES" variable (:constant-flag t) nil [1466 1485])
+            ("MAX_LOCKDEP_CHAINS_BITS" variable (:constant-flag t) nil [1503 1526])
+            ("MAX_LOCKDEP_CHAINS" variable (:constant-flag t) nil [1538 1556])
+            ("MAX_LOCKDEP_CHAIN_HLOCKS" variable (:constant-flag t) nil [1599 1623])
+            ("MAX_STACK_TRACE_ENTRIES" variable (:constant-flag t) nil [1761 1784])
+            ("all_lock_classes" variable
+               (:typemodifiers ("extern")
+                :type ("list_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1795 1836])
+            ("lock_chains" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("lock_chain" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1837 1876])
+            ("LOCK_USAGE_CHARS" variable (:constant-flag t) nil [1886 1902])
+            ("get_usage_chars" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1956 1980])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [1975 1981])
+                    ("usage" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1989 2018]))                  
+                :type "void")
+                nil [1928 2019])
+            ("__get_key_name" function
+               (:prototype-flag t
+                :pointer 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :arguments 
+                  ( ("key" variable
+                       (:pointer 1
+                        :type ("lockdep_subclass_key" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2056 2089])
+                    ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2090 2100]))                  
+                :type "char")
+                nil [2021 2101])
+            ("lock_chain_get_class" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("chain" variable
+                       (:pointer 1
+                        :type ("lock_chain" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2143 2168])
+                    ("i" variable (:type "int") (reparse-symbol arg-sub-list) [2169 2175]))                  
+                :type ("lock_class" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2103 2176])
+            ("nr_lock_classes" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [2178 2215])
+            ("nr_list_entries" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [2216 2253])
+            ("nr_lock_chains" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [2254 2290])
+            ("nr_chain_hlocks" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [2291 2318])
+            ("nr_stack_trace_entries" variable
+               (:typemodifiers ("extern")
+                :type "unsigned long")
+                nil [2319 2363])
+            ("nr_hardirq_chains" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [2365 2403])
+            ("nr_softirq_chains" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [2404 2442])
+            ("nr_process_chains" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [2443 2481])
+            ("max_lockdep_depth" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [2482 2520])
+            ("max_recursion_depth" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [2521 2561])
+            ("max_bfs_queue_depth" variable
+               (:typemodifiers ("extern")
+                :type "unsigned int")
+                nil [2563 2603])
+            ("lockdep_count_forward_deps" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2835 2859])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [2854 2860]))                  
+                :type "unsigned long")
+                nil [2780 2875])
+            ("lockdep_count_backward_deps" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("lock_class" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2932 2956])
+                    ("" variable (:type ("" type
+                         (:prototype t
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [2951 2957]))                  
+                :type "unsigned long")
+                nil [2876 2972])
+            ("__debug_atomic_inc" variable (:constant-flag t) nil [4407 4425])
+            ("debug_atomic_inc" variable (:constant-flag t) nil [4457 4473])
+            ("debug_atomic_dec" variable (:constant-flag t) nil [4506 4522])
+            ("debug_atomic_read" variable (:constant-flag t) nil [4555 4572]))          
       :file "lockdep_internals.h"
+      :pointmax 4588
       :fsize 4587
-      :lastmodtime '(21976 3069 208725 537000))
+      :lastmodtime '(21976 3069 208725 537000)
+      :unmatched-syntax '((spp-macro-undef 764 . 777) (spp-include "lockdep_states.h" 729 . 756) (spp-macro-def 556 . 569) (spp-macro-undef 393 . 406) (spp-include "lockdep_states.h" 358 . 385) (spp-macro-def 210 . 223))
+      :lexical-table 
+        '(("__debug_atomic_inc" (spp-arg-list ("ptr") 4425 . 4430) . 
+              ((DO "do" 4431 . 4433) (semantic-list "{ }" 4434 . 4437) (WHILE "while" 4438 . 4443) (semantic-list "(0)" 4444 . 4447)))
+          ("LOCKF_ENABLED_IRQ_READ" . ((semantic-list "(LOCKF_ENABLED_HARDIRQ_READ | LOCKF_ENABLED_SOFTIRQ_READ)" 981 . 1038)))
+          ("MAX_LOCKDEP_CHAINS_BITS" . ((number "15" 1527 . 1529)))
+          ("LOCKF_USED_IN_IRQ" . ((semantic-list "(LOCKF_USED_IN_HARDIRQ | LOCKF_USED_IN_SOFTIRQ)" 897 . 944)))
+          ("debug_atomic_dec" (spp-arg-list ("ptr") 4522 . 4527) . 
+              ((DO "do" 4529 . 4531) (semantic-list "{ }" 4532 . 4535) (WHILE "while" 4536 . 4541) (semantic-list "(0)" 4542 . 4545)))
+          ("LOCKF_ENABLED_IRQ" . ((semantic-list "(LOCKF_ENABLED_HARDIRQ | LOCKF_ENABLED_SOFTIRQ)" 823 . 870)))
+          ("MAX_LOCKDEP_ENTRIES" . ((symbol "16384UL" 1486 . 1493)))
+          ("MAX_LOCKDEP_CHAINS" . ((semantic-list "(1UL << MAX_LOCKDEP_CHAINS_BITS)" 1557 . 1589)))
+          ("LOCK_USAGE_CHARS" . ((semantic-list "(1+LOCK_USAGE_STATES/2)" 1903 . 1926)))
+          ("LOCKF_USED_IN_IRQ_READ" . ((semantic-list "(LOCKF_USED_IN_HARDIRQ_READ | LOCKF_USED_IN_SOFTIRQ_READ)" 1074 . 1131)))
+          ("MAX_STACK_TRACE_ENTRIES" . ((symbol "262144UL" 1785 . 1793)))
+          ("debug_atomic_read" (spp-arg-list ("ptr") 4572 . 4577) . ((number "0" 4579 . 4580)))
+          ("__LOCKF" (spp-arg-list ("__STATE") 489 . 498) . 
+              ((spp-symbol-merge ((symbol "LOCKF_" 499 . 505) (symbol "__STATE" 507 . 514)) 499 . 514) (punctuation "=" 515 . 516) (semantic-list "(1 << LOCK_##__STATE)" 517 . 538) (punctuation "," 538 . 539)))
+          ("debug_atomic_inc" (spp-arg-list ("ptr") 4473 . 4478) . 
+              ((DO "do" 4480 . 4482) (semantic-list "{ }" 4483 . 4486) (WHILE "while" 4487 . 4492) (semantic-list "(0)" 4493 . 4496)))
+          ("MAX_LOCKDEP_CHAIN_HLOCKS" . ((semantic-list "(MAX_LOCKDEP_CHAINS*5)" 1624 . 1646)))
+          )
+)
     (semanticdb-table "cgroup.c"
       :major-mode 'c-mode
       :tags 
@@ -5909,7 +6119,7 @@
       :pointmax 46767
       :fsize 46766
       :lastmodtime '(21976 3069 204725 537000)
-      :unmatched-syntax '((VOID 40849 . 40853) (punctuation 37759 . 37760) (punctuation 37725 . 37726) (punctuation 26169 . 26170) (punctuation 24873 . 24874) (string 12418 . 12436) (INT 12247 . 12250) (STATIC 12240 . 12246) (VOID 6174 . 6178) (symbol 6128 . 6134) (VOID 6123 . 6127) (VOID 3313 . 3317) (VOID 2900 . 2904))
+      :unmatched-syntax '((thing 24873 . 24874) (thing 12418 . 12436) (thing 12247 . 12250) (thing 12240 . 12246) (thing 6174 . 6178) (thing 6128 . 6134) (thing 6123 . 6127) (thing 3313 . 3317) (thing 2900 . 2904) (thing 26169 . 26170) (thing 37725 . 37726) (thing 37759 . 37760) (thing 40849 . 40853))
       :lexical-table 
         '(("CREATE_TRACE_POINTS")
           ("ARCH_MIN_MMSTRUCT_ALIGN" . ((number "0" 40674 . 40675)))
@@ -10905,6 +11115,2923 @@
       :unmatched-syntax '((thing 45699 . 45702) (thing 45165 . 45169) (thing 42077 . 42078) (thing 42077 . 42078) (thing 42043 . 42044) (thing 42043 . 42044) (thing 41032 . 41033) (thing 41032 . 41033) (thing 40351 . 40355) (thing 40351 . 40355) (thing 40121 . 40122) (thing 40121 . 40122) (thing 39575 . 39578) (thing 39575 . 39578) (thing 39568 . 39574) (thing 39568 . 39574) (thing 2369 . 2370) (thing 2369 . 2370) (thing 1742 . 2369) (thing 1742 . 2369) (thing 1740 . 1741) (thing 1740 . 1741) (thing 1699 . 1739) (thing 1699 . 1739) (thing 1685 . 1699) (thing 1685 . 1699) (thing 47707 . 47710) (thing 48707 . 48710))
       :lexical-table 
         '(("switch_hrtimer_base" (spp-arg-list ("t" "b" "p") 7103 . 7112) . ((semantic-list "(b)" 7113 . 7116)))
+          )
+)
+    (semanticdb-table "params.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kernel.h" include (:system-flag t) nil [818 843])
+            ("linux/string.h" include (:system-flag t) nil [844 869])
+            ("linux/errno.h" include (:system-flag t) nil [870 894])
+            ("linux/module.h" include (:system-flag t) nil [895 920])
+            ("linux/device.h" include (:system-flag t) nil [921 946])
+            ("linux/err.h" include (:system-flag t) nil [947 969])
+            ("linux/slab.h" include (:system-flag t) nil [970 993])
+            ("linux/ctype.h" include (:system-flag t) nil [994 1018])
+            ("DEFINE_MUTEX" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("param_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1110 1121]))                  
+                :type "int")
+                nil [1090 1122])
+            ("kmalloced_param" type
+               (:members 
+                  ( ("list" variable (:type ("list_head" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1225 1247])
+                    ("val" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1249 1260]))                  
+                :type "struct")
+                nil [1199 1263])
+            ("LIST_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("kmalloced_params" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1281 1298]))                  
+                :type "int")
+                nil [1264 1299])
+            ("kmalloc_parameter" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [1332 1350]))                  
+                :type "void")
+                nil [1301 1509])
+            ("maybe_kfree_parameter" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("param" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1601 1613]))                  
+                :type "void")
+                nil [1567 1775])
+            ("dash2underscore" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [1805 1812]))                  
+                :type "char")
+                nil [1777 1856])
+            ("parameqn" function
+               (:arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1872 1886])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1887 1901])
+                    ("n" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1902 1911]))                  
+                :type "bool")
+                nil [1858 2042])
+            ("parameq" function
+               (:arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2057 2071])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2072 2086]))                  
+                :type "bool")
+                nil [2044 2127])
+            ("parse_one" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("param" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2150 2162])
+                    ("val" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2170 2180])
+                    ("doing" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2188 2206])
+                    ("params" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2214 2248])
+                    ("num_params" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [2256 2276])
+                    ("min_level" variable (:type ("s16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2284 2298])
+                    ("max_level" variable (:type ("s16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2306 2320])
+                    ("handle_unknown" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("param" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2350 2362])
+                            ("val" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2363 2373])
+                            ("doing" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2383 2401]))                          
+                        :type "int")
+                        nil nil))                  
+                :type "int")
+                nil [2129 3387])
+            ("next_arg" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("args" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3527 3538])
+                    ("param" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3539 3552])
+                    ("val" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3553 3564]))                  
+                :type "char")
+                nil [3505 4578])
+            ("parse_args" function
+               (:arguments 
+                  ( ("doing" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4645 4663])
+                    ("args" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4672 4683])
+                    ("params" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4692 4726])
+                    ("num" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [4735 4748])
+                    ("min_level" variable (:type ("s16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4757 4771])
+                    ("max_level" variable (:type ("s16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4780 4794])
+                    ("unknown" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("param" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4818 4830])
+                            ("val" variable
+                               (:pointer 1
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4831 4841])
+                            ("doing" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [4842 4860]))                          
+                        :type "int")
+                        nil nil))                  
+                :type "int")
+                nil [4630 5905])
+            ("STANDARD_PARAM_DEF" variable (:constant-flag t) nil [5939 5957])
+            ("param_set_byte" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6724 6796])
+            ("param_get_byte" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6724 6796])
+            ("param_ops_byte" variable
+               (:default-value "STANDARD_PARAM_DEF(byte, unsigned char, \"%hhu\", unsigned long, kstrtoul)"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6724 6796])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("byte" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6724 6796])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("byte" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6724 6796])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("byte" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6724 6797])
+            ("param_set_short" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6798 6852])
+            ("param_get_short" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6798 6852])
+            ("param_ops_short" variable
+               (:default-value "STANDARD_PARAM_DEF(short, short, \"%hi\", long, kstrtol)"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6798 6852])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type "short") (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6798 6852])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type "short") (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6798 6852])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type "short") (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6798 6853])
+            ("param_set_ushort" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6854 6928])
+            ("param_get_ushort" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6854 6928])
+            ("param_ops_ushort" variable
+               (:default-value "STANDARD_PARAM_DEF(ushort, unsigned short, \"%hu\", unsigned long, kstrtoul)"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6854 6928])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("ushort" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6854 6928])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("ushort" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6854 6928])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("ushort" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6854 6929])
+            ("param_set_int" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6930 6979])
+            ("param_get_int" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6930 6979])
+            ("param_ops_int" variable
+               (:default-value "STANDARD_PARAM_DEF(int, int, \"%i\", long, kstrtol)"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6930 6979])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6930 6979])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6930 6979])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type "int") (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6930 6980])
+            ("param_set_uint" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6981 7050])
+            ("param_get_uint" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6981 7050])
+            ("param_ops_uint" variable
+               (:default-value "STANDARD_PARAM_DEF(uint, unsigned int, \"%u\", unsigned long, kstrtoul)"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6981 7050])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6981 7050])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6981 7050])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("uint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [6981 7051])
+            ("param_set_long" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7052 7104])
+            ("param_get_long" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7052 7104])
+            ("param_ops_long" variable
+               (:default-value "STANDARD_PARAM_DEF(long, long, \"%li\", long, kstrtol)"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7052 7104])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type "long") (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7052 7104])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type "long") (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7052 7104])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type "long") (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7052 7105])
+            ("param_set_ulong" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7106 7178])
+            ("param_get_ulong" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) nil)
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7106 7178])
+            ("param_ops_ulong" variable
+               (:default-value "STANDARD_PARAM_DEF(ulong, unsigned long, \"%lu\", unsigned long, kstrtoul)"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7106 7178])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("ulong" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7106 7178])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("ulong" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7106 7178])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("" variable (:type ("ulong" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil [7106 7179])
+            ("param_set_charp" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7201 7217])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7218 7248]))                  
+                :type "int")
+                nil [7181 7737])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_charp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7752 7768]))                  
+                :type "int")
+                nil [7738 7769])
+            ("param_get_charp" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7791 7804])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7805 7835]))                  
+                :type "int")
+                nil [7771 7904])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_charp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7919 7935]))                  
+                :type "int")
+                nil [7905 7936])
+            ("param_free_charp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7967 7977]))                  
+                :type "void")
+                nil [7938 8022])
+            ("param_ops_charp" variable
+               (:default-value "{
+	.set = param_set_charp,
+	.get = param_get_charp,
+	.free = param_free_charp,
+}"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8024 8147])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_charp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8162 8178]))                  
+                :type "int")
+                nil [8148 8179])
+            ("param_set_bool" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8266 8282])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8283 8313]))                  
+                :type "int")
+                nil [8247 8429])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8444 8459]))                  
+                :type "int")
+                nil [8430 8460])
+            ("param_get_bool" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8481 8494])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8495 8525]))                  
+                :type "int")
+                nil [8462 8651])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8666 8681]))                  
+                :type "int")
+                nil [8652 8682])
+            ("param_ops_bool" variable
+               (:default-value "{
+	.flags = KERNEL_PARAM_FL_NOARG,
+	.set = param_set_bool,
+	.get = param_get_bool,
+}"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8684 8810])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_bool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8825 8840]))                  
+                :type "int")
+                nil [8811 8841])
+            ("param_set_invbool" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8894 8910])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8911 8941]))                  
+                :type "int")
+                nil [8872 9117])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_invbool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9132 9150]))                  
+                :type "int")
+                nil [9118 9151])
+            ("param_get_invbool" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9175 9188])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9189 9219]))                  
+                :type "int")
+                nil [9153 9286])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_invbool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9301 9319]))                  
+                :type "int")
+                nil [9287 9320])
+            ("param_ops_invbool" variable
+               (:default-value "{
+	.set = param_set_invbool,
+	.get = param_get_invbool,
+}"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9322 9424])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_invbool" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9439 9457]))                  
+                :type "int")
+                nil [9425 9458])
+            ("param_set_bint" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9479 9495])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9496 9526]))                  
+                :type "int")
+                nil [9460 9744])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_bint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9759 9774]))                  
+                :type "int")
+                nil [9745 9775])
+            ("param_ops_bint" variable
+               (:default-value "{
+	.flags = KERNEL_PARAM_FL_NOARG,
+	.set = param_set_bint,
+	.get = param_get_int,
+}"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9777 9902])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_bint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9917 9932]))                  
+                :type "int")
+                nil [9903 9933])
+            ("param_array" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10005 10022])
+                    ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10032 10048])
+                    ("min" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10058 10075])
+                    ("max" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [10076 10093])
+                    ("elem" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10103 10114])
+                    ("elemsize" variable (:type "int") (reparse-symbol arg-sub-list) [10115 10128])
+                    ("set" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [10149 10162])
+                            ("kp" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type ("kernel_param" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [10163 10193]))                          
+                        :type "int")
+                        nil nil)
+                    ("level" variable (:type ("s16" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10204 10214])
+                    ("num" variable
+                       (:pointer 1
+                        :type "unsigned int")
+                        (reparse-symbol arg-sub-list) [10224 10242]))                  
+                :type "int")
+                nil [9982 10955])
+            ("param_array_set" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10984 11000])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11001 11031]))                  
+                :type "int")
+                nil [10957 11239])
+            ("param_array_get" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11268 11281])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11282 11312]))                  
+                :type "int")
+                nil [11241 11714])
+            ("param_array_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [11745 11755]))                  
+                :type "void")
+                nil [11716 11945])
+            ("param_array_ops" variable
+               (:default-value "{
+	.set = param_array_set,
+	.get = param_array_get,
+	.free = param_array_free,
+}"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11947 12070])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_array_ops" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12085 12101]))                  
+                :type "int")
+                nil [12071 12102])
+            ("param_set_copystring" function
+               (:arguments 
+                  ( ("val" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12129 12145])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12146 12176]))                  
+                :type "int")
+                nil [12104 12405])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_set_copystring" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12420 12441]))                  
+                :type "int")
+                nil [12406 12442])
+            ("param_get_string" function
+               (:arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12465 12478])
+                    ("kp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12479 12509]))                  
+                :type "int")
+                nil [12444 12608])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_get_string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12623 12640]))                  
+                :type "int")
+                nil [12609 12641])
+            ("param_ops_string" variable
+               (:default-value "{
+	.set = param_set_copystring,
+	.get = param_get_string,
+}"
+                :type ("kernel_param_ops" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12643 12746])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("param_ops_string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12761 12778]))                  
+                :type "int")
+                nil [12747 12779])
+            ("to_module_attr" variable (:constant-flag t) nil [12840 12854])
+            ("to_module_kobject" variable (:constant-flag t) nil [12913 12930])
+            ("__start___param" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("kernel_param" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12980 13043])
+            ("__stop___param" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("kernel_param" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12980 13043])
+            ("param_attribute" type
+               (:members 
+                  ( ("mattr" variable (:type ("module_attribute" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [13071 13101])
+                    ("param" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("kernel_param" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [13103 13136]))                  
+                :type "struct")
+                nil [13045 13139])
+            ("module_param_attrs" type
+               (:members 
+                  ( ("num" variable (:type "unsigned int") (reparse-symbol classsubparts) [13170 13187])
+                    ("grp" variable (:type ("attribute_group" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [13189 13216])
+                    ("attrs" variable
+                       (:dereference 1
+                        :type ("param_attribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [13218 13250]))                  
+                :type "struct")
+                nil [13141 13253])
+            ("__modinit" variable (:constant-flag t) nil [14312 14321]))          
+      :file "params.c"
+      :pointmax 23279
+      :fsize 23620
+      :lastmodtime '(21976 19959 15896 910000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__modinit" . ((symbol "__init" 14322 . 14328)))
+          ("to_module_attr" (spp-arg-list ("n") 12854 . 12857) . ((symbol "container_of" 12858 . 12870) (semantic-list "(n, struct module_attribute, attr)" 12870 . 12904)))
+          ("STANDARD_PARAM_DEF" (spp-arg-list ("name" "type" "format" "tmptype" "strtolfn") 5957 . 5996) . 
+              ((INT "int" 6006 . 6009) (spp-symbol-merge ((symbol "param_set_" 6010 . 6020) (symbol "name" 6022 . 6026)) 6010 . 6026) (semantic-list "(const char *val, const struct kernel_param *kp)" 6026 . 6074) (semantic-list "{								\\
+		tmptype l;						\\
+		int ret;						\\
+									\\
+		ret = strtolfn(val, 0, &l);				\\
+		if (ret < 0 || ((type)l != l))				\\
+			return ret < 0 ? ret : -EINVAL;			\\
+		*((type *)kp->arg) = l;					\\
+		return 0;						\\
+	}" 6078 . 6303) (INT "int" 6314 . 6317) (spp-symbol-merge ((symbol "param_get_" 6318 . 6328) (symbol "name" 6330 . 6334)) 6318 . 6334) (semantic-list "(char *buffer, const struct kernel_param *kp)" 6334 . 6379) (semantic-list "{								\\
+		return scnprintf(buffer, PAGE_SIZE, format,		\\
+				*((type *)kp->arg));			\\
+	}" 6383 . 6474) (STRUCT "struct" 6485 . 6491) (symbol "kernel_param_ops" 6492 . 6508) (spp-symbol-merge ((symbol "param_ops_" 6509 . 6519) (symbol "name" 6521 . 6525)) 6509 . 6525) (punctuation "=" 6526 . 6527) (semantic-list "{			\\
+		.set = param_set_##name,				\\
+		.get = param_get_##name,				\\
+	}" 6528 . 6600) (punctuation ";" 6600 . 6601) (symbol "EXPORT_SYMBOL" 6612 . 6625) (semantic-list "(param_set_##name)" 6625 . 6643) (punctuation ";" 6643 . 6644) (symbol "EXPORT_SYMBOL" 6651 . 6664) (semantic-list "(param_get_##name)" 6664 . 6682) (punctuation ";" 6682 . 6683) (symbol "EXPORT_SYMBOL" 6690 . 6703) (semantic-list "(param_ops_##name)" 6703 . 6721)))
+          ("to_module_kobject" (spp-arg-list ("n") 12930 . 12933) . ((symbol "container_of" 12934 . 12946) (semantic-list "(n, struct module_kobject, kobj)" 12946 . 12978)))
+          )
+)
+    (semanticdb-table "pid.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/mm.h" include (:system-flag t) nil [1186 1207])
+            ("linux/export.h" include (:system-flag t) nil [1208 1233])
+            ("linux/slab.h" include (:system-flag t) nil [1234 1257])
+            ("linux/init.h" include (:system-flag t) nil [1258 1281])
+            ("linux/rculist.h" include (:system-flag t) nil [1282 1308])
+            ("linux/bootmem.h" include (:system-flag t) nil [1309 1335])
+            ("linux/hash.h" include (:system-flag t) nil [1336 1359])
+            ("linux/pid_namespace.h" include (:system-flag t) nil [1360 1392])
+            ("linux/init_task.h" include (:system-flag t) nil [1393 1421])
+            ("linux/syscalls.h" include (:system-flag t) nil [1422 1449])
+            ("linux/proc_ns.h" include (:system-flag t) nil [1450 1476])
+            ("linux/proc_fs.h" include (:system-flag t) nil [1477 1503])
+            ("pid_hashfn" variable (:constant-flag t) nil [1513 1523])
+            ("pid_hash" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("hlist_head" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1599 1634])
+            ("pidhash_shift" variable
+               (:typemodifiers ("static")
+                :default-value "4"
+                :type "unsigned int")
+                nil [1635 1673])
+            ("init_struct_pid" variable
+               (:default-value "INIT_STRUCT_PID"
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1674 1719])
+            ("pid_max" variable
+               (:default-value "PID_MAX_DEFAULT"
+                :type "int")
+                nil [1721 1751])
+            ("RESERVED_PIDS" variable (:constant-flag t) nil [1761 1774])
+            ("pid_max_min" variable
+               (:default-value "RESERVED_PIDS + 1"
+                :type "int")
+                nil [1781 1817])
+            ("pid_max_max" variable
+               (:default-value "PID_MAX_LIMIT"
+                :type "int")
+                nil [1818 1850])
+            ("mk_pid" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("pid_ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1877 1906])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("pidmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1909 1928])
+                    ("off" variable (:type "int") (reparse-symbol arg-sub-list) [1929 1937]))                  
+                :type "int")
+                nil [1852 1993])
+            ("find_next_offset" variable (:constant-flag t) nil [2003 2019])
+            ("init_pid_ns" variable
+               (:default-value "{
+	.kref = {
+		.refcount       = ATOMIC_INIT(2),
+	},
+	.pidmap = {
+		[ 0 ... PIDMAP_ENTRIES-1] = { ATOMIC_INIT(BITS_PER_PAGE), NULL }
+	},
+	.last_pid = 0,
+	.nr_hashed = PIDNS_HASH_ADDING,
+	.level = 0,
+	.child_reaper = &init_task,
+	.user_ns = &init_user_ns,
+	.proc_inum = PROC_PID_INIT_INO,
+}"
+                :type ("pid_namespace" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2337 2662])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("init_pid_ns" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2681 2693]))                  
+                :type "int")
+                nil [2663 2694])
+            ("DEFINE_SPINLOCK" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("pidmap_lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3301 3313]))                  
+                :type ("__cacheline_aligned_in_smp" type (:type "class") nil nil))
+                nil [3250 3314])
+            ("free_pidmap" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("upid" variable
+                       (:pointer 1
+                        :type ("upid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3340 3358]))                  
+                :type "void")
+                nil [3316 3542])
+            ("pid_before" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("base" variable (:type "int") (reparse-symbol arg-sub-list) [3638 3647])
+                    ("a" variable (:type "int") (reparse-symbol arg-sub-list) [3648 3654])
+                    ("b" variable (:type "int") (reparse-symbol arg-sub-list) [3655 3661]))                  
+                :type "int")
+                nil [3616 3894])
+            ("set_last_pid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pid_ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4563 4592])
+                    ("base" variable (:type "int") (reparse-symbol arg-sub-list) [4593 4602])
+                    ("pid" variable (:type "int") (reparse-symbol arg-sub-list) [4603 4611]))                  
+                :type "void")
+                nil [4538 4803])
+            ("alloc_pidmap" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pid_ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4829 4858]))                  
+                :type "int")
+                nil [4805 6324])
+            ("next_pidmap" function
+               (:arguments 
+                  ( ("pid_ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6342 6371])
+                    ("last" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [6372 6390]))                  
+                :type "int")
+                nil [6326 6837])
+            ("put_pid" function
+               (:arguments 
+                  ( ("pid" variable
+                       (:pointer 1
+                        :type ("pid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6852 6868]))                  
+                :type "void")
+                nil [6839 7100])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("put_pid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7119 7127]))                  
+                :type "int")
+                nil [7101 7128])
+            ("delayed_put_pid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("rhp" variable
+                       (:pointer 1
+                        :type ("rcu_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7158 7179]))                  
+                :type "void")
+                nil [7130 7253])
+            ("free_pid" function
+               (:arguments 
+                  ( ("pid" variable
+                       (:pointer 1
+                        :type ("pid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7269 7285]))                  
+                :type "void")
+                nil [7255 8198])
+            ("alloc_pid" function
+               (:pointer 1
+                :arguments 
+                  ( ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8222 8247]))                  
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8200 9371])
+            ("disable_pid_allocation" function
+               (:arguments 
+                  ( ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9401 9426]))                  
+                :type "void")
+                nil [9373 9530])
+            ("find_pid_ns" function
+               (:pointer 1
+                :arguments 
+                  ( ("nr" variable (:type "int") (reparse-symbol arg-sub-list) [9556 9563])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9564 9589]))                  
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9532 9808])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("find_pid_ns" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9827 9839]))                  
+                :type "int")
+                nil [9809 9840])
+            ("find_vpid" function
+               (:pointer 1
+                :arguments 
+                  ( ("nr" variable (:type "int") (reparse-symbol arg-sub-list) [9864 9871]))                  
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9842 9929])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("find_vpid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9948 9958]))                  
+                :type "int")
+                nil [9930 9959])
+            ("attach_pid" function
+               (:arguments 
+                  ( ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10050 10075])
+                    ("type" variable (:type ("pid_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [10076 10095]))                  
+                :type "void")
+                nil [10034 10202])
+            ("__change_pid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10229 10254])
+                    ("type" variable (:type ("pid_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [10255 10274])
+                    ("" variable
+                       (:pointer 1
+                        :type ("pid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10278 10293]))                  
+                :type "void")
+                nil [10204 10550])
+            ("detach_pid" function
+               (:arguments 
+                  ( ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10568 10593])
+                    ("type" variable (:type ("pid_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [10594 10613]))                  
+                :type "void")
+                nil [10552 10650])
+            ("change_pid" function
+               (:arguments 
+                  ( ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10668 10693])
+                    ("type" variable (:type ("pid_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [10694 10713])
+                    ("pid" variable
+                       (:pointer 1
+                        :type ("pid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10716 10732]))                  
+                :type "void")
+                nil [10652 10793])
+            ("transfer_pid" function
+               (:arguments 
+                  ( ("old" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10887 10911])
+                    ("" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10912 10935])
+                    ("type" variable (:type ("pid_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [10943 10962]))                  
+                :type "void")
+                nil [10869 11076])
+            ("pid_task" function
+               (:pointer 1
+                :arguments 
+                  ( ("pid" variable
+                       (:pointer 1
+                        :type ("pid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11107 11123])
+                    ("type" variable (:type ("pid_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [11124 11143]))                  
+                :type ("task_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11078 11439])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pid_task" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11454 11463]))                  
+                :type "int")
+                nil [11440 11464])
+            ("find_task_by_pid_ns" function
+               (:pointer 1
+                :arguments 
+                  ( ("nr" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11554 11563])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11564 11589]))                  
+                :type ("task_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11514 11761])
+            ("find_task_by_vpid" function
+               (:pointer 1
+                :arguments 
+                  ( ("vnr" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11801 11811]))                  
+                :type ("task_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11763 11878])
+            ("get_task_pid" function
+               (:pointer 1
+                :arguments 
+                  ( ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11905 11930])
+                    ("type" variable (:type ("pid_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [11931 11950]))                  
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11880 12116])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_task_pid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12135 12148]))                  
+                :type "int")
+                nil [12117 12149])
+            ("get_pid_task" function
+               (:pointer 1
+                :arguments 
+                  ( ("pid" variable
+                       (:pointer 1
+                        :type ("pid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12184 12200])
+                    ("type" variable (:type ("pid_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [12201 12220]))                  
+                :type ("task_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12151 12378])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_pid_task" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12397 12410]))                  
+                :type "int")
+                nil [12379 12411])
+            ("find_get_pid" function
+               (:pointer 1
+                :arguments 
+                  ( ("nr" variable (:type ("pid_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12438 12447]))                  
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12413 12553])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("find_get_pid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12572 12585]))                  
+                :type "int")
+                nil [12554 12586])
+            ("pid_nr_ns" function
+               (:arguments 
+                  ( ("pid" variable
+                       (:pointer 1
+                        :type ("pid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12604 12620])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12621 12646]))                  
+                :type ("pid_t" type (:type "class") nil nil))
+                nil [12588 12815])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pid_nr_ns" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12834 12844]))                  
+                :type "int")
+                nil [12816 12845])
+            ("pid_vnr" function
+               (:arguments 
+                  ( ("pid" variable
+                       (:pointer 1
+                        :type ("pid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12861 12877]))                  
+                :type ("pid_t" type (:type "class") nil nil))
+                nil [12847 12934])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("pid_vnr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12953 12961]))                  
+                :type "int")
+                nil [12935 12962])
+            ("__task_pid_nr_ns" function
+               (:arguments 
+                  ( ("task" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12987 13012])
+                    ("type" variable (:type ("pid_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [13013 13032])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13036 13061]))                  
+                :type ("pid_t" type (:type "class") nil nil))
+                nil [12964 13314])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__task_pid_nr_ns" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13329 13346]))                  
+                :type "int")
+                nil [13315 13347])
+            ("task_tgid_nr_ns" function
+               (:arguments 
+                  ( ("tsk" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13371 13395])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13396 13421]))                  
+                :type ("pid_t" type (:type "class") nil nil))
+                nil [13349 13464])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("task_tgid_nr_ns" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13479 13495]))                  
+                :type "int")
+                nil [13465 13496])
+            ("task_active_pid_ns" function
+               (:pointer 1
+                :arguments 
+                  ( ("tsk" variable
+                       (:pointer 1
+                        :type ("task_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13539 13563]))                  
+                :type ("pid_namespace" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13498 13601])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("task_active_pid_ns" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13620 13639]))                  
+                :type "int")
+                nil [13602 13640])
+            ("find_ge_pid" function
+               (:pointer 1
+                :arguments 
+                  ( ("nr" variable (:type "int") (reparse-symbol arg-sub-list) [13828 13835])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("pid_namespace" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13836 13861]))                  
+                :type ("pid" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13804 14001])
+            ("pidhash_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14193 14198]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [14173 14491])
+            ("pidmap_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [14517 14522]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [14498 15220]))          
+      :file "pid.c"
+      :pointmax 15221
+      :fsize 15220
+      :lastmodtime '(21976 3069 212725 537000)
+      :unmatched-syntax '((VOID 14493 . 14497) (VOID 14168 . 14172) (NEW 10932 . 10935) (NEW 10290 . 10293))
+      :lexical-table 
+        '(("RESERVED_PIDS" . ((number "300" 1776 . 1779)))
+          ("find_next_offset" (spp-arg-list ("map" "off") 2019 . 2029) . ((symbol "find_next_zero_bit" 2038 . 2056) (semantic-list "((map)->page, BITS_PER_PAGE, off)" 2056 . 2089)))
+          ("pid_hashfn" (spp-arg-list ("nr" "ns") 1523 . 1531) . ((symbol "hash_long" 1535 . 1544) (semantic-list "((unsigned long)nr + (unsigned long)ns, pidhash_shift)" 1544 . 1598)))
+          )
+)
+    (semanticdb-table "extable.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/ftrace.h" include (:system-flag t) nil [848 873])
+            ("linux/memory.h" include (:system-flag t) nil [874 899])
+            ("linux/module.h" include (:system-flag t) nil [900 925])
+            ("linux/mutex.h" include (:system-flag t) nil [926 950])
+            ("linux/init.h" include (:system-flag t) nil [951 974])
+            ("asm/sections.h" include (:system-flag t) nil [976 1001])
+            ("asm/uaccess.h" include (:system-flag t) nil [1002 1026])
+            ("DEFINE_MUTEX" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("text_mutex" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1279 1290]))                  
+                :type "int")
+                nil [1266 1291])
+            ("__start___ex_table" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("exception_table_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1293 1350])
+            ("__stop___ex_table" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :type ("exception_table_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1351 1407])
+            ("main_extable_sort_needed" variable
+               (:default-value "1"
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1479 1519])
+            ("sort_main_extable" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1600 1605]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1575 1782])
+            ("search_exception_tables" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [1905 1924]))                  
+                :type ("exception_table_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1845 2093])
+            ("init_kernel_text" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2130 2149]))                  
+                :type "int")
+                nil [2095 2258])
+            ("core_kernel_text" function
+               (:arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2281 2300]))                  
+                :type "int")
+                nil [2260 2482])
+            ("core_kernel_data" function
+               (:arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2805 2824]))                  
+                :type "int")
+                nil [2784 2924])
+            ("__kernel_text_address" function
+               (:arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [2952 2971]))                  
+                :type "int")
+                nil [2926 3363])
+            ("kernel_text_address" function
+               (:arguments 
+                  ( ("addr" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3389 3408]))                  
+                :type "int")
+                nil [3365 3491])
+            ("func_ptr_is_kernel_text" function
+               (:arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3797 3807]))                  
+                :type "int")
+                nil [3769 3973]))          
+      :file "extable.c"
+      :pointmax 3974
+      :fsize 3973
+      :lastmodtime '(21976 3069 204725 537000)
+      :unmatched-syntax nil)
+    (semanticdb-table "smp.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/rcupdate.h" include (:system-flag t) nil [95 122])
+            ("linux/rculist.h" include (:system-flag t) nil [123 149])
+            ("linux/kernel.h" include (:system-flag t) nil [150 175])
+            ("linux/export.h" include (:system-flag t) nil [176 201])
+            ("linux/percpu.h" include (:system-flag t) nil [202 227])
+            ("linux/init.h" include (:system-flag t) nil [228 251])
+            ("linux/gfp.h" include (:system-flag t) nil [252 274])
+            ("linux/smp.h" include (:system-flag t) nil [275 297])
+            ("linux/cpu.h" include (:system-flag t) nil [298 320])
+            ("smpboot.h" include nil nil [322 342])
+            ("setup_max_cpus" variable
+               (:default-value "NR_CPUS"
+                :type "unsigned int")
+                nil [12466 12504])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("setup_max_cpus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12519 12534]))                  
+                :type "int")
+                nil [12505 12535])
+            ("arch_disable_smp_support" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12928 12933]))                  
+                :type ("__weak" type (:type "class") nil nil))
+                nil [12896 12937])
+            ("nosmp" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12963 12973]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [12950 13039])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("nosmp" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13062 13068]))                  
+                :type "int")
+                nil [13041 13069])
+            ("nrcpus" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13121 13131]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13107 13257])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("nrcpus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13282 13289]))                  
+                :type "int")
+                nil [13259 13290])
+            ("maxcpus" function
+               (:arguments 
+                  ( ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13318 13328]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13303 13436])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("maxcpus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13461 13469]))                  
+                :type "int")
+                nil [13438 13470])
+            ("__read_mostly" variable
+               (:default-value "NR_CPUS"
+                :type ("nr_cpu_ids" type (:type "class") nil nil))
+                nil [13521 13556])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("nr_cpu_ids" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13571 13582]))                  
+                :type "int")
+                nil [13557 13583])
+            ("setup_nr_cpu_ids" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13693 13698]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13669 13776])
+            ("smp_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13852 13857]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13836 14207])
+            ("on_each_cpu" function
+               (:arguments 
+                  ( ("func" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("info" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [14429 14440]))                          
+                        :type "void")
+                        nil nil)
+                    ("info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14442 14453])
+                    ("wait" variable (:type "int") (reparse-symbol arg-sub-list) [14454 14463]))                  
+                :type "int")
+                nil [14399 14664])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("on_each_cpu" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14679 14691]))                  
+                :type "int")
+                nil [14665 14692])
+            ("on_each_cpu_mask" function
+               (:arguments 
+                  ( ("mask" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("cpumask" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15417 15444])
+                    ("func" variable (:type ("smp_call_func_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15445 15466])
+                    ("info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [15470 15481])
+                    ("wait" variable (:type "bool") (reparse-symbol arg-sub-list) [15482 15492]))                  
+                :type "void")
+                nil [15395 15709])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("on_each_cpu_mask" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15724 15741]))                  
+                :type "int")
+                nil [15710 15742])
+            ("on_each_cpu_cond" function
+               (:arguments 
+                  ( ("cond_func" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [16965 16973])
+                            ("info" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [16974 16985]))                          
+                        :type "bool")
+                        nil nil)
+                    ("func" variable (:type ("smp_call_func_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16990 17011])
+                    ("info" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17012 17023])
+                    ("wait" variable (:type "bool") (reparse-symbol arg-sub-list) [17024 17034])
+                    ("gfp_flags" variable (:type ("gfp_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17038 17054]))                  
+                :type "void")
+                nil [16925 17709])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("on_each_cpu_cond" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17724 17741]))                  
+                :type "int")
+                nil [17710 17742])
+            ("do_nothing" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("unused" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [17767 17780]))                  
+                :type "void")
+                nil [17744 17784])
+            ("kick_all_cpus_sync" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [18294 18299]))                  
+                :type "void")
+                nil [18270 18418])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("kick_all_cpus_sync" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18437 18456]))                  
+                :type "int")
+                nil [18419 18457]))          
+      :file "smp.c"
+      :pointmax 18458
+      :fsize 18457
+      :lastmodtime '(21976 3069 220725 537000)
+      :unmatched-syntax '((VOID 13831 . 13835) (VOID 13664 . 13668) (INT 13517 . 13520) (string 13450 . 13459) (INT 13299 . 13302) (STATIC 13292 . 13298) (string 13271 . 13280) (INT 13103 . 13106) (STATIC 13096 . 13102) (string 13053 . 13060) (INT 12946 . 12949) (STATIC 12939 . 12945) (VOID 12891 . 12895)))
+    (semanticdb-table "smpboot.h"
+      :file "smpboot.h"
+      :fsize 564
+      :lastmodtime '(21976 3069 220725 537000))
+    (semanticdb-table "timer.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/kernel_stat.h" include (:system-flag t) nil [900 930])
+            ("linux/export.h" include (:system-flag t) nil [931 956])
+            ("linux/interrupt.h" include (:system-flag t) nil [957 985])
+            ("linux/percpu.h" include (:system-flag t) nil [986 1011])
+            ("linux/init.h" include (:system-flag t) nil [1012 1035])
+            ("linux/mm.h" include (:system-flag t) nil [1036 1057])
+            ("linux/swap.h" include (:system-flag t) nil [1058 1081])
+            ("linux/pid_namespace.h" include (:system-flag t) nil [1082 1114])
+            ("linux/notifier.h" include (:system-flag t) nil [1115 1142])
+            ("linux/thread_info.h" include (:system-flag t) nil [1143 1173])
+            ("linux/time.h" include (:system-flag t) nil [1174 1197])
+            ("linux/jiffies.h" include (:system-flag t) nil [1198 1224])
+            ("linux/posix-timers.h" include (:system-flag t) nil [1225 1256])
+            ("linux/cpu.h" include (:system-flag t) nil [1257 1279])
+            ("linux/syscalls.h" include (:system-flag t) nil [1280 1307])
+            ("linux/delay.h" include (:system-flag t) nil [1308 1332])
+            ("linux/tick.h" include (:system-flag t) nil [1333 1356])
+            ("linux/kallsyms.h" include (:system-flag t) nil [1357 1384])
+            ("linux/irq_work.h" include (:system-flag t) nil [1385 1412])
+            ("linux/sched.h" include (:system-flag t) nil [1413 1437])
+            ("linux/sched/sysctl.h" include (:system-flag t) nil [1438 1469])
+            ("linux/slab.h" include (:system-flag t) nil [1470 1493])
+            ("linux/compat.h" include (:system-flag t) nil [1494 1519])
+            ("asm/uaccess.h" include (:system-flag t) nil [1521 1545])
+            ("asm/unistd.h" include (:system-flag t) nil [1546 1569])
+            ("asm/div64.h" include (:system-flag t) nil [1570 1592])
+            ("asm/timex.h" include (:system-flag t) nil [1593 1615])
+            ("asm/io.h" include (:system-flag t) nil [1616 1635])
+            ("CREATE_TRACE_POINTS" variable (:constant-flag t) nil [1645 1664])
+            ("trace/events/timer.h" include (:system-flag t) nil [1665 1696])
+            ("__cacheline_aligned_in_smp" variable
+               (:default-value "INITIAL_JIFFIES"
+                :type ("jiffies_64" type (:type "class") nil nil))
+                nil [1702 1758])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("jiffies_64" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1774 1785]))                  
+                :type "int")
+                nil [1760 1786])
+            ("TVN_BITS" variable (:constant-flag t) nil [1840 1848])
+            ("TVR_BITS" variable (:constant-flag t) nil [1885 1893])
+            ("TVN_SIZE" variable (:constant-flag t) nil [1930 1938])
+            ("TVR_SIZE" variable (:constant-flag t) nil [1963 1971])
+            ("TVN_MASK" variable (:constant-flag t) nil [1996 2004])
+            ("TVR_MASK" variable (:constant-flag t) nil [2028 2036])
+            ("MAX_TVAL" variable (:constant-flag t) nil [2060 2068])
+            ("tvec" type
+               (:members 
+                  ( ("vec" variable
+                       (:dereference 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2142 2173]))                  
+                :type "struct")
+                nil [2127 2176])
+            ("tvec_root" type
+               (:members 
+                  ( ("vec" variable
+                       (:dereference 1
+                        :type ("list_head" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2198 2229]))                  
+                :type "struct")
+                nil [2178 2232])
+            ("____cacheline_aligned" variable (:type ("tvec_base" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [2234 2512])
+            ("tvec_base" type
+               (:members 
+                  ( ("lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2254 2270])
+                    ("running_timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2272 2305])
+                    ("timer_jiffies" variable (:type "unsigned long") (reparse-symbol classsubparts) [2307 2335])
+                    ("next_timer" variable (:type "unsigned long") (reparse-symbol classsubparts) [2337 2362])
+                    ("active_timers" variable (:type "unsigned long") (reparse-symbol classsubparts) [2364 2392])
+                    ("tv1" variable (:type ("tvec_root" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2394 2415])
+                    ("tv2" variable (:type ("tvec" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2417 2433])
+                    ("tv3" variable (:type ("tvec" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2435 2451])
+                    ("tv4" variable (:type ("tvec" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2453 2469])
+                    ("tv5" variable (:type ("tvec" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2471 2487]))                  
+                :type "struct")
+                nil [2234 2512])
+            ("boot_tvec_bases" variable (:type ("tvec_base" type
+                 (:prototype t
+                  :type "struct")
+                  nil nil)) nil [2514 2547])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("boot_tvec_bases" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2562 2578]))                  
+                :type "int")
+                nil [2548 2579])
+            ("boot_tvec_bases" variable (:type "int") nil [2636 2653])
+            ("tbase_get_deferrable" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2758 2781]))                  
+                :type "unsigned int")
+                nil [2710 2849])
+            ("tbase_get_irqsafe" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2896 2919]))                  
+                :type "unsigned int")
+                nil [2851 2984])
+            ("tbase_get_base" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3033 3056]))                  
+                :type ("tvec_base" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2986 3132])
+            ("timer_set_base" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3168 3193])
+                    ("new_base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3194 3221]))                  
+                :type "void")
+                nil [3134 3367])
+            ("round_jiffies_common" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("j" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [3411 3427])
+                    ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [3428 3436])
+                    ("force_up" variable (:type "bool") (reparse-symbol arg-sub-list) [3439 3453]))                  
+                :type "unsigned long")
+                nil [3369 4520])
+            ("__round_jiffies" function
+               (:arguments 
+                  ( ("j" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [5475 5491])
+                    ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [5492 5500]))                  
+                :type "unsigned long")
+                nil [5445 5549])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__round_jiffies" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5568 5584]))                  
+                :type "int")
+                nil [5550 5585])
+            ("__round_jiffies_relative" function
+               (:arguments 
+                  ( ("j" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [6564 6580])
+                    ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [6581 6589]))                  
+                :type "unsigned long")
+                nil [6525 6734])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__round_jiffies_relative" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6753 6778]))                  
+                :type "int")
+                nil [6735 6779])
+            ("round_jiffies" function
+               (:arguments 
+                  ( ("j" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [7481 7497]))                  
+                :type "unsigned long")
+                nil [7453 7565])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("round_jiffies" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7584 7598]))                  
+                :type "int")
+                nil [7566 7599])
+            ("round_jiffies_relative" function
+               (:arguments 
+                  ( ("j" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8325 8341]))                  
+                :type "unsigned long")
+                nil [8288 8406])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("round_jiffies_relative" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8425 8448]))                  
+                :type "int")
+                nil [8407 8449])
+            ("__round_jiffies_up" function
+               (:arguments 
+                  ( ("j" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [8905 8921])
+                    ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [8922 8930]))                  
+                :type "unsigned long")
+                nil [8872 8978])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__round_jiffies_up" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8997 9016]))                  
+                :type "int")
+                nil [8979 9017])
+            ("__round_jiffies_up_relative" function
+               (:arguments 
+                  ( ("j" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [9500 9516])
+                    ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [9517 9525]))                  
+                :type "unsigned long")
+                nil [9458 9669])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("__round_jiffies_up_relative" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9688 9716]))                  
+                :type "int")
+                nil [9670 9717])
+            ("round_jiffies_up" function
+               (:arguments 
+                  ( ("j" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [10104 10120]))                  
+                :type "unsigned long")
+                nil [10073 10187])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("round_jiffies_up" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10206 10223]))                  
+                :type "int")
+                nil [10188 10224])
+            ("round_jiffies_up_relative" function
+               (:arguments 
+                  ( ("j" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [10638 10654]))                  
+                :type "unsigned long")
+                nil [10598 10722])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("round_jiffies_up_relative" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10741 10767]))                  
+                :type "int")
+                nil [10723 10768])
+            ("set_timer_slack" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11285 11310])
+                    ("slack_hz" variable (:type "int") (reparse-symbol arg-sub-list) [11311 11324]))                  
+                :type "void")
+                nil [11264 11354])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("set_timer_slack" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11373 11389]))                  
+                :type "int")
+                nil [11355 11390])
+            ("__internal_add_timer" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11425 11448])
+                    ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11449 11474]))                  
+                :type "void")
+                nil [11392 12689])
+            ("internal_add_timer" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12722 12745])
+                    ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12746 12771]))                  
+                :type "void")
+                nil [12691 13034])
+            ("timer_stats_account_timer" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13688 13713]))                  
+                :type "void")
+                nil [13650 13716])
+            ("debug_timer_init" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17585 17610]))                  
+                :type "void")
+                nil [17549 17614])
+            ("debug_timer_activate" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17655 17680]))                  
+                :type "void")
+                nil [17615 17684])
+            ("debug_timer_deactivate" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17727 17752]))                  
+                :type "void")
+                nil [17685 17756])
+            ("debug_timer_assert_init" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17800 17825]))                  
+                :type "void")
+                nil [17757 17829])
+            ("debug_init" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17868 17893]))                  
+                :type "void")
+                nil [17838 17949])
+            ("debug_activate" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17985 18010])
+                    ("expires" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [18011 18033]))                  
+                :type "void")
+                nil [17951 18103])
+            ("debug_deactivate" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18141 18166]))                  
+                :type "void")
+                nil [18105 18230])
+            ("debug_assert_init" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18269 18294]))                  
+                :type "void")
+                nil [18232 18331])
+            ("do_init_timer" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18359 18384])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [18385 18404])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [18410 18427])
+                    ("key" variable
+                       (:pointer 1
+                        :type ("lock_class_key" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18428 18455]))                  
+                :type "void")
+                nil [18333 18802])
+            ("init_timer_key" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19161 19186])
+                    ("flags" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [19187 19206])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [19213 19230])
+                    ("key" variable
+                       (:pointer 1
+                        :type ("lock_class_key" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19231 19258]))                  
+                :type "void")
+                nil [19141 19323])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("init_timer_key" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19338 19353]))                  
+                :type "int")
+                nil [19324 19354])
+            ("detach_timer" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19388 19413])
+                    ("clear_pending" variable (:type "bool") (reparse-symbol arg-sub-list) [19414 19433]))                  
+                :type "void")
+                nil [19356 19617])
+            ("detach_expired_timer" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19659 19684])
+                    ("base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19685 19708]))                  
+                :type "void")
+                nil [19619 19806])
+            ("detach_if_pending" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19837 19862])
+                    ("base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19863 19886])
+                    ("clear_pending" variable (:type "bool") (reparse-symbol arg-sub-list) [19895 19914]))                  
+                :type "int")
+                nil [19808 20163])
+            ("__acquires" function
+               (:arguments 
+                  ( ("" variable (:type ("timer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20732 20738])
+                    ("" variable (:type ("base" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20739 20744])
+                    ("" variable (:type ("lock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20745 20750]))                  
+                :type "int")
+                nil [20721 21130])
+            ("__mod_timer" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21162 21187])
+                    ("expires" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [21188 21210])
+                    ("pending_only" variable (:type "bool") (reparse-symbol arg-sub-list) [21217 21235])
+                    ("pinned" variable (:type "int") (reparse-symbol arg-sub-list) [21236 21247]))                  
+                :type "int")
+                nil [21132 22489])
+            ("mod_timer_pending" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22844 22869])
+                    ("expires" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [22870 22892]))                  
+                :type "int")
+                nil [22822 22957])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("mod_timer_pending" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22972 22990]))                  
+                :type "int")
+                nil [22958 22991])
+            ("apply_slack" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23382 23407])
+                    ("expires" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [23408 23430]))                  
+                :type "unsigned long")
+                nil [23342 23881])
+            ("mod_timer" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24663 24688])
+                    ("expires" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [24689 24711]))                  
+                :type "int")
+                nil [24649 25040])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("mod_timer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25055 25065]))                  
+                :type "int")
+                nil [25041 25066])
+            ("mod_timer_pinned" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [25812 25837])
+                    ("expires" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [25838 25860]))                  
+                :type "int")
+                nil [25791 25991])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("mod_timer_pinned" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26006 26023]))                  
+                :type "int")
+                nil [25992 26024])
+            ("add_timer" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26487 26512]))                  
+                :type "void")
+                nil [26472 26582])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("add_timer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26597 26607]))                  
+                :type "int")
+                nil [26583 26608])
+            ("add_timer_on" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [26823 26848])
+                    ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [26849 26857]))                  
+                :type "void")
+                nil [26805 27569])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("add_timer_on" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27588 27601]))                  
+                :type "int")
+                nil [27570 27602])
+            ("del_timer" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27964 27989]))                  
+                :type "int")
+                nil [27950 28306])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("del_timer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28321 28331]))                  
+                :type "int")
+                nil [28307 28332])
+            ("try_to_del_timer_sync" function
+               (:arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28596 28621]))                  
+                :type "int")
+                nil [28570 28947])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("try_to_del_timer_sync" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28962 28984]))                  
+                :type "int")
+                nil [28948 28985])
+            ("cascade" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31314 31337])
+                    ("tv" variable
+                       (:pointer 1
+                        :type ("tvec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31338 31354])
+                    ("index" variable (:type "int") (reparse-symbol arg-sub-list) [31355 31365]))                  
+                :type "int")
+                nil [31295 31837])
+            ("call_timer_fn" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("timer" variable
+                       (:pointer 1
+                        :type ("timer_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [31865 31890])
+                    ("fn" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [31902 31916]))                          
+                        :type "void")
+                        nil nil)
+                    ("data" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [31923 31942]))                  
+                :type "void")
+                nil [31839 33089])
+            ("INDEX" variable (:constant-flag t) nil [33099 33104])
+            ("__run_timers" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("tvec_base" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33406 33429]))                  
+                :type "void")
+                nil [33374 34626])
+            ("update_process_times" function
+               (:arguments 
+                  ( ("user_tick" variable (:type "int") (reparse-symbol arg-sub-list) [38526 38540]))                  
+                :type "void")
+                nil [38500 38881])
+            ("run_timer_softirq" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("h" variable
+                       (:pointer 1
+                        :type ("softirq_action" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38990 39015]))                  
+                :type "void")
+                nil [38960 39172])
+            ("run_local_timers" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [39259 39264]))                  
+                :type "void")
+                nil [39237 39322])
+            ("process_timeout" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("__data" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [39591 39612]))                  
+                :type "void")
+                nil [39563 39664])
+            ("schedule_timeout" function
+               (:arguments 
+                  ( ("timeout" variable (:type "signed long") (reparse-symbol arg-sub-list) [40707 40727]))                  
+                :type ("__sched" type (:type "class") nil nil))
+                nil [40682 42004])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("schedule_timeout" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42019 42036]))                  
+                :type "int")
+                nil [42005 42037])
+            ("schedule_timeout_interruptible" function
+               (:arguments 
+                  ( ("timeout" variable (:type "signed long") (reparse-symbol arg-sub-list) [42202 42222]))                  
+                :type ("__sched" type (:type "class") nil nil))
+                nil [42163 42303])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("schedule_timeout_interruptible" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42318 42349]))                  
+                :type "int")
+                nil [42304 42350])
+            ("schedule_timeout_killable" function
+               (:arguments 
+                  ( ("timeout" variable (:type "signed long") (reparse-symbol arg-sub-list) [42398 42418]))                  
+                :type ("__sched" type (:type "class") nil nil))
+                nil [42364 42494])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("schedule_timeout_killable" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42509 42535]))                  
+                :type "int")
+                nil [42495 42536])
+            ("schedule_timeout_uninterruptible" function
+               (:arguments 
+                  ( ("timeout" variable (:type "signed long") (reparse-symbol arg-sub-list) [42591 42611]))                  
+                :type ("__sched" type (:type "class") nil nil))
+                nil [42550 42694])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("schedule_timeout_uninterruptible" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42709 42742]))                  
+                :type "int")
+                nil [42695 42743])
+            ("init_timers_cpu" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("cpu" variable (:type "int") (reparse-symbol arg-sub-list) [42772 42780]))                  
+                :type "int")
+                nil [42745 44038])
+            ("timer_cpu_notify" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("self" variable
+                       (:pointer 1
+                        :type ("notifier_block" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [45379 45407])
+                    ("action" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [45412 45433])
+                    ("hcpu" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [45434 45445]))                  
+                :type "int")
+                nil [45351 45788])
+            ("timers_nb" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.notifier_call	= timer_cpu_notify,
+}"
+                :type ("notifier_block" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [45790 45871])
+            ("init_timers" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [45898 45903]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [45879 46302])
+            ("msleep" function
+               (:arguments 
+                  ( ("msecs" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [46428 46447]))                  
+                :type "void")
+                nil [46416 46578])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("msleep" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46594 46601]))                  
+                :type "int")
+                nil [46580 46602])
+            ("msleep_interruptible" function
+               (:arguments 
+                  ( ("msecs" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [46744 46763]))                  
+                :type "unsigned long")
+                nil [46709 46955])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("msleep_interruptible" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [46971 46992]))                  
+                :type "int")
+                nil [46957 46993])
+            ("do_usleep_range" function
+               (:arguments 
+                  ( ("min" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [47030 47048])
+                    ("max" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [47049 47067]))                  
+                :type ("__sched" type (:type "class") nil nil))
+                nil [47006 47256])
+            ("usleep_range" function
+               (:arguments 
+                  ( ("min" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [47438 47456])
+                    ("max" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [47457 47475]))                  
+                :type "void")
+                nil [47420 47551])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("usleep_range" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47566 47579]))                  
+                :type "int")
+                nil [47552 47580]))          
+      :file "timer.c"
+      :pointmax 47581
+      :fsize 47580
+      :lastmodtime '(21976 3069 224725 537000)
+      :unmatched-syntax '((INT 47002 . 47005) (STATIC 46995 . 47001) (VOID 45874 . 45878) (LONG 42545 . 42549) (SIGNED 42538 . 42544) (LONG 42359 . 42363) (SIGNED 42352 . 42358) (LONG 42158 . 42162) (SIGNED 42151 . 42157) (LONG 40677 . 40681) (SIGNED 40670 . 40676) (punctuation 20744 . 20745) (punctuation 20743 . 20744) (punctuation 20738 . 20739) (punctuation 20737 . 20738) (semantic-list 20666 . 20719) (symbol 20651 . 20666) (punctuation 20650 . 20651) (symbol 20640 . 20649) (STRUCT 20633 . 20639) (STATIC 20626 . 20632) (punctuation 2634 . 2635) (semantic-list 2601 . 2633) (symbol 2587 . 2601) (STATIC 2580 . 2586) (symbol 1698 . 1701) (LONG 42158 . 42162) (SIGNED 42151 . 42157) (LONG 40677 . 40681) (SIGNED 40670 . 40676) (punctuation 20744 . 20745) (punctuation 20743 . 20744) (punctuation 20738 . 20739) (punctuation 20737 . 20738) (semantic-list 20666 . 20719) (symbol 20651 . 20666) (punctuation 20650 . 20651) (symbol 20640 . 20649) (STRUCT 20633 . 20639) (STATIC 20626 . 20632) (punctuation 2634 . 2635) (semantic-list 2601 . 2633) (symbol 2587 . 2601) (STATIC 2580 . 2586) (symbol 1698 . 1701))
+      :lexical-table 
+        '(("CREATE_TRACE_POINTS")
+          ("TVR_BITS" . ((semantic-list "(CONFIG_BASE_SMALL ? 6 : 8)" 1894 . 1921)))
+          ("TVN_BITS" . ((semantic-list "(CONFIG_BASE_SMALL ? 4 : 6)" 1849 . 1876)))
+          ("MAX_TVAL" . ((semantic-list "((unsigned long)((1ULL << (TVR_BITS + 4*TVN_BITS)) - 1))" 2069 . 2125)))
+          ("TVR_MASK" . ((semantic-list "(TVR_SIZE - 1)" 2037 . 2051)))
+          ("INDEX" (spp-arg-list ("N") 33104 . 33107) . ((semantic-list "((base->timer_jiffies >> (TVR_BITS + (N) * TVN_BITS)) & TVN_MASK)" 33108 . 33173)))
+          ("TVR_SIZE" . ((semantic-list "(1 << TVR_BITS)" 1972 . 1987)))
+          ("TVN_MASK" . ((semantic-list "(TVN_SIZE - 1)" 2005 . 2019)))
+          ("TVN_SIZE" . ((semantic-list "(1 << TVN_BITS)" 1939 . 1954)))
           )
 ))
   :file "!home!knuth!linux_kernel!linux-3.12.20!kernel!semantic.cache"

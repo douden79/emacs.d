@@ -1,0 +1,827 @@
+;; Object char/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "char/"
+  :tables
+  (list
+    (semanticdb-table "random.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/utsname.h" include (:system-flag t) nil [11198 11224])
+            ("linux/module.h" include (:system-flag t) nil [11225 11250])
+            ("linux/kernel.h" include (:system-flag t) nil [11251 11276])
+            ("linux/major.h" include (:system-flag t) nil [11277 11301])
+            ("linux/string.h" include (:system-flag t) nil [11302 11327])
+            ("linux/fcntl.h" include (:system-flag t) nil [11328 11352])
+            ("linux/slab.h" include (:system-flag t) nil [11353 11376])
+            ("linux/random.h" include (:system-flag t) nil [11377 11402])
+            ("linux/poll.h" include (:system-flag t) nil [11403 11426])
+            ("linux/init.h" include (:system-flag t) nil [11427 11450])
+            ("linux/fs.h" include (:system-flag t) nil [11451 11472])
+            ("linux/genhd.h" include (:system-flag t) nil [11473 11497])
+            ("linux/interrupt.h" include (:system-flag t) nil [11498 11526])
+            ("linux/mm.h" include (:system-flag t) nil [11527 11548])
+            ("linux/spinlock.h" include (:system-flag t) nil [11549 11576])
+            ("linux/percpu.h" include (:system-flag t) nil [11577 11602])
+            ("linux/cryptohash.h" include (:system-flag t) nil [11603 11632])
+            ("linux/fips.h" include (:system-flag t) nil [11633 11656])
+            ("linux/ptrace.h" include (:system-flag t) nil [11657 11682])
+            ("linux/kmemcheck.h" include (:system-flag t) nil [11683 11711])
+            ("linux/irq.h" include (:system-flag t) nil [11712 11734])
+            ("asm/processor.h" include (:system-flag t) nil [11736 11762])
+            ("asm/uaccess.h" include (:system-flag t) nil [11763 11787])
+            ("asm/irq.h" include (:system-flag t) nil [11788 11808])
+            ("asm/irq_regs.h" include (:system-flag t) nil [11809 11834])
+            ("asm/io.h" include (:system-flag t) nil [11835 11854])
+            ("CREATE_TRACE_POINTS" variable (:constant-flag t) nil [11864 11883])
+            ("trace/events/random.h" include (:system-flag t) nil [11884 11916])
+            ("INPUT_POOL_WORDS" variable (:constant-flag t) nil [11962 11978])
+            ("OUTPUT_POOL_WORDS" variable (:constant-flag t) nil [11991 12008])
+            ("SEC_XFER_SIZE" variable (:constant-flag t) nil [12020 12033])
+            ("EXTRACT_SIZE" variable (:constant-flag t) nil [12046 12058])
+            ("LONGS" variable (:constant-flag t) nil [12071 12076])
+            ("random_read_wakeup_thresh" variable
+               (:typemodifiers ("static")
+                :default-value "64"
+                :type "int")
+                nil [12277 12319])
+            ("random_write_wakeup_thresh" variable
+               (:typemodifiers ("static")
+                :default-value "128"
+                :type "int")
+                nil [12487 12531])
+            ("__read_mostly" variable
+               (:default-value "INPUT_POOL_WORDS * 28"
+                :type ("trickle_thresh" type (:type "class") nil nil))
+                nil [12686 12739])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [12763 12767])
+                    ("" variable (:type ("trickle_count" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12768 12782]))                  
+                :type "int")
+                nil [12741 12783])
+            ("poolinfo_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	/* x^128 + x^103 + x^76 + x^51 +x^25 + x + 1 -- 105 */
+	{ 128,	103,	76,	51,	25,	1 },
+	/* x^32 + x^26 + x^20 + x^14 + x^7 + x + 1 -- 15 */
+	{ 32,	26,	20,	14,	7,	1 },
+#if 0
+	/* x^2048 + x^1638 + x^1231 + x^819 + x^411 + x + 1  -- 115 */
+	{ 2048,	1638,	1231,	819,	411,	1 },
+
+	/* x^1024 + x^817 + x^615 + x^412 + x^204 + x + 1 -- 290 */
+	{ 1024,	817,	615,	412,	204,	1 },
+
+	/* x^1024 + x^819 + x^616 + x^410 + x^207 + x^2 + 1 -- 115 */
+	{ 1024,	819,	616,	410,	207,	2 },
+
+	/* x^512 + x^411 + x^308 + x^208 + x^104 + x + 1 -- 225 */
+	{ 512,	411,	308,	208,	104,	1 },
+
+	/* x^512 + x^409 + x^307 + x^206 + x^102 + x^2 + 1 -- 95 */
+	{ 512,	409,	307,	206,	102,	2 },
+	/* x^512 + x^409 + x^309 + x^205 + x^103 + x^2 + 1 -- 95 */
+	{ 512,	409,	309,	205,	103,	2 },
+
+	/* x^256 + x^205 + x^155 + x^101 + x^52 + x + 1 -- 125 */
+	{ 256,	205,	155,	101,	52,	1 },
+
+	/* x^128 + x^103 + x^78 + x^51 + x^27 + x^2 + 1 -- 70 */
+	{ 128,	103,	78,	51,	27,	2 },
+
+	/* x^64 + x^52 + x^39 + x^26 + x^14 + x + 1 -- 15 */
+	{ 64,	52,	39,	26,	14,	1 },
+#endif
+}"
+                :type ("poolinfo" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13181 14302])
+            ("poolinfo" type
+               (:members 
+                  ( ("poolwords" variable (:type "int") (reparse-symbol classsubparts) [13207 13221])
+                    ("tap1" variable (:type "int") (reparse-symbol classsubparts) [13223 13256])
+                    ("tap2" variable (:type "int") (reparse-symbol classsubparts) [13223 13256])
+                    ("tap3" variable (:type "int") (reparse-symbol classsubparts) [13223 13256])
+                    ("tap4" variable (:type "int") (reparse-symbol classsubparts) [13223 13256])
+                    ("tap5" variable (:type "int") (reparse-symbol classsubparts) [13223 13256]))                  
+                :type "struct")
+                nil [13181 14302])
+            ("POOLBITS" variable (:constant-flag t) nil [14312 14320])
+            ("POOLBYTES" variable (:constant-flag t) nil [14342 14351])
+            ("DECLARE_WAIT_QUEUE_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("random_read_wait" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16826 16843]))                  
+                :type "int")
+                nil [16795 16844])
+            ("DECLARE_WAIT_QUEUE_HEAD" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("random_write_wait" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16876 16894]))                  
+                :type "int")
+                nil [16845 16895])
+            ("fasync" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("fasync_struct" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16896 16932])
+            ("debug" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [16934 16952])
+            ("module_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("debug" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16966 16972])
+                    ("" variable (:type "bool") (reparse-symbol arg-sub-list) [16973 16978]))                  
+                :type "int")
+                nil [16953 16985])
+            ("DEBUG_ENT" variable (:constant-flag t) nil [16994 17003])
+            ("entropy_store" type
+               (:prototype t
+                :type "struct")
+                nil [17476 17497])
+            ("entropy_store" type
+               (:members 
+                  ( ("poolinfo" variable
+                       (:pointer 1
+                        :type ("poolinfo" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [17545 17571])
+                    ("pool" variable
+                       (:pointer 1
+                        :type ("__u32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [17573 17585])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [17587 17604])
+                    ("pull" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [17606 17633])
+                    ("limit" variable (:type "int") (reparse-symbol classsubparts) [17635 17645])
+                    ("lock" variable (:type ("spinlock_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17672 17688])
+                    ("add_ptr" variable (:type "unsigned int") (reparse-symbol classsubparts) [17690 17707])
+                    ("input_rotate" variable (:type "unsigned int") (reparse-symbol classsubparts) [17709 17731])
+                    ("entropy_count" variable (:type "int") (reparse-symbol classsubparts) [17733 17751])
+                    ("entropy_total" variable (:type "int") (reparse-symbol classsubparts) [17753 17771])
+                    ("initialized" variable
+                       (:suffix ":1"
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [17773 17800])
+                    ("last_data_init" variable (:type "bool") (reparse-symbol classsubparts) [17802 17822])
+                    ("last_data" variable
+                       (:dereference 1
+                        :type ("__u8" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [17824 17853]))                  
+                :type "struct")
+                nil [17498 17856])
+            ("input_pool_data" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("__u32" type (:type "class") nil nil))
+                nil [17858 17905])
+            ("blocking_pool_data" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("__u32" type (:type "class") nil nil))
+                nil [17906 17957])
+            ("nonblocking_pool_data" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type ("__u32" type (:type "class") nil nil))
+                nil [17958 18012])
+            ("input_pool" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.poolinfo = &poolinfo_table[0],
+	.name = \"input\",
+	.limit = 1,
+	.lock = __SPIN_LOCK_UNLOCKED(input_pool.lock),
+	.pool = input_pool_data
+}"
+                :type ("entropy_store" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18014 18196])
+            ("blocking_pool" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.poolinfo = &poolinfo_table[1],
+	.name = \"blocking\",
+	.limit = 1,
+	.pull = &input_pool,
+	.lock = __SPIN_LOCK_UNLOCKED(blocking_pool.lock),
+	.pool = blocking_pool_data
+}"
+                :type ("entropy_store" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18198 18414])
+            ("nonblocking_pool" variable
+               (:typemodifiers ("static")
+                :default-value "{
+	.poolinfo = &poolinfo_table[1],
+	.name = \"nonblocking\",
+	.pull = &input_pool,
+	.lock = __SPIN_LOCK_UNLOCKED(nonblocking_pool.lock),
+	.pool = nonblocking_pool_data
+}"
+                :type ("entropy_store" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [18416 18631])
+            ("twist_table" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :default-value "{
+	0x00000000, 0x3b6e20c8, 0x76dc4190, 0x4db26158,
+	0xedb88320, 0xd6d6a3e8, 0x9b64c2b0, 0xa00ae278 }"
+                :type ("__u32" type (:type "class") nil nil))
+                nil [18633 18770])
+            ("_mix_pool_bytes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19243 19267])
+                    ("in" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19268 19283])
+                    ("nbytes" variable (:type "int") (reparse-symbol arg-sub-list) [19291 19302])
+                    ("out" variable
+                       (:dereference 1
+                        :type ("__u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19303 19316]))                  
+                :type "void")
+                nil [19215 20619])
+            ("__mix_pool_bytes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20650 20674])
+                    ("in" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20675 20690])
+                    ("nbytes" variable (:type "int") (reparse-symbol arg-sub-list) [20699 20710])
+                    ("out" variable
+                       (:dereference 1
+                        :type ("__u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20711 20724]))                  
+                :type "void")
+                nil [20621 20823])
+            ("mix_pool_bytes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20852 20876])
+                    ("in" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [20877 20892])
+                    ("nbytes" variable (:type "int") (reparse-symbol arg-sub-list) [20899 20910])
+                    ("out" variable
+                       (:dereference 1
+                        :type ("__u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20911 20924]))                  
+                :type "void")
+                nil [20825 21118])
+            ("fast_pool" type
+               (:members 
+                  ( ("pool" variable
+                       (:dereference 1
+                        :type ("__u32" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [21140 21155])
+                    ("last" variable (:type "unsigned long") (reparse-symbol classsubparts) [21157 21176])
+                    ("count" variable (:type "unsigned short") (reparse-symbol classsubparts) [21178 21199])
+                    ("rotate" variable (:type "unsigned char") (reparse-symbol classsubparts) [21201 21222])
+                    ("last_timer_intr" variable (:type "unsigned char") (reparse-symbol classsubparts) [21224 21254]))                  
+                :type "struct")
+                nil [21120 21257])
+            ("fast_mix" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("f" variable
+                       (:pointer 1
+                        :type ("fast_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21479 21499])
+                    ("in" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21500 21515])
+                    ("nbytes" variable (:type "int") (reparse-symbol arg-sub-list) [21516 21527]))                  
+                :type "void")
+                nil [21458 21866])
+            ("credit_entropy_bits" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21969 21993])
+                    ("nbits" variable (:type "int") (reparse-symbol arg-sub-list) [21994 22004]))                  
+                :type "void")
+                nil [21937 22877])
+            ("timer_rand_state" type
+               (:members 
+                  ( ("last_time" variable (:type ("cycles_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [23131 23150])
+                    ("last_delta" variable (:type "long") (reparse-symbol classsubparts) [23152 23181])
+                    ("last_delta2" variable (:type "long") (reparse-symbol classsubparts) [23152 23181])
+                    ("dont_count_entropy" variable
+                       (:suffix ":1"
+                        :type "unsigned int")
+                        (reparse-symbol classsubparts) [23183 23213]))                  
+                :type "struct")
+                nil [23104 23216])
+            ("add_device_randomness" function
+               (:arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [23532 23548])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [23549 23567]))                  
+                :type "void")
+                nil [23505 23846])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("add_device_randomness" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23861 23883]))                  
+                :type "int")
+                nil [23847 23884])
+            ("input_timer_state" variable
+               (:typemodifiers ("static")
+                :type ("timer_rand_state" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [23886 23935])
+            ("add_timer_randomness" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("state" variable
+                       (:pointer 1
+                        :type ("timer_rand_state" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24388 24419])
+                    ("num" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [24420 24433]))                  
+                :type "void")
+                nil [24355 25768])
+            ("add_input_randomness" function
+               (:arguments 
+                  ( ("type" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25796 25814])
+                    ("code" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25815 25833])
+                    ("value" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [25839 25858]))                  
+                :type "void")
+                nil [25770 26115])
+            ("EXPORT_SYMBOL_GPL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("add_input_randomness" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26134 26155]))                  
+                :type "int")
+                nil [26116 26156])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("fast_pool" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [26180 26197])
+                    ("" variable (:type ("irq_randomness" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26198 26213]))                  
+                :type "int")
+                nil [26158 26214])
+            ("add_interrupt_randomness" function
+               (:arguments 
+                  ( ("irq" variable (:type "int") (reparse-symbol arg-sub-list) [26246 26254])
+                    ("irq_flags" variable (:type "int") (reparse-symbol arg-sub-list) [26255 26269]))                  
+                :type "void")
+                nil [26216 27284])
+            ("extract_entropy" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [27814 27838])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [27839 27849])
+                    ("nbytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27860 27874])
+                    ("min" variable (:type "int") (reparse-symbol arg-sub-list) [27875 27883])
+                    ("rsvd" variable (:type "int") (reparse-symbol arg-sub-list) [27884 27893]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [27783 27894])
+            ("xfer_secondary_pool" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [28126 28150])
+                    ("nbytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28151 28165]))                  
+                :type "void")
+                nil [28094 28946])
+            ("account" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [29424 29448])
+                    ("nbytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29449 29463])
+                    ("min" variable (:type "int") (reparse-symbol arg-sub-list) [29464 29472])
+                    ("reserved" variable (:type "int") (reparse-symbol arg-sub-list) [29481 29494]))                  
+                :type ("size_t" type (:type "class") nil nil))
+                nil [29402 30724])
+            ("extract_buf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [30750 30774])
+                    ("out" variable
+                       (:pointer 1
+                        :type ("__u8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [30775 30785]))                  
+                :type "void")
+                nil [30726 32454])
+            ("extract_entropy" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [32487 32511])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [32512 32522])
+                    ("nbytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32528 32542])
+                    ("min" variable (:type "int") (reparse-symbol arg-sub-list) [32543 32551])
+                    ("reserved" variable (:type "int") (reparse-symbol arg-sub-list) [32552 32565]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [32456 33856])
+            ("extract_entropy_user" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [33894 33918])
+                    ("__user" variable (:type "void") (reparse-symbol arg-sub-list) [33919 33932])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33932 33936])
+                    ("nbytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33945 33959]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [33858 34570])
+            ("get_random_bytes" function
+               (:arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [35037 35047])
+                    ("nbytes" variable (:type "int") (reparse-symbol arg-sub-list) [35048 35059]))                  
+                :type "void")
+                nil [35015 35165])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_random_bytes" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35180 35197]))                  
+                :type "int")
+                nil [35166 35198])
+            ("get_random_bytes_arch" function
+               (:arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [35738 35748])
+                    ("nbytes" variable (:type "int") (reparse-symbol arg-sub-list) [35749 35760]))                  
+                :type "void")
+                nil [35711 36092])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_random_bytes_arch" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [36107 36129]))                  
+                :type "int")
+                nil [36093 36130])
+            ("init_std_data" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [36444 36468]))                  
+                :type "void")
+                nil [36418 36862])
+            ("rand_initialize" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [37330 37335]))                  
+                :type "int")
+                nil [37303 37446])
+            ("module_init" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("rand_initialize" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37459 37475]))                  
+                :type "int")
+                nil [37447 37476])
+            ("random_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [37799 37817])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [37818 37831])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37831 37835])
+                    ("nbytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [37836 37850])
+                    ("ppos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [37851 37864]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [37772 38752])
+            ("urandom_read" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38782 38800])
+                    ("__user" variable (:type "char") (reparse-symbol arg-sub-list) [38801 38814])
+                    ("" variable (:type ("buf" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38814 38818])
+                    ("nbytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [38819 38833])
+                    ("ppos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38834 38847]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [38754 38913])
+            ("random_poll" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [38947 38965])
+                    ("wait" variable
+                       (:pointer 1
+                        :type ("poll_table" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [38966 38984]))                  
+                :type "unsigned int")
+                nil [38915 39304])
+            ("write_pool" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("r" variable
+                       (:pointer 1
+                        :type ("entropy_store" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [39328 39352])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [39353 39372])
+                    ("" variable (:type ("buffer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39372 39379])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39380 39393]))                  
+                :type "int")
+                nil [39306 39680])
+            ("random_write" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [39710 39728])
+                    ("__user" variable
+                       (:constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [39729 39748])
+                    ("" variable (:type ("buffer" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39748 39755])
+                    ("count" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [39763 39776])
+                    ("ppos" variable
+                       (:pointer 1
+                        :type ("loff_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39777 39790]))                  
+                :type ("ssize_t" type (:type "class") nil nil))
+                nil [39682 39984])
+            ("random_ioctl" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("f" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [40011 40026])
+                    ("cmd" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [40027 40044])
+                    ("arg" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [40045 40063]))                  
+                :type "long")
+                nil [39986 41042])
+            ("random_fasync" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fd" variable (:type "int") (reparse-symbol arg-sub-list) [41069 41076])
+                    ("filp" variable
+                       (:pointer 1
+                        :type ("file" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [41077 41095])
+                    ("on" variable (:type "int") (reparse-symbol arg-sub-list) [41096 41103]))                  
+                :type "int")
+                nil [41044 41153])
+            ("random_fops" variable
+               (:constant-flag t
+                :default-value "{
+	.read  = random_read,
+	.write = random_write,
+	.poll  = random_poll,
+	.unlocked_ioctl = random_ioctl,
+	.fasync = random_fasync,
+	.llseek = noop_llseek,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [41155 41355])
+            ("urandom_fops" variable
+               (:constant-flag t
+                :default-value "{
+	.read  = urandom_read,
+	.write = random_write,
+	.unlocked_ioctl = random_ioctl,
+	.fasync = random_fasync,
+	.llseek = noop_llseek,
+}"
+                :type ("file_operations" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [41357 41536])
+            ("generate_random_uuid" function
+               (:arguments 
+                  ( ("uuid_out" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol arg-sub-list) [41830 41857]))                  
+                :type "void")
+                nil [41804 42074])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("generate_random_uuid" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [42089 42110]))                  
+                :type "int")
+                nil [42075 42111])
+            ("____cacheline_aligned" variable (:type "int") nil [44724 44746])
+            ("random_int_secret_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [44775 44780]))                  
+                :type "int")
+                nil [44748 44860])
+            ("DEFINE_PER_CPU" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type ("__u32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45148 45172])
+                    ("" variable (:type ("get_random_int_hash" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45174 45194]))                  
+                :type "int")
+                nil [45126 45195])
+            ("get_random_int" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [45224 45229]))                  
+                :type "unsigned int")
+                nil [45196 45522])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("get_random_int" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [45537 45552]))                  
+                :type "int")
+                nil [45523 45553])
+            ("randomize_range" function
+               (:arguments 
+                  ( ("start" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [45850 45870])
+                    ("end" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [45871 45889])
+                    ("len" variable (:type "unsigned long") (reparse-symbol arg-sub-list) [45890 45908]))                  
+                :type "unsigned long")
+                nil [45820 46046]))          
+      :file "random.c"
+      :pointmax 46047
+      :fsize 46150
+      :lastmodtime '(21989 52506 245732 363000)
+      :unmatched-syntax '((thing 33931 . 33932) (thing 16979 . 16983) (thing 12682 . 12685) (thing 12675 . 12681) (thing 37830 . 37831) (thing 38813 . 38814) (thing 39371 . 39372) (thing 39747 . 39748) (thing 44672 . 44678) (thing 44679 . 44682) (thing 44683 . 44700) (thing 44700 . 44723) (thing 45154 . 45172))
+      :lexical-table 
+        '(("SEC_XFER_SIZE" . ((number "512" 12034 . 12037)))
+          ("CREATE_TRACE_POINTS")
+          ("POOLBITS" . 
+              ((symbol "poolwords" 14321 . 14330) (punctuation "*" 14330 . 14331) (number "32" 14331 . 14333)))
+          ("LONGS" (spp-arg-list ("x") 12076 . 12079) . ((semantic-list "(((x) + sizeof(unsigned long) - 1)/sizeof(unsigned long))" 12080 . 12137)))
+          ("EXTRACT_SIZE" . ((number "10" 12059 . 12061)))
+          ("INPUT_POOL_WORDS" . ((number "128" 11979 . 11982)))
+          ("OUTPUT_POOL_WORDS" . ((number "32" 12009 . 12011)))
+          ("POOLBYTES" . 
+              ((symbol "poolwords" 14352 . 14361) (punctuation "*" 14361 . 14362) (number "4" 14362 . 14363)))
+          ("DEBUG_ENT" (spp-arg-list ("fmt" "arg...") 17003 . 17016) . 
+              ((DO "do" 17017 . 17019) (semantic-list "{ \\
+	if (debug) \\
+		printk(KERN_DEBUG \"random %04d %04d %04d: \" \\
+		fmt,\\
+		input_pool.entropy_count,\\
+		blocking_pool.entropy_count,\\
+		nonblocking_pool.entropy_count,\\
+		## arg); }" 17020 . 17202) (WHILE "while" 17203 . 17208) (semantic-list "(0)" 17209 . 17212)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!drivers!char!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

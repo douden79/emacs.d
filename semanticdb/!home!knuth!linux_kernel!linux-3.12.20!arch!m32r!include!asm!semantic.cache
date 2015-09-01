@@ -1,0 +1,147 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "page.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ASM_M32R_PAGE_H" variable (:constant-flag t) nil [34 50])
+            ("linux/const.h" include (:system-flag t) nil [52 76])
+            ("PAGE_SHIFT" variable (:constant-flag t) nil [128 138])
+            ("PAGE_SIZE" variable (:constant-flag t) nil [150 159])
+            ("PAGE_MASK" variable (:constant-flag t) nil [195 204])
+            ("clear_page" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("to" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [268 277]))                  
+                :type "void")
+                nil [245 278])
+            ("copy_page" function
+               (:prototype-flag t
+                :typemodifiers ("extern")
+                :arguments 
+                  ( ("to" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [301 310])
+                    ("from" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [311 322]))                  
+                :type "void")
+                nil [279 323])
+            ("clear_user_page" variable (:constant-flag t) nil [333 348])
+            ("copy_user_page" variable (:constant-flag t) nil [391 405])
+            ("__alloc_zeroed_user_highpage" variable (:constant-flag t) nil [456 484])
+            ("__HAVE_ARCH_ALLOC_ZEROED_USER_HIGHPAGE" variable (:constant-flag t) nil [591 629])
+            ("pte_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pte" variable (:type "unsigned long") (reparse-symbol classsubparts) [706 724]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [689 733])
+            ("pmd_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pmd" variable (:type "unsigned long") (reparse-symbol classsubparts) [751 769]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [734 778])
+            ("pgd_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pgd" variable (:type "unsigned long") (reparse-symbol classsubparts) [796 814]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [779 823])
+            ("pte_val" variable (:constant-flag t) nil [832 839])
+            ("PTE_MASK" variable (:constant-flag t) nil [861 869])
+            ("pgprot_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pgprot" variable (:type "unsigned long") (reparse-symbol classsubparts) [898 919]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [881 931])
+            ("pgtable_t" type
+               (:typedef ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :pointer 1
+                :type "typedef")
+                nil [932 963])
+            ("pmd_val" variable (:constant-flag t) nil [973 980])
+            ("pgd_val" variable (:constant-flag t) nil [1002 1009])
+            ("pgprot_val" variable (:constant-flag t) nil [1031 1041])
+            ("__pte" variable (:constant-flag t) nil [1067 1072])
+            ("__pmd" variable (:constant-flag t) nil [1103 1108])
+            ("__pgd" variable (:constant-flag t) nil [1139 1144])
+            ("__pgprot" variable (:constant-flag t) nil [1175 1183])
+            ("__MEMORY_START" variable (:constant-flag t) nil [1704 1718])
+            ("__MEMORY_SIZE" variable (:constant-flag t) nil [1748 1761])
+            ("__PAGE_OFFSET" variable (:constant-flag t) nil [1852 1865])
+            ("PAGE_OFFSET" variable (:constant-flag t) nil [1896 1907])
+            ("__pa" variable (:constant-flag t) nil [1948 1952])
+            ("__va" variable (:constant-flag t) nil [2001 2005])
+            ("PFN_BASE" variable (:constant-flag t) nil [2093 2101])
+            ("ARCH_PFN_OFFSET" variable (:constant-flag t) nil [2147 2162])
+            ("pfn_valid" variable (:constant-flag t) nil [2181 2190])
+            ("virt_to_page" variable (:constant-flag t) nil [2274 2286])
+            ("virt_addr_valid" variable (:constant-flag t) nil [2341 2356])
+            ("VM_DATA_DEFAULT_FLAGS" variable (:constant-flag t) nil [2410 2431])
+            ("devmem_is_allowed" variable (:constant-flag t) nil [2520 2537])
+            ("asm-generic/memory_model.h" include (:system-flag t) nil [2544 2581])
+            ("asm-generic/getorder.h" include (:system-flag t) nil [2582 2615]))          
+      :file "page.h"
+      :pointmax 2647
+      :fsize 2646
+      :lastmodtime '(21976 3065 804725 638000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__PAGE_OFFSET" . ((semantic-list "(0x00000000)" 1867 . 1879)))
+          ("__alloc_zeroed_user_highpage" (spp-arg-list ("movableflags" "vma" "vaddr") 484 . 510) . ((symbol "alloc_page_vma" 514 . 528) (semantic-list "(GFP_HIGHUSER | __GFP_ZERO | movableflags, vma, vaddr)" 528 . 582)))
+          ("__pgd" (spp-arg-list ("x") 1144 . 1147) . ((semantic-list "((pgd_t) { (x) } )" 1148 . 1166)))
+          ("devmem_is_allowed" (spp-arg-list ("x") 2537 . 2540) . ((number "1" 2541 . 2542)))
+          ("__pte" (spp-arg-list ("x") 1072 . 1075) . ((semantic-list "((pte_t) { (x) } )" 1076 . 1094)))
+          ("PFN_BASE" . ((semantic-list "(CONFIG_MEMORY_START >> PAGE_SHIFT)" 2103 . 2138)))
+          ("PAGE_MASK" . ((semantic-list "(~(PAGE_SIZE-1))" 205 . 221)))
+          ("__HAVE_ARCH_ALLOC_ZEROED_USER_HIGHPAGE")
+          ("__pa" (spp-arg-list ("x") 1952 . 1955) . ((semantic-list "((unsigned long)(x) - PAGE_OFFSET)" 1958 . 1992)))
+          ("VM_DATA_DEFAULT_FLAGS" . ((semantic-list "(VM_READ | VM_WRITE | VM_EXEC | \\
+				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC )" 2432 . 2510)))
+          ("PAGE_SHIFT" . ((number "12" 139 . 141)))
+          ("clear_user_page" (spp-arg-list ("page" "vaddr" "pg") 348 . 365) . ((symbol "clear_page" 366 . 376) (semantic-list "(page)" 376 . 382)))
+          ("PTE_MASK" . ((symbol "PAGE_MASK" 870 . 879)))
+          ("PAGE_SIZE" . ((semantic-list "(_AC(1, UL) << PAGE_SHIFT)" 160 . 186)))
+          ("__MEMORY_SIZE" . ((symbol "CONFIG_MEMORY_SIZE" 1764 . 1782)))
+          ("copy_user_page" (spp-arg-list ("to" "from" "vaddr" "pg") 405 . 426) . ((symbol "copy_page" 427 . 436) (semantic-list "(to, from)" 436 . 446)))
+          ("__pmd" (spp-arg-list ("x") 1108 . 1111) . ((semantic-list "((pmd_t) { (x) } )" 1112 . 1130)))
+          ("__pgprot" (spp-arg-list ("x") 1183 . 1186) . ((semantic-list "((pgprot_t) { (x) } )" 1187 . 1208)))
+          ("__MEMORY_START" . ((symbol "CONFIG_MEMORY_START" 1720 . 1739)))
+          ("virt_addr_valid" (spp-arg-list ("kaddr") 2356 . 2363) . ((symbol "pfn_valid" 2364 . 2373) (semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 2373 . 2400)))
+          ("pgd_val" (spp-arg-list ("x") 1009 . 1012) . ((semantic-list "((x).pgd)" 1013 . 1022)))
+          ("pfn_valid" (spp-arg-list ("pfn") 2190 . 2195) . ((semantic-list "(((pfn) - PFN_BASE) < max_mapnr)" 2197 . 2229)))
+          ("__va" (spp-arg-list ("x") 2005 . 2008) . ((semantic-list "((void *)((unsigned long)(x) + PAGE_OFFSET))" 2011 . 2055)))
+          ("_ASM_M32R_PAGE_H")
+          ("pmd_val" (spp-arg-list ("x") 980 . 983) . ((semantic-list "((x).pmd)" 984 . 993)))
+          ("pgprot_val" (spp-arg-list ("x") 1041 . 1044) . ((semantic-list "((x).pgprot)" 1045 . 1057)))
+          ("ARCH_PFN_OFFSET" . ((symbol "PFN_BASE" 2164 . 2172)))
+          ("pte_val" (spp-arg-list ("x") 839 . 842) . ((semantic-list "((x).pte)" 843 . 852)))
+          ("PAGE_OFFSET" . ((semantic-list "((unsigned long)__PAGE_OFFSET)" 1909 . 1939)))
+          ("virt_to_page" (spp-arg-list ("kaddr") 2286 . 2293) . ((symbol "pfn_to_page" 2294 . 2305) (semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 2305 . 2332)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!m32r!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

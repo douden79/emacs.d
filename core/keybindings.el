@@ -37,7 +37,7 @@
              (local-set-key (kbd "C-c d") 'helm-cscope-find-global-definition)
              (local-set-key (kbd "C-c c") 'helm-cscope-find-called-function)
              (local-set-key (kbd "C-c p") 'helm-cscope-find-calling-this-function)
-             (local-set-key (kbd "C-c s") 'helm-cscope-select)))
+             (local-set-key (kbd "C-c s") 'helm-cscope-pop-mark)))
 
 ;;============================================================
 ;;                        Magit
@@ -48,29 +48,29 @@
 ;;;============================================================
 ;;;                   HighLight SymBol
 ;;;============================================================
-;(require 'highlight-symbol)
-;(global-set-key [f3] 'highlight-symbol-at-point)
-;(global-set-key [f4] 'highlight-symbol-next) 
-;(global-set-key [f2] 'highlight-symbol-prev) 
-;
+(require 'highlight-symbol)
+(global-set-key [f3] 'highlight-symbol-at-point)
+(global-set-key [f4] 'highlight-symbol-next) 
+(global-set-key [f2] 'highlight-symbol-prev) 
+
 ;;;============================================================
 ;;;                 TAB Bar Ruler
 ;;;============================================================
-;(global-set-key (kbd "C-c t") 'tabbar-ruler-move)
+(global-set-key (kbd "C-c t") 'tabbar-ruler-move)
 ;
 ;
 ;;;============================================================
 ;;;                    Plugins
 ;;;============================================================
-;; multiple cursors shortcuts
-;(require 'multiple-cursors)
-;(global-set-key (kbd "C-;") 'mc/edit-lines)
-;(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+; multiple cursors shortcuts
+(require 'multiple-cursors)
+(global-set-key (kbd "C-;") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 ;
 ;; ecb-toggle activate
-;(global-set-key [f10] 'ecb-activate)
-;(global-set-key [f9] 'ecb-deactivate)
+(global-set-key [f10] 'ecb-activate)
+(global-set-key [f9] 'ecb-deactivate)
 
 (provide 'keybindings)

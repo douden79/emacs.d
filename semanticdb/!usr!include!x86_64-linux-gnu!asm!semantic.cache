@@ -1292,6 +1292,39 @@
           ("_ASM_X86_SWAB_H")
           ("__arch_swab64" . ((symbol "__arch_swab64" 618 . 631)))
           )
+)
+    (semanticdb-table "poll.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("asm-generic/poll.h" include (:system-flag t) nil [1 30]))          
+      :file "poll.h"
+      :pointmax 31
+      :fsize 30
+      :lastmodtime '(21962 8046 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "param.h"
+      :file "param.h"
+      :fsize 31
+      :lastmodtime '(21962 8046 0 0))
+    (semanticdb-table "mman.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_ASM_X86_MMAN_H" variable (:constant-flag t) nil [33 48])
+            ("MAP_32BIT" variable (:constant-flag t) nil [58 67])
+            ("MAP_HUGE_2MB" variable (:constant-flag t) nil [119 131])
+            ("MAP_HUGE_1GB" variable (:constant-flag t) nil [166 178])
+            ("asm-generic/mman.h" include (:system-flag t) nil [206 235]))          
+      :file "mman.h"
+      :pointmax 266
+      :fsize 265
+      :lastmodtime '(21962 8046 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAP_HUGE_1GB" . ((semantic-list "(30 << MAP_HUGE_SHIFT)" 182 . 204)))
+          ("_ASM_X86_MMAN_H")
+          ("MAP_HUGE_2MB" . ((semantic-list "(21 << MAP_HUGE_SHIFT)" 135 . 157)))
+          ("MAP_32BIT" . ((number "0x40" 68 . 72)))
+          )
 ))
   :file "!usr!include!x86_64-linux-gnu!asm!semantic.cache"
   :semantic-tag-version "2.0"

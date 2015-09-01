@@ -1,0 +1,350 @@
+;; Object kernel/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "kernel/"
+  :tables
+  (list
+    (semanticdb-table "setup.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("linux/clk.h" include (:system-flag t) nil [244 266])
+            ("linux/init.h" include (:system-flag t) nil [267 290])
+            ("linux/initrd.h" include (:system-flag t) nil [291 316])
+            ("linux/sched.h" include (:system-flag t) nil [317 341])
+            ("linux/console.h" include (:system-flag t) nil [342 368])
+            ("linux/ioport.h" include (:system-flag t) nil [369 394])
+            ("linux/bootmem.h" include (:system-flag t) nil [395 421])
+            ("linux/fs.h" include (:system-flag t) nil [422 443])
+            ("linux/module.h" include (:system-flag t) nil [444 469])
+            ("linux/pfn.h" include (:system-flag t) nil [470 492])
+            ("linux/root_dev.h" include (:system-flag t) nil [493 520])
+            ("linux/cpu.h" include (:system-flag t) nil [521 543])
+            ("linux/kernel.h" include (:system-flag t) nil [544 569])
+            ("asm/sections.h" include (:system-flag t) nil [571 596])
+            ("asm/processor.h" include (:system-flag t) nil [597 623])
+            ("asm/pgtable.h" include (:system-flag t) nil [624 648])
+            ("asm/setup.h" include (:system-flag t) nil [649 671])
+            ("asm/sysreg.h" include (:system-flag t) nil [672 695])
+            ("mach/board.h" include (:system-flag t) nil [697 720])
+            ("mach/init.h" include (:system-flag t) nil [721 743])
+            ("root_mountflags" variable
+               (:typemodifiers ("extern")
+                :type "int")
+                nil [745 772])
+            ("boot_cpu_data" variable
+               (:default-value "{
+	.loops_per_jiffy = 5000000
+}"
+                :type ("avr32_cpuinfo" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [879 948])
+            ("EXPORT_SYMBOL" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("boot_cpu_data" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [963 977]))                  
+                :type "int")
+                nil [949 978])
+            ("command_line" variable
+               (:dereference 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [992 1035])
+            ("kernel_data" variable
+               (:default-value "{
+	.name	= \"Kernel data\",
+	.start	= 0,
+	.end	= 0,
+	.flags	= IORESOURCE_MEM,
+}"
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1096 1199])
+            ("kernel_code" variable
+               (:default-value "{
+	.name	= \"Kernel code\",
+	.start	= 0,
+	.end	= 0,
+	.flags	= IORESOURCE_MEM,
+	.sibling = &kernel_data,
+}"
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1223 1352])
+            ("system_ram" variable (:type ("__initdata" type (:type "class") nil nil)) nil [1565 1587])
+            ("reserved" variable
+               (:default-value "&kernel_code"
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1612 1647])
+            ("res_cache" variable
+               (:dereference 1
+                :type ("__initdata" type (:type "class") nil nil))
+                nil [1865 1890])
+            ("res_cache_next_free" variable (:type ("__initdata" type (:type "class") nil nil)) nil [1911 1942])
+            ("resource_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1977 1982]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [1956 2734])
+            ("add_physical_memory" function
+               (:arguments 
+                  ( ("start" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2775 2797])
+                    ("end" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2798 2818]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [2748 3578])
+            ("add_reserved_region" function
+               (:arguments 
+                  ( ("start" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3618 3640])
+                    ("end" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3641 3661])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3668 3685]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [3591 4200])
+            ("find_free_region" function
+               (:arguments 
+                  ( ("mem" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("resource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4247 4274])
+                    ("size" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4275 4296])
+                    ("align" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4300 4322]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4223 4654])
+            ("alloc_reserved_region" function
+               (:arguments 
+                  ( ("start" variable
+                       (:pointer 1
+                        :type ("resource_size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4696 4719])
+                    ("size" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4720 4741])
+                    ("align" variable (:type ("resource_size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4750 4772])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4773 4790]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [4667 5124])
+            ("fbmem_start" variable (:type ("__initdata" type (:type "class") nil nil)) nil [5910 5933])
+            ("fbmem_size" variable (:type ("__initdata" type (:type "class") nil nil)) nil [5950 5972])
+            ("early_parse_fbmem" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6345 6353]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [6320 7178])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_parse_fbmem" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7200 7218]))                  
+                :type "int")
+                nil [7179 7219])
+            ("early_mem" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7357 7365]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7340 7590])
+            ("early_param" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("early_mem" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7610 7620]))                  
+                :type "int")
+                nil [7591 7621])
+            ("parse_tag_core" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7656 7672]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7634 7836])
+            ("__tagtable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ATAG_CORE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7848 7858])
+                    ("" variable (:type ("parse_tag_core" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7859 7874]))                  
+                :type "int")
+                nil [7837 7875])
+            ("parse_tag_mem" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7909 7925]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [7888 8280])
+            ("__tagtable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ATAG_MEM" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8292 8301])
+                    ("" variable (:type ("parse_tag_mem" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8302 8316]))                  
+                :type "int")
+                nil [8281 8317])
+            ("parse_tag_rdimg" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8353 8369]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [8330 8992])
+            ("__tagtable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ATAG_RDIMG" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9004 9015])
+                    ("" variable (:type ("parse_tag_rdimg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9016 9032]))                  
+                :type "int")
+                nil [8993 9033])
+            ("parse_tag_rsvd_mem" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9072 9088]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [9046 9227])
+            ("__tagtable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ATAG_RSVD_MEM" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9239 9253])
+                    ("" variable (:type ("parse_tag_rsvd_mem" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9254 9273]))                  
+                :type "int")
+                nil [9228 9274])
+            ("parse_tag_cmdline" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9312 9328]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [9287 9415])
+            ("__tagtable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ATAG_CMDLINE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9427 9440])
+                    ("" variable (:type ("parse_tag_cmdline" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9441 9459]))                  
+                :type "int")
+                nil [9416 9460])
+            ("parse_tag_clock" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9496 9512]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [9473 9620])
+            ("__tagtable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ATAG_CLOCK" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9632 9643])
+                    ("" variable (:type ("parse_tag_clock" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9644 9660]))                  
+                :type "int")
+                nil [9621 9661])
+            ("board_number" variable (:type ("__initdata" type (:type "class") nil nil)) nil [9858 9882])
+            ("parse_tag_boardinfo" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9922 9938]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [9895 10001])
+            ("__tagtable" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("ATAG_BOARDINFO" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10013 10028])
+                    ("" variable (:type ("parse_tag_boardinfo" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10029 10049]))                  
+                :type "int")
+                nil [10002 10050])
+            ("parse_tag" function
+               (:arguments 
+                  ( ("tag" variable
+                       (:pointer 1
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10233 10249]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [10216 10482])
+            ("parse_tags" function
+               (:arguments 
+                  ( ("t" variable
+                       (:pointer 1
+                        :type ("tag" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10579 10593]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [10561 10762])
+            ("find_bootmap_pfn" function
+               (:arguments 
+                  ( ("mem" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("resource" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10893 10920]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [10869 11561])
+            ("MAX_LOWMEM" variable (:constant-flag t) nil [11571 11581])
+            ("MAX_LOWMEM_PFN" variable (:constant-flag t) nil [11604 11618])
+            ("setup_bootmem" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [11674 11679]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [11653 13962])
+            ("setup_arch" function
+               (:arguments 
+                  ( ("cmdline_p" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13988 14005]))                  
+                :type ("__init" type (:type "class") nil nil))
+                nil [13969 15308]))          
+      :file "setup.c"
+      :pointmax 15309
+      :fsize 15308
+      :lastmodtime '(21976 3065 684725 641000)
+      :unmatched-syntax '((VOID 13964 . 13968) (VOID 11648 . 11652) (STATIC 11641 . 11647) (LONG 10864 . 10868) (UNSIGNED 10855 . 10863) (STATIC 10848 . 10854) (VOID 10556 . 10560) (STATIC 10549 . 10555) (INT 10212 . 10215) (STATIC 10205 . 10211) (INT 9891 . 9894) (STATIC 9884 . 9890) (symbol 9854 . 9857) (INT 9469 . 9472) (STATIC 9462 . 9468) (INT 9283 . 9286) (STATIC 9276 . 9282) (INT 9042 . 9045) (STATIC 9035 . 9041) (INT 8326 . 8329) (STATIC 8319 . 8325) (INT 7884 . 7887) (STATIC 7877 . 7883) (INT 7630 . 7633) (STATIC 7623 . 7629) (string 7603 . 7608) (INT 7336 . 7339) (STATIC 7329 . 7335) (string 7191 . 7198) (INT 6316 . 6319) (STATIC 6309 . 6315) (symbol 5934 . 5949) (symbol 5894 . 5909) (INT 4663 . 4666) (STATIC 4656 . 4662) (LONG 4218 . 4222) (UNSIGNED 4209 . 4217) (STATIC 4202 . 4208) (INT 3587 . 3590) (STATIC 3580 . 3586) (VOID 2743 . 2747) (STATIC 2736 . 2742) (VOID 1951 . 1955) (STATIC 1944 . 1950) (INT 1907 . 1910) (UNSIGNED 1898 . 1906) (STATIC 1891 . 1897) (symbol 1856 . 1864) (STRUCT 1849 . 1855) (STATIC 1842 . 1848) (punctuation 1611 . 1612) (symbol 1602 . 1610) (STRUCT 1595 . 1601) (STATIC 1588 . 1594) (punctuation 1564 . 1565) (symbol 1555 . 1563) (STRUCT 1548 . 1554) (STATIC 1541 . 1547) (symbol 1214 . 1222) (STRUCT 1207 . 1213) (STATIC 1200 . 1206) (symbol 1087 . 1095) (STRUCT 1080 . 1086) (STATIC 1073 . 1079) (CHAR 987 . 991) (STATIC 980 . 986))
+      :lexical-table 
+        '(("MAX_LOWMEM" . ((symbol "HIGHMEM_START" 11582 . 11595)))
+          ("MAX_LOWMEM_PFN" . ((symbol "PFN_DOWN" 11619 . 11627) (semantic-list "(MAX_LOWMEM)" 11627 . 11639)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!avr32!kernel!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,111 @@
+;; Object asm/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "asm/"
+  :tables
+  (list
+    (semanticdb-table "page.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__ASM_OPENRISC_PAGE_H" variable (:constant-flag t) nil [636 657])
+            ("PAGE_SHIFT" variable (:constant-flag t) nil [711 721])
+            ("PAGE_SIZE" variable (:constant-flag t) nil [806 815])
+            ("PAGE_MASK" variable (:constant-flag t) nil [857 866])
+            ("PAGE_OFFSET" variable (:constant-flag t) nil [899 910])
+            ("KERNELBASE" variable (:constant-flag t) nil [930 940])
+            ("asm/setup.h" include (:system-flag t) nil [1050 1072])
+            ("get_user_page" variable (:constant-flag t) nil [1104 1117])
+            ("free_user_page" variable (:constant-flag t) nil [1172 1186])
+            ("clear_page" variable (:constant-flag t) nil [1229 1239])
+            ("copy_page" variable (:constant-flag t) nil [1283 1292])
+            ("clear_user_page" variable (:constant-flag t) nil [1344 1359])
+            ("copy_user_page" variable (:constant-flag t) nil [1409 1423])
+            ("pte_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pte" variable (:type "unsigned long") (reparse-symbol classsubparts) [1546 1564]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1528 1573])
+            ("pgd_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pgd" variable (:type "unsigned long") (reparse-symbol classsubparts) [1592 1610]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1574 1619])
+            ("pgprot_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("pgprot" variable (:type "unsigned long") (reparse-symbol classsubparts) [1638 1659]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1620 1671])
+            ("pgtable_t" type
+               (:typedef ("page" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil)
+                :pointer 1
+                :type "typedef")
+                nil [1672 1703])
+            ("pte_val" variable (:constant-flag t) nil [1713 1720])
+            ("pgd_val" variable (:constant-flag t) nil [1742 1749])
+            ("pgprot_val" variable (:constant-flag t) nil [1771 1781])
+            ("__pte" variable (:constant-flag t) nil [1807 1812])
+            ("__pgd" variable (:constant-flag t) nil [1842 1847])
+            ("__pgprot" variable (:constant-flag t) nil [1877 1885])
+            ("__va" variable (:constant-flag t) nil [1970 1974])
+            ("__pa" variable (:constant-flag t) nil [2031 2035])
+            ("virt_to_pfn" variable (:constant-flag t) nil [2084 2095])
+            ("pfn_to_virt" variable (:constant-flag t) nil [2144 2155])
+            ("virt_to_page" variable (:constant-flag t) nil [2203 2215])
+            ("page_to_virt" variable (:constant-flag t) nil [2297 2309])
+            ("page_to_phys" variable (:constant-flag t) nil [2379 2391])
+            ("pfn_valid" variable (:constant-flag t) nil [2458 2467])
+            ("virt_addr_valid" variable (:constant-flag t) nil [2511 2526])
+            ("VM_DATA_DEFAULT_FLAGS" variable (:constant-flag t) nil [2603 2624])
+            ("asm-generic/memory_model.h" include (:system-flag t) nil [2705 2742])
+            ("asm-generic/getorder.h" include (:system-flag t) nil [2743 2776]))          
+      :file "page.h"
+      :pointmax 2813
+      :fsize 2812
+      :lastmodtime '(21976 3066 60725 630000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__ASM_OPENRISC_PAGE_H")
+          ("virt_to_pfn" (spp-arg-list ("kaddr") 2095 . 2102) . ((semantic-list "(__pa(kaddr) >> PAGE_SHIFT)" 2108 . 2135)))
+          ("__pgd" (spp-arg-list ("x") 1847 . 1850) . ((semantic-list "((pgd_t) { (x) })" 1851 . 1868)))
+          ("KERNELBASE" . ((symbol "PAGE_OFFSET" 941 . 952)))
+          ("free_user_page" (spp-arg-list ("page" "addr") 1186 . 1198) . ((symbol "free_page" 1204 . 1213) (semantic-list "(addr)" 1213 . 1219)))
+          ("clear_page" (spp-arg-list ("page") 1239 . 1245) . ((symbol "memset" 1246 . 1252) (semantic-list "((page), 0, PAGE_SIZE)" 1252 . 1274)))
+          ("__pte" (spp-arg-list ("x") 1812 . 1815) . ((semantic-list "((pte_t) { (x) })" 1816 . 1833)))
+          ("PAGE_MASK" . ((semantic-list "(~(PAGE_SIZE-1))" 873 . 889)))
+          ("get_user_page" (spp-arg-list ("vaddr") 1117 . 1124) . ((symbol "__get_free_page" 1136 . 1151) (semantic-list "(GFP_KERNEL)" 1151 . 1163)))
+          ("__pa" (spp-arg-list ("x") 2035 . 2038) . ((semantic-list "((unsigned long) (x) - PAGE_OFFSET)" 2039 . 2074)))
+          ("page_to_virt" (spp-arg-list ("page") 2309 . 2315) . ((semantic-list "((((page) - mem_map) << PAGE_SHIFT) + PAGE_OFFSET)" 2319 . 2369)))
+          ("VM_DATA_DEFAULT_FLAGS" . ((semantic-list "(VM_READ | VM_WRITE | VM_EXEC | \\
+				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)" 2625 . 2702)))
+          ("PAGE_SHIFT" . ((number "13" 727 . 729)))
+          ("clear_user_page" (spp-arg-list ("page" "vaddr" "pg") 1359 . 1376) . ((symbol "clear_page" 1384 . 1394) (semantic-list "(page)" 1394 . 1400)))
+          ("pfn_to_virt" (spp-arg-list ("pfn") 2155 . 2160) . ((symbol "__va" 2168 . 2172) (semantic-list "((pfn) << PAGE_SHIFT)" 2172 . 2193)))
+          ("PAGE_SIZE" . ((semantic-list "(1UL << PAGE_SHIFT)" 822 . 841)))
+          ("copy_user_page" (spp-arg-list ("to" "from" "vaddr" "pg") 1423 . 1444) . ((symbol "copy_page" 1449 . 1458) (semantic-list "(to, from)" 1458 . 1468)))
+          ("__pgprot" (spp-arg-list ("x") 1885 . 1888) . ((semantic-list "((pgprot_t) { (x) })" 1889 . 1909)))
+          ("virt_addr_valid" (spp-arg-list ("kaddr") 2526 . 2533) . ((semantic-list "(pfn_valid(virt_to_pfn(kaddr)))" 2534 . 2565)))
+          ("pgd_val" (spp-arg-list ("x") 1749 . 1752) . ((semantic-list "((x).pgd)" 1753 . 1762)))
+          ("pfn_valid" (spp-arg-list ("pfn") 2467 . 2472) . ((semantic-list "((pfn) < max_mapnr)" 2482 . 2501)))
+          ("copy_page" (spp-arg-list ("to" "from") 1292 . 1302) . ((symbol "memcpy" 1303 . 1309) (semantic-list "((to), (from), PAGE_SIZE)" 1309 . 1334)))
+          ("__va" (spp-arg-list ("x") 1974 . 1977) . ((semantic-list "((void *)((unsigned long)(x) + PAGE_OFFSET))" 1978 . 2022)))
+          ("page_to_phys" (spp-arg-list ("page") 2391 . 2397) . ((semantic-list "((dma_addr_t)page_to_pfn(page) << PAGE_SHIFT)" 2403 . 2448)))
+          ("pgprot_val" (spp-arg-list ("x") 1781 . 1784) . ((semantic-list "((x).pgprot)" 1785 . 1797)))
+          ("PAGE_OFFSET" . ((number "0xc0000000" 911 . 921)))
+          ("pte_val" (spp-arg-list ("x") 1720 . 1723) . ((semantic-list "((x).pte)" 1724 . 1733)))
+          ("virt_to_page" (spp-arg-list ("addr") 2215 . 2221) . ((semantic-list "(mem_map + (((unsigned long)(addr)-PAGE_OFFSET) >> PAGE_SHIFT))" 2225 . 2288)))
+          )
+))
+  :file "!home!knuth!linux_kernel!linux-3.12.20!arch!openrisc!include!asm!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
