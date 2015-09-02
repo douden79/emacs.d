@@ -973,14 +973,15 @@ little more place."
 If you have not set a compilation-window in `ecb-compile-window-height' then
 the layout contains no persistent compilation window and the other windows get a
 little more place."
-  (ecb-set-directories-buffer)
-  (ecb-split-ver 0.2)
-  (ecb-set-sources-buffer)
-  (ecb-split-ver 0.2)
   (ecb-set-methods-buffer)
   (ecb-split-ver 0.3)
+  (ecb-set-sources-buffer)
+  (ecb-split-ver 0.5)
   (ecb-set-symboldef-buffer)
-  (select-window (next-window)))
+  (select-window (previous-window))
+  (ecb-split-hor 0.5)
+  (ecb-set-history-buffer)
+  (select-window (next-window (next-window))))
 
 (defconst ecb-buildin-layouts (ecb-copy-list ecb-available-layouts)
   "All layouts defined until now.")
