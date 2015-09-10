@@ -111,7 +111,8 @@
 ;;;;
 ;;;; TAGS Table on linux kernel ( ~/linux_kernel/linux-3.12.20 )
 ;;;;
-(setq tags-table-list '("/home/knuth/linux_kernel/linux-3.12.20"))
+;(setq tags-table-list '("/home/knuth/linux_kernel/linux-3.12.20"))
+(setq tags-table-list '("/home/knuth/enigma2.pli.bsp"))
 
 ;;;;
 ;;;; Helm Gtags Settings
@@ -154,4 +155,10 @@ your recently and most frequently used commands.")
 
 (global-set-key (kbd "M-x") 'smex)
 
+;;;;
+;;;; global highlight line
+;;;;
+;; highlight the current line
+(global-hl-line-mode +1)
+(set-face-background 'hl-line "#f0e394")
 (provide 'editor)
