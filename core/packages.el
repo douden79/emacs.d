@@ -8,7 +8,8 @@
 ;; stable package archives
 ;;-------------------------~-------------------------~-----------------
 (setq package-archives '( ("gnu" . "http://elpa.gnu.org/packages/")
-			 ("melpa-stable" . "http://stable.melpa.org/packages/")))
+						  ("melpa-stable" . "http://stable.melpa.org/packages/")
+						  ("melpa" . "http://melpa.org/packages/")))
        
 ;; set package-user-dir to be relative to Knuth install path
 (setq package-user-dir (expand-file-name "melpa" knuth-dir))
@@ -32,7 +33,13 @@
      helm-gtags
      helm-cscope
      powerline
-	 org
+     org
+     flycheck
+     flycheck-tip
+     auto-complete-clang-async
+     auto-complete-clang
+	 smartparens
+	 smart-compile
     )
   "A list of packages to ensure are installed at launch.")
 

@@ -8,10 +8,13 @@
 (global-set-key [M-down] 'windmove-down)
 
 ;---------~----------~----------~---------~--------~---------
-;                ECB Window Toggle Key
+;                  Glbal Set Key
 ;---------~----------~----------~---------~--------~---------
-
-(global-set-key [f5] 'ecb-toggle-compile-window)
+(global-set-key [f1] 'woman)
+(global-set-key [f2] 'rgrep)
+(global-set-key [f5] 'compile)
+(global-set-key [f6] 'goto-line)
+(global-set-key [f10] 'ansi-term)
 
 ;;============================================================
 ;;                     Helm Plugins
@@ -30,6 +33,7 @@
 ;;;;;;;;;; Helm Cscope
 (add-hook 'c-mode-hook 'helm-cscope-mode)
 (add-hook 'c++-mode-hook 'helm-cscope-mode)
+
 ; Set key bindings
 (add-hook 'helm-cscope-mode-hook
           '(lambda ()
@@ -51,7 +55,6 @@
 (require 'highlight-symbol)
 (global-set-key [f3] 'highlight-symbol-at-point)
 (global-set-key [f4] 'highlight-symbol-next) 
-(global-set-key [f2] 'highlight-symbol-prev) 
 
 ;;;============================================================
 ;;;                 TAB Bar Ruler
