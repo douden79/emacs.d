@@ -38,8 +38,9 @@
      flycheck-tip
      auto-complete-clang-async
      auto-complete-clang
-	 smartparens
-	 smart-compile
+     smartparens
+     smart-compile
+	 tabbar-ruler
     )
   "A list of packages to ensure are installed at launch.")
 

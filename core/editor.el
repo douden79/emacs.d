@@ -32,7 +32,7 @@
 (global-semanticdb-minor-mode 1)	
 (global-semantic-mru-bookmark-mode 1)
 (global-semantic-highlight-func-mode 1)
-(global-semantic-stickyfunc-mode 1)
+;;(global-semantic-stickyfunc-mode 1)
 (global-semantic-decoration-mode 1)
 (global-semantic-idle-scheduler-mode 1)
 (global-semantic-idle-local-symbol-highlight-mode 1)
@@ -163,4 +163,14 @@ your recently and most frequently used commands.")
 (set-face-background 'hl-line "#544f34")
 
 ;;;;
+;;;; Tabbar Ruler
+;;;;
+(require 'tabbar-ruler)
+(setq tabbar-ruler-global-tabbar t) ; If you want tabbar
+(setq tabbar-ruler-global-ruler t) ; if you want a global ruler
+;;(setq tabbar-ruler-popup-menu t) ; If you want a popup menu.
+;;(setq tabbar-ruler-popup-toolbar t) ; If you want a popup toolbar
+;;(setq tabbar-ruler-popup-scrollbar t) ; If you want to only show the
+
+(global-set-key (kbd "C-c t") 'tabbar-ruler-move)
 (provide 'editor)
