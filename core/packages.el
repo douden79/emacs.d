@@ -43,6 +43,7 @@
      tabbar-ruler
      ac-clang
      dracular-theme
+     org-bullets
     )
   "A list of packages to ensure are installed at launch.")
 
