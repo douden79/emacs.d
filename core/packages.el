@@ -40,7 +40,9 @@
      auto-complete-clang
      smartparens
      smart-compile
-	 tabbar-ruler
+     tabbar-ruler
+     ac-clang
+     dracular-theme
     )
   "A list of packages to ensure are installed at launch.")
 

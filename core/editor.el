@@ -69,6 +69,10 @@
 (set-face-foreground 'ac-completion-face "white")
 (set-face-background 'ac-completion-face "black")
 
+;;;; org mode bullets mode
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 ;;;; powerline
 (require 'powerline)
 (powerline-default-theme)
@@ -84,6 +88,7 @@
 (modify-coding-system-alist 'file "\\.cpp\\'" 'utf-8)
 (modify-coding-system-alist 'file "\\.txt\\'" 'utf-8)
 (modify-coding-system-alist 'file "\\.md\\'" 'utf-8)
+(modify-coding-system-alist 'file "\\.org\\'" 'utf-8)
 
 ;; Loding Korean Font Set
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc)
@@ -112,6 +117,7 @@
 ;;;; TAGS Table on linux kernel ( ~/linux_kernel/linux-3.12.20 )
 ;;;;
 (setq tags-table-list '("/home/knuth/linux_kernel/linux-3.12.20"))
+(setq tags-table-list '("/home/knuth/ORG/BcmLinuxDVB/linux-4.2.1"))
 ;(setq tags-table-list '("/home/knuth/enigma2.pli.bsp"))
 
 ;;;;
@@ -126,6 +132,14 @@
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
 (add-hook 'php-mode-hook 'helm-gtags-mode)
 
+;; ac-clang
+;(require 'ac-clang)
+
+;(when (ac-clang-initialize)
+;  (add-hook 'c-mode-common-hook '(lambda ()
+;								   (setq ac-clang-cflags CFLAGS)
+;								   (ac-clang-activate-after-modify)))
+  
 ;; helm gtags customize
 (setq helm-gtags-path-style 'relative)
 (setq helm-gtags-ignore-case t)
