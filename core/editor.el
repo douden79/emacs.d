@@ -69,6 +69,18 @@
 (set-face-foreground 'ac-completion-face "white")
 (set-face-background 'ac-completion-face "black")
 
+
+;;;;
+;;;; Org Mode
+;;;;
+;; fill paragraph
+(setq org-list-allow-alphabetical t)
+(require 'org2blog-autoloads)
+(require 'netrc)
+
+(setq wp-cpbotha (netrc-machine (netrc-parse "~/.netrc") "wp-cpbotha" t))
+(setq wp-vxlabs (netrc-machine (netrc-parse "~/.netrc") "wp-vxlabs" t))
+
 ;;;; org mode bullets mode
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))

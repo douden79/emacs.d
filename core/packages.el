@@ -42,8 +42,11 @@
      smart-compile
      tabbar-ruler
      ac-clang
-     dracular-theme
      org-bullets
+	 xml-rpc
+	 metaweblog
+	 org2blog
+	 htmlize
     )
   "A list of packages to ensure are installed at launch.")
 
