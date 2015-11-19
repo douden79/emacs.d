@@ -39,7 +39,7 @@
                                                   (abbreviate-file-name (buffer-file-name))
                                                 "%b"))))
 ;; use zenburn as the default theme
-;;(load-theme 'solarized-dark t)
+;;load-theme 'solarized-light t)
 (load-theme 'dracula t)
 
 ;; set cursor color

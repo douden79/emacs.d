@@ -11,11 +11,31 @@
 (global-set-key (kbd "C-b") 'hs-hide-block)
 (global-set-key (kbd "C-s") 'hs-show-block)
 
+;;;;
+;;;; smart tab
+;;;;
 ;; smart tab behavior - indent or complete
 (setq tab-always-indent 'complete)
 
+(smart-tabs-advice python-indent-line-1 python-indent)
+(add-hook 'python-mode-hook
+		  (lambda ()
+			(setq indent-tabs-mode t)
+			(setq tab-width (default-value 'tab-width))))
+
+(smart-tabs-advice py-indent-line py-indent-offset)
+(smart-tabs-advice py-newline-and-indent py-indent-offset)
+(smart-tabs-advice py-indent-region py-indent-offset)
+
 ;; gdb windows option.
 (setq gdb-many-windows t)
+
+;;;;
+;;;; Handling Uncommon File Extensions
+;;;;
+
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.sh\\'" . python-mode))
 
 ;;;;
 ;;;; Source Navigator cedet
@@ -129,7 +149,7 @@
 ;;;; TAGS Table on linux kernel ( ~/linux_kernel/linux-3.12.20 )
 ;;;;
 (setq tags-table-list '("/home/knuth/linux_kernel/linux-3.12.20"))
-(setq tags-table-list '("/home/knuth/ORG/BcmLinuxDVB/linux-4.2.1"))
+;(setq tags-table-list '("/home/knuth/ORG/BcmLinuxDVB/linux-4.2.1"))
 ;(setq tags-table-list '("/home/knuth/enigma2.pli.bsp"))
 
 ;;;;

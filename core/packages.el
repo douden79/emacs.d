@@ -43,6 +43,7 @@
      tabbar-ruler
      ac-clang
      org-bullets
+	dracula-theme
 	 xml-rpc
 	 metaweblog
 	 org2blog
