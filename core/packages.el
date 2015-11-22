@@ -43,11 +43,13 @@
      tabbar-ruler
      ac-clang
      org-bullets
-	dracula-theme
+	 dracula-theme
 	 xml-rpc
 	 metaweblog
 	 org2blog
 	 htmlize
+	 obsidian-theme
+	 emacs-eclim
     )
   "A list of packages to ensure are installed at launch.")
 

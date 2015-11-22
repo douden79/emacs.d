@@ -40,7 +40,8 @@
                                                 "%b"))))
 ;; use zenburn as the default theme
 ;;load-theme 'solarized-light t)
-(load-theme 'dracula t)
+;;(load-theme 'dracula t)
+(load-theme 'obsidian t)
 
 ;; set cursor color
 (set-cursor-color "SkyBlue2")
