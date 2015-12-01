@@ -39,9 +39,13 @@
                                                   (abbreviate-file-name (buffer-file-name))
                                                 "%b"))))
 ;; use zenburn as the default theme
-;;load-theme 'solarized-light t)
+;;(load-theme 'solarized-light t)
 ;;(load-theme 'dracula t)
-(load-theme 'obsidian t)
+;;(load-theme 'obsidian t)
+(load-theme 'flatui t)
+;; hlinum-mode
+(require 'hlinum)
+(hlinum-activate)
 
 ;; set cursor color
 (set-cursor-color "SkyBlue2")

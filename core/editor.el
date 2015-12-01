@@ -7,9 +7,36 @@
 
 (add-hook 'c-mode-common-hook 'hs-minor-mode)
 
-;; source folding
-(global-set-key (kbd "C-b") 'hs-hide-block)
-(global-set-key (kbd "C-s") 'hs-show-block)
+;;;;
+;;;; Linux C mode
+;;;;
+(defun linux-c-mode ()
+"C mode with adjusted defaults for use with the Linux kernel."
+(interactive)
+(c-mode)
+(c-set-style "K&R")
+(setq tab-width 8)
+(setq indent-tabs-mode t)
+(setq c-basic-offset 8))
+
+(add-to-list 'auto-mode-alist '("\.c$" . linux-c-mode))
+;;;;
+;;;; source folding
+;;;;
+(defun hs-enable-and-toggle ()
+  (interactive)
+  (hs-minor-mode 1)
+  (hs-toggle-hiding))
+(defun hs-enable-and-hideshow-all (&optional arg)
+  "Hide all blocks. If prefix argument is given, show all blocks."
+  (interactive "P")
+  (hs-minor-mode 1)
+  (if arg
+      (hs-show-all)
+	(hs-hide-all)))
+
+(global-set-key (kbd "C-b") 'hs-enable-and-toggle)
+(global-set-key (kbd "C-s") 'hs-enable-and-hideshow-all)
 
 ;;;;
 ;;;; smart tab
@@ -149,6 +176,7 @@
 ;;;; TAGS Table on linux kernel ( ~/linux_kernel/linux-3.12.20 )
 ;;;;
 (setq tags-table-list '("/home/knuth/linux_kernel/linux-3.12.20"))
+(setq tags-table-list '("/home/knuth/Work/broadcom/BcmLinuxDVB/linux-4.2.1"))
 ;(setq tags-table-list '("/home/knuth/ORG/BcmLinuxDVB/linux-4.2.1"))
 ;(setq tags-table-list '("/home/knuth/enigma2.pli.bsp"))
 
@@ -219,4 +247,11 @@ your recently and most frequently used commands.")
 ;;(setq tabbar-ruler-popup-scrollbar t) ; If you want to only show the
 
 (global-set-key (kbd "C-c t") 'tabbar-ruler-move)
+
+;;;;
+;;;; Global Key Binding
+;;;;
+(global-set-key [f9] 'compile)
+(global-set-key [f11] 'gdb-next)
+(global-set-key [f12] 'gdb-step)
 (provide 'editor)

@@ -50,6 +50,8 @@
 	 htmlize
 	 obsidian-theme
 	 emacs-eclim
+	 hlinum
+	 flatui-theme
     )
   "A list of packages to ensure are installed at launch.")
 
