@@ -175,8 +175,7 @@
 ;;;;
 ;;;; TAGS Table on linux kernel ( ~/linux_kernel/linux-3.12.20 )
 ;;;;
-(setq tags-table-list '("/home/knuth/linux_kernel/linux-3.12.20"))
-(setq tags-table-list '("/home/knuth/Work/broadcom/BcmLinuxDVB/linux-4.2.1"))
+(setq tags-table-list '("/home/knuth/linux_kernel/linux-3.12.20/TAGS"))
 ;(setq tags-table-list '("/home/knuth/ORG/BcmLinuxDVB/linux-4.2.1"))
 ;(setq tags-table-list '("/home/knuth/enigma2.pli.bsp"))
 

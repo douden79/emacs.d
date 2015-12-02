@@ -46,8 +46,8 @@
 ;;============================================================
 ;;                        Magit
 ;;============================================================
-(global-set-key (kbd "C-x s") 'magit-status)
-(global-set-key (kbd "C-x l") 'magit-log)
+(global-set-key (kbd "C-x s") 'magit-blame)
+(global-set-key (kbd "C-x l") 'magit-log-all)
 
 ;;;============================================================
 ;;;                   HighLight SymBol
