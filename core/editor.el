@@ -252,6 +252,6 @@ your recently and most frequently used commands.")
 ;;;; Global Key Binding
 ;;;;
 (global-set-key [f9] 'compile)
-(global-set-key [f11] 'gdb-next)
-(global-set-key [f12] 'gdb-step)
+(global-set-key [f7] 'gdb-next)
+(global-set-key [f8] 'gdb-step)
 (provide 'editor)
