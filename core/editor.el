@@ -116,7 +116,6 @@
 (set-face-foreground 'ac-completion-face "white")
 (set-face-background 'ac-completion-face "black")
 
-
 ;;;;
 ;;;; Org Mode
 ;;;;
@@ -148,6 +147,7 @@
 (modify-coding-system-alist 'file "\\.txt\\'" 'utf-8)
 (modify-coding-system-alist 'file "\\.md\\'" 'utf-8)
 (modify-coding-system-alist 'file "\\.org\\'" 'utf-8)
+(modify-coding-system-alist 'file "\\.tv\\'" 'utf-8)
 
 ;; Loding Korean Font Set
 (set-fontset-font "fontset-default" '(#x1100 . #xffdc)
@@ -170,12 +170,14 @@
 ;;(when (cedet-gnu-global-version-check t)) ;; is not active
 (semanticdb-enable-gnu-global-databases 'c-mode t)
 (semanticdb-enable-gnu-global-databases 'c++-mode t)
+(semanticdb-enable-gnu-global-databases 'python-mode t)
 (setq-default semantic-symref-tool "global")
 
 ;;;;
 ;;;; TAGS Table on linux kernel ( ~/linux_kernel/linux-3.12.20 )
 ;;;;
-(setq tags-table-list '("/home/knuth/linux_kernel/linux-3.12.20/TAGS"))
+;;(setq tags-table-list '("/home/knuth/linux_kernel/linux-3.12.20/TAGS"))
+(setq tags-table-list '("/home/knuth/Work/DRV/broadcom_7362/BcmLinuxDVB/linux-4.2.1/TAGS"))
 ;(setq tags-table-list '("/home/knuth/ORG/BcmLinuxDVB/linux-4.2.1"))
 ;(setq tags-table-list '("/home/knuth/enigma2.pli.bsp"))
 
@@ -190,6 +192,7 @@
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
 (add-hook 'php-mode-hook 'helm-gtags-mode)
+(add-hook 'python-mode-hook 'helm-gtags-mode)
 
 ;; ac-clang
 ;(require 'ac-clang)
@@ -233,7 +236,8 @@ your recently and most frequently used commands.")
 ;;;;
 ;; highlight the current line
 (global-hl-line-mode +1)
-(set-face-background 'hl-line "#544f34")
+(set-face-background 'hl-line "#ffae42")
+(set-face-foreground 'highlight nil)
 
 ;;;;
 ;;;; Tabbar Ruler
