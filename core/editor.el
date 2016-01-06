@@ -57,6 +57,9 @@
 ;; gdb windows option.
 (setq gdb-many-windows t)
 
+;; helm-grep-mode is true when rgrep search command.
+(setq helm-grep-mode t)
+
 ;;;;
 ;;;; Handling Uncommon File Extensions
 ;;;;
