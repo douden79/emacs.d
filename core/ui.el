@@ -42,8 +42,12 @@
 ;;(load-theme 'solarized-light t)
 ;;(load-theme 'dracula t)
 ;;(load-theme 'obsidian t)
-(load-theme 'flatui t)
+;;(load-theme 'flatui t)
 ;; hlinum-mode
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/melpa/sunburst")
+(load-theme 'sunburst t)
+
 (require 'hlinum)
 (hlinum-activate)
 
