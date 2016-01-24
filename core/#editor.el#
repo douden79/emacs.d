@@ -240,7 +240,7 @@ your recently and most frequently used commands.")
 ;; highlight the current line
 (global-hl-line-mode +1)
 ;;(set-face-background 'hl-line "#4169E1")
-(set-face-background 'hl-line "#000094")
+(set-face-background 'hl-line "#000080")
 (set-face-foreground 'highlight nil)
 
 ;;;;
